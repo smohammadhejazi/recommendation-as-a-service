@@ -19,18 +19,28 @@ class UserRecommendation:
         self.user_info = pd.read_csv(self.user_info_path, sep=info_sep, names=info_columns)
         self.user_ratings = pd.read_csv(self.user_ratings_path, sep=ratings_sep, names=ratings_columns)
 
-    def set_optimal_n_clusters(self):
+    def matching_dissimilarity(self, a, b):
+        return np.sum(a != b)
+
+    # def silhouette_analysis(self, df):
+    #     return np.mean(silhouette_samples(X, labels, metric=metric, **kwds))
+
+    def set_optimal_k_clusters(self):
+        k_start = 25
+        k_end = 35
+        score = []
         cost = []
         fit_time = []
-        for k_clusters in range(1, 5):
-            print("*" * 5)
-            print("K clusters = " + str(k_clusters))
-            kmode = KModes(n_clusters=k_clusters, init="random", n_init=5, verbose=1)
+        for k in range(k_start, k_end):
+            print("K clusters = " + str(k))
+            kmode = KModes(n_clusters=k, init="random", n_init=5, n_jobs=-1, verbose=0)
 
             start = time.perf_counter()
-            cluster_labels = kmode.fit_predict(self.user_ratings)
+            cluster_labels = kmode.fit_predict(self.user_info)
             end = time.perf_counter()
-
+            s_score = metrics.silhouette_score(self.user_info, cluster_labels, metric=self.matching_dissimilarity)
+            print(s_score)
+            score.append(s_score)
             cost.append(kmode.cost_)
             fit_time.append(end - start)
 
@@ -53,7 +63,7 @@ if __name__ == "__main__":
                                ['user_id', 'item_id', 'rating', 'timestamp'], info_sep="|", ratings_sep="\t")
 
     # get optimal number of clusters
-    optimal_n_cluster, cost_normalized, fit_time_normalized, np_cost, np_fit_time = recom_module.set_optimal_n_clusters()
+    optimal_n_cluster, cost_normalized, fit_time_normalized, np_cost, np_fit_time = recom_module.set_optimal_k_clusters()
 
     print(optimal_n_cluster)
     k_clusters = range(1, int(math.sqrt(recom_module.user_ratings.shape[0])) + 1)
