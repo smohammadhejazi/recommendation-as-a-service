@@ -1,11 +1,9 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import math
 import time
-from sklearn import metrics
 from kmodes.kmodes import KModes
-from utils import *
+from utils import silhouette_score, matching_dissimilarity
 
 
 class UserRecommendation:
@@ -30,7 +28,7 @@ class UserRecommendation:
             start = time.perf_counter()
             cluster_labels = kmode.fit_predict(self.user_info)
             end = time.perf_counter()
-            s_score = metrics.silhouette_score(self.user_info, cluster_labels, metric=matching_dissimilarity)
+            s_score = silhouette_score(self.user_info, cluster_labels, metric=matching_dissimilarity)
             score.append(s_score)
             cost.append(kmode.cost_)
             fit_time.append(end - start)
