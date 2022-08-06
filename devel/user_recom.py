@@ -4,6 +4,12 @@ import matplotlib.pyplot as plt
 import time
 from kmodes.kmodes import KModes
 from utils import silhouette_score, matching_dissimilarity
+from surprise import SVD
+from surprise import Dataset
+
+
+NUMBER_OF_USERS = 943
+NUMBER_OF_MOVIES = 1682
 
 
 class UserRecommendation:
@@ -28,12 +34,34 @@ class UserRecommendation:
             start = time.perf_counter()
             cluster_labels = kmode.fit_predict(self.user_info)
             end = time.perf_counter()
-            s_score = silhouette_score(self.user_info, cluster_labels, metric=matching_dissimilarity)
+            s_score = silhouette_score(self.user_info[["age", "gender", "occupation"]], cluster_labels, metric=matching_dissimilarity)
             score.append(s_score)
             cost.append(kmode.cost_)
             fit_time.append(end - start)
 
         return np.argmax(np.array(score)) + k_start, score, cost, fit_time
+
+    def generate_virtual_users(self, k):
+        for i in range(k):
+            # users in cluster i
+            users = self.user_info[self.user_info["cluster"] == i]
+            print(users)
+            print("#####")
+            # ratings of these users
+            b = self.user_ratings[self.user_ratings["user_id"].isin(users["user_id"])]
+            print(b)
+            print("#####")
+            c = b.groupby(["item_id"])["rating"].mean()
+            print(c)
+            exit()
+
+
+    # def generate_user_rating_matrix(self):
+    #     matrix = np.empty(shape=(NUMBER_OF_USERS, NUMBER_OF_MOVIES + 1))
+    #     for index, row in self.user_ratings.iterrows():
+    #         for column in row.iterrows():
+    #             print(column)
+    #         exit(0)
 
 
 if __name__ == "__main__":
@@ -44,14 +72,20 @@ if __name__ == "__main__":
                                ["user_id", "item_id", "rating", "timestamp"], info_sep="|", ratings_sep="\t")
 
     # get optimal number of clusters
-    k_start = 25
+    k_start = 26
     k_end = 27
-    optimal_n_cluster, score, cost, fit_time = recom_module.set_optimal_k_clusters(k_start, k_end)
+    optimal_k, score, cost, fit_time = recom_module.set_optimal_k_clusters(k_start, k_end)
+    print("Optimal K = " + str(optimal_k))
 
-    print(optimal_n_cluster)
-    k_clusters = range(k_start, k_end)
+    # cluster with optimal k
+    kmode = KModes(n_clusters=25, init="random", n_init=5, n_jobs=-1, verbose=0)
+    cluster_labels = kmode.fit_predict(recom_module.user_info)
+    recom_module.user_info['cluster'] = cluster_labels.tolist()
+    recom_module.generate_virtual_users(25)
 
+    exit(0)
     # show plots
+    k_clusters = range(k_start, k_end)
     color = "k"
     marker = "."
     line = "-"
