@@ -4,8 +4,10 @@ import matplotlib.pyplot as plt
 import time
 from kmodes.kmodes import KModes
 from utils import silhouette_score, matching_dissimilarity
-from surprise import SVD
+from surprise import SlopeOne
 from surprise import Dataset
+from surprise import Reader
+from surprise.model_selection import cross_validate
 
 
 NUMBER_OF_USERS = 943
@@ -82,7 +84,12 @@ if __name__ == "__main__":
     cluster_labels = kmode.fit_predict(recom_module.user_info)
     recom_module.user_info['cluster'] = cluster_labels.tolist()
     virtual_rating = recom_module.generate_virtual_ratings(25)
-    print(virtual_rating)
+    # print(virtual_rating)
+
+    reader = Reader(rating_scale=(1, 5))
+    data = Dataset.load_from_df(virtual_rating, reader)
+    algo = SlopeOne()
+    cross_validate(algo, data, measures=['RMSE', 'MAE'], cv=5, verbose=True)
 
     exit(0)
     # show plots
