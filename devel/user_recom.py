@@ -41,27 +41,27 @@ class UserRecommendation:
 
         return np.argmax(np.array(score)) + k_start, score, cost, fit_time
 
-    def generate_virtual_users(self, k):
+    def generate_virtual_ratings(self, k):
+        virtual_rating = pd.DataFrame(columns=["user_id", "item_id", "rating"])
+
         for i in range(k):
             # users in cluster i
             users = self.user_info[self.user_info["cluster"] == i]
-            print(users)
-            print("#####")
+
             # ratings of these users
-            b = self.user_ratings[self.user_ratings["user_id"].isin(users["user_id"])]
-            print(b)
-            print("#####")
-            c = b.groupby(["item_id"])["rating"].mean()
-            print(c)
-            exit()
+            users_rating = self.user_ratings[self.user_ratings["user_id"].isin(users["user_id"])]
 
+            # mean of item ratings in within this cluster
+            users_mean_rating = users_rating.groupby(["item_id"], as_index=False)["rating"].mean()
 
-    # def generate_user_rating_matrix(self):
-    #     matrix = np.empty(shape=(NUMBER_OF_USERS, NUMBER_OF_MOVIES + 1))
-    #     for index, row in self.user_ratings.iterrows():
-    #         for column in row.iterrows():
-    #             print(column)
-    #         exit(0)
+            # add virtual user_id to dataframe
+            users_mean_rating.insert(0, 'user_id', i)
+
+            # TODO maybe we can optimise this part
+            # add them to virtual_rating
+            virtual_rating = pd.concat([virtual_rating, users_mean_rating])
+
+        return virtual_rating
 
 
 if __name__ == "__main__":
@@ -81,7 +81,8 @@ if __name__ == "__main__":
     kmode = KModes(n_clusters=25, init="random", n_init=5, n_jobs=-1, verbose=0)
     cluster_labels = kmode.fit_predict(recom_module.user_info)
     recom_module.user_info['cluster'] = cluster_labels.tolist()
-    recom_module.generate_virtual_users(25)
+    virtual_rating = recom_module.generate_virtual_ratings(25)
+    print(virtual_rating)
 
     exit(0)
     # show plots
