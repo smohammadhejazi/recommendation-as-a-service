@@ -43,27 +43,35 @@ class UserRecommendation:
 
         return np.argmax(np.array(score)) + k_start, score, cost, fit_time
 
-    def generate_virtual_ratings(self, k):
-        virtual_rating = pd.DataFrame(columns=["user_id", "item_id", "rating"])
+    def generate_virtual_rating_count(self, k):
+        virtual_rating = pd.DataFrame(columns=["user_id", "item_id", "rating_mean"])
+        virtual_count = pd.DataFrame(columns=["user_id", "item_id", "rating_count"])
 
         for i in range(k):
             # users in cluster i
             users = self.user_info[self.user_info["cluster"] == i]
 
-            # ratings of these users
+            # ratings and counts of these users
             users_rating = self.user_ratings[self.user_ratings["user_id"].isin(users["user_id"])]
+            users_items = users_rating.groupby(["item_id"], as_index=False)
+            res = users_items.agg({"rating": ["mean", "count"]})
+            res.columns = list(map(''.join, res.columns.values))
+            res = res.rename({"ratingmean": "rating_mean", "ratingcount": "rating_count"}, axis=1)
 
-            # mean of item ratings in within this cluster
-            users_mean_rating = users_rating.groupby(["item_id"], as_index=False)["rating"].mean()
+            # mean and count of item ratings in within this cluster
+            item_mean = res[["item_id", "rating_mean"]]
+            item_count = res[["item_id", "rating_count"]]
 
-            # add virtual user_id to dataframe
-            users_mean_rating.insert(0, 'user_id', i)
+            # add virtual user_id to dataframes
+            item_mean.insert(0, 'user_id', i)
+            item_count.insert(0, 'user_id', i)
 
             # TODO maybe we can optimise this part
-            # add them to virtual_rating
-            virtual_rating = pd.concat([virtual_rating, users_mean_rating])
+            # add them to virtual_rating and virtual count
+            virtual_rating = pd.concat([virtual_rating, item_mean])
+            virtual_count = pd.concat([virtual_count, item_count])
 
-        return virtual_rating
+        return virtual_rating, virtual_count
 
 
 if __name__ == "__main__":
@@ -83,13 +91,17 @@ if __name__ == "__main__":
     kmode = KModes(n_clusters=25, init="random", n_init=5, n_jobs=-1, verbose=0)
     cluster_labels = kmode.fit_predict(recom_module.user_info)
     recom_module.user_info['cluster'] = cluster_labels.tolist()
-    virtual_rating = recom_module.generate_virtual_ratings(25)
-    # print(virtual_rating)
+    virtual_rating, virtual_count = recom_module.generate_virtual_rating_count(25)
 
+    # virtual ratings ready
     reader = Reader(rating_scale=(1, 5))
     data = Dataset.load_from_df(virtual_rating, reader)
+    train_set = data.build_full_trainset()
     algo = SlopeOne()
-    cross_validate(algo, data, measures=['RMSE', 'MAE'], cv=5, verbose=True)
+    algo.fit(train_set)
+    uid = 1
+    iid = 1
+    pred = algo.predict(uid, iid, verbose=True)
 
     exit(0)
     # show plots
