@@ -5,6 +5,7 @@ import time
 from kmodes.kmodes import KModes
 from utils import silhouette_score, matching_dissimilarity
 from surprise import SlopeOne
+from surprise import WeightedSlopeOne
 from surprise import Dataset
 from surprise import Reader
 from surprise.model_selection import cross_validate
@@ -97,7 +98,7 @@ if __name__ == "__main__":
     reader = Reader(rating_scale=(1, 5))
     data = Dataset.load_from_df(virtual_rating, reader)
     train_set = data.build_full_trainset()
-    algo = SlopeOne()
+    algo = WeightedSlopeOne()
     algo.fit(train_set)
     uid = 1
     iid = 1
