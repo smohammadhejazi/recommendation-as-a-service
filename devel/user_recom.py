@@ -16,16 +16,19 @@ NUMBER_OF_MOVIES = 1682
 
 
 class UserRecommendation:
-    def __init__(self, user_info_path=None, user_ratings_path=None):
+    def __init__(self, user_info_path=None, user_ratings_path=None, item_info_path=None):
         self.user_info_path = user_info_path
         self.user_ratings_path = user_ratings_path
+        self.item_info_path = item_info_path
         self.user_info = None
         self.user_ratings = None
+        self.item_info = None
         self.number_of_clusters = 0
 
-    def read_csv_data(self, info_columns, ratings_columns, info_sep="|", ratings_sep="\t"):
+    def read_csv_data(self, info_columns, ratings_columns, item_columns, info_sep="|", ratings_sep="\t", item_sep="|"):
         self.user_info = pd.read_csv(self.user_info_path, sep=info_sep, names=info_columns)
         self.user_ratings = pd.read_csv(self.user_ratings_path, sep=ratings_sep, names=ratings_columns)
+        self.item_info = pd.read_csv(self.item_info_path, sep=item_sep, names=item_columns, encoding="ISO-8859-1")
 
     def set_optimal_k_clusters(self, k_start, k_end):
         score = []
@@ -78,9 +81,15 @@ class UserRecommendation:
 if __name__ == "__main__":
     base_dataset_dir = "../dataset/ml-100k/"
     recom_module = UserRecommendation(user_info_path=base_dataset_dir + "u.user",
-                                      user_ratings_path=base_dataset_dir + "u.data")
+                                      user_ratings_path=base_dataset_dir + "u.data",
+                                      item_info_path=base_dataset_dir + "u.item")
     recom_module.read_csv_data(["user_id", "age", "gender", "occupation", "zip_code"],
-                               ["user_id", "item_id", "rating", "timestamp"], info_sep="|", ratings_sep="\t")
+                               ["user_id", "item_id", "rating", "timestamp"],
+                               ["movie_id", "movie_title", "release_date", "video_release_date", "imdb_url", "unknown",
+                                "action", "adventure", "animation", "children's", "comedy", "crime", "documentary",
+                                "drama", "fantasy", "film_noir", "horror", "musical", "mystery", "romance", "sci-fi",
+                                "thriller", "war", "western"],
+                               info_sep="|", ratings_sep="\t", item_sep="|")
 
     # get optimal number of clusters
     k_start = 26
