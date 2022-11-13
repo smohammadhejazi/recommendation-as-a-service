@@ -3,13 +3,15 @@ from surprise import Dataset, KNNBasic
 
 
 def name_to_id(name, items):
+    # TODO csv reads ids as integer but we need string in inner_id
     movie = items[items["movie_title"] == name]
-    return movie["movie_id"].item()
+    return str(movie["movie_id"].item())
 
 
 def id_to_name(iid, items):
-    movie = items[items["movie_id"] == iid]
-    return movie["movie_name"].item()
+    # TODO after converting to string, here we convert back
+    movie = items[items["movie_id"] == int(iid)]
+    return movie["movie_title"].item()
 
 
 if __name__ == "__main__":
@@ -42,13 +44,14 @@ if __name__ == "__main__":
     toy_story_neighbors = algo.get_neighbors(toy_story_inner_id, k=10)
 
     # Convert inner ids to real ids
-    toy_story_neighbors = (
+    toy_story_neighbors_rids = (
         algo.trainset.to_raw_iid(inner_id) for inner_id in toy_story_neighbors
     )
-    # Convert real ids to names
+
     toy_story_neighbors = (id_to_name(rid, recom_module.item_info) for rid in toy_story_neighbors)
 
     # Print them
+    print("")
     print("The nearest 10 movies are:")
     for movie in toy_story_neighbors:
         print(movie)
