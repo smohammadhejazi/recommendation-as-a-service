@@ -1,17 +1,34 @@
 from user_recom import UserRecommendation
 from surprise import Dataset, KNNBasic
 
+
+def name_to_id(name, items):
+    movie = items[items["movie_title"] == name]
+    return movie["movie_id"]
+
+
+def id_to_name(iid, items):
+    movie = items[items["movie_id"] == iid]
+    return movie["movie_name"]
+
+
 if __name__ == "__main__":
     base_dataset_dir = "../dataset/ml-100k/"
-    # recom_module = UserRecommendation(user_info_path=base_dataset_dir + "u.user",
-    #                                   user_ratings_path=base_dataset_dir + "u.data")
-    # recom_module.read_csv_data(["user_id", "age", "gender", "occupation", "zip_code"],
-    #                            ["user_id", "item_id", "rating", "timestamp"], info_sep="|", ratings_sep="\t")
+    recom_module = UserRecommendation(user_info_path=base_dataset_dir + "u.user",
+                                      user_ratings_path=base_dataset_dir + "u.data",
+                                      item_info_path=base_dataset_dir + "u.item")
+    recom_module.read_csv_data(["user_id", "age", "gender", "occupation", "zip_code"],
+                               ["user_id", "item_id", "rating", "timestamp"],
+                               ["movie_id", "movie_title", "release_date", "video_release_date", "imdb_url", "unknown",
+                                "action", "adventure", "animation", "children's", "comedy", "crime", "documentary",
+                                "drama", "fantasy", "film_noir", "horror", "musical", "mystery", "romance", "sci-fi",
+                                "thriller", "war", "western"],
+                               info_sep="|", ratings_sep="\t", item_sep="|")
+
+    print(name_to_id("Dead Man Walking (1995)", recom_module.item_info))
+    exit(0)
 
     def read_item_names():
-        """Read the u.item file from MovieLens 100-k dataset and return two
-        mappings to convert raw ids into movie names and movie names into raw ids.
-        """
 
         file_name = base_dataset_dir + "u.item"
         rid_to_name = {}
