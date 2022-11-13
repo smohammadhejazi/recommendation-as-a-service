@@ -41,14 +41,14 @@ if __name__ == "__main__":
     toy_story_inner_id = algo.trainset.to_inner_iid(toy_story_raw_id)
 
     # Get the inner ids of the closest 10 movies
-    toy_story_neighbors = algo.get_neighbors(toy_story_inner_id, k=10)
+    toy_story_neighbors_inner_ids = algo.get_neighbors(toy_story_inner_id, k=10)
 
     # Convert inner ids to real ids
     toy_story_neighbors_rids = (
-        algo.trainset.to_raw_iid(inner_id) for inner_id in toy_story_neighbors
+        algo.trainset.to_raw_iid(inner_id) for inner_id in toy_story_neighbors_inner_ids
     )
 
-    toy_story_neighbors = (id_to_name(rid, recom_module.item_info) for rid in toy_story_neighbors)
+    toy_story_neighbors = (id_to_name(rid, recom_module.item_info) for rid in toy_story_neighbors_rids)
 
     # Print them
     print("")
