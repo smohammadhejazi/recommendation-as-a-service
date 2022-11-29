@@ -1,0 +1,35 @@
+import pandas as pd
+import numpy as np
+
+
+class RecommendationService:
+    def __init__(self):
+        self.user_info = None
+        self.user_ratings = None
+        self.item_info = None
+        self.number_of_clusters = 0
+
+    def read_csv_data(self, user_info_path, user_ratings_path, item_info_path,
+                      info_columns,  ratings_columns, item_columns,
+                      info_sep, ratings_sep, item_sep):
+        self.user_info = pd.read_csv(user_info_path, sep=info_sep, names=info_columns)
+        self.user_ratings = pd.read_csv(user_ratings_path, sep=ratings_sep, names=ratings_columns)
+        self.item_info = pd.read_csv(item_info_path, sep=item_sep, names=item_columns, encoding="ISO-8859-1")
+
+
+if __name__ == "__main__":
+
+    recommendation_service = RecommendationService()
+
+    recommendation_service.read_csv_data(
+        user_info_path="../dataset/ml-100k/u.user",
+        user_ratings_path="../dataset/ml-100k/u.data",
+        item_info_path="../dataset/ml-100k/u.item",
+        info_columns=["user_id", "age", "gender", "occupation", "zip_code"],
+        ratings_columns=["user_id", "item_id", "rating", "timestamp"],
+        item_columns=["movie_id", "movie_title", "release_date", "video_release_date", "imdb_url", "unknown",
+                      "action", "adventure", "animation", "children's", "comedy", "crime", "documentary",
+                      "drama", "fantasy", "film_noir", "horror", "musical", "mystery", "romance", "sci-fi",
+                      "thriller", "war", "western"],
+        info_sep="|", ratings_sep="\t", item_sep="|"
+    )
