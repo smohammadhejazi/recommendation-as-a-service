@@ -1,11 +1,13 @@
 from user_recom import UserRecommendation
-from surprise import Dataset, KNNBasic
+from surprise import Dataset, KNNBasic, Reader
+from surprise import KNNBasic
+from surprise import Reader
 
 
 def name_to_id(name, items):
     # TODO csv reads ids as integer but we need string in inner_id
     movie = items[items["movie_title"] == name]
-    return str(movie["movie_id"].item())
+    return movie["movie_id"].item()
 
 
 def id_to_name(iid, items):
@@ -28,11 +30,14 @@ if __name__ == "__main__":
                                info_sep="|", ratings_sep="\t", item_sep="|")
 
     # First, train the algorithm to compute the similarities between items
-    data = Dataset.load_builtin("ml-100k")
-    trainset = data.build_full_trainset()
+
+    reader = Reader(rating_scale=(1, 5))
+    data = Dataset.load_from_df(recom_module.user_ratings[["user_id", "item_id", "rating"]], reader)
+    train_set = data.build_full_trainset()
+
     sim_options = {"name": "pearson_baseline", "user_based": False}
     algo = KNNBasic(sim_options=sim_options)
-    algo.fit(trainset)
+    algo.fit(train_set)
 
     # Get id of a movie
     toy_story_raw_id = name_to_id("Toy Story (1995)", recom_module.item_info)
