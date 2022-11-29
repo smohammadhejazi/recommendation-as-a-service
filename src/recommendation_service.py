@@ -1,5 +1,5 @@
 import pandas as pd
-import numpy as np
+from modules.cold_start import ColdStart
 
 
 class RecommendationService:
@@ -7,7 +7,6 @@ class RecommendationService:
         self.user_info = None
         self.user_ratings = None
         self.item_info = None
-        self.number_of_clusters = 0
 
     def read_csv_data(self, user_info_path, user_ratings_path, item_info_path,
                       info_columns,  ratings_columns, item_columns,
@@ -15,6 +14,9 @@ class RecommendationService:
         self.user_info = pd.read_csv(user_info_path, sep=info_sep, names=info_columns)
         self.user_ratings = pd.read_csv(user_ratings_path, sep=ratings_sep, names=ratings_columns)
         self.item_info = pd.read_csv(item_info_path, sep=item_sep, names=item_columns, encoding="ISO-8859-1")
+
+    def cold_start_module(self):
+        return ColdStart(self.user_ratings, options={})
 
 
 if __name__ == "__main__":
@@ -33,3 +35,7 @@ if __name__ == "__main__":
                       "thriller", "war", "western"],
         info_sep="|", ratings_sep="\t", item_sep="|"
     )
+
+    cold_start = recommendation_service.cold_start_module()
+    cold_start.fit()
+    print(cold_start.recommend(5))
