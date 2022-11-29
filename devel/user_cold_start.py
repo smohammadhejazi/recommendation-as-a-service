@@ -13,4 +13,7 @@ if __name__ == "__main__":
                                 "thriller", "war", "western"],
                                info_sep="|", ratings_sep="\t", item_sep="|")
 
-    
+    most_popular = recom_module.user_ratings.groupby(['item_id'])['rating'].sum().reset_index().\
+        sort_values(by=["rating", "item_id"], ascending=[False, False])
+
+    print(most_popular.head(10))
