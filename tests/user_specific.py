@@ -17,9 +17,11 @@ if __name__ == "__main__":
         info_sep="|", ratings_sep="\t", item_sep="|"
     )
 
-    user_specific = recommendation_service.user_specific_module()
-    user_specific.fit()
+    user_specific = recommendation_service.user_specific_module(options={"verbose": True,
+                                                                         "k": None})
+    user_specific.fit(20, 30)
+    user_specific.draw_clusters_graph()
     prediction_rating = user_specific.recommend(1, 1)
     print(prediction_rating)
     prediction_rating = user_specific.recommend(1, 5)
-    print(type(prediction_rating))
+    print(prediction_rating.est)
