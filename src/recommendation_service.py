@@ -49,19 +49,21 @@ if __name__ == "__main__":
         info_sep="|", ratings_sep="\t", item_sep="|"
     )
 
-    # cold_start = recommendation_service.cold_start_module()
-    # cold_start.fit()
-    # items = cold_start.recommend(5)
-    # print(items.head(5))
+    cold_start = recommendation_service.cold_start_module(options={"verbose": True})
+    cold_start.fit()
+    items = cold_start.recommend(5)
+    print(items.head(5))
 
-    # similar_items = recommendation_service.similar_items_module()
-    # similar_items.fit()
-    # items = similar_items.recommend("Toy Story (1995)")
-    # for movie in items:
-    #     print(movie)
+    similar_items = recommendation_service.similar_items_module(options={"verbose": True})
+    similar_items.fit()
+    items = similar_items.recommend("Toy Story (1995)", k=5)
+    for movie in items:
+        print(movie)
 
-    user_specific = recommendation_service.user_specific_module()
-    user_specific.fit()
+    user_specific = recommendation_service.user_specific_module(options={"verbose": True,
+                                                                         "k": None})
+    user_specific.fit(26, 27)
+    user_specific.draw_clusters_graph()
     prediction_rating = user_specific.recommend(1, 1)
     print(prediction_rating)
     prediction_rating = user_specific.recommend(1, 5)
