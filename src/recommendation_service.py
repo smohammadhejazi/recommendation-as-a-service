@@ -1,7 +1,7 @@
 import pandas as pd
-from .modules.cold_start import ColdStart
-from .modules.similar_items import SimilarItems
-from .modules.user_specific import UserSpecific
+from src.modules.cold_start import ColdStart
+from src.modules.similar_items import SimilarItems
+from src.modules.user_specific import UserSpecific
 
 
 class RecommendationService:
@@ -27,6 +27,11 @@ class RecommendationService:
             options = {}
         return SimilarItems(self.user_ratings, self.item_info, options=options)
 
+    def user_specific_module(self, options=None):
+        if options is None:
+            options = {}
+        return UserSpecific(self.user_ratings, self.user_info, self.item_info, options=options)
+
 
 if __name__ == "__main__":
     recommendation_service = RecommendationService()
@@ -49,9 +54,16 @@ if __name__ == "__main__":
     # items = cold_start.recommend(5)
     # print(items.head(5))
 
-    similar_items = recommendation_service.similar_items_module()
-    similar_items.fit()
-    items = similar_items.recommend("Toy Story (1995)")
-    for movie in items:
-        print(movie)
+    # similar_items = recommendation_service.similar_items_module()
+    # similar_items.fit()
+    # items = similar_items.recommend("Toy Story (1995)")
+    # for movie in items:
+    #     print(movie)
+
+    user_specific = recommendation_service.user_specific_module()
+    user_specific.fit()
+    prediction_rating = user_specific.recommend(1, 1)
+    print(prediction_rating)
+    prediction_rating = user_specific.recommend(1, 5)
+    print(prediction_rating.est)
 
