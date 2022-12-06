@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import time
 from .module_base import ModuleBase
 from kmodes.kmodes import KModes
-from src.utils import silhouette_score, matching_dissimilarity
+from kabirrec.utils import silhouette_score, matching_dissimilarity
 from surprise import WeightedSlopeOne
 from surprise import Dataset
 from surprise import Reader
