@@ -4,7 +4,7 @@ setup(
     name='kabirrec',
     version='1.0.0',
     description='A recommendation system with cold start, similar items and user specific recommendation',
-    long_description=open('README.txt').read() + '\n\n' + open('CHANGELOG.txt').read(),
+    long_description=open('README.md').read(),
     url='https://github.com/smohammadhejazi/recommendation-as-a-service',
     author='Seyyed Mohammad Hejazi Hoseini',
     author_email='smohammadhejazi78@gmail.com',
