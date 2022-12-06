@@ -1,39 +1,415 @@
-"""Unsupervised evaluation metrics."""
-
-# Authors: Robert Layton <robertlayton@gmail.com>
-#          Arnaud Fouchet <foucheta@gmail.com>
-#          Thierry Guillemot <thierry.guillemot.work@gmail.com>
-# License: BSD 3 clause
-
-
-import functools
-
-import numpy as np
-
-from ...utils import check_random_state
-from ...utils import check_X_y
-from ...utils import _safe_indexing
-from ..pairwise import pairwise_distances_chunked
-from ..pairwise import pairwise_distances
-from ...preprocessing import LabelEncoder
+# imports
+from sklearn.metrics.pairwise import *
+from sklearn.metrics.cluster._unsupervised import *
+# protected imports
+from sklearn.metrics.cluster._unsupervised import _silhouette_reduce
+from sklearn.metrics.pairwise import _return_float_dtype, _dist_wrapper, _num_samples, _VALID_METRICS, _precompute_metric_params, _check_chunk_size
 
 
-def check_number_of_labels(n_labels, n_samples):
-    """Check that number of labels are valid.
+'''Original Code'''
+
+
+def matching_dissimilarity(a, b):
+    result = np.sum(a != b)
+    return result
+
+
+'''sklearn/metrics/pairwise.py'''
+
+
+def pairwise_distances_chunked(
+    X,
+    Y=None,
+    *,
+    reduce_func=None,
+    metric="euclidean",
+    n_jobs=None,
+    working_memory=None,
+    **kwds,
+):
+    """Generate a distance matrix chunk by chunk with optional reduction.
+
+    In cases where not all of a pairwise distance matrix needs to be stored at
+    once, this is used to calculate pairwise distances in
+    ``working_memory``-sized chunks.  If ``reduce_func`` is given, it is run
+    on each chunk and its return values are concatenated into lists, arrays
+    or sparse matrices.
 
     Parameters
     ----------
-    n_labels : int
-        Number of labels.
+    X : ndarray of shape (n_samples_X, n_samples_X) or \
+            (n_samples_X, n_features)
+        Array of pairwise distances between samples, or a feature array.
+        The shape the array should be (n_samples_X, n_samples_X) if
+        metric='precomputed' and (n_samples_X, n_features) otherwise.
 
-    n_samples : int
-        Number of samples.
+    Y : ndarray of shape (n_samples_Y, n_features), default=None
+        An optional second feature array. Only allowed if
+        metric != "precomputed".
+
+    reduce_func : callable, default=None
+        The function which is applied on each chunk of the distance matrix,
+        reducing it to needed values.  ``reduce_func(D_chunk, start)``
+        is called repeatedly, where ``D_chunk`` is a contiguous vertical
+        slice of the pairwise distance matrix, starting at row ``start``.
+        It should return one of: None; an array, a list, or a sparse matrix
+        of length ``D_chunk.shape[0]``; or a tuple of such objects. Returning
+        None is useful for in-place operations, rather than reductions.
+
+        If None, pairwise_distances_chunked returns a generator of vertical
+        chunks of the distance matrix.
+
+    metric : str or callable, default='euclidean'
+        The metric to use when calculating distance between instances in a
+        feature array. If metric is a string, it must be one of the options
+        allowed by scipy.spatial.distance.pdist for its metric parameter, or
+        a metric listed in pairwise.PAIRWISE_DISTANCE_FUNCTIONS.
+        If metric is "precomputed", X is assumed to be a distance matrix.
+        Alternatively, if metric is a callable function, it is called on each
+        pair of instances (rows) and the resulting value recorded. The callable
+        should take two arrays from X as input and return a value indicating
+        the distance between them.
+
+    n_jobs : int, default=None
+        The number of jobs to use for the computation. This works by breaking
+        down the pairwise matrix into n_jobs even slices and computing them in
+        parallel.
+
+        ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
+        ``-1`` means using all processors. See :term:`Glossary <n_jobs>`
+        for more details.
+
+    working_memory : int, default=None
+        The sought maximum memory for temporary distance matrix chunks.
+        When None (default), the value of
+        ``sklearn.get_config()['working_memory']`` is used.
+
+    `**kwds` : optional keyword parameters
+        Any further parameters are passed directly to the distance function.
+        If using a scipy.spatial.distance metric, the parameters are still
+        metric dependent. See the scipy docs for usage examples.
+
+    Yields
+    ------
+    D_chunk : {ndarray, sparse matrix}
+        A contiguous slice of distance matrix, optionally processed by
+        ``reduce_func``.
+
+    Examples
+    --------
+    Without reduce_func:
+
+    >>> import numpy as np
+    >>> from sklearn.metrics import pairwise_distances_chunked
+    >>> X = np.random.RandomState(0).rand(5, 3)
+    >>> D_chunk = next(pairwise_distances_chunked(X))
+    >>> D_chunk
+    array([[0.  ..., 0.29..., 0.41..., 0.19..., 0.57...],
+           [0.29..., 0.  ..., 0.57..., 0.41..., 0.76...],
+           [0.41..., 0.57..., 0.  ..., 0.44..., 0.90...],
+           [0.19..., 0.41..., 0.44..., 0.  ..., 0.51...],
+           [0.57..., 0.76..., 0.90..., 0.51..., 0.  ...]])
+
+    Retrieve all neighbors and average distance within radius r:
+
+    >>> r = .2
+    >>> def reduce_func(D_chunk, start):
+    ...     neigh = [np.flatnonzero(d < r) for d in D_chunk]
+    ...     avg_dist = (D_chunk * (D_chunk < r)).mean(axis=1)
+    ...     return neigh, avg_dist
+    >>> gen = pairwise_distances_chunked(X, reduce_func=reduce_func)
+    >>> neigh, avg_dist = next(gen)
+    >>> neigh
+    [array([0, 3]), array([1]), array([2]), array([0, 3]), array([4])]
+    >>> avg_dist
+    array([0.039..., 0.        , 0.        , 0.039..., 0.        ])
+
+    Where r is defined per sample, we need to make use of ``start``:
+
+    >>> r = [.2, .4, .4, .3, .1]
+    >>> def reduce_func(D_chunk, start):
+    ...     neigh = [np.flatnonzero(d < r[i])
+    ...              for i, d in enumerate(D_chunk, start)]
+    ...     return neigh
+    >>> neigh = next(pairwise_distances_chunked(X, reduce_func=reduce_func))
+    >>> neigh
+    [array([0, 3]), array([0, 1]), array([2]), array([0, 3]), array([4])]
+
+    Force row-by-row generation by reducing ``working_memory``:
+
+    >>> gen = pairwise_distances_chunked(X, reduce_func=reduce_func,
+    ...                                  working_memory=0)
+    >>> next(gen)
+    [array([0, 3])]
+    >>> next(gen)
+    [array([0, 1])]
     """
-    if not 1 < n_labels < n_samples:
-        raise ValueError(
-            "Number of labels is %d. Valid values are 2 to n_samples - 1 (inclusive)"
-            % n_labels
+    n_samples_X = _num_samples(X)
+    if metric == "precomputed":
+        slices = (slice(0, n_samples_X),)
+    else:
+        if Y is None:
+            Y = X
+        # We get as many rows as possible within our working_memory budget to
+        # store len(Y) distances in each row of output.
+        #
+        # Note:
+        #  - this will get at least 1 row, even if 1 row of distances will
+        #    exceed working_memory.
+        #  - this does not account for any temporary memory usage while
+        #    calculating distances (e.g. difference of vectors in manhattan
+        #    distance.
+        chunk_n_rows = get_chunk_n_rows(
+            row_bytes=8 * _num_samples(Y),
+            max_n_rows=n_samples_X,
+            working_memory=working_memory,
         )
+        slices = gen_batches(n_samples_X, chunk_n_rows)
+
+    # precompute data-derived metric params
+    params = _precompute_metric_params(X, Y, metric=metric, **kwds)
+    kwds.update(**params)
+
+    for sl in slices:
+        if sl.start == 0 and sl.stop == n_samples_X:
+            X_chunk = X  # enable optimised paths for X is Y
+        else:
+            X_chunk = X[sl]
+        D_chunk = pairwise_distances(X_chunk, Y, metric=metric, n_jobs=n_jobs, **kwds)
+        if (X is Y or Y is None) and PAIRWISE_DISTANCE_FUNCTIONS.get(
+            metric, None
+        ) is euclidean_distances:
+            # zeroing diagonal, taking care of aliases of "euclidean",
+            # i.e. "l2"
+            D_chunk.flat[sl.start :: _num_samples(X) + 1] = 0
+        if reduce_func is not None:
+            chunk_size = D_chunk.shape[0]
+            D_chunk = reduce_func(D_chunk, sl.start)
+            _check_chunk_size(D_chunk, chunk_size)
+        yield D_chunk
+
+
+def _parallel_pairwise(X, Y, func, n_jobs, **kwds):
+    """Break the pairwise matrix in n_jobs even slices
+    and compute them in parallel."""
+
+    if Y is None:
+        Y = X
+    X, Y, dtype = _return_float_dtype(X, Y)
+
+    if effective_n_jobs(n_jobs) == 1:
+        return func(X, Y, **kwds)
+
+    # enforce a threading backend to prevent data communication overhead
+    fd = delayed(_dist_wrapper)
+    ret = np.empty((X.shape[0], Y.shape[0]), dtype=dtype, order="F")
+    Parallel(backend="threading", n_jobs=n_jobs)(
+        fd(func, ret, s, X, Y[s], **kwds)
+        for s in gen_even_slices(_num_samples(Y), effective_n_jobs(n_jobs))
+    )
+
+    if (X is Y or Y is None) and func is euclidean_distances:
+        # zeroing diagonal for euclidean norm.
+        # TODO: do it also for other norms.
+        np.fill_diagonal(ret, 0)
+
+    return ret
+
+
+def _pairwise_callable(X, Y, metric, force_all_finite=True, **kwds):
+    """Handle the callable case for pairwise_{distances,kernels}."""
+    # My Change
+    X, Y = check_pairwise_arrays(X, Y, dtype="str", force_all_finite=force_all_finite)
+
+    if X is Y:
+        # Only calculate metric for upper triangle
+        out = np.zeros((X.shape[0], Y.shape[0]), dtype="float")
+        iterator = itertools.combinations(range(X.shape[0]), 2)
+        for i, j in iterator:
+            out[i, j] = metric(X[i], Y[j], **kwds)
+
+        # Make symmetric
+        # NB: out += out.T will produce incorrect results
+        out = out + out.T
+
+        # Calculate diagonal
+        # NB: nonzero diagonals are allowed for both metrics and kernels
+        for i in range(X.shape[0]):
+            x = X[i]
+            out[i, i] = metric(x, x, **kwds)
+
+    else:
+        # Calculate all cells
+        out = np.empty((X.shape[0], Y.shape[0]), dtype="float")
+        iterator = itertools.product(range(X.shape[0]), range(Y.shape[0]))
+        for i, j in iterator:
+            out[i, j] = metric(X[i], Y[j], **kwds)
+
+    return out
+
+
+def pairwise_distances(
+    X, Y=None, metric="euclidean", *, n_jobs=None, force_all_finite=True, **kwds
+):
+    """Compute the distance matrix from a vector array X and optional Y.
+
+    This method takes either a vector array or a distance matrix, and returns
+    a distance matrix. If the input is a vector array, the distances are
+    computed. If the input is a distances matrix, it is returned instead.
+
+    This method provides a safe way to take a distance matrix as input, while
+    preserving compatibility with many other algorithms that take a vector
+    array.
+
+    If Y is given (default is None), then the returned matrix is the pairwise
+    distance between the arrays from both X and Y.
+
+    Valid values for metric are:
+
+    - From scikit-learn: ['cityblock', 'cosine', 'euclidean', 'l1', 'l2',
+      'manhattan']. These metrics support sparse matrix
+      inputs.
+      ['nan_euclidean'] but it does not yet support sparse matrices.
+
+    - From scipy.spatial.distance: ['braycurtis', 'canberra', 'chebyshev',
+      'correlation', 'dice', 'hamming', 'jaccard', 'kulsinski', 'mahalanobis',
+      'minkowski', 'rogerstanimoto', 'russellrao', 'seuclidean',
+      'sokalmichener', 'sokalsneath', 'sqeuclidean', 'yule']
+      See the documentation for scipy.spatial.distance for details on these
+      metrics. These metrics do not support sparse matrix inputs.
+
+    Note that in the case of 'cityblock', 'cosine' and 'euclidean' (which are
+    valid scipy.spatial.distance metrics), the scikit-learn implementation
+    will be used, which is faster and has support for sparse matrices (except
+    for 'cityblock'). For a verbose description of the metrics from
+    scikit-learn, see the __doc__ of the sklearn.pairwise.distance_metrics
+    function.
+
+    Read more in the :ref:`User Guide <metrics>`.
+
+    Parameters
+    ----------
+    X : ndarray of shape (n_samples_X, n_samples_X) or \
+            (n_samples_X, n_features)
+        Array of pairwise distances between samples, or a feature array.
+        The shape of the array should be (n_samples_X, n_samples_X) if
+        metric == "precomputed" and (n_samples_X, n_features) otherwise.
+
+    Y : ndarray of shape (n_samples_Y, n_features), default=None
+        An optional second feature array. Only allowed if
+        metric != "precomputed".
+
+    metric : str or callable, default='euclidean'
+        The metric to use when calculating distance between instances in a
+        feature array. If metric is a string, it must be one of the options
+        allowed by scipy.spatial.distance.pdist for its metric parameter, or
+        a metric listed in ``pairwise.PAIRWISE_DISTANCE_FUNCTIONS``.
+        If metric is "precomputed", X is assumed to be a distance matrix.
+        Alternatively, if metric is a callable function, it is called on each
+        pair of instances (rows) and the resulting value recorded. The callable
+        should take two arrays from X as input and return a value indicating
+        the distance between them.
+
+    n_jobs : int, default=None
+        The number of jobs to use for the computation. This works by breaking
+        down the pairwise matrix into n_jobs even slices and computing them in
+        parallel.
+
+        ``None`` means 1 unless in a :obj:`joblib.parallel_backend` context.
+        ``-1`` means using all processors. See :term:`Glossary <n_jobs>`
+        for more details.
+
+    force_all_finite : bool or 'allow-nan', default=True
+        Whether to raise an error on np.inf, np.nan, pd.NA in array. Ignored
+        for a metric listed in ``pairwise.PAIRWISE_DISTANCE_FUNCTIONS``. The
+        possibilities are:
+
+        - True: Force all values of array to be finite.
+        - False: accepts np.inf, np.nan, pd.NA in array.
+        - 'allow-nan': accepts only np.nan and pd.NA values in array. Values
+          cannot be infinite.
+
+        .. versionadded:: 0.22
+           ``force_all_finite`` accepts the string ``'allow-nan'``.
+
+        .. versionchanged:: 0.23
+           Accepts `pd.NA` and converts it into `np.nan`.
+
+    **kwds : optional keyword parameters
+        Any further parameters are passed directly to the distance function.
+        If using a scipy.spatial.distance metric, the parameters are still
+        metric dependent. See the scipy docs for usage examples.
+
+    Returns
+    -------
+    D : ndarray of shape (n_samples_X, n_samples_X) or \
+            (n_samples_X, n_samples_Y)
+        A distance matrix D such that D_{i, j} is the distance between the
+        ith and jth vectors of the given matrix X, if Y is None.
+        If Y is not None, then D_{i, j} is the distance between the ith array
+        from X and the jth array from Y.
+
+    See Also
+    --------
+    pairwise_distances_chunked : Performs the same calculation as this
+        function, but returns a generator of chunks of the distance matrix, in
+        order to limit memory usage.
+    paired_distances : Computes the distances between corresponding elements
+        of two arrays.
+    """
+    if (
+        metric not in _VALID_METRICS
+        and not callable(metric)
+        and metric != "precomputed"
+    ):
+        raise ValueError(
+            "Unknown metric %s. Valid metrics are %s, or 'precomputed', or a callable"
+            % (metric, _VALID_METRICS)
+        )
+
+    if metric == "precomputed":
+        X, _ = check_pairwise_arrays(
+            X, Y, precomputed=True, force_all_finite=force_all_finite
+        )
+
+        whom = (
+            "`pairwise_distances`. Precomputed distance "
+            " need to have non-negative values."
+        )
+        check_non_negative(X, whom=whom)
+        return X
+    elif metric in PAIRWISE_DISTANCE_FUNCTIONS:
+        func = PAIRWISE_DISTANCE_FUNCTIONS[metric]
+    elif callable(metric):
+        func = partial(
+            _pairwise_callable, metric=metric, force_all_finite=force_all_finite, **kwds
+        )
+    else:
+        if issparse(X) or issparse(Y):
+            raise TypeError("scipy distance metrics do not support sparse matrices.")
+
+        dtype = bool if metric in PAIRWISE_BOOLEAN_FUNCTIONS else None
+
+        if dtype == bool and (X.dtype != bool or (Y is not None and Y.dtype != bool)):
+            msg = "Data was converted to boolean for metric %s" % metric
+            warnings.warn(msg, DataConversionWarning)
+
+        X, Y = check_pairwise_arrays(
+            X, Y, dtype=dtype, force_all_finite=force_all_finite
+        )
+
+        # precompute data-derived metric params
+        params = _precompute_metric_params(X, Y, metric=metric, **kwds)
+        kwds.update(**params)
+
+        if effective_n_jobs(n_jobs) == 1 and X is Y:
+            return distance.squareform(distance.pdist(X, metric=metric, **kwds))
+        func = partial(distance.cdist, metric=metric, **kwds)
+
+    return _parallel_pairwise(X, Y, func, n_jobs, **kwds)
+
+
+'''sklearn/metrics/cluster/_unsupervised.py'''
 
 
 def silhouette_score(
@@ -117,38 +493,6 @@ def silhouette_score(
     return np.mean(silhouette_samples(X, labels, metric=metric, **kwds))
 
 
-def _silhouette_reduce(D_chunk, start, labels, label_freqs):
-    """Accumulate silhouette statistics for vertical chunk of X.
-
-    Parameters
-    ----------
-    D_chunk : array-like of shape (n_chunk_samples, n_samples)
-        Precomputed distances for a chunk.
-    start : int
-        First index in the chunk.
-    labels : array-like of shape (n_samples,)
-        Corresponding cluster labels, encoded as {0, ..., n_clusters-1}.
-    label_freqs : array-like
-        Distribution of cluster labels in ``labels``.
-    """
-    # accumulate distances from each sample to each cluster
-    clust_dists = np.zeros((len(D_chunk), len(label_freqs)), dtype=D_chunk.dtype)
-    for i in range(len(D_chunk)):
-        clust_dists[i] += np.bincount(
-            labels, weights=D_chunk[i], minlength=len(label_freqs)
-        )
-
-    # intra_index selects intra-cluster distances within clust_dists
-    intra_index = (np.arange(len(D_chunk)), labels[start : start + len(D_chunk)])
-    # intra_clust_dists are averaged over cluster size outside this function
-    intra_clust_dists = clust_dists[intra_index]
-    # of the remaining distances we normalise and extract the minimum
-    clust_dists[intra_index] = np.inf
-    clust_dists /= label_freqs
-    inter_clust_dists = clust_dists.min(axis=1)
-    return intra_clust_dists, inter_clust_dists
-
-
 def silhouette_samples(X, labels, *, metric="euclidean", **kwds):
     """Compute the Silhouette Coefficient for each sample.
 
@@ -209,7 +553,8 @@ def silhouette_samples(X, labels, *, metric="euclidean", **kwds):
     .. [2] `Wikipedia entry on the Silhouette Coefficient
        <https://en.wikipedia.org/wiki/Silhouette_(clustering)>`_
     """
-    X, labels = check_X_y(X, labels, accept_sparse=["csc", "csr"])
+    # My Change
+    X, labels = check_X_y(X, labels, dtype="str", accept_sparse=["csc", "csr"])
 
     # Check for non-zero diagonal entries in precomputed distance matrix
     if metric == "precomputed":
@@ -248,119 +593,3 @@ def silhouette_samples(X, labels, *, metric="euclidean", **kwds):
         sil_samples /= np.maximum(intra_clust_dists, inter_clust_dists)
     # nan values are for clusters of size 1, and should be 0
     return np.nan_to_num(sil_samples)
-
-
-def calinski_harabasz_score(X, labels):
-    """Compute the Calinski and Harabasz score.
-
-    It is also known as the Variance Ratio Criterion.
-
-    The score is defined as ratio of the sum of between-cluster dispersion and
-    of within-cluster dispersion.
-
-    Read more in the :ref:`User Guide <calinski_harabasz_index>`.
-
-    Parameters
-    ----------
-    X : array-like of shape (n_samples, n_features)
-        A list of ``n_features``-dimensional data points. Each row corresponds
-        to a single data point.
-
-    labels : array-like of shape (n_samples,)
-        Predicted labels for each sample.
-
-    Returns
-    -------
-    score : float
-        The resulting Calinski-Harabasz score.
-
-    References
-    ----------
-    .. [1] `T. Calinski and J. Harabasz, 1974. "A dendrite method for cluster
-       analysis". Communications in Statistics
-       <https://www.tandfonline.com/doi/abs/10.1080/03610927408827101>`_
-    """
-    X, labels = check_X_y(X, labels)
-    le = LabelEncoder()
-    labels = le.fit_transform(labels)
-
-    n_samples, _ = X.shape
-    n_labels = len(le.classes_)
-
-    check_number_of_labels(n_labels, n_samples)
-
-    extra_disp, intra_disp = 0.0, 0.0
-    mean = np.mean(X, axis=0)
-    for k in range(n_labels):
-        cluster_k = X[labels == k]
-        mean_k = np.mean(cluster_k, axis=0)
-        extra_disp += len(cluster_k) * np.sum((mean_k - mean) ** 2)
-        intra_disp += np.sum((cluster_k - mean_k) ** 2)
-
-    return (
-        1.0
-        if intra_disp == 0.0
-        else extra_disp * (n_samples - n_labels) / (intra_disp * (n_labels - 1.0))
-    )
-
-
-def davies_bouldin_score(X, labels):
-    """Compute the Davies-Bouldin score.
-
-    The score is defined as the average similarity measure of each cluster with
-    its most similar cluster, where similarity is the ratio of within-cluster
-    distances to between-cluster distances. Thus, clusters which are farther
-    apart and less dispersed will result in a better score.
-
-    The minimum score is zero, with lower values indicating better clustering.
-
-    Read more in the :ref:`User Guide <davies-bouldin_index>`.
-
-    .. versionadded:: 0.20
-
-    Parameters
-    ----------
-    X : array-like of shape (n_samples, n_features)
-        A list of ``n_features``-dimensional data points. Each row corresponds
-        to a single data point.
-
-    labels : array-like of shape (n_samples,)
-        Predicted labels for each sample.
-
-    Returns
-    -------
-    score: float
-        The resulting Davies-Bouldin score.
-
-    References
-    ----------
-    .. [1] Davies, David L.; Bouldin, Donald W. (1979).
-       `"A Cluster Separation Measure"
-       <https://ieeexplore.ieee.org/document/4766909>`__.
-       IEEE Transactions on Pattern Analysis and Machine Intelligence.
-       PAMI-1 (2): 224-227
-    """
-    X, labels = check_X_y(X, labels)
-    le = LabelEncoder()
-    labels = le.fit_transform(labels)
-    n_samples, _ = X.shape
-    n_labels = len(le.classes_)
-    check_number_of_labels(n_labels, n_samples)
-
-    intra_dists = np.zeros(n_labels)
-    centroids = np.zeros((n_labels, len(X[0])), dtype=float)
-    for k in range(n_labels):
-        cluster_k = _safe_indexing(X, labels == k)
-        centroid = cluster_k.mean(axis=0)
-        centroids[k] = centroid
-        intra_dists[k] = np.average(pairwise_distances(cluster_k, [centroid]))
-
-    centroid_distances = pairwise_distances(centroids)
-
-    if np.allclose(intra_dists, 0) or np.allclose(centroid_distances, 0):
-        return 0.0
-
-    centroid_distances[centroid_distances == 0] = np.inf
-    combined_intra_dists = intra_dists[:, None] + intra_dists
-    scores = np.max(combined_intra_dists / centroid_distances, axis=1)
-    return np.mean(scores)
