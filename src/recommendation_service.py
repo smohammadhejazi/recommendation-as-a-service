@@ -1,7 +1,7 @@
 import pandas as pd
-from modules.cold_start import ColdStart
-from modules.similar_items import SimilarItems
-from modules.user_specific import UserSpecific
+from .modules.cold_start import ColdStart
+from .modules.similar_items import SimilarItems
+from .modules.user_specific import UserSpecific
 
 
 class RecommendationService:
@@ -29,7 +29,6 @@ class RecommendationService:
 
 
 if __name__ == "__main__":
-
     recommendation_service = RecommendationService()
 
     recommendation_service.read_csv_data(
