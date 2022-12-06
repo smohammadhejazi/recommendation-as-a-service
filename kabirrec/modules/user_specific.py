@@ -1,13 +1,14 @@
+import time
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import time
-from .module_base import ModuleBase
 from kmodes.kmodes import KModes
-from kabirrec.utils import silhouette_score, matching_dissimilarity
-from surprise import WeightedSlopeOne
-from surprise import Dataset
-from surprise import Reader
+from kabirrec.utils import silhouette_score
+from kabirrec.utils import matching_dissimilarity
+from .module_base import ModuleBase
+from ..surprise import WeightedSlopeOne
+from ..surprise import Dataset
+from ..surprise import Reader
 
 
 class UserSpecific(ModuleBase):

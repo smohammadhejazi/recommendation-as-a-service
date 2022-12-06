@@ -1,7 +1,7 @@
 from .module_base import ModuleBase
-from surprise import Dataset
-from surprise import KNNBasic
-from surprise import Reader
+from ..surprise import Dataset
+from ..surprise import KNNBasic
+from ..surprise import Reader
 
 
 class SimilarItems(ModuleBase):
