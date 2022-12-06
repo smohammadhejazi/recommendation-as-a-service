@@ -14,10 +14,10 @@ setup(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-        'Intended Audience :: Education',
+        "Intended Audience :: Education",
     ],
     keywords=['recommendation-service', 'recommendation-system', 'recommender-system'],
-    packages=find_packages(exclude=["devel"]),
+    packages=find_packages(),
     install_requires=[
         "joblib>=1.1.0",
         "kmodes>=0.12.1",
