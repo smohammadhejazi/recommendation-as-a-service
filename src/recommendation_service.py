@@ -1,5 +1,7 @@
 import pandas as pd
 from modules.cold_start import ColdStart
+from modules.similar_items import SimilarItems
+from modules.user_specific import UserSpecific
 
 
 class RecommendationService:
@@ -15,8 +17,15 @@ class RecommendationService:
         self.user_ratings = pd.read_csv(user_ratings_path, sep=ratings_sep, names=ratings_columns)
         self.item_info = pd.read_csv(item_info_path, sep=item_sep, names=item_columns, encoding="ISO-8859-1")
 
-    def cold_start_module(self):
-        return ColdStart(self.user_ratings, options={})
+    def cold_start_module(self, options=None):
+        if options is None:
+            options = {}
+        return ColdStart(self.user_ratings, options=options)
+
+    def similar_items_module(self, options=None):
+        if options is None:
+            options = {}
+        return SimilarItems(self.user_ratings, self.item_info, options=options)
 
 
 if __name__ == "__main__":
@@ -36,6 +45,14 @@ if __name__ == "__main__":
         info_sep="|", ratings_sep="\t", item_sep="|"
     )
 
-    cold_start = recommendation_service.cold_start_module()
-    cold_start.fit()
-    print(cold_start.recommend(5))
+    # cold_start = recommendation_service.cold_start_module()
+    # cold_start.fit()
+    # items = cold_start.recommend(5)
+    # print(items.head(5))
+
+    similar_items = recommendation_service.similar_items_module()
+    similar_items.fit()
+    items = similar_items.recommend("Toy Story (1995)")
+    for movie in items:
+        print(movie)
+
