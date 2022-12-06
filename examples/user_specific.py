@@ -1,4 +1,4 @@
-from kabirrec.recommendation_service import RecommendationService
+from kabirrec import RecommendationService
 
 
 if __name__ == "__main__":
