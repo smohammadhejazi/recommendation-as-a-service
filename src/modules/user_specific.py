@@ -18,13 +18,21 @@ class UserSpecific(ModuleBase):
         self.user_info = user_info
         self.item_info = item_info
         self.algo = None
+        self.clusters_score = None
+        self.clusters_cost = None
+        self.clusters_fit_time = None
+        self.k_start = None
+        self.k_end = None
+        self.optimal_k = options.get("k", None)
+        self.manual_cluster = False if options.get("k", None) is None else True
 
     def set_optimal_k_clusters(self, k_start, k_end):
+        if self.verbose:
+            print("Finding optimal cluster...")
         score = []
         cost = []
         fit_time = []
         for k in range(k_start, k_end):
-            print("K clusters = " + str(k))
             kmode = KModes(n_clusters=k, init="random", n_init=5, n_jobs=-1, verbose=0)
             start = time.perf_counter()
             cluster_labels = kmode.fit_predict(self.user_info)
@@ -35,7 +43,16 @@ class UserSpecific(ModuleBase):
             cost.append(kmode.cost_)
             fit_time.append(end - start)
 
-        return np.argmax(np.array(score)) + k_start, score, cost, fit_time
+        self.clusters_score = score
+        self.clusters_cost = cost
+        self.clusters_fit_time = fit_time
+
+        optimal_cluster = np.argmax(np.array(score)) + k_start
+
+        if self.verbose:
+            print("Optimal cluster k={} found.".format(optimal_cluster))
+
+        return optimal_cluster
 
     def generate_virtual_rating_count(self, k):
         virtual_rating = pd.DataFrame(columns=["user_id", "item_id", "rating_mean"])
@@ -67,18 +84,65 @@ class UserSpecific(ModuleBase):
 
         return virtual_rating, virtual_count
 
-    def fit(self):
+    def draw_clusters_graph(self):
+        if self.is_fit is False:
+            raise ValueError("Algorithm is not fit.")
+        if self.manual_cluster:
+            print("Error: Can't draw graph, finding optimal cluster was done manually.")
+            return
+        # show plots
+        k_clusters = range(self.k_start, self.k_end)
+        color = "k"
+        marker = "."
+        line = "-"
+        fig, axes = plt.subplots(3, 1)
+
+        ax1 = axes[0]
+        # ax1.set_xlabel("No. of clusters")
+        ax1.set_ylabel("distortion", color=color)
+        # ax1.set_xticks(k_clusters)
+        ax1.plot(k_clusters, self.clusters_cost, color=color, marker=marker, linestyle=line)
+
+        ax2 = axes[1]
+        # ax2.set_xlabel("No. of clusters")
+        ax2.set_ylabel("time (s)", color=color)
+        # ax2.set_xticks(k_clusters)
+        ax2.plot(k_clusters, self.clusters_fit_time, color=color, marker=marker, linestyle=line)
+
+        ax3 = axes[2]
+        ax3.set_xlabel("No. of clusters")
+        ax3.set_ylabel("Silhouette score")
+        # ax3.set_xticks(k_clusters)
+        ax3.plot(k_clusters, self.clusters_score, color=color, marker=marker, linestyle=line)
+
+        fig.tight_layout()
+        plt.show()
+
+    def fit(self, k_start, k_end):
+        if k_start >= k_end:
+            raise ValueError("Error: k_start should be smaller than k_end")
+        if self.verbose:
+            print("Fitting the algorithm...")
+
+        self.k_start = k_start
+        self.k_end = k_end
+
         # get optimal number of clusters
-        k_start = 26
-        k_end = 27
-        optimal_k, score, cost, fit_time = self.set_optimal_k_clusters(k_start, k_end)
-        print("Optimal K = " + str(optimal_k))
+        if self.optimal_k is None:
+            self.optimal_k = self.set_optimal_k_clusters(k_start, k_end)
 
         # cluster with optimal k
-        kmode = KModes(n_clusters=25, init="random", n_init=5, n_jobs=-1, verbose=0)
+        if self.verbose:
+            print("Clustering with k={}...".format(self.optimal_k))
+
+        kmode = KModes(n_clusters=self.optimal_k, init="random", n_init=5, n_jobs=-1, verbose=0)
         cluster_labels = kmode.fit_predict(self.user_info)
+
+        if self.verbose:
+            print("Clustering done.".format(self.optimal_k))
+
         self.user_info['cluster'] = cluster_labels.tolist()
-        virtual_rating, virtual_count = self.generate_virtual_rating_count(25)
+        virtual_rating, virtual_count = self.generate_virtual_rating_count(self.optimal_k)
 
         # virtual ratings ready
 
@@ -92,36 +156,13 @@ class UserSpecific(ModuleBase):
 
         self.algo = WeightedSlopeOne(count_train_set)
         self.algo.fit(mean_train_set)
+        self.is_fit = True
+
+        if self.verbose:
+            print("Fitting is done.")
 
     def recommend(self, user_id, item_id):
-        pred = self.algo.predict(user_id, item_id)
-        return pred
-
-        # exit(0)
-        # # show plots
-        # k_clusters = range(k_start, k_end)
-        # color = "k"
-        # marker = "."
-        # line = "-"
-        # fig, axes = plt.subplots(3, 1)
-        #
-        # ax1 = axes[0]
-        # # ax1.set_xlabel("No. of clusters")
-        # ax1.set_ylabel("distortion", color=color)
-        # # ax1.set_xticks(k_clusters)
-        # ax1.plot(k_clusters, cost, color=color, marker=marker, linestyle=line)
-        #
-        # ax2 = axes[1]
-        # # ax2.set_xlabel("No. of clusters")
-        # ax2.set_ylabel("time (s)", color=color)
-        # # ax2.set_xticks(k_clusters)
-        # ax2.plot(k_clusters, fit_time, color=color, marker=marker, linestyle=line)
-        #
-        # ax3 = axes[2]
-        # ax3.set_xlabel("No. of clusters")
-        # ax3.set_ylabel("Silhouette score")
-        # # ax3.set_xticks(k_clusters)
-        # ax3.plot(k_clusters, score, color=color, marker=marker, linestyle=line)
-        #
-        # fig.tight_layout()
-        # plt.show()
+        if self.is_fit is False:
+            raise ValueError("Algorithm is not fit.")
+        prediction_rating_object = self.algo.predict(user_id, item_id)
+        return prediction_rating_object
