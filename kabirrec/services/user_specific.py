@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from kmodes.kmodes import KModes
+from collections import defaultdict
 from .module_base import ModuleBase
 from ..utils import silhouette_score
 from ..utils import matching_dissimilarity
@@ -26,6 +27,17 @@ class UserSpecific(ModuleBase):
         self.k_end = None
         self.optimal_k = options.get("k", None)
         self.manual_cluster = False if options.get("k", None) is None else True
+        self.top_n = options.get("top_n", 10)
+
+    def name_to_id(self, name):
+        # csv reads ids as integer but we need string in inner_id
+        movie = self.item_info[self.item_info["movie_title"] == name]
+        return movie["movie_id"].item()
+
+    def id_to_name(self, iid):
+        # after converting to string, here we convert back
+        movie = self.item_info[self.item_info["movie_id"] == int(iid)]
+        return movie["movie_title"].item()
 
     def set_optimal_k_clusters(self, k_start, k_end):
         if self.verbose:
@@ -119,7 +131,20 @@ class UserSpecific(ModuleBase):
         fig.tight_layout()
         plt.show()
 
-    def fit(self, k_start, k_end):
+    def set_top_n(self, predictions, n=10):
+        # First map the predictions to each user.
+        top_n = defaultdict(list)
+        for uid, iid, true_r, est, _ in predictions:
+            top_n[uid].append((iid, est))
+
+        # Then sort the predictions for each user and retrieve the k highest ones.
+        for uid, user_ratings in top_n.items():
+            user_ratings.sort(key=lambda x: x[1], reverse=True)
+            top_n[uid] = user_ratings[:n]
+
+        self.top_n = top_n
+
+    def fit(self, k_start=1, k_end=2):
         if k_start >= k_end:
             raise ValueError("Error: k_start should be smaller than k_end")
         if self.verbose:
@@ -155,15 +180,31 @@ class UserSpecific(ModuleBase):
         mean_train_set = mean_data.build_full_trainset()
         count_train_set = count_data.build_full_trainset()
 
+        mean_train_set.build_anti_testset()
+
         self.algo = WeightedSlopeOne(count_train_set)
         self.algo.fit(mean_train_set)
-        self.is_fit = True
 
+        data = Dataset.load_from_df(self.user_rating[["user_id", "item_id", "rating"]], mean_reader)
+        train_set = data.build_full_trainset()
+        test_set = train_set.build_anti_testset()
+        predictions = self.algo.test(test_set)
+
+        self.set_top_n(predictions, n=self.top_n)
+        self.is_fit = True
         if self.verbose:
             print("Fitting is done.")
 
-    def recommend(self, user_id, item_id):
+    def predict_rating(self, user_id, item_id):
         if self.is_fit is False:
             raise ValueError("Algorithm is not fit.")
         prediction_rating_object = self.algo.predict(user_id, item_id)
         return prediction_rating_object
+
+    def recommend(self, user_id, n=10):
+        items = self.top_n[user_id]
+        recommendation_table = []
+        for i in range(n):
+            entry = (items[i][0], self.id_to_name(items[i][0]), items[i][1])
+            recommendation_table.append(entry)
+        return recommendation_table
