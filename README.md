@@ -106,7 +106,7 @@ You can also clone the repo and build the library:
 $ pip install numpy cython
 $ git clone https://github.com/smohammadhejazi/recommendation-as-a-service
 $ cd recommendation-as-a-service
-$ python setup.py install`
+$ python setup.py install
 ```
 
 
