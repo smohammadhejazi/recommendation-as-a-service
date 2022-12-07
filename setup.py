@@ -78,7 +78,7 @@ setup(
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
 
-    version='1.0.5',
+    version='1.0.6',
     url='https://github.com/smohammadhejazi/recommendation-as-a-service',
 
     license='MIT',
