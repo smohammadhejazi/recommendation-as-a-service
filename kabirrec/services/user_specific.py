@@ -3,9 +3,9 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from kmodes.kmodes import KModes
-from kabirrec.utils import silhouette_score
-from kabirrec.utils import matching_dissimilarity
 from .module_base import ModuleBase
+from ..utils import silhouette_score
+from ..utils import matching_dissimilarity
 from ..surprise import WeightedSlopeOne
 from ..surprise import Dataset
 from ..surprise import Reader
