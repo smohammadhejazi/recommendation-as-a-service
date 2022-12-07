@@ -71,31 +71,31 @@ else:
 
 setup(
     name='kabirrec',
-    version='1.0.0',
+    author='Seyyed Mohammad Hejazi Hoseini',
+    author_email='smohammadhejazi78@gmail.com',
+
     description='A recommendation system with cold start, similar items and user specific recommendation',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
+
+    version='1.0.2',
     url='https://github.com/smohammadhejazi/recommendation-as-a-service',
-    author='Seyyed Mohammad Hejazi Hoseini',
-    author_email='smohammadhejazi78@gmail.com',
+
     license='MIT',
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
         "Intended Audience :: Education",
+        "Intended Audience :: Science/Research",
     ],
     keywords=['recommendation-service', 'recommendation-system', 'recommender-system'],
+
     packages=find_packages(),
-    install_requires=[
-        "joblib>=1.1.0",
-        "kmodes>=0.12.1",
-        "matplotlib>=3.5.2",
-        "matrix_factorization>=1.3",
-        "numpy>=1.22.3",
-        "pandas>=1.4.2",
-        "scikit_learn>=1.1.3",
-        "scipy>=1.8.0",
-        "six>=1.16.0",
-    ]
+    include_package_data=True,
+    ext_modules=ext_modules,
+    cmdclass=cmdclass,
+    install_requires=install_requires,
+    dependency_links = dependency_links,
+
 )
