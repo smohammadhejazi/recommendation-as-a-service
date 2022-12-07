@@ -1,7 +1,7 @@
 import pandas as pd
-from kabirrec.modules.cold_start import ColdStart
-from kabirrec.modules.similar_items import SimilarItems
-from kabirrec.modules.user_specific import UserSpecific
+from .services.cold_start import ColdStart
+from .services.similar_items import SimilarItems
+from .services.user_specific import UserSpecific
 
 
 class RecommendationService:
