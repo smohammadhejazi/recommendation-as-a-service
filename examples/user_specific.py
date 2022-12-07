@@ -18,10 +18,10 @@ if __name__ == "__main__":
     )
 
     user_specific = recommendation_service.user_specific_module(options={"verbose": True,
-                                                                         "k": None})
+                                                                         "k": 26})
     user_specific.fit(20, 30)
     user_specific.draw_clusters_graph()
-    prediction_rating = user_specific.recommend(1, 1)
+    prediction_rating = user_specific.recommend(1, 4)
     print(prediction_rating)
-    prediction_rating = user_specific.recommend(1, 5)
+    prediction_rating = user_specific.predict_rating(1, 1)
     print(prediction_rating.est)
