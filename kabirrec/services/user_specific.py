@@ -97,7 +97,7 @@ class UserSpecific(ModuleBase):
 
         return virtual_rating, virtual_count
 
-    def draw_clusters_graph(self):
+    def draw_clusters_graph(self, path=None):
         if self.is_fit is False:
             raise ValueError("Algorithm is not fit.")
         if self.manual_cluster:
@@ -129,6 +129,8 @@ class UserSpecific(ModuleBase):
         ax3.plot(k_clusters, self.clusters_score, color=color, marker=marker, linestyle=line)
 
         fig.tight_layout()
+        if path is not None:
+            plt.savefig(path)
         plt.show()
 
     def set_top_n(self, predictions, n=10):
@@ -166,6 +168,7 @@ class UserSpecific(ModuleBase):
 
         if self.verbose:
             print("Clustering done.".format(self.optimal_k))
+            print("Building tables...")
 
         self.user_info['cluster'] = cluster_labels.tolist()
         virtual_rating, virtual_count = self.generate_virtual_rating_count(self.optimal_k)
@@ -193,6 +196,7 @@ class UserSpecific(ModuleBase):
         self.set_top_n(predictions, n=self.top_n)
         self.is_fit = True
         if self.verbose:
+            print("Tables are built.")
             print("Fitting is done.")
 
     def predict_rating(self, user_id, item_id):
