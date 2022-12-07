@@ -1,4 +1,4 @@
-![KabirRec](logo.svg "KabirRec")
+![KabirRec](https://github.com/smohammadhejazi/recommendation-as-a-service/raw/main/logo.svg "KabirRec")
 
 # Overview
 **KabirRec** is a Python recommendation service that uses **surprise** and **scikit-learn**.
@@ -51,7 +51,7 @@ Fitting is done.
 [(1189, 'Prefontaine (1997)', 5), (1500, 'Santa with Muscles (1996)', 5), (814, 'Great Day in Harlem, A (1994)', 5), (1536, 'Aiqing wansui (1994)', 5)]
 3.603819651096398
 ```
-![Clusters Info](examples_output/user_specific_plot.png "Clusters Info")
+![Clusters Info](https://github.com/smohammadhejazi/recommendation-as-a-service/raw/main/examples_output/user_specific_plot.png "Clusters Info")
 ## Similar Item Example
 ```
 similar_items = recommendation_service.similar_items_module(options={"verbose": True})
