@@ -13,12 +13,12 @@
         "include_dirs": [
             "C:\\Users\\Mohammad\\AppData\\Roaming\\Python\\Python310\\site-packages\\numpy\\core\\include"
         ],
-        "name": "surprise.prediction_algorithms.weighted_slope_one",
+        "name": "kabirrec.surprise.prediction_algorithms.weighted_slope_one",
         "sources": [
-            "surprise/prediction_algorithms/weighted_slope_one.pyx"
+            "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx"
         ]
     },
-    "module_name": "surprise.prediction_algorithms.weighted_slope_one"
+    "module_name": "kabirrec.surprise.prediction_algorithms.weighted_slope_one"
 }
 END: Cython Metadata */
 
@@ -760,8 +760,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__surprise__prediction_algorithms__weighted_slope_one
-#define __PYX_HAVE_API__surprise__prediction_algorithms__weighted_slope_one
+#define __PYX_HAVE__kabirrec__surprise__prediction_algorithms__weighted_slope_one
+#define __PYX_HAVE_API__kabirrec__surprise__prediction_algorithms__weighted_slope_one
 /* Early includes */
 #include <string.h>
 #include <stdio.h>
@@ -1004,7 +1004,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "surprise\\prediction_algorithms\\weighted_slope_one.pyx",
+  "kabirrec\\surprise\\prediction_algorithms\\weighted_slope_one.pyx",
   "__init__.pxd",
   "type.pxd",
 };
@@ -1045,7 +1045,7 @@ typedef struct {
 } __Pyx_BufFmt_Context;
 
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":690
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":690
  * # in Cython to enable them only on the right systems.
  * 
  * ctypedef npy_int8       int8_t             # <<<<<<<<<<<<<<
@@ -1054,7 +1054,7 @@ typedef struct {
  */
 typedef npy_int8 __pyx_t_5numpy_int8_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":691
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":691
  * 
  * ctypedef npy_int8       int8_t
  * ctypedef npy_int16      int16_t             # <<<<<<<<<<<<<<
@@ -1063,7 +1063,7 @@ typedef npy_int8 __pyx_t_5numpy_int8_t;
  */
 typedef npy_int16 __pyx_t_5numpy_int16_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":692
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":692
  * ctypedef npy_int8       int8_t
  * ctypedef npy_int16      int16_t
  * ctypedef npy_int32      int32_t             # <<<<<<<<<<<<<<
@@ -1072,7 +1072,7 @@ typedef npy_int16 __pyx_t_5numpy_int16_t;
  */
 typedef npy_int32 __pyx_t_5numpy_int32_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":693
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":693
  * ctypedef npy_int16      int16_t
  * ctypedef npy_int32      int32_t
  * ctypedef npy_int64      int64_t             # <<<<<<<<<<<<<<
@@ -1081,7 +1081,7 @@ typedef npy_int32 __pyx_t_5numpy_int32_t;
  */
 typedef npy_int64 __pyx_t_5numpy_int64_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":697
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":697
  * #ctypedef npy_int128     int128_t
  * 
  * ctypedef npy_uint8      uint8_t             # <<<<<<<<<<<<<<
@@ -1090,7 +1090,7 @@ typedef npy_int64 __pyx_t_5numpy_int64_t;
  */
 typedef npy_uint8 __pyx_t_5numpy_uint8_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":698
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":698
  * 
  * ctypedef npy_uint8      uint8_t
  * ctypedef npy_uint16     uint16_t             # <<<<<<<<<<<<<<
@@ -1099,7 +1099,7 @@ typedef npy_uint8 __pyx_t_5numpy_uint8_t;
  */
 typedef npy_uint16 __pyx_t_5numpy_uint16_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":699
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":699
  * ctypedef npy_uint8      uint8_t
  * ctypedef npy_uint16     uint16_t
  * ctypedef npy_uint32     uint32_t             # <<<<<<<<<<<<<<
@@ -1108,7 +1108,7 @@ typedef npy_uint16 __pyx_t_5numpy_uint16_t;
  */
 typedef npy_uint32 __pyx_t_5numpy_uint32_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":700
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":700
  * ctypedef npy_uint16     uint16_t
  * ctypedef npy_uint32     uint32_t
  * ctypedef npy_uint64     uint64_t             # <<<<<<<<<<<<<<
@@ -1117,7 +1117,7 @@ typedef npy_uint32 __pyx_t_5numpy_uint32_t;
  */
 typedef npy_uint64 __pyx_t_5numpy_uint64_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":704
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":704
  * #ctypedef npy_uint128    uint128_t
  * 
  * ctypedef npy_float32    float32_t             # <<<<<<<<<<<<<<
@@ -1126,7 +1126,7 @@ typedef npy_uint64 __pyx_t_5numpy_uint64_t;
  */
 typedef npy_float32 __pyx_t_5numpy_float32_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":705
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":705
  * 
  * ctypedef npy_float32    float32_t
  * ctypedef npy_float64    float64_t             # <<<<<<<<<<<<<<
@@ -1135,7 +1135,7 @@ typedef npy_float32 __pyx_t_5numpy_float32_t;
  */
 typedef npy_float64 __pyx_t_5numpy_float64_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":714
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":714
  * # The int types are mapped a bit surprising --
  * # numpy.int corresponds to 'l' and numpy.long to 'q'
  * ctypedef npy_long       int_t             # <<<<<<<<<<<<<<
@@ -1144,7 +1144,7 @@ typedef npy_float64 __pyx_t_5numpy_float64_t;
  */
 typedef npy_long __pyx_t_5numpy_int_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":715
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":715
  * # numpy.int corresponds to 'l' and numpy.long to 'q'
  * ctypedef npy_long       int_t
  * ctypedef npy_longlong   long_t             # <<<<<<<<<<<<<<
@@ -1153,7 +1153,7 @@ typedef npy_long __pyx_t_5numpy_int_t;
  */
 typedef npy_longlong __pyx_t_5numpy_long_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":716
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":716
  * ctypedef npy_long       int_t
  * ctypedef npy_longlong   long_t
  * ctypedef npy_longlong   longlong_t             # <<<<<<<<<<<<<<
@@ -1162,7 +1162,7 @@ typedef npy_longlong __pyx_t_5numpy_long_t;
  */
 typedef npy_longlong __pyx_t_5numpy_longlong_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":718
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":718
  * ctypedef npy_longlong   longlong_t
  * 
  * ctypedef npy_ulong      uint_t             # <<<<<<<<<<<<<<
@@ -1171,7 +1171,7 @@ typedef npy_longlong __pyx_t_5numpy_longlong_t;
  */
 typedef npy_ulong __pyx_t_5numpy_uint_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":719
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":719
  * 
  * ctypedef npy_ulong      uint_t
  * ctypedef npy_ulonglong  ulong_t             # <<<<<<<<<<<<<<
@@ -1180,7 +1180,7 @@ typedef npy_ulong __pyx_t_5numpy_uint_t;
  */
 typedef npy_ulonglong __pyx_t_5numpy_ulong_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":720
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":720
  * ctypedef npy_ulong      uint_t
  * ctypedef npy_ulonglong  ulong_t
  * ctypedef npy_ulonglong  ulonglong_t             # <<<<<<<<<<<<<<
@@ -1189,7 +1189,7 @@ typedef npy_ulonglong __pyx_t_5numpy_ulong_t;
  */
 typedef npy_ulonglong __pyx_t_5numpy_ulonglong_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":722
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":722
  * ctypedef npy_ulonglong  ulonglong_t
  * 
  * ctypedef npy_intp       intp_t             # <<<<<<<<<<<<<<
@@ -1198,7 +1198,7 @@ typedef npy_ulonglong __pyx_t_5numpy_ulonglong_t;
  */
 typedef npy_intp __pyx_t_5numpy_intp_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":723
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":723
  * 
  * ctypedef npy_intp       intp_t
  * ctypedef npy_uintp      uintp_t             # <<<<<<<<<<<<<<
@@ -1207,7 +1207,7 @@ typedef npy_intp __pyx_t_5numpy_intp_t;
  */
 typedef npy_uintp __pyx_t_5numpy_uintp_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":725
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":725
  * ctypedef npy_uintp      uintp_t
  * 
  * ctypedef npy_double     float_t             # <<<<<<<<<<<<<<
@@ -1216,7 +1216,7 @@ typedef npy_uintp __pyx_t_5numpy_uintp_t;
  */
 typedef npy_double __pyx_t_5numpy_float_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":726
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":726
  * 
  * ctypedef npy_double     float_t
  * ctypedef npy_double     double_t             # <<<<<<<<<<<<<<
@@ -1225,7 +1225,7 @@ typedef npy_double __pyx_t_5numpy_float_t;
  */
 typedef npy_double __pyx_t_5numpy_double_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":727
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":727
  * ctypedef npy_double     float_t
  * ctypedef npy_double     double_t
  * ctypedef npy_longdouble longdouble_t             # <<<<<<<<<<<<<<
@@ -1259,10 +1259,10 @@ static CYTHON_INLINE __pyx_t_double_complex __pyx_t_double_complex_from_parts(do
 
 
 /*--- Type declarations ---*/
-struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate;
-struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr;
+struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate;
+struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":729
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":729
  * ctypedef npy_longdouble longdouble_t
  * 
  * ctypedef npy_cfloat      cfloat_t             # <<<<<<<<<<<<<<
@@ -1271,7 +1271,7 @@ struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_sc
  */
 typedef npy_cfloat __pyx_t_5numpy_cfloat_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":730
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":730
  * 
  * ctypedef npy_cfloat      cfloat_t
  * ctypedef npy_cdouble     cdouble_t             # <<<<<<<<<<<<<<
@@ -1280,7 +1280,7 @@ typedef npy_cfloat __pyx_t_5numpy_cfloat_t;
  */
 typedef npy_cdouble __pyx_t_5numpy_cdouble_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":731
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":731
  * ctypedef npy_cfloat      cfloat_t
  * ctypedef npy_cdouble     cdouble_t
  * ctypedef npy_clongdouble clongdouble_t             # <<<<<<<<<<<<<<
@@ -1289,7 +1289,7 @@ typedef npy_cdouble __pyx_t_5numpy_cdouble_t;
  */
 typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":733
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":733
  * ctypedef npy_clongdouble clongdouble_t
  * 
  * ctypedef npy_cdouble     complex_t             # <<<<<<<<<<<<<<
@@ -1298,14 +1298,14 @@ typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
  */
 typedef npy_cdouble __pyx_t_5numpy_complex_t;
 
-/* "surprise/prediction_algorithms/weighted_slope_one.pyx":78
+/* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":71
  *         return self
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
  * 
  *         if not (self.trainset.knows_user(u) and self.trainset.knows_item(i)):
  */
-struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate {
+struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate {
   PyObject_HEAD
   PyObject *__pyx_v_Ri;
   PyObject *__pyx_v_i;
@@ -1313,16 +1313,16 @@ struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_sc
 };
 
 
-/* "surprise/prediction_algorithms/weighted_slope_one.pyx":89
+/* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":82
  *         est = self.user_mean[u]
  *         if Ri:
  *             est += sum(self.dev[i, j] for j in Ri) / len(Ri)             # <<<<<<<<<<<<<<
  * 
  *         return est
  */
-struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr {
+struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr {
   PyObject_HEAD
-  struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *__pyx_outer_scope;
+  struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *__pyx_outer_scope;
   PyObject *__pyx_v_j;
   PyObject *__pyx_t_0;
   Py_ssize_t __pyx_t_1;
@@ -2130,16 +2130,16 @@ static PyTypeObject *__pyx_ptype_5numpy_flexible = 0;
 static PyTypeObject *__pyx_ptype_5numpy_character = 0;
 static PyTypeObject *__pyx_ptype_5numpy_ufunc = 0;
 
-/* Module declarations from 'surprise.prediction_algorithms.weighted_slope_one' */
-static PyTypeObject *__pyx_ptype_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate = 0;
-static PyTypeObject *__pyx_ptype_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr = 0;
+/* Module declarations from 'kabirrec.surprise.prediction_algorithms.weighted_slope_one' */
+static PyTypeObject *__pyx_ptype_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate = 0;
+static PyTypeObject *__pyx_ptype_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr = 0;
 static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_5numpy_int_t = { "int_t", NULL, sizeof(__pyx_t_5numpy_int_t), { 0 }, 0, IS_UNSIGNED(__pyx_t_5numpy_int_t) ? 'U' : 'I', IS_UNSIGNED(__pyx_t_5numpy_int_t), 0 };
 static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_5numpy_double_t = { "double_t", NULL, sizeof(__pyx_t_5numpy_double_t), { 0 }, 0, 'R', 0, 0 };
-#define __Pyx_MODULE_NAME "surprise.prediction_algorithms.weighted_slope_one"
-extern int __pyx_module_is_main_surprise__prediction_algorithms__weighted_slope_one;
-int __pyx_module_is_main_surprise__prediction_algorithms__weighted_slope_one = 0;
+#define __Pyx_MODULE_NAME "kabirrec.surprise.prediction_algorithms.weighted_slope_one"
+extern int __pyx_module_is_main_kabirrec__surprise__prediction_algorithms__weighted_slope_one;
+int __pyx_module_is_main_kabirrec__surprise__prediction_algorithms__weighted_slope_one = 0;
 
-/* Implementation of 'surprise.prediction_algorithms.weighted_slope_one' */
+/* Implementation of 'kabirrec.surprise.prediction_algorithms.weighted_slope_one' */
 static PyObject *__pyx_builtin_enumerate;
 static PyObject *__pyx_builtin_sum;
 static PyObject *__pyx_builtin_ImportError;
@@ -2215,9 +2215,9 @@ static const char __pyx_k_numpy_core_multiarray_failed_to[] = "numpy.core.multia
 static const char __pyx_k_the_mod_weighted_slope_one_modu[] = "\nthe :mod:`weighted_slope_one` module includes the :class:`WeightedSlopeOne` algorithm.\n";
 static const char __pyx_k_A_simple_yet_accurate_collaborat[] = "A simple yet accurate collaborative filtering algorithm.\n\n    This is a straightforward implementation of the WeightedSlopeOne algorithm\n    ";
 static const char __pyx_k_WeightedSlopeOne_estimate_locals[] = "WeightedSlopeOne.estimate.<locals>.genexpr";
+static const char __pyx_k_kabirrec_surprise_prediction_alg[] = "kabirrec.surprise.prediction_algorithms.weighted_slope_one";
 static const char __pyx_k_numpy_core_umath_failed_to_impor[] = "numpy.core.umath failed to import";
-static const char __pyx_k_surprise_prediction_algorithms_w[] = "surprise.prediction_algorithms.weighted_slope_one";
-static const char __pyx_k_surprise_prediction_algorithms_w_2[] = "surprise\\prediction_algorithms\\weighted_slope_one.pyx";
+static const char __pyx_k_kabirrec_surprise_prediction_alg_2[] = "kabirrec\\surprise\\prediction_algorithms\\weighted_slope_one.pyx";
 static PyObject *__pyx_kp_s_A_simple_yet_accurate_collaborat;
 static PyObject *__pyx_n_s_AlgoBase;
 static PyObject *__pyx_n_s_ImportError;
@@ -2255,6 +2255,8 @@ static PyObject *__pyx_n_s_ir2;
 static PyObject *__pyx_n_s_iteritems;
 static PyObject *__pyx_n_s_j;
 static PyObject *__pyx_n_s_j_idx;
+static PyObject *__pyx_n_s_kabirrec_surprise_prediction_alg;
+static PyObject *__pyx_kp_s_kabirrec_surprise_prediction_alg_2;
 static PyObject *__pyx_n_s_knows_item;
 static PyObject *__pyx_n_s_knows_user;
 static PyObject *__pyx_n_s_main;
@@ -2280,8 +2282,6 @@ static PyObject *__pyx_n_s_send;
 static PyObject *__pyx_n_s_six;
 static PyObject *__pyx_n_s_six_moves;
 static PyObject *__pyx_n_s_sum;
-static PyObject *__pyx_n_s_surprise_prediction_algorithms_w;
-static PyObject *__pyx_kp_s_surprise_prediction_algorithms_w_2;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_throw;
 static PyObject *__pyx_n_s_trainset;
@@ -2292,12 +2292,12 @@ static PyObject *__pyx_n_s_ur;
 static PyObject *__pyx_n_s_user_mean;
 static PyObject *__pyx_n_s_virtual_count;
 static PyObject *__pyx_n_s_zeros;
-static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_virtual_count); /* proto */
-static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_2fit(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_trainset); /* proto */
-static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_8estimate_genexpr(PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_4estimate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_u, PyObject *__pyx_v_i); /* proto */
-static PyObject *__pyx_tp_new_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
-static PyObject *__pyx_tp_new_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_virtual_count); /* proto */
+static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_2fit(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_trainset); /* proto */
+static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_8estimate_genexpr(PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_4estimate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_u, PyObject *__pyx_v_i); /* proto */
+static PyObject *__pyx_tp_new_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_int_0;
 static PyObject *__pyx_int_1;
 static PyObject *__pyx_tuple_;
@@ -2310,7 +2310,7 @@ static PyObject *__pyx_codeobj__7;
 static PyObject *__pyx_codeobj__9;
 /* Late includes */
 
-/* "surprise/prediction_algorithms/weighted_slope_one.pyx":23
+/* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":23
  *     """
  * 
  *     def __init__(self, virtual_count):             # <<<<<<<<<<<<<<
@@ -2319,9 +2319,9 @@ static PyObject *__pyx_codeobj__9;
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_1__init__ = {"__init__", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_1__init__, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_1__init__ = {"__init__", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_1__init__, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_virtual_count = 0;
   int __pyx_lineno = 0;
@@ -2372,18 +2372,18 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_18weighted_slope_one
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 23, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("surprise.prediction_algorithms.weighted_slope_one.WeightedSlopeOne.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("kabirrec.surprise.prediction_algorithms.weighted_slope_one.WeightedSlopeOne.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne___init__(__pyx_self, __pyx_v_self, __pyx_v_virtual_count);
+  __pyx_r = __pyx_pf_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne___init__(__pyx_self, __pyx_v_self, __pyx_v_virtual_count);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_virtual_count) {
+static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_virtual_count) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2394,7 +2394,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":25
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":25
  *     def __init__(self, virtual_count):
  * 
  *         AlgoBase.__init__(self)             # <<<<<<<<<<<<<<
@@ -2423,7 +2423,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":26
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":26
  * 
  *         AlgoBase.__init__(self)
  *         self.counts = virtual_count.ur             # <<<<<<<<<<<<<<
@@ -2435,7 +2435,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_counts, __pyx_t_1) < 0) __PYX_ERR(0, 26, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":23
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":23
  *     """
  * 
  *     def __init__(self, virtual_count):             # <<<<<<<<<<<<<<
@@ -2450,7 +2450,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("surprise.prediction_algorithms.weighted_slope_one.WeightedSlopeOne.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("kabirrec.surprise.prediction_algorithms.weighted_slope_one.WeightedSlopeOne.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2458,7 +2458,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   return __pyx_r;
 }
 
-/* "surprise/prediction_algorithms/weighted_slope_one.pyx":28
+/* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":28
  *         self.counts = virtual_count.ur
  * 
  *     def fit(self, trainset):             # <<<<<<<<<<<<<<
@@ -2467,9 +2467,9 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_3fit(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_3fit = {"fit", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_3fit, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_3fit(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_3fit(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_3fit = {"fit", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_3fit, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_3fit(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_trainset = 0;
   int __pyx_lineno = 0;
@@ -2520,18 +2520,18 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_18weighted_slope_one
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("fit", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 28, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("surprise.prediction_algorithms.weighted_slope_one.WeightedSlopeOne.fit", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("kabirrec.surprise.prediction_algorithms.weighted_slope_one.WeightedSlopeOne.fit", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_2fit(__pyx_self, __pyx_v_self, __pyx_v_trainset);
+  __pyx_r = __pyx_pf_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_2fit(__pyx_self, __pyx_v_self, __pyx_v_trainset);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_2fit(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_trainset) {
+static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_2fit(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_trainset) {
   PyObject *__pyx_v_n_items = NULL;
   PyArrayObject *__pyx_v_freq = 0;
   PyArrayObject *__pyx_v_dev = 0;
@@ -2598,7 +2598,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   __pyx_pybuffernd_dev.data = NULL;
   __pyx_pybuffernd_dev.rcbuffer = &__pyx_pybuffer_dev;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":29
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":29
  * 
  *     def fit(self, trainset):
  *         n_items = trainset.n_items             # <<<<<<<<<<<<<<
@@ -2610,7 +2610,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   __pyx_v_n_items = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":38
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":38
  *         cdef int u, i, j, r_ui, r_uj
  * 
  *         AlgoBase.fit(self, trainset)             # <<<<<<<<<<<<<<
@@ -2669,7 +2669,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":40
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":40
  *         AlgoBase.fit(self, trainset)
  * 
  *         freq = np.zeros((trainset.n_items, trainset.n_items), np.int32)             # <<<<<<<<<<<<<<
@@ -2770,7 +2770,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   __pyx_v_freq = ((PyArrayObject *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":41
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":41
  * 
  *         freq = np.zeros((trainset.n_items, trainset.n_items), np.int32)
  *         dev = np.zeros((trainset.n_items, trainset.n_items), np.double)             # <<<<<<<<<<<<<<
@@ -2871,7 +2871,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   __pyx_v_dev = ((PyArrayObject *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":44
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":44
  * 
  *         # Computation of freq and dev arrays.
  *         for u, u_ratings in iteritems(trainset.ur):             # <<<<<<<<<<<<<<
@@ -2990,7 +2990,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
     __Pyx_XDECREF_SET(__pyx_v_u_ratings, __pyx_t_5);
     __pyx_t_5 = 0;
 
-    /* "surprise/prediction_algorithms/weighted_slope_one.pyx":45
+    /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":45
  *         # Computation of freq and dev arrays.
  *         for u, u_ratings in iteritems(trainset.ur):
  *             u_count = self.counts[u]             # <<<<<<<<<<<<<<
@@ -3005,7 +3005,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
     __Pyx_XDECREF_SET(__pyx_v_u_count, __pyx_t_5);
     __pyx_t_5 = 0;
 
-    /* "surprise/prediction_algorithms/weighted_slope_one.pyx":46
+    /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":46
  *         for u, u_ratings in iteritems(trainset.ur):
  *             u_count = self.counts[u]
  *             for i_idx, ir1 in enumerate(u_ratings):             # <<<<<<<<<<<<<<
@@ -3063,7 +3063,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
       __pyx_t_5 = __pyx_t_2;
       __pyx_t_2 = 0;
 
-      /* "surprise/prediction_algorithms/weighted_slope_one.pyx":47
+      /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":47
  *             u_count = self.counts[u]
  *             for i_idx, ir1 in enumerate(u_ratings):
  *                 for j_idx, ir2 in enumerate(u_ratings):             # <<<<<<<<<<<<<<
@@ -3121,7 +3121,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
         __pyx_t_2 = __pyx_t_3;
         __pyx_t_3 = 0;
 
-        /* "surprise/prediction_algorithms/weighted_slope_one.pyx":48
+        /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":48
  *             for i_idx, ir1 in enumerate(u_ratings):
  *                 for j_idx, ir2 in enumerate(u_ratings):
  *                     i = ir1[0]             # <<<<<<<<<<<<<<
@@ -3134,7 +3134,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __pyx_v_i = __pyx_t_4;
 
-        /* "surprise/prediction_algorithms/weighted_slope_one.pyx":49
+        /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":49
  *                 for j_idx, ir2 in enumerate(u_ratings):
  *                     i = ir1[0]
  *                     j = ir2[0]             # <<<<<<<<<<<<<<
@@ -3147,7 +3147,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __pyx_v_j = __pyx_t_4;
 
-        /* "surprise/prediction_algorithms/weighted_slope_one.pyx":50
+        /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":50
  *                     i = ir1[0]
  *                     j = ir2[0]
  *                     r_ui = ir1[1]             # <<<<<<<<<<<<<<
@@ -3160,7 +3160,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __pyx_v_r_ui = __pyx_t_4;
 
-        /* "surprise/prediction_algorithms/weighted_slope_one.pyx":51
+        /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":51
  *                     j = ir2[0]
  *                     r_ui = ir1[1]
  *                     r_uj = ir2[1]             # <<<<<<<<<<<<<<
@@ -3173,7 +3173,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __pyx_v_r_uj = __pyx_t_4;
 
-        /* "surprise/prediction_algorithms/weighted_slope_one.pyx":52
+        /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":52
  *                     r_ui = ir1[1]
  *                     r_uj = ir2[1]
  *                     min_count = min(u_count[i_idx][1], u_count[j_idx][1])             # <<<<<<<<<<<<<<
@@ -3208,12 +3208,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
         __Pyx_XDECREF_SET(__pyx_v_min_count, __pyx_t_20);
         __pyx_t_20 = 0;
 
-        /* "surprise/prediction_algorithms/weighted_slope_one.pyx":53
+        /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":53
  *                     r_uj = ir2[1]
  *                     min_count = min(u_count[i_idx][1], u_count[j_idx][1])
  *                     freq[i, j] += min_count             # <<<<<<<<<<<<<<
  *                     dev[i, j] += (r_ui - r_uj) * min_count
- *             # for i, r_ui in u_ratings:
+ * 
  */
         __pyx_t_24 = __Pyx_PyInt_As_npy_long(__pyx_v_min_count); if (unlikely((__pyx_t_24 == ((npy_long)-1)) && PyErr_Occurred())) __PYX_ERR(0, 53, __pyx_L1_error)
         __pyx_t_25 = __pyx_v_i;
@@ -3233,12 +3233,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
         }
         *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_freq.rcbuffer->pybuffer.buf, __pyx_t_25, __pyx_pybuffernd_freq.diminfo[0].strides, __pyx_t_26, __pyx_pybuffernd_freq.diminfo[1].strides) += __pyx_t_24;
 
-        /* "surprise/prediction_algorithms/weighted_slope_one.pyx":54
+        /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":54
  *                     min_count = min(u_count[i_idx][1], u_count[j_idx][1])
  *                     freq[i, j] += min_count
  *                     dev[i, j] += (r_ui - r_uj) * min_count             # <<<<<<<<<<<<<<
- *             # for i, r_ui in u_ratings:
- *             #     for j, r_uj in u_ratings:
+ * 
+ *         for i in range(n_items):
  */
         __pyx_t_20 = __Pyx_PyInt_From_int((__pyx_v_r_ui - __pyx_v_r_uj)); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 54, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_20);
@@ -3264,7 +3264,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
         }
         *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_dev.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd_dev.diminfo[0].strides, __pyx_t_25, __pyx_pybuffernd_dev.diminfo[1].strides) += __pyx_t_27;
 
-        /* "surprise/prediction_algorithms/weighted_slope_one.pyx":47
+        /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":47
  *             u_count = self.counts[u]
  *             for i_idx, ir1 in enumerate(u_ratings):
  *                 for j_idx, ir2 in enumerate(u_ratings):             # <<<<<<<<<<<<<<
@@ -3275,7 +3275,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "surprise/prediction_algorithms/weighted_slope_one.pyx":46
+      /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":46
  *         for u, u_ratings in iteritems(trainset.ur):
  *             u_count = self.counts[u]
  *             for i_idx, ir1 in enumerate(u_ratings):             # <<<<<<<<<<<<<<
@@ -3286,7 +3286,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "surprise/prediction_algorithms/weighted_slope_one.pyx":44
+    /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":44
  * 
  *         # Computation of freq and dev arrays.
  *         for u, u_ratings in iteritems(trainset.ur):             # <<<<<<<<<<<<<<
@@ -3296,14 +3296,14 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   }
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":63
- *             #         dev[i, j] += (r_ui - r_uj) * min_count
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":56
+ *                     dev[i, j] += (r_ui - r_uj) * min_count
  * 
  *         for i in range(n_items):             # <<<<<<<<<<<<<<
  *             dev[i, i] = 0
  *             for j in range(i + 1, n_items):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_range); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 63, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_range); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_1 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_5))) {
@@ -3317,16 +3317,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   }
   __pyx_t_7 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_1, __pyx_v_n_items) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_v_n_items);
   __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 63, __pyx_L1_error)
+  if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (likely(PyList_CheckExact(__pyx_t_7)) || PyTuple_CheckExact(__pyx_t_7)) {
     __pyx_t_5 = __pyx_t_7; __Pyx_INCREF(__pyx_t_5); __pyx_t_13 = 0;
     __pyx_t_14 = NULL;
   } else {
-    __pyx_t_13 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 63, __pyx_L1_error)
+    __pyx_t_13 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 56, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_14 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 63, __pyx_L1_error)
+    __pyx_t_14 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 56, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   for (;;) {
@@ -3334,17 +3334,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
       if (likely(PyList_CheckExact(__pyx_t_5))) {
         if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_5)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_7 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_13); __Pyx_INCREF(__pyx_t_7); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 63, __pyx_L1_error)
+        __pyx_t_7 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_13); __Pyx_INCREF(__pyx_t_7); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 56, __pyx_L1_error)
         #else
-        __pyx_t_7 = PySequence_ITEM(__pyx_t_5, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 63, __pyx_L1_error)
+        __pyx_t_7 = PySequence_ITEM(__pyx_t_5, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 56, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         #endif
       } else {
         if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_5)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_13); __Pyx_INCREF(__pyx_t_7); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 63, __pyx_L1_error)
+        __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_13); __Pyx_INCREF(__pyx_t_7); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 56, __pyx_L1_error)
         #else
-        __pyx_t_7 = PySequence_ITEM(__pyx_t_5, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 63, __pyx_L1_error)
+        __pyx_t_7 = PySequence_ITEM(__pyx_t_5, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 56, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         #endif
       }
@@ -3354,17 +3354,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 63, __pyx_L1_error)
+          else __PYX_ERR(0, 56, __pyx_L1_error)
         }
         break;
       }
       __Pyx_GOTREF(__pyx_t_7);
     }
-    __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_7); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 63, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_7); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_v_i = __pyx_t_4;
 
-    /* "surprise/prediction_algorithms/weighted_slope_one.pyx":64
+    /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":57
  * 
  *         for i in range(n_items):
  *             dev[i, i] = 0             # <<<<<<<<<<<<<<
@@ -3384,20 +3384,20 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
     } else if (unlikely(__pyx_t_26 >= __pyx_pybuffernd_dev.diminfo[1].shape)) __pyx_t_4 = 1;
     if (unlikely(__pyx_t_4 != -1)) {
       __Pyx_RaiseBufferIndexError(__pyx_t_4);
-      __PYX_ERR(0, 64, __pyx_L1_error)
+      __PYX_ERR(0, 57, __pyx_L1_error)
     }
     *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_dev.rcbuffer->pybuffer.buf, __pyx_t_25, __pyx_pybuffernd_dev.diminfo[0].strides, __pyx_t_26, __pyx_pybuffernd_dev.diminfo[1].strides) = 0.0;
 
-    /* "surprise/prediction_algorithms/weighted_slope_one.pyx":65
+    /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":58
  *         for i in range(n_items):
  *             dev[i, i] = 0
  *             for j in range(i + 1, n_items):             # <<<<<<<<<<<<<<
  *                 dev[i, j] /= freq[i, j]
  *                 dev[j, i] = -dev[i, j]
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_range); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_range); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyInt_From_long((__pyx_v_i + 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 65, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_From_long((__pyx_v_i + 1)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 58, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_6 = NULL;
     __pyx_t_4 = 0;
@@ -3414,7 +3414,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_2, __pyx_v_n_items};
-      __pyx_t_7 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 65, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 58, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -3423,14 +3423,14 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_2, __pyx_v_n_items};
-      __pyx_t_7 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 65, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 58, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     } else
     #endif
     {
-      __pyx_t_3 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 65, __pyx_L1_error)
+      __pyx_t_3 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 58, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       if (__pyx_t_6) {
         __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -3441,7 +3441,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
       __Pyx_GIVEREF(__pyx_v_n_items);
       PyTuple_SET_ITEM(__pyx_t_3, 1+__pyx_t_4, __pyx_v_n_items);
       __pyx_t_2 = 0;
-      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_3, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 65, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_3, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 58, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
@@ -3450,9 +3450,9 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
       __pyx_t_1 = __pyx_t_7; __Pyx_INCREF(__pyx_t_1); __pyx_t_16 = 0;
       __pyx_t_17 = NULL;
     } else {
-      __pyx_t_16 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 65, __pyx_L1_error)
+      __pyx_t_16 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 58, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_17 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 65, __pyx_L1_error)
+      __pyx_t_17 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 58, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     for (;;) {
@@ -3460,17 +3460,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
         if (likely(PyList_CheckExact(__pyx_t_1))) {
           if (__pyx_t_16 >= PyList_GET_SIZE(__pyx_t_1)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_7 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_16); __Pyx_INCREF(__pyx_t_7); __pyx_t_16++; if (unlikely(0 < 0)) __PYX_ERR(0, 65, __pyx_L1_error)
+          __pyx_t_7 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_16); __Pyx_INCREF(__pyx_t_7); __pyx_t_16++; if (unlikely(0 < 0)) __PYX_ERR(0, 58, __pyx_L1_error)
           #else
-          __pyx_t_7 = PySequence_ITEM(__pyx_t_1, __pyx_t_16); __pyx_t_16++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 65, __pyx_L1_error)
+          __pyx_t_7 = PySequence_ITEM(__pyx_t_1, __pyx_t_16); __pyx_t_16++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 58, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_7);
           #endif
         } else {
           if (__pyx_t_16 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_16); __Pyx_INCREF(__pyx_t_7); __pyx_t_16++; if (unlikely(0 < 0)) __PYX_ERR(0, 65, __pyx_L1_error)
+          __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_16); __Pyx_INCREF(__pyx_t_7); __pyx_t_16++; if (unlikely(0 < 0)) __PYX_ERR(0, 58, __pyx_L1_error)
           #else
-          __pyx_t_7 = PySequence_ITEM(__pyx_t_1, __pyx_t_16); __pyx_t_16++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 65, __pyx_L1_error)
+          __pyx_t_7 = PySequence_ITEM(__pyx_t_1, __pyx_t_16); __pyx_t_16++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 58, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_7);
           #endif
         }
@@ -3480,17 +3480,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 65, __pyx_L1_error)
+            else __PYX_ERR(0, 58, __pyx_L1_error)
           }
           break;
         }
         __Pyx_GOTREF(__pyx_t_7);
       }
-      __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_7); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 65, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_7); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 58, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __pyx_v_j = __pyx_t_4;
 
-      /* "surprise/prediction_algorithms/weighted_slope_one.pyx":66
+      /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":59
  *             dev[i, i] = 0
  *             for j in range(i + 1, n_items):
  *                 dev[i, j] /= freq[i, j]             # <<<<<<<<<<<<<<
@@ -3510,7 +3510,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
       } else if (unlikely(__pyx_t_25 >= __pyx_pybuffernd_freq.diminfo[1].shape)) __pyx_t_4 = 1;
       if (unlikely(__pyx_t_4 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_4);
-        __PYX_ERR(0, 66, __pyx_L1_error)
+        __PYX_ERR(0, 59, __pyx_L1_error)
       }
       __pyx_t_28 = __pyx_v_i;
       __pyx_t_29 = __pyx_v_j;
@@ -3525,11 +3525,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
       } else if (unlikely(__pyx_t_29 >= __pyx_pybuffernd_dev.diminfo[1].shape)) __pyx_t_4 = 1;
       if (unlikely(__pyx_t_4 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_4);
-        __PYX_ERR(0, 66, __pyx_L1_error)
+        __PYX_ERR(0, 59, __pyx_L1_error)
       }
       *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_dev.rcbuffer->pybuffer.buf, __pyx_t_28, __pyx_pybuffernd_dev.diminfo[0].strides, __pyx_t_29, __pyx_pybuffernd_dev.diminfo[1].strides) /= (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_freq.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd_freq.diminfo[0].strides, __pyx_t_25, __pyx_pybuffernd_freq.diminfo[1].strides));
 
-      /* "surprise/prediction_algorithms/weighted_slope_one.pyx":67
+      /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":60
  *             for j in range(i + 1, n_items):
  *                 dev[i, j] /= freq[i, j]
  *                 dev[j, i] = -dev[i, j]             # <<<<<<<<<<<<<<
@@ -3549,7 +3549,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
       } else if (unlikely(__pyx_t_26 >= __pyx_pybuffernd_dev.diminfo[1].shape)) __pyx_t_4 = 1;
       if (unlikely(__pyx_t_4 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_4);
-        __PYX_ERR(0, 67, __pyx_L1_error)
+        __PYX_ERR(0, 60, __pyx_L1_error)
       }
       __pyx_t_29 = __pyx_v_j;
       __pyx_t_28 = __pyx_v_i;
@@ -3564,11 +3564,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
       } else if (unlikely(__pyx_t_28 >= __pyx_pybuffernd_dev.diminfo[1].shape)) __pyx_t_4 = 1;
       if (unlikely(__pyx_t_4 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_4);
-        __PYX_ERR(0, 67, __pyx_L1_error)
+        __PYX_ERR(0, 60, __pyx_L1_error)
       }
       *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_dev.rcbuffer->pybuffer.buf, __pyx_t_29, __pyx_pybuffernd_dev.diminfo[0].strides, __pyx_t_28, __pyx_pybuffernd_dev.diminfo[1].strides) = (-(*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_dev.rcbuffer->pybuffer.buf, __pyx_t_25, __pyx_pybuffernd_dev.diminfo[0].strides, __pyx_t_26, __pyx_pybuffernd_dev.diminfo[1].strides)));
 
-      /* "surprise/prediction_algorithms/weighted_slope_one.pyx":65
+      /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":58
  *         for i in range(n_items):
  *             dev[i, i] = 0
  *             for j in range(i + 1, n_items):             # <<<<<<<<<<<<<<
@@ -3578,8 +3578,8 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "surprise/prediction_algorithms/weighted_slope_one.pyx":63
- *             #         dev[i, j] += (r_ui - r_uj) * min_count
+    /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":56
+ *                     dev[i, j] += (r_ui - r_uj) * min_count
  * 
  *         for i in range(n_items):             # <<<<<<<<<<<<<<
  *             dev[i, i] = 0
@@ -3588,42 +3588,42 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":69
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":62
  *                 dev[j, i] = -dev[i, j]
  * 
  *         self.freq = freq             # <<<<<<<<<<<<<<
  *         self.dev = dev
  * 
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_freq, ((PyObject *)__pyx_v_freq)) < 0) __PYX_ERR(0, 69, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_freq, ((PyObject *)__pyx_v_freq)) < 0) __PYX_ERR(0, 62, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":70
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":63
  * 
  *         self.freq = freq
  *         self.dev = dev             # <<<<<<<<<<<<<<
  * 
  *         # mean ratings of all users: mu_u
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_dev, ((PyObject *)__pyx_v_dev)) < 0) __PYX_ERR(0, 70, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_dev, ((PyObject *)__pyx_v_dev)) < 0) __PYX_ERR(0, 63, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":73
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":66
  * 
  *         # mean ratings of all users: mu_u
  *         self.user_mean = [np.mean([r for (_, r) in trainset.ur[u]])             # <<<<<<<<<<<<<<
  *                           for u in trainset.all_users()]
  * 
  */
-  __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 73, __pyx_L1_error)
+  __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 66, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":74
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":67
  *         # mean ratings of all users: mu_u
  *         self.user_mean = [np.mean([r for (_, r) in trainset.ur[u]])
  *                           for u in trainset.all_users()]             # <<<<<<<<<<<<<<
  * 
  *         return self
  */
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_all_users); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 74, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_all_users); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
@@ -3637,16 +3637,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
     __pyx_t_7 = __pyx_t_1; __Pyx_INCREF(__pyx_t_7); __pyx_t_13 = 0;
     __pyx_t_14 = NULL;
   } else {
-    __pyx_t_13 = -1; __pyx_t_7 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 74, __pyx_L1_error)
+    __pyx_t_13 = -1; __pyx_t_7 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 67, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_14 = Py_TYPE(__pyx_t_7)->tp_iternext; if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 74, __pyx_L1_error)
+    __pyx_t_14 = Py_TYPE(__pyx_t_7)->tp_iternext; if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 67, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -3654,17 +3654,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
       if (likely(PyList_CheckExact(__pyx_t_7))) {
         if (__pyx_t_13 >= PyList_GET_SIZE(__pyx_t_7)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_7, __pyx_t_13); __Pyx_INCREF(__pyx_t_1); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 74, __pyx_L1_error)
+        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_7, __pyx_t_13); __Pyx_INCREF(__pyx_t_1); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 67, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_7, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_7, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       } else {
         if (__pyx_t_13 >= PyTuple_GET_SIZE(__pyx_t_7)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_7, __pyx_t_13); __Pyx_INCREF(__pyx_t_1); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 74, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_7, __pyx_t_13); __Pyx_INCREF(__pyx_t_1); __pyx_t_13++; if (unlikely(0 < 0)) __PYX_ERR(0, 67, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_7, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 74, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_7, __pyx_t_13); __pyx_t_13++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 67, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       }
@@ -3674,42 +3674,42 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 74, __pyx_L1_error)
+          else __PYX_ERR(0, 67, __pyx_L1_error)
         }
         break;
       }
       __Pyx_GOTREF(__pyx_t_1);
     }
-    __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 74, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 67, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_u = __pyx_t_4;
 
-    /* "surprise/prediction_algorithms/weighted_slope_one.pyx":73
+    /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":66
  * 
  *         # mean ratings of all users: mu_u
  *         self.user_mean = [np.mean([r for (_, r) in trainset.ur[u]])             # <<<<<<<<<<<<<<
  *                           for u in trainset.all_users()]
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_mean); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 73, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_mean); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 66, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
+    __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_ur); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 73, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_ur); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 66, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_20 = __Pyx_GetItemInt(__pyx_t_6, __pyx_v_u, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 73, __pyx_L1_error)
+    __pyx_t_20 = __Pyx_GetItemInt(__pyx_t_6, __pyx_v_u, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 66, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_20);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     if (likely(PyList_CheckExact(__pyx_t_20)) || PyTuple_CheckExact(__pyx_t_20)) {
       __pyx_t_6 = __pyx_t_20; __Pyx_INCREF(__pyx_t_6); __pyx_t_16 = 0;
       __pyx_t_17 = NULL;
     } else {
-      __pyx_t_16 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_t_20); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 73, __pyx_L1_error)
+      __pyx_t_16 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_t_20); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 66, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
-      __pyx_t_17 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 73, __pyx_L1_error)
+      __pyx_t_17 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_17)) __PYX_ERR(0, 66, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
     for (;;) {
@@ -3717,17 +3717,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
         if (likely(PyList_CheckExact(__pyx_t_6))) {
           if (__pyx_t_16 >= PyList_GET_SIZE(__pyx_t_6)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_20 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_16); __Pyx_INCREF(__pyx_t_20); __pyx_t_16++; if (unlikely(0 < 0)) __PYX_ERR(0, 73, __pyx_L1_error)
+          __pyx_t_20 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_16); __Pyx_INCREF(__pyx_t_20); __pyx_t_16++; if (unlikely(0 < 0)) __PYX_ERR(0, 66, __pyx_L1_error)
           #else
-          __pyx_t_20 = PySequence_ITEM(__pyx_t_6, __pyx_t_16); __pyx_t_16++; if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 73, __pyx_L1_error)
+          __pyx_t_20 = PySequence_ITEM(__pyx_t_6, __pyx_t_16); __pyx_t_16++; if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 66, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_20);
           #endif
         } else {
           if (__pyx_t_16 >= PyTuple_GET_SIZE(__pyx_t_6)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_20 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_16); __Pyx_INCREF(__pyx_t_20); __pyx_t_16++; if (unlikely(0 < 0)) __PYX_ERR(0, 73, __pyx_L1_error)
+          __pyx_t_20 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_16); __Pyx_INCREF(__pyx_t_20); __pyx_t_16++; if (unlikely(0 < 0)) __PYX_ERR(0, 66, __pyx_L1_error)
           #else
-          __pyx_t_20 = PySequence_ITEM(__pyx_t_6, __pyx_t_16); __pyx_t_16++; if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 73, __pyx_L1_error)
+          __pyx_t_20 = PySequence_ITEM(__pyx_t_6, __pyx_t_16); __pyx_t_16++; if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 66, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_20);
           #endif
         }
@@ -3737,7 +3737,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 73, __pyx_L1_error)
+            else __PYX_ERR(0, 66, __pyx_L1_error)
           }
           break;
         }
@@ -3749,7 +3749,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
         if (unlikely(size != 2)) {
           if (size > 2) __Pyx_RaiseTooManyValuesError(2);
           else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-          __PYX_ERR(0, 73, __pyx_L1_error)
+          __PYX_ERR(0, 66, __pyx_L1_error)
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
         if (likely(PyTuple_CheckExact(sequence))) {
@@ -3762,15 +3762,15 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
         __Pyx_INCREF(__pyx_t_21);
         __Pyx_INCREF(__pyx_t_22);
         #else
-        __pyx_t_21 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 73, __pyx_L1_error)
+        __pyx_t_21 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_21)) __PYX_ERR(0, 66, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_21);
-        __pyx_t_22 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 73, __pyx_L1_error)
+        __pyx_t_22 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 66, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_22);
         #endif
         __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
       } else {
         Py_ssize_t index = -1;
-        __pyx_t_30 = PyObject_GetIter(__pyx_t_20); if (unlikely(!__pyx_t_30)) __PYX_ERR(0, 73, __pyx_L1_error)
+        __pyx_t_30 = PyObject_GetIter(__pyx_t_20); if (unlikely(!__pyx_t_30)) __PYX_ERR(0, 66, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_30);
         __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
         __pyx_t_15 = Py_TYPE(__pyx_t_30)->tp_iternext;
@@ -3778,7 +3778,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
         __Pyx_GOTREF(__pyx_t_21);
         index = 1; __pyx_t_22 = __pyx_t_15(__pyx_t_30); if (unlikely(!__pyx_t_22)) goto __pyx_L19_unpacking_failed;
         __Pyx_GOTREF(__pyx_t_22);
-        if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_30), 2) < 0) __PYX_ERR(0, 73, __pyx_L1_error)
+        if (__Pyx_IternextUnpackEndCheck(__pyx_t_15(__pyx_t_30), 2) < 0) __PYX_ERR(0, 66, __pyx_L1_error)
         __pyx_t_15 = NULL;
         __Pyx_DECREF(__pyx_t_30); __pyx_t_30 = 0;
         goto __pyx_L20_unpacking_done;
@@ -3786,14 +3786,14 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
         __Pyx_DECREF(__pyx_t_30); __pyx_t_30 = 0;
         __pyx_t_15 = NULL;
         if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-        __PYX_ERR(0, 73, __pyx_L1_error)
+        __PYX_ERR(0, 66, __pyx_L1_error)
         __pyx_L20_unpacking_done:;
       }
       __Pyx_XDECREF_SET(__pyx_v__, __pyx_t_21);
       __pyx_t_21 = 0;
       __Pyx_XDECREF_SET(__pyx_v_r, __pyx_t_22);
       __pyx_t_22 = 0;
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_v_r))) __PYX_ERR(0, 73, __pyx_L1_error)
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_v_r))) __PYX_ERR(0, 66, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_6 = NULL;
@@ -3809,13 +3809,13 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
     __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_6, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(__Pyx_ListComp_Append(__pyx_t_5, (PyObject*)__pyx_t_1))) __PYX_ERR(0, 73, __pyx_L1_error)
+    if (unlikely(__Pyx_ListComp_Append(__pyx_t_5, (PyObject*)__pyx_t_1))) __PYX_ERR(0, 66, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "surprise/prediction_algorithms/weighted_slope_one.pyx":74
+    /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":67
  *         # mean ratings of all users: mu_u
  *         self.user_mean = [np.mean([r for (_, r) in trainset.ur[u]])
  *                           for u in trainset.all_users()]             # <<<<<<<<<<<<<<
@@ -3825,17 +3825,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   }
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":73
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":66
  * 
  *         # mean ratings of all users: mu_u
  *         self.user_mean = [np.mean([r for (_, r) in trainset.ur[u]])             # <<<<<<<<<<<<<<
  *                           for u in trainset.all_users()]
  * 
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_user_mean, __pyx_t_5) < 0) __PYX_ERR(0, 73, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_user_mean, __pyx_t_5) < 0) __PYX_ERR(0, 66, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":76
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":69
  *                           for u in trainset.all_users()]
  * 
  *         return self             # <<<<<<<<<<<<<<
@@ -3847,7 +3847,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":28
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":28
  *         self.counts = virtual_count.ur
  * 
  *     def fit(self, trainset):             # <<<<<<<<<<<<<<
@@ -3874,7 +3874,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_dev.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_freq.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("surprise.prediction_algorithms.weighted_slope_one.WeightedSlopeOne.fit", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("kabirrec.surprise.prediction_algorithms.weighted_slope_one.WeightedSlopeOne.fit", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -3898,7 +3898,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   return __pyx_r;
 }
 
-/* "surprise/prediction_algorithms/weighted_slope_one.pyx":78
+/* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":71
  *         return self
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
@@ -3907,9 +3907,9 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_5estimate(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_5estimate = {"estimate", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_5estimate, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_5estimate(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_5estimate(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_5estimate = {"estimate", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_5estimate, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_5estimate(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_u = 0;
   PyObject *__pyx_v_i = 0;
@@ -3944,17 +3944,17 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_18weighted_slope_one
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_u)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, 1); __PYX_ERR(0, 78, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, 1); __PYX_ERR(0, 71, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_i)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, 2); __PYX_ERR(0, 78, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, 2); __PYX_ERR(0, 71, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "estimate") < 0)) __PYX_ERR(0, 78, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "estimate") < 0)) __PYX_ERR(0, 71, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -3969,21 +3969,21 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_18weighted_slope_one
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 78, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 71, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("surprise.prediction_algorithms.weighted_slope_one.WeightedSlopeOne.estimate", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("kabirrec.surprise.prediction_algorithms.weighted_slope_one.WeightedSlopeOne.estimate", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_4estimate(__pyx_self, __pyx_v_self, __pyx_v_u, __pyx_v_i);
+  __pyx_r = __pyx_pf_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_4estimate(__pyx_self, __pyx_v_self, __pyx_v_u, __pyx_v_i);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
-static PyObject *__pyx_gb_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_8estimate_2generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
+static PyObject *__pyx_gb_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_8estimate_2generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "surprise/prediction_algorithms/weighted_slope_one.pyx":89
+/* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":82
  *         est = self.user_mean[u]
  *         if Ri:
  *             est += sum(self.dev[i, j] for j in Ri) / len(Ri)             # <<<<<<<<<<<<<<
@@ -3991,27 +3991,27 @@ static PyObject *__pyx_gb_8surprise_21prediction_algorithms_18weighted_slope_one
  *         return est
  */
 
-static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_8estimate_genexpr(PyObject *__pyx_self) {
-  struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *__pyx_cur_scope;
+static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_8estimate_genexpr(PyObject *__pyx_self) {
+  struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *__pyx_cur_scope;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("genexpr", 0);
-  __pyx_cur_scope = (struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *)__pyx_tp_new_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr(__pyx_ptype_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr, __pyx_empty_tuple, NULL);
+  __pyx_cur_scope = (struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *)__pyx_tp_new_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr(__pyx_ptype_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr, __pyx_empty_tuple, NULL);
   if (unlikely(!__pyx_cur_scope)) {
-    __pyx_cur_scope = ((struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *)Py_None);
+    __pyx_cur_scope = ((struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 89, __pyx_L1_error)
+    __PYX_ERR(0, 82, __pyx_L1_error)
   } else {
     __Pyx_GOTREF(__pyx_cur_scope);
   }
-  __pyx_cur_scope->__pyx_outer_scope = (struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *) __pyx_self;
+  __pyx_cur_scope->__pyx_outer_scope = (struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *) __pyx_self;
   __Pyx_INCREF(((PyObject *)__pyx_cur_scope->__pyx_outer_scope));
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_outer_scope);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_8estimate_2generator, NULL, (PyObject *) __pyx_cur_scope, __pyx_n_s_genexpr, __pyx_n_s_WeightedSlopeOne_estimate_locals, __pyx_n_s_surprise_prediction_algorithms_w); if (unlikely(!gen)) __PYX_ERR(0, 89, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_8estimate_2generator, NULL, (PyObject *) __pyx_cur_scope, __pyx_n_s_genexpr, __pyx_n_s_WeightedSlopeOne_estimate_locals, __pyx_n_s_kabirrec_surprise_prediction_alg); if (unlikely(!gen)) __PYX_ERR(0, 82, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -4019,7 +4019,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_AddTraceback("surprise.prediction_algorithms.weighted_slope_one.WeightedSlopeOne.estimate.genexpr", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("kabirrec.surprise.prediction_algorithms.weighted_slope_one.WeightedSlopeOne.estimate.genexpr", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __Pyx_DECREF(((PyObject *)__pyx_cur_scope));
   __Pyx_XGIVEREF(__pyx_r);
@@ -4027,9 +4027,9 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   return __pyx_r;
 }
 
-static PyObject *__pyx_gb_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_8estimate_2generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value) /* generator body */
+static PyObject *__pyx_gb_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_8estimate_2generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value) /* generator body */
 {
-  struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *__pyx_cur_scope = ((struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *)__pyx_generator->closure);
+  struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *__pyx_cur_scope = ((struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *)__pyx_generator->closure);
   PyObject *__pyx_r = NULL;
   PyObject *__pyx_t_1 = NULL;
   Py_ssize_t __pyx_t_2;
@@ -4049,30 +4049,30 @@ static PyObject *__pyx_gb_8surprise_21prediction_algorithms_18weighted_slope_one
     return NULL;
   }
   __pyx_L3_first_run:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 89, __pyx_L1_error)
-  if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_Ri)) { __Pyx_RaiseClosureNameError("Ri"); __PYX_ERR(0, 89, __pyx_L1_error) }
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 82, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_Ri)) { __Pyx_RaiseClosureNameError("Ri"); __PYX_ERR(0, 82, __pyx_L1_error) }
   if (unlikely(__pyx_cur_scope->__pyx_outer_scope->__pyx_v_Ri == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
-    __PYX_ERR(0, 89, __pyx_L1_error)
+    __PYX_ERR(0, 82, __pyx_L1_error)
   }
   __pyx_t_1 = __pyx_cur_scope->__pyx_outer_scope->__pyx_v_Ri; __Pyx_INCREF(__pyx_t_1); __pyx_t_2 = 0;
   for (;;) {
     if (__pyx_t_2 >= PyList_GET_SIZE(__pyx_t_1)) break;
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-    __pyx_t_3 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_3); __pyx_t_2++; if (unlikely(0 < 0)) __PYX_ERR(0, 89, __pyx_L1_error)
+    __pyx_t_3 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_2); __Pyx_INCREF(__pyx_t_3); __pyx_t_2++; if (unlikely(0 < 0)) __PYX_ERR(0, 82, __pyx_L1_error)
     #else
-    __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 89, __pyx_L1_error)
+    __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_2); __pyx_t_2++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 82, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     #endif
     __Pyx_XGOTREF(__pyx_cur_scope->__pyx_v_j);
     __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v_j, __pyx_t_3);
     __Pyx_GIVEREF(__pyx_t_3);
     __pyx_t_3 = 0;
-    if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_self)) { __Pyx_RaiseClosureNameError("self"); __PYX_ERR(0, 89, __pyx_L1_error) }
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_outer_scope->__pyx_v_self, __pyx_n_s_dev); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 89, __pyx_L1_error)
+    if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_self)) { __Pyx_RaiseClosureNameError("self"); __PYX_ERR(0, 82, __pyx_L1_error) }
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_outer_scope->__pyx_v_self, __pyx_n_s_dev); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 82, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_i)) { __Pyx_RaiseClosureNameError("i"); __PYX_ERR(0, 89, __pyx_L1_error) }
-    __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 89, __pyx_L1_error)
+    if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_i)) { __Pyx_RaiseClosureNameError("i"); __PYX_ERR(0, 82, __pyx_L1_error) }
+    __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 82, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_INCREF(__pyx_cur_scope->__pyx_outer_scope->__pyx_v_i);
     __Pyx_GIVEREF(__pyx_cur_scope->__pyx_outer_scope->__pyx_v_i);
@@ -4080,7 +4080,7 @@ static PyObject *__pyx_gb_8surprise_21prediction_algorithms_18weighted_slope_one
     __Pyx_INCREF(__pyx_cur_scope->__pyx_v_j);
     __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_j);
     PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_cur_scope->__pyx_v_j);
-    __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 89, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 82, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -4100,7 +4100,7 @@ static PyObject *__pyx_gb_8surprise_21prediction_algorithms_18weighted_slope_one
     __pyx_cur_scope->__pyx_t_0 = 0;
     __Pyx_XGOTREF(__pyx_t_1);
     __pyx_t_2 = __pyx_cur_scope->__pyx_t_1;
-    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 89, __pyx_L1_error)
+    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 82, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
@@ -4125,7 +4125,7 @@ static PyObject *__pyx_gb_8surprise_21prediction_algorithms_18weighted_slope_one
   return __pyx_r;
 }
 
-/* "surprise/prediction_algorithms/weighted_slope_one.pyx":78
+/* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":71
  *         return self
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
@@ -4133,12 +4133,12 @@ static PyObject *__pyx_gb_8surprise_21prediction_algorithms_18weighted_slope_one
  *         if not (self.trainset.knows_user(u) and self.trainset.knows_item(i)):
  */
 
-static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_4estimate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_u, PyObject *__pyx_v_i) {
-  struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *__pyx_cur_scope;
+static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_4estimate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_u, PyObject *__pyx_v_i) {
+  struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *__pyx_cur_scope;
   PyObject *__pyx_v_est = NULL;
   PyObject *__pyx_v_j = NULL;
   CYTHON_UNUSED PyObject *__pyx_v__ = NULL;
-  PyObject *__pyx_gb_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_8estimate_2generator = 0;
+  PyObject *__pyx_gb_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_8estimate_2generator = 0;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -4156,11 +4156,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("estimate", 0);
-  __pyx_cur_scope = (struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *)__pyx_tp_new_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate(__pyx_ptype_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate, __pyx_empty_tuple, NULL);
+  __pyx_cur_scope = (struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *)__pyx_tp_new_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate(__pyx_ptype_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate, __pyx_empty_tuple, NULL);
   if (unlikely(!__pyx_cur_scope)) {
-    __pyx_cur_scope = ((struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *)Py_None);
+    __pyx_cur_scope = ((struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 78, __pyx_L1_error)
+    __PYX_ERR(0, 71, __pyx_L1_error)
   } else {
     __Pyx_GOTREF(__pyx_cur_scope);
   }
@@ -4171,16 +4171,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_i);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_i);
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":80
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":73
  *     def estimate(self, u, i):
  * 
  *         if not (self.trainset.knows_user(u) and self.trainset.knows_item(i)):             # <<<<<<<<<<<<<<
  *             raise PredictionImpossible('User and/or item is unknown.')
  * 
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_knows_user); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_knows_user); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -4195,19 +4195,19 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   }
   __pyx_t_2 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_3, __pyx_v_u) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_u);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 80, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_5) {
   } else {
     __pyx_t_1 = __pyx_t_5;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_knows_item); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_knows_item); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_t_4 = NULL;
@@ -4222,24 +4222,24 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   }
   __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_cur_scope->__pyx_v_i) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_cur_scope->__pyx_v_i);
   __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 80, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 80, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 73, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_1 = __pyx_t_5;
   __pyx_L4_bool_binop_done:;
   __pyx_t_5 = ((!__pyx_t_1) != 0);
   if (unlikely(__pyx_t_5)) {
 
-    /* "surprise/prediction_algorithms/weighted_slope_one.pyx":81
+    /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":74
  * 
  *         if not (self.trainset.knows_user(u) and self.trainset.knows_item(i)):
  *             raise PredictionImpossible('User and/or item is unknown.')             # <<<<<<<<<<<<<<
  * 
  *         # Ri: relevant items for i. This is the set of items j rated by u that
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_PredictionImpossible); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 81, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_PredictionImpossible); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 74, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = NULL;
     if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -4253,14 +4253,14 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
     }
     __pyx_t_2 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_4, __pyx_kp_u_User_and_or_item_is_unknown) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_kp_u_User_and_or_item_is_unknown);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 81, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 74, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(0, 81, __pyx_L1_error)
+    __PYX_ERR(0, 74, __pyx_L1_error)
 
-    /* "surprise/prediction_algorithms/weighted_slope_one.pyx":80
+    /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":73
  *     def estimate(self, u, i):
  * 
  *         if not (self.trainset.knows_user(u) and self.trainset.knows_item(i)):             # <<<<<<<<<<<<<<
@@ -4269,30 +4269,30 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
  */
   }
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":86
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":79
  *         # also have common users with i (i.e. at least one user has rated both
  *         # i and j).
  *         Ri = [j for (j, _) in self.trainset.ur[u] if self.freq[i, j] > 0]             # <<<<<<<<<<<<<<
  *         est = self.user_mean[u]
  *         if Ri:
  */
-  __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 79, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 79, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_ur); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_ur); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 79, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_4, __pyx_v_u); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 86, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_4, __pyx_v_u); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 79, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (likely(PyList_CheckExact(__pyx_t_3)) || PyTuple_CheckExact(__pyx_t_3)) {
     __pyx_t_4 = __pyx_t_3; __Pyx_INCREF(__pyx_t_4); __pyx_t_6 = 0;
     __pyx_t_7 = NULL;
   } else {
-    __pyx_t_6 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 86, __pyx_L1_error)
+    __pyx_t_6 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 79, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_7 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 86, __pyx_L1_error)
+    __pyx_t_7 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 79, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   for (;;) {
@@ -4300,17 +4300,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
       if (likely(PyList_CheckExact(__pyx_t_4))) {
         if (__pyx_t_6 >= PyList_GET_SIZE(__pyx_t_4)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_3 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_6); __Pyx_INCREF(__pyx_t_3); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 86, __pyx_L1_error)
+        __pyx_t_3 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_6); __Pyx_INCREF(__pyx_t_3); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 79, __pyx_L1_error)
         #else
-        __pyx_t_3 = PySequence_ITEM(__pyx_t_4, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 86, __pyx_L1_error)
+        __pyx_t_3 = PySequence_ITEM(__pyx_t_4, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 79, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         #endif
       } else {
         if (__pyx_t_6 >= PyTuple_GET_SIZE(__pyx_t_4)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_6); __Pyx_INCREF(__pyx_t_3); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 86, __pyx_L1_error)
+        __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_6); __Pyx_INCREF(__pyx_t_3); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(0, 79, __pyx_L1_error)
         #else
-        __pyx_t_3 = PySequence_ITEM(__pyx_t_4, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 86, __pyx_L1_error)
+        __pyx_t_3 = PySequence_ITEM(__pyx_t_4, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 79, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         #endif
       }
@@ -4320,7 +4320,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 86, __pyx_L1_error)
+          else __PYX_ERR(0, 79, __pyx_L1_error)
         }
         break;
       }
@@ -4332,7 +4332,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 86, __pyx_L1_error)
+        __PYX_ERR(0, 79, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -4345,15 +4345,15 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
       __Pyx_INCREF(__pyx_t_8);
       __Pyx_INCREF(__pyx_t_9);
       #else
-      __pyx_t_8 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 86, __pyx_L1_error)
+      __pyx_t_8 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 79, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_9 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 86, __pyx_L1_error)
+      __pyx_t_9 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 79, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       #endif
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_10 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 86, __pyx_L1_error)
+      __pyx_t_10 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 79, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_t_11 = Py_TYPE(__pyx_t_10)->tp_iternext;
@@ -4361,7 +4361,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
       __Pyx_GOTREF(__pyx_t_8);
       index = 1; __pyx_t_9 = __pyx_t_11(__pyx_t_10); if (unlikely(!__pyx_t_9)) goto __pyx_L8_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_9);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_11(__pyx_t_10), 2) < 0) __PYX_ERR(0, 86, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_11(__pyx_t_10), 2) < 0) __PYX_ERR(0, 79, __pyx_L1_error)
       __pyx_t_11 = NULL;
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       goto __pyx_L9_unpacking_done;
@@ -4369,16 +4369,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       __pyx_t_11 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 86, __pyx_L1_error)
+      __PYX_ERR(0, 79, __pyx_L1_error)
       __pyx_L9_unpacking_done:;
     }
     __Pyx_XDECREF_SET(__pyx_v_j, __pyx_t_8);
     __pyx_t_8 = 0;
     __Pyx_XDECREF_SET(__pyx_v__, __pyx_t_9);
     __pyx_t_9 = 0;
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_freq); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 86, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_freq); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 79, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 86, __pyx_L1_error)
+    __pyx_t_9 = PyTuple_New(2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 79, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_INCREF(__pyx_cur_scope->__pyx_v_i);
     __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_i);
@@ -4386,16 +4386,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
     __Pyx_INCREF(__pyx_v_j);
     __Pyx_GIVEREF(__pyx_v_j);
     PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_v_j);
-    __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 86, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_3, __pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 79, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_9 = PyObject_RichCompare(__pyx_t_8, __pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_9); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 86, __pyx_L1_error)
+    __pyx_t_9 = PyObject_RichCompare(__pyx_t_8, __pyx_int_0, Py_GT); __Pyx_XGOTREF(__pyx_t_9); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 79, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_9); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 86, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_9); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 79, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     if (__pyx_t_5) {
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_v_j))) __PYX_ERR(0, 86, __pyx_L1_error)
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_v_j))) __PYX_ERR(0, 79, __pyx_L1_error)
     }
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -4403,22 +4403,22 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   __pyx_cur_scope->__pyx_v_Ri = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":87
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":80
  *         # i and j).
  *         Ri = [j for (j, _) in self.trainset.ur[u] if self.freq[i, j] > 0]
  *         est = self.user_mean[u]             # <<<<<<<<<<<<<<
  *         if Ri:
  *             est += sum(self.dev[i, j] for j in Ri) / len(Ri)
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_user_mean); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_user_mean); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_u); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_u); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_est = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":88
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":81
  *         Ri = [j for (j, _) in self.trainset.ur[u] if self.freq[i, j] > 0]
  *         est = self.user_mean[u]
  *         if Ri:             # <<<<<<<<<<<<<<
@@ -4428,39 +4428,39 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   __pyx_t_5 = (PyList_GET_SIZE(__pyx_cur_scope->__pyx_v_Ri) != 0);
   if (__pyx_t_5) {
 
-    /* "surprise/prediction_algorithms/weighted_slope_one.pyx":89
+    /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":82
  *         est = self.user_mean[u]
  *         if Ri:
  *             est += sum(self.dev[i, j] for j in Ri) / len(Ri)             # <<<<<<<<<<<<<<
  * 
  *         return est
  */
-    __pyx_t_4 = __pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_8estimate_genexpr(((PyObject*)__pyx_cur_scope)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 89, __pyx_L1_error)
+    __pyx_t_4 = __pyx_pf_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_8estimate_genexpr(((PyObject*)__pyx_cur_scope)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 82, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_sum, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 89, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_sum, __pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 82, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __pyx_t_4 = __pyx_cur_scope->__pyx_v_Ri;
     __Pyx_INCREF(__pyx_t_4);
     if (unlikely(__pyx_t_4 == Py_None)) {
       PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
-      __PYX_ERR(0, 89, __pyx_L1_error)
+      __PYX_ERR(0, 82, __pyx_L1_error)
     }
-    __pyx_t_6 = PyList_GET_SIZE(__pyx_t_4); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 89, __pyx_L1_error)
+    __pyx_t_6 = PyList_GET_SIZE(__pyx_t_4); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 82, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = PyInt_FromSsize_t(__pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 89, __pyx_L1_error)
+    __pyx_t_4 = PyInt_FromSsize_t(__pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 82, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_9 = __Pyx_PyNumber_Divide(__pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 89, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyNumber_Divide(__pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 82, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_9); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 89, __pyx_L1_error)
+    __pyx_t_4 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_9); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 82, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     __Pyx_DECREF_SET(__pyx_v_est, __pyx_t_4);
     __pyx_t_4 = 0;
 
-    /* "surprise/prediction_algorithms/weighted_slope_one.pyx":88
+    /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":81
  *         Ri = [j for (j, _) in self.trainset.ur[u] if self.freq[i, j] > 0]
  *         est = self.user_mean[u]
  *         if Ri:             # <<<<<<<<<<<<<<
@@ -4469,7 +4469,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
  */
   }
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":91
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":84
  *             est += sum(self.dev[i, j] for j in Ri) / len(Ri)
  * 
  *         return est             # <<<<<<<<<<<<<<
@@ -4479,7 +4479,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   __pyx_r = __pyx_v_est;
   goto __pyx_L0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":78
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":71
  *         return self
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
@@ -4495,20 +4495,20 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18weighted_slope_one
   __Pyx_XDECREF(__pyx_t_8);
   __Pyx_XDECREF(__pyx_t_9);
   __Pyx_XDECREF(__pyx_t_10);
-  __Pyx_AddTraceback("surprise.prediction_algorithms.weighted_slope_one.WeightedSlopeOne.estimate", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("kabirrec.surprise.prediction_algorithms.weighted_slope_one.WeightedSlopeOne.estimate", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_est);
   __Pyx_XDECREF(__pyx_v_j);
   __Pyx_XDECREF(__pyx_v__);
-  __Pyx_XDECREF(__pyx_gb_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_8estimate_2generator);
+  __Pyx_XDECREF(__pyx_gb_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_8estimate_2generator);
   __Pyx_DECREF(((PyObject *)__pyx_cur_scope));
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":735
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":735
  * ctypedef npy_cdouble     complex_t
  * 
  * cdef inline object PyArray_MultiIterNew1(a):             # <<<<<<<<<<<<<<
@@ -4525,7 +4525,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew1", 0);
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":736
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":736
  * 
  * cdef inline object PyArray_MultiIterNew1(a):
  *     return PyArray_MultiIterNew(1, <void*>a)             # <<<<<<<<<<<<<<
@@ -4539,7 +4539,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":735
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":735
  * ctypedef npy_cdouble     complex_t
  * 
  * cdef inline object PyArray_MultiIterNew1(a):             # <<<<<<<<<<<<<<
@@ -4558,7 +4558,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew1(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":738
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":738
  *     return PyArray_MultiIterNew(1, <void*>a)
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):             # <<<<<<<<<<<<<<
@@ -4575,7 +4575,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew2", 0);
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":739
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":739
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)             # <<<<<<<<<<<<<<
@@ -4589,7 +4589,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":738
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":738
  *     return PyArray_MultiIterNew(1, <void*>a)
  * 
  * cdef inline object PyArray_MultiIterNew2(a, b):             # <<<<<<<<<<<<<<
@@ -4608,7 +4608,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew2(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":741
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":741
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):             # <<<<<<<<<<<<<<
@@ -4625,7 +4625,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew3", 0);
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":742
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":742
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)             # <<<<<<<<<<<<<<
@@ -4639,7 +4639,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":741
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":741
  *     return PyArray_MultiIterNew(2, <void*>a, <void*>b)
  * 
  * cdef inline object PyArray_MultiIterNew3(a, b, c):             # <<<<<<<<<<<<<<
@@ -4658,7 +4658,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew3(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":744
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":744
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):             # <<<<<<<<<<<<<<
@@ -4675,7 +4675,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew4", 0);
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":745
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":745
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)             # <<<<<<<<<<<<<<
@@ -4689,7 +4689,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":744
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":744
  *     return PyArray_MultiIterNew(3, <void*>a, <void*>b, <void*> c)
  * 
  * cdef inline object PyArray_MultiIterNew4(a, b, c, d):             # <<<<<<<<<<<<<<
@@ -4708,7 +4708,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew4(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":747
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":747
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):             # <<<<<<<<<<<<<<
@@ -4725,7 +4725,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("PyArray_MultiIterNew5", 0);
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":748
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":748
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)             # <<<<<<<<<<<<<<
@@ -4739,7 +4739,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":747
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":747
  *     return PyArray_MultiIterNew(4, <void*>a, <void*>b, <void*>c, <void*> d)
  * 
  * cdef inline object PyArray_MultiIterNew5(a, b, c, d, e):             # <<<<<<<<<<<<<<
@@ -4758,7 +4758,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyArray_MultiIterNew5(PyObject *__
   return __pyx_r;
 }
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":750
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":750
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):             # <<<<<<<<<<<<<<
@@ -4772,7 +4772,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("PyDataType_SHAPE", 0);
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":751
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":751
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):
  *     if PyDataType_HASSUBARRAY(d):             # <<<<<<<<<<<<<<
@@ -4782,7 +4782,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
   __pyx_t_1 = (PyDataType_HASSUBARRAY(__pyx_v_d) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":752
+    /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":752
  * cdef inline tuple PyDataType_SHAPE(dtype d):
  *     if PyDataType_HASSUBARRAY(d):
  *         return <tuple>d.subarray.shape             # <<<<<<<<<<<<<<
@@ -4794,7 +4794,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
     __pyx_r = ((PyObject*)__pyx_v_d->subarray->shape);
     goto __pyx_L0;
 
-    /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":751
+    /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":751
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):
  *     if PyDataType_HASSUBARRAY(d):             # <<<<<<<<<<<<<<
@@ -4803,7 +4803,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
  */
   }
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":754
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":754
  *         return <tuple>d.subarray.shape
  *     else:
  *         return ()             # <<<<<<<<<<<<<<
@@ -4817,7 +4817,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
     goto __pyx_L0;
   }
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":750
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":750
  *     return PyArray_MultiIterNew(5, <void*>a, <void*>b, <void*>c, <void*> d, <void*> e)
  * 
  * cdef inline tuple PyDataType_SHAPE(dtype d):             # <<<<<<<<<<<<<<
@@ -4832,7 +4832,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_PyDataType_SHAPE(PyArray_Descr *__
   return __pyx_r;
 }
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":929
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":929
  *     int _import_umath() except -1
  * 
  * cdef inline void set_array_base(ndarray arr, object base):             # <<<<<<<<<<<<<<
@@ -4844,7 +4844,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("set_array_base", 0);
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":930
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":930
  * 
  * cdef inline void set_array_base(ndarray arr, object base):
  *     Py_INCREF(base) # important to do this before stealing the reference below!             # <<<<<<<<<<<<<<
@@ -4853,7 +4853,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
   Py_INCREF(__pyx_v_base);
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":931
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":931
  * cdef inline void set_array_base(ndarray arr, object base):
  *     Py_INCREF(base) # important to do this before stealing the reference below!
  *     PyArray_SetBaseObject(arr, base)             # <<<<<<<<<<<<<<
@@ -4862,7 +4862,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
  */
   (void)(PyArray_SetBaseObject(__pyx_v_arr, __pyx_v_base));
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":929
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":929
  *     int _import_umath() except -1
  * 
  * cdef inline void set_array_base(ndarray arr, object base):             # <<<<<<<<<<<<<<
@@ -4874,7 +4874,7 @@ static CYTHON_INLINE void __pyx_f_5numpy_set_array_base(PyArrayObject *__pyx_v_a
   __Pyx_RefNannyFinishContext();
 }
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":933
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":933
  *     PyArray_SetBaseObject(arr, base)
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -4889,7 +4889,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   int __pyx_t_1;
   __Pyx_RefNannySetupContext("get_array_base", 0);
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":934
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":934
  * 
  * cdef inline object get_array_base(ndarray arr):
  *     base = PyArray_BASE(arr)             # <<<<<<<<<<<<<<
@@ -4898,7 +4898,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
  */
   __pyx_v_base = PyArray_BASE(__pyx_v_arr);
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":935
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":935
  * cdef inline object get_array_base(ndarray arr):
  *     base = PyArray_BASE(arr)
  *     if base is NULL:             # <<<<<<<<<<<<<<
@@ -4908,7 +4908,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   __pyx_t_1 = ((__pyx_v_base == NULL) != 0);
   if (__pyx_t_1) {
 
-    /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":936
+    /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":936
  *     base = PyArray_BASE(arr)
  *     if base is NULL:
  *         return None             # <<<<<<<<<<<<<<
@@ -4919,7 +4919,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
     __pyx_r = Py_None; __Pyx_INCREF(Py_None);
     goto __pyx_L0;
 
-    /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":935
+    /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":935
  * cdef inline object get_array_base(ndarray arr):
  *     base = PyArray_BASE(arr)
  *     if base is NULL:             # <<<<<<<<<<<<<<
@@ -4928,7 +4928,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
  */
   }
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":937
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":937
  *     if base is NULL:
  *         return None
  *     return <object>base             # <<<<<<<<<<<<<<
@@ -4940,7 +4940,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   __pyx_r = ((PyObject *)__pyx_v_base);
   goto __pyx_L0;
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":933
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":933
  *     PyArray_SetBaseObject(arr, base)
  * 
  * cdef inline object get_array_base(ndarray arr):             # <<<<<<<<<<<<<<
@@ -4955,7 +4955,7 @@ static CYTHON_INLINE PyObject *__pyx_f_5numpy_get_array_base(PyArrayObject *__py
   return __pyx_r;
 }
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":941
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":941
  * # Versions of the import_* functions which are more suitable for
  * # Cython code.
  * cdef inline int import_array() except -1:             # <<<<<<<<<<<<<<
@@ -4979,7 +4979,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("import_array", 0);
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":942
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":942
  * # Cython code.
  * cdef inline int import_array() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -4995,7 +4995,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":943
+      /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":943
  * cdef inline int import_array() except -1:
  *     try:
  *         __pyx_import_array()             # <<<<<<<<<<<<<<
@@ -5004,7 +5004,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
  */
       __pyx_t_4 = _import_array(); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(1, 943, __pyx_L3_error)
 
-      /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":942
+      /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":942
  * # Cython code.
  * cdef inline int import_array() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -5018,7 +5018,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     goto __pyx_L8_try_end;
     __pyx_L3_error:;
 
-    /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":944
+    /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":944
  *     try:
  *         __pyx_import_array()
  *     except Exception:             # <<<<<<<<<<<<<<
@@ -5033,7 +5033,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_7);
 
-      /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":945
+      /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":945
  *         __pyx_import_array()
  *     except Exception:
  *         raise ImportError("numpy.core.multiarray failed to import")             # <<<<<<<<<<<<<<
@@ -5049,7 +5049,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":942
+    /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":942
  * # Cython code.
  * cdef inline int import_array() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -5064,7 +5064,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
     __pyx_L8_try_end:;
   }
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":941
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":941
  * # Versions of the import_* functions which are more suitable for
  * # Cython code.
  * cdef inline int import_array() except -1:             # <<<<<<<<<<<<<<
@@ -5087,7 +5087,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_array(void) {
   return __pyx_r;
 }
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":947
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":947
  *         raise ImportError("numpy.core.multiarray failed to import")
  * 
  * cdef inline int import_umath() except -1:             # <<<<<<<<<<<<<<
@@ -5111,7 +5111,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("import_umath", 0);
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":948
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":948
  * 
  * cdef inline int import_umath() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -5127,7 +5127,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":949
+      /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":949
  * cdef inline int import_umath() except -1:
  *     try:
  *         _import_umath()             # <<<<<<<<<<<<<<
@@ -5136,7 +5136,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
  */
       __pyx_t_4 = _import_umath(); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(1, 949, __pyx_L3_error)
 
-      /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":948
+      /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":948
  * 
  * cdef inline int import_umath() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -5150,7 +5150,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     goto __pyx_L8_try_end;
     __pyx_L3_error:;
 
-    /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":950
+    /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":950
  *     try:
  *         _import_umath()
  *     except Exception:             # <<<<<<<<<<<<<<
@@ -5165,7 +5165,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_7);
 
-      /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":951
+      /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":951
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
@@ -5181,7 +5181,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":948
+    /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":948
  * 
  * cdef inline int import_umath() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -5196,7 +5196,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
     __pyx_L8_try_end:;
   }
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":947
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":947
  *         raise ImportError("numpy.core.multiarray failed to import")
  * 
  * cdef inline int import_umath() except -1:             # <<<<<<<<<<<<<<
@@ -5219,7 +5219,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_umath(void) {
   return __pyx_r;
 }
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":953
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":953
  *         raise ImportError("numpy.core.umath failed to import")
  * 
  * cdef inline int import_ufunc() except -1:             # <<<<<<<<<<<<<<
@@ -5243,7 +5243,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("import_ufunc", 0);
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":954
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":954
  * 
  * cdef inline int import_ufunc() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -5259,7 +5259,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     __Pyx_XGOTREF(__pyx_t_3);
     /*try:*/ {
 
-      /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":955
+      /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":955
  * cdef inline int import_ufunc() except -1:
  *     try:
  *         _import_umath()             # <<<<<<<<<<<<<<
@@ -5268,7 +5268,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
  */
       __pyx_t_4 = _import_umath(); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(1, 955, __pyx_L3_error)
 
-      /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":954
+      /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":954
  * 
  * cdef inline int import_ufunc() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -5282,7 +5282,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     goto __pyx_L8_try_end;
     __pyx_L3_error:;
 
-    /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":956
+    /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":956
  *     try:
  *         _import_umath()
  *     except Exception:             # <<<<<<<<<<<<<<
@@ -5297,7 +5297,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GOTREF(__pyx_t_7);
 
-      /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":957
+      /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":957
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
@@ -5313,7 +5313,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     goto __pyx_L5_except_error;
     __pyx_L5_except_error:;
 
-    /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":954
+    /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":954
  * 
  * cdef inline int import_ufunc() except -1:
  *     try:             # <<<<<<<<<<<<<<
@@ -5328,7 +5328,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
     __pyx_L8_try_end:;
   }
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":953
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":953
  *         raise ImportError("numpy.core.umath failed to import")
  * 
  * cdef inline int import_ufunc() except -1:             # <<<<<<<<<<<<<<
@@ -5351,7 +5351,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_import_ufunc(void) {
   return __pyx_r;
 }
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":967
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":967
  * 
  * 
  * cdef inline bint is_timedelta64_object(object obj):             # <<<<<<<<<<<<<<
@@ -5364,7 +5364,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_timedelta64_object(PyObject *__pyx_v_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("is_timedelta64_object", 0);
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":979
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":979
  *     bool
  *     """
  *     return PyObject_TypeCheck(obj, &PyTimedeltaArrType_Type)             # <<<<<<<<<<<<<<
@@ -5374,7 +5374,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_timedelta64_object(PyObject *__pyx_v_
   __pyx_r = PyObject_TypeCheck(__pyx_v_obj, (&PyTimedeltaArrType_Type));
   goto __pyx_L0;
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":967
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":967
  * 
  * 
  * cdef inline bint is_timedelta64_object(object obj):             # <<<<<<<<<<<<<<
@@ -5388,7 +5388,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_timedelta64_object(PyObject *__pyx_v_
   return __pyx_r;
 }
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":982
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":982
  * 
  * 
  * cdef inline bint is_datetime64_object(object obj):             # <<<<<<<<<<<<<<
@@ -5401,7 +5401,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_datetime64_object(PyObject *__pyx_v_o
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("is_datetime64_object", 0);
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":994
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":994
  *     bool
  *     """
  *     return PyObject_TypeCheck(obj, &PyDatetimeArrType_Type)             # <<<<<<<<<<<<<<
@@ -5411,7 +5411,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_datetime64_object(PyObject *__pyx_v_o
   __pyx_r = PyObject_TypeCheck(__pyx_v_obj, (&PyDatetimeArrType_Type));
   goto __pyx_L0;
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":982
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":982
  * 
  * 
  * cdef inline bint is_datetime64_object(object obj):             # <<<<<<<<<<<<<<
@@ -5425,7 +5425,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_datetime64_object(PyObject *__pyx_v_o
   return __pyx_r;
 }
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":997
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":997
  * 
  * 
  * cdef inline npy_datetime get_datetime64_value(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -5436,7 +5436,7 @@ static CYTHON_INLINE int __pyx_f_5numpy_is_datetime64_object(PyObject *__pyx_v_o
 static CYTHON_INLINE npy_datetime __pyx_f_5numpy_get_datetime64_value(PyObject *__pyx_v_obj) {
   npy_datetime __pyx_r;
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":1004
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":1004
  *     also needed.  That can be found using `get_datetime64_unit`.
  *     """
  *     return (<PyDatetimeScalarObject*>obj).obval             # <<<<<<<<<<<<<<
@@ -5446,7 +5446,7 @@ static CYTHON_INLINE npy_datetime __pyx_f_5numpy_get_datetime64_value(PyObject *
   __pyx_r = ((PyDatetimeScalarObject *)__pyx_v_obj)->obval;
   goto __pyx_L0;
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":997
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":997
  * 
  * 
  * cdef inline npy_datetime get_datetime64_value(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -5459,7 +5459,7 @@ static CYTHON_INLINE npy_datetime __pyx_f_5numpy_get_datetime64_value(PyObject *
   return __pyx_r;
 }
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":1007
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":1007
  * 
  * 
  * cdef inline npy_timedelta get_timedelta64_value(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -5470,7 +5470,7 @@ static CYTHON_INLINE npy_datetime __pyx_f_5numpy_get_datetime64_value(PyObject *
 static CYTHON_INLINE npy_timedelta __pyx_f_5numpy_get_timedelta64_value(PyObject *__pyx_v_obj) {
   npy_timedelta __pyx_r;
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":1011
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":1011
  *     returns the int64 value underlying scalar numpy timedelta64 object
  *     """
  *     return (<PyTimedeltaScalarObject*>obj).obval             # <<<<<<<<<<<<<<
@@ -5480,7 +5480,7 @@ static CYTHON_INLINE npy_timedelta __pyx_f_5numpy_get_timedelta64_value(PyObject
   __pyx_r = ((PyTimedeltaScalarObject *)__pyx_v_obj)->obval;
   goto __pyx_L0;
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":1007
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":1007
  * 
  * 
  * cdef inline npy_timedelta get_timedelta64_value(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -5493,7 +5493,7 @@ static CYTHON_INLINE npy_timedelta __pyx_f_5numpy_get_timedelta64_value(PyObject
   return __pyx_r;
 }
 
-/* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":1014
+/* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":1014
  * 
  * 
  * cdef inline NPY_DATETIMEUNIT get_datetime64_unit(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -5504,7 +5504,7 @@ static CYTHON_INLINE npy_timedelta __pyx_f_5numpy_get_timedelta64_value(PyObject
 static CYTHON_INLINE NPY_DATETIMEUNIT __pyx_f_5numpy_get_datetime64_unit(PyObject *__pyx_v_obj) {
   NPY_DATETIMEUNIT __pyx_r;
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":1018
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":1018
  *     returns the unit part of the dtype for a numpy datetime64 object.
  *     """
  *     return <NPY_DATETIMEUNIT>(<PyDatetimeScalarObject*>obj).obmeta.base             # <<<<<<<<<<<<<<
@@ -5512,7 +5512,7 @@ static CYTHON_INLINE NPY_DATETIMEUNIT __pyx_f_5numpy_get_datetime64_unit(PyObjec
   __pyx_r = ((NPY_DATETIMEUNIT)((PyDatetimeScalarObject *)__pyx_v_obj)->obmeta.base);
   goto __pyx_L0;
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":1014
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":1014
  * 
  * 
  * cdef inline NPY_DATETIMEUNIT get_datetime64_unit(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -5525,14 +5525,14 @@ static CYTHON_INLINE NPY_DATETIMEUNIT __pyx_f_5numpy_get_datetime64_unit(PyObjec
   return __pyx_r;
 }
 
-static struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *__pyx_freelist_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate[8];
-static int __pyx_freecount_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate = 0;
+static struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *__pyx_freelist_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate[8];
+static int __pyx_freecount_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate = 0;
 
-static PyObject *__pyx_tp_new_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+static PyObject *__pyx_tp_new_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
   PyObject *o;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate)))) {
-    o = (PyObject*)__pyx_freelist_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate[--__pyx_freecount_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate];
-    memset(o, 0, sizeof(struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate));
+  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate)))) {
+    o = (PyObject*)__pyx_freelist_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate[--__pyx_freecount_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate];
+    memset(o, 0, sizeof(struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate));
     (void) PyObject_INIT(o, t);
     PyObject_GC_Track(o);
   } else {
@@ -5542,22 +5542,22 @@ static PyObject *__pyx_tp_new_8surprise_21prediction_algorithms_18weighted_slope
   return o;
 }
 
-static void __pyx_tp_dealloc_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate(PyObject *o) {
-  struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *p = (struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *)o;
+static void __pyx_tp_dealloc_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate(PyObject *o) {
+  struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *p = (struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *)o;
   PyObject_GC_UnTrack(o);
   Py_CLEAR(p->__pyx_v_Ri);
   Py_CLEAR(p->__pyx_v_i);
   Py_CLEAR(p->__pyx_v_self);
-  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate)))) {
-    __pyx_freelist_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate[__pyx_freecount_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate++] = ((struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *)o);
+  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate)))) {
+    __pyx_freelist_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate[__pyx_freecount_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate++] = ((struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *)o);
   } else {
     (*Py_TYPE(o)->tp_free)(o);
   }
 }
 
-static int __pyx_tp_traverse_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate(PyObject *o, visitproc v, void *a) {
+static int __pyx_tp_traverse_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate(PyObject *o, visitproc v, void *a) {
   int e;
-  struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *p = (struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *)o;
+  struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *p = (struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *)o;
   if (p->__pyx_v_Ri) {
     e = (*v)(p->__pyx_v_Ri, a); if (e) return e;
   }
@@ -5570,9 +5570,9 @@ static int __pyx_tp_traverse_8surprise_21prediction_algorithms_18weighted_slope_
   return 0;
 }
 
-static int __pyx_tp_clear_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate(PyObject *o) {
+static int __pyx_tp_clear_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate(PyObject *o) {
   PyObject* tmp;
-  struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *p = (struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *)o;
+  struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *p = (struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate *)o;
   tmp = ((PyObject*)p->__pyx_v_Ri);
   p->__pyx_v_Ri = ((PyObject*)Py_None); Py_INCREF(Py_None);
   Py_XDECREF(tmp);
@@ -5585,12 +5585,12 @@ static int __pyx_tp_clear_8surprise_21prediction_algorithms_18weighted_slope_one
   return 0;
 }
 
-static PyTypeObject __pyx_type_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate = {
+static PyTypeObject __pyx_type_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate = {
   PyVarObject_HEAD_INIT(0, 0)
-  "surprise.prediction_algorithms.weighted_slope_one.__pyx_scope_struct__estimate", /*tp_name*/
-  sizeof(struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate), /*tp_basicsize*/
+  "kabirrec.surprise.prediction_algorithms.weighted_slope_one.__pyx_scope_struct__estimate", /*tp_name*/
+  sizeof(struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate, /*tp_dealloc*/
+  __pyx_tp_dealloc_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate, /*tp_dealloc*/
   #if PY_VERSION_HEX < 0x030800b4
   0, /*tp_print*/
   #endif
@@ -5617,8 +5617,8 @@ static PyTypeObject __pyx_type_8surprise_21prediction_algorithms_18weighted_slop
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
   0, /*tp_doc*/
-  __pyx_tp_traverse_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate, /*tp_traverse*/
-  __pyx_tp_clear_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate, /*tp_clear*/
+  __pyx_tp_traverse_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate, /*tp_traverse*/
+  __pyx_tp_clear_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
   0, /*tp_iter*/
@@ -5633,7 +5633,7 @@ static PyTypeObject __pyx_type_8surprise_21prediction_algorithms_18weighted_slop
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate, /*tp_new*/
+  __pyx_tp_new_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -5657,14 +5657,14 @@ static PyTypeObject __pyx_type_8surprise_21prediction_algorithms_18weighted_slop
   #endif
 };
 
-static struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *__pyx_freelist_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr[8];
-static int __pyx_freecount_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr = 0;
+static struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *__pyx_freelist_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr[8];
+static int __pyx_freecount_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr = 0;
 
-static PyObject *__pyx_tp_new_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+static PyObject *__pyx_tp_new_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
   PyObject *o;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr)))) {
-    o = (PyObject*)__pyx_freelist_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr[--__pyx_freecount_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr];
-    memset(o, 0, sizeof(struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr));
+  if (CYTHON_COMPILING_IN_CPYTHON && likely((__pyx_freecount_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr > 0) & (t->tp_basicsize == sizeof(struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr)))) {
+    o = (PyObject*)__pyx_freelist_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr[--__pyx_freecount_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr];
+    memset(o, 0, sizeof(struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr));
     (void) PyObject_INIT(o, t);
     PyObject_GC_Track(o);
   } else {
@@ -5674,22 +5674,22 @@ static PyObject *__pyx_tp_new_8surprise_21prediction_algorithms_18weighted_slope
   return o;
 }
 
-static void __pyx_tp_dealloc_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr(PyObject *o) {
-  struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *)o;
+static void __pyx_tp_dealloc_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr(PyObject *o) {
+  struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *)o;
   PyObject_GC_UnTrack(o);
   Py_CLEAR(p->__pyx_outer_scope);
   Py_CLEAR(p->__pyx_v_j);
   Py_CLEAR(p->__pyx_t_0);
-  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr)))) {
-    __pyx_freelist_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr[__pyx_freecount_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr++] = ((struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *)o);
+  if (CYTHON_COMPILING_IN_CPYTHON && ((__pyx_freecount_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr < 8) & (Py_TYPE(o)->tp_basicsize == sizeof(struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr)))) {
+    __pyx_freelist_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr[__pyx_freecount_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr++] = ((struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *)o);
   } else {
     (*Py_TYPE(o)->tp_free)(o);
   }
 }
 
-static int __pyx_tp_traverse_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr(PyObject *o, visitproc v, void *a) {
+static int __pyx_tp_traverse_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr(PyObject *o, visitproc v, void *a) {
   int e;
-  struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *)o;
+  struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *p = (struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr *)o;
   if (p->__pyx_outer_scope) {
     e = (*v)(((PyObject *)p->__pyx_outer_scope), a); if (e) return e;
   }
@@ -5702,12 +5702,12 @@ static int __pyx_tp_traverse_8surprise_21prediction_algorithms_18weighted_slope_
   return 0;
 }
 
-static PyTypeObject __pyx_type_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr = {
+static PyTypeObject __pyx_type_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr = {
   PyVarObject_HEAD_INIT(0, 0)
-  "surprise.prediction_algorithms.weighted_slope_one.__pyx_scope_struct_1_genexpr", /*tp_name*/
-  sizeof(struct __pyx_obj_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr), /*tp_basicsize*/
+  "kabirrec.surprise.prediction_algorithms.weighted_slope_one.__pyx_scope_struct_1_genexpr", /*tp_name*/
+  sizeof(struct __pyx_obj_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr), /*tp_basicsize*/
   0, /*tp_itemsize*/
-  __pyx_tp_dealloc_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr, /*tp_dealloc*/
+  __pyx_tp_dealloc_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr, /*tp_dealloc*/
   #if PY_VERSION_HEX < 0x030800b4
   0, /*tp_print*/
   #endif
@@ -5734,7 +5734,7 @@ static PyTypeObject __pyx_type_8surprise_21prediction_algorithms_18weighted_slop
   0, /*tp_as_buffer*/
   Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
   0, /*tp_doc*/
-  __pyx_tp_traverse_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr, /*tp_traverse*/
+  __pyx_tp_traverse_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr, /*tp_traverse*/
   0, /*tp_clear*/
   0, /*tp_richcompare*/
   0, /*tp_weaklistoffset*/
@@ -5750,7 +5750,7 @@ static PyTypeObject __pyx_type_8surprise_21prediction_algorithms_18weighted_slop
   0, /*tp_dictoffset*/
   0, /*tp_init*/
   0, /*tp_alloc*/
-  __pyx_tp_new_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr, /*tp_new*/
+  __pyx_tp_new_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr, /*tp_new*/
   0, /*tp_free*/
   0, /*tp_is_gc*/
   0, /*tp_bases*/
@@ -5857,6 +5857,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_iteritems, __pyx_k_iteritems, sizeof(__pyx_k_iteritems), 0, 0, 1, 1},
   {&__pyx_n_s_j, __pyx_k_j, sizeof(__pyx_k_j), 0, 0, 1, 1},
   {&__pyx_n_s_j_idx, __pyx_k_j_idx, sizeof(__pyx_k_j_idx), 0, 0, 1, 1},
+  {&__pyx_n_s_kabirrec_surprise_prediction_alg, __pyx_k_kabirrec_surprise_prediction_alg, sizeof(__pyx_k_kabirrec_surprise_prediction_alg), 0, 0, 1, 1},
+  {&__pyx_kp_s_kabirrec_surprise_prediction_alg_2, __pyx_k_kabirrec_surprise_prediction_alg_2, sizeof(__pyx_k_kabirrec_surprise_prediction_alg_2), 0, 0, 1, 0},
   {&__pyx_n_s_knows_item, __pyx_k_knows_item, sizeof(__pyx_k_knows_item), 0, 0, 1, 1},
   {&__pyx_n_s_knows_user, __pyx_k_knows_user, sizeof(__pyx_k_knows_user), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
@@ -5882,8 +5884,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_six, __pyx_k_six, sizeof(__pyx_k_six), 0, 0, 1, 1},
   {&__pyx_n_s_six_moves, __pyx_k_six_moves, sizeof(__pyx_k_six_moves), 0, 0, 1, 1},
   {&__pyx_n_s_sum, __pyx_k_sum, sizeof(__pyx_k_sum), 0, 0, 1, 1},
-  {&__pyx_n_s_surprise_prediction_algorithms_w, __pyx_k_surprise_prediction_algorithms_w, sizeof(__pyx_k_surprise_prediction_algorithms_w), 0, 0, 1, 1},
-  {&__pyx_kp_s_surprise_prediction_algorithms_w_2, __pyx_k_surprise_prediction_algorithms_w_2, sizeof(__pyx_k_surprise_prediction_algorithms_w_2), 0, 0, 1, 0},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_throw, __pyx_k_throw, sizeof(__pyx_k_throw), 0, 0, 1, 1},
   {&__pyx_n_s_trainset, __pyx_k_trainset, sizeof(__pyx_k_trainset), 0, 0, 1, 1},
@@ -5898,7 +5898,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
   __pyx_builtin_enumerate = __Pyx_GetBuiltinName(__pyx_n_s_enumerate); if (!__pyx_builtin_enumerate) __PYX_ERR(0, 46, __pyx_L1_error)
-  __pyx_builtin_sum = __Pyx_GetBuiltinName(__pyx_n_s_sum); if (!__pyx_builtin_sum) __PYX_ERR(0, 89, __pyx_L1_error)
+  __pyx_builtin_sum = __Pyx_GetBuiltinName(__pyx_n_s_sum); if (!__pyx_builtin_sum) __PYX_ERR(0, 82, __pyx_L1_error)
   __pyx_builtin_ImportError = __Pyx_GetBuiltinName(__pyx_n_s_ImportError); if (!__pyx_builtin_ImportError) __PYX_ERR(1, 945, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
@@ -5909,7 +5909,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":945
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":945
  *         __pyx_import_array()
  *     except Exception:
  *         raise ImportError("numpy.core.multiarray failed to import")             # <<<<<<<<<<<<<<
@@ -5920,7 +5920,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":951
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":951
  *         _import_umath()
  *     except Exception:
  *         raise ImportError("numpy.core.umath failed to import")             # <<<<<<<<<<<<<<
@@ -5931,7 +5931,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":23
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":23
  *     """
  * 
  *     def __init__(self, virtual_count):             # <<<<<<<<<<<<<<
@@ -5941,9 +5941,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__3 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_virtual_count); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
-  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_w_2, __pyx_n_s_init, 23, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_kabirrec_surprise_prediction_alg_2, __pyx_n_s_init, 23, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 23, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":28
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":28
  *         self.counts = virtual_count.ur
  * 
  *     def fit(self, trainset):             # <<<<<<<<<<<<<<
@@ -5953,19 +5953,19 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__6 = PyTuple_Pack(19, __pyx_n_s_self, __pyx_n_s_trainset, __pyx_n_s_n_items, __pyx_n_s_freq, __pyx_n_s_dev, __pyx_n_s_u, __pyx_n_s_i, __pyx_n_s_j, __pyx_n_s_r_ui, __pyx_n_s_r_uj, __pyx_n_s_u_ratings, __pyx_n_s_u_count, __pyx_n_s_i_idx, __pyx_n_s_ir1, __pyx_n_s_j_idx, __pyx_n_s_ir2, __pyx_n_s_min_count, __pyx_n_s__5, __pyx_n_s_r); if (unlikely(!__pyx_tuple__6)) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__6);
   __Pyx_GIVEREF(__pyx_tuple__6);
-  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(2, 0, 19, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_w_2, __pyx_n_s_fit, 28, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(2, 0, 19, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__6, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_kabirrec_surprise_prediction_alg_2, __pyx_n_s_fit, 28, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 28, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":78
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":71
  *         return self
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
  * 
  *         if not (self.trainset.knows_user(u) and self.trainset.knows_item(i)):
  */
-  __pyx_tuple__8 = PyTuple_Pack(9, __pyx_n_s_self, __pyx_n_s_u, __pyx_n_s_i, __pyx_n_s_Ri, __pyx_n_s_est, __pyx_n_s_j, __pyx_n_s__5, __pyx_n_s_genexpr, __pyx_n_s_genexpr); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 78, __pyx_L1_error)
+  __pyx_tuple__8 = PyTuple_Pack(9, __pyx_n_s_self, __pyx_n_s_u, __pyx_n_s_i, __pyx_n_s_Ri, __pyx_n_s_est, __pyx_n_s_j, __pyx_n_s__5, __pyx_n_s_genexpr, __pyx_n_s_genexpr); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__8);
   __Pyx_GIVEREF(__pyx_tuple__8);
-  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(3, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_w_2, __pyx_n_s_estimate, 78, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 78, __pyx_L1_error)
+  __pyx_codeobj__9 = (PyObject*)__Pyx_PyCode_New(3, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__8, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_kabirrec_surprise_prediction_alg_2, __pyx_n_s_estimate, 71, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__9)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -6021,22 +6021,22 @@ static int __Pyx_modinit_type_init_code(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate) < 0) __PYX_ERR(0, 78, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate) < 0) __PYX_ERR(0, 71, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
-  __pyx_type_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate.tp_print = 0;
+  __pyx_type_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate.tp_print = 0;
   #endif
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate.tp_dictoffset && __pyx_type_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate.tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate.tp_dictoffset && __pyx_type_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate.tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
   }
-  __pyx_ptype_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate = &__pyx_type_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate;
-  if (PyType_Ready(&__pyx_type_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr) < 0) __PYX_ERR(0, 89, __pyx_L1_error)
+  __pyx_ptype_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate = &__pyx_type_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct__estimate;
+  if (PyType_Ready(&__pyx_type_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr) < 0) __PYX_ERR(0, 82, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
-  __pyx_type_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr.tp_print = 0;
+  __pyx_type_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr.tp_print = 0;
   #endif
-  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr.tp_dictoffset && __pyx_type_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr.tp_getattro == PyObject_GenericGetAttr)) {
-    __pyx_type_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr.tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr.tp_dictoffset && __pyx_type_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr.tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_type_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr.tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
   }
-  __pyx_ptype_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr = &__pyx_type_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr;
+  __pyx_ptype_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr = &__pyx_type_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one___pyx_scope_struct_1_genexpr;
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -6295,14 +6295,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_surprise__prediction_algorithms__weighted_slope_one) {
+  if (__pyx_module_is_main_kabirrec__surprise__prediction_algorithms__weighted_slope_one) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "surprise.prediction_algorithms.weighted_slope_one")) {
-      if (unlikely(PyDict_SetItemString(modules, "surprise.prediction_algorithms.weighted_slope_one", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "kabirrec.surprise.prediction_algorithms.weighted_slope_one")) {
+      if (unlikely(PyDict_SetItemString(modules, "kabirrec.surprise.prediction_algorithms.weighted_slope_one", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -6323,7 +6323,7 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":9
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":9
  * 
  * cimport numpy as np  # noqa
  * import numpy as np             # <<<<<<<<<<<<<<
@@ -6335,7 +6335,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":10
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":10
  * cimport numpy as np  # noqa
  * import numpy as np
  * from six.moves import range             # <<<<<<<<<<<<<<
@@ -6356,7 +6356,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":11
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":11
  * import numpy as np
  * from six.moves import range
  * from six import iteritems             # <<<<<<<<<<<<<<
@@ -6377,7 +6377,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":13
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":13
  * from six import iteritems
  * 
  * from .algo_base import AlgoBase             # <<<<<<<<<<<<<<
@@ -6398,7 +6398,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":14
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":14
  * 
  * from .algo_base import AlgoBase
  * from .predictions import PredictionImpossible             # <<<<<<<<<<<<<<
@@ -6419,7 +6419,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":17
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":17
  * 
  * 
  * class WeightedSlopeOne(AlgoBase):             # <<<<<<<<<<<<<<
@@ -6435,46 +6435,46 @@ if (!__Pyx_RefNanny) {
   __pyx_t_1 = 0;
   __pyx_t_1 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_t_2, __pyx_n_s_WeightedSlopeOne, __pyx_n_s_WeightedSlopeOne, (PyObject *) NULL, __pyx_n_s_surprise_prediction_algorithms_w, __pyx_kp_s_A_simple_yet_accurate_collaborat); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 17, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_t_2, __pyx_n_s_WeightedSlopeOne, __pyx_n_s_WeightedSlopeOne, (PyObject *) NULL, __pyx_n_s_kabirrec_surprise_prediction_alg, __pyx_kp_s_A_simple_yet_accurate_collaborat); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 17, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":23
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":23
  *     """
  * 
  *     def __init__(self, virtual_count):             # <<<<<<<<<<<<<<
  * 
  *         AlgoBase.__init__(self)
  */
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_1__init__, 0, __pyx_n_s_WeightedSlopeOne___init, NULL, __pyx_n_s_surprise_prediction_algorithms_w, __pyx_d, ((PyObject *)__pyx_codeobj__4)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 23, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_1__init__, 0, __pyx_n_s_WeightedSlopeOne___init, NULL, __pyx_n_s_kabirrec_surprise_prediction_alg, __pyx_d, ((PyObject *)__pyx_codeobj__4)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_init, __pyx_t_4) < 0) __PYX_ERR(0, 23, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":28
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":28
  *         self.counts = virtual_count.ur
  * 
  *     def fit(self, trainset):             # <<<<<<<<<<<<<<
  *         n_items = trainset.n_items
  * 
  */
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_3fit, 0, __pyx_n_s_WeightedSlopeOne_fit, NULL, __pyx_n_s_surprise_prediction_algorithms_w, __pyx_d, ((PyObject *)__pyx_codeobj__7)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 28, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_3fit, 0, __pyx_n_s_WeightedSlopeOne_fit, NULL, __pyx_n_s_kabirrec_surprise_prediction_alg, __pyx_d, ((PyObject *)__pyx_codeobj__7)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_fit, __pyx_t_4) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":78
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":71
  *         return self
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
  * 
  *         if not (self.trainset.knows_user(u) and self.trainset.knows_item(i)):
  */
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_5estimate, 0, __pyx_n_s_WeightedSlopeOne_estimate, NULL, __pyx_n_s_surprise_prediction_algorithms_w, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 78, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_8kabirrec_8surprise_21prediction_algorithms_18weighted_slope_one_16WeightedSlopeOne_5estimate, 0, __pyx_n_s_WeightedSlopeOne_estimate, NULL, __pyx_n_s_kabirrec_surprise_prediction_alg, __pyx_d, ((PyObject *)__pyx_codeobj__9)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_estimate, __pyx_t_4) < 0) __PYX_ERR(0, 78, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_estimate, __pyx_t_4) < 0) __PYX_ERR(0, 71, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":17
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":17
  * 
  * 
  * class WeightedSlopeOne(AlgoBase):             # <<<<<<<<<<<<<<
@@ -6489,7 +6489,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/weighted_slope_one.pyx":1
+  /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":1
  * """             # <<<<<<<<<<<<<<
  * the :mod:`weighted_slope_one` module includes the :class:`WeightedSlopeOne` algorithm.
  * """
@@ -6499,7 +6499,7 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_2) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "../../../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":1014
+  /* "../../../../AppData/Roaming/Python/Python310/site-packages/numpy/__init__.pxd":1014
  * 
  * 
  * cdef inline NPY_DATETIMEUNIT get_datetime64_unit(object obj) nogil:             # <<<<<<<<<<<<<<
@@ -6517,11 +6517,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_4);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init surprise.prediction_algorithms.weighted_slope_one", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init kabirrec.surprise.prediction_algorithms.weighted_slope_one", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init surprise.prediction_algorithms.weighted_slope_one");
+    PyErr_SetString(PyExc_ImportError, "init kabirrec.surprise.prediction_algorithms.weighted_slope_one");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();

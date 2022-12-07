@@ -71,7 +71,7 @@ else:
 
 setup(
     name='kabirrec',
-    version='1.0.1',
+    version='1.0.0',
     description='A recommendation system with cold start, similar items and user specific recommendation',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
