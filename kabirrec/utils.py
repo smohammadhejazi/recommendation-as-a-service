@@ -1,3 +1,10 @@
+"""
+This file contains util functions for different parts of the RecommendationService.
+Part of it is original code and the rest is edited code from sklearn library to implement
+KModes to cluster users based on their categorical info like occupation, age, favorite genre and etc.
+Functions from sklearn are copied here and edited, so the library could be portable and more independent
+"""
+
 # imports
 from sklearn.metrics.pairwise import *
 from sklearn.metrics.cluster._unsupervised import *
@@ -10,6 +17,13 @@ from sklearn.metrics.pairwise import _return_float_dtype, _dist_wrapper, _num_sa
 
 
 def matching_dissimilarity(a, b):
+    """
+    Compares two vectors and returns number of different elements
+
+    :param a: vector a
+    :param b: vector b
+    :return: number of different elements
+    """
     result = np.sum(a != b)
     return result
 

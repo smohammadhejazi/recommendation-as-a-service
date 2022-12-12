@@ -1,3 +1,8 @@
+"""
+This file contains the RecommendationService class
+"""
+
+
 import pandas as pd
 from .services.cold_start import ColdStart
 from .services.similar_items import SimilarItems
@@ -5,6 +10,12 @@ from .services.user_specific import UserSpecific
 
 
 class RecommendationService:
+    """
+    A class to control the usage of ColdStart, SimilarItems, UserSpecific modules.
+    Read csv files of dataset and use each module generator to get access to services modules
+    and use them to recommend items or predict ratings.
+    """
+
     def __init__(self):
         self.user_info = None
         self.user_ratings = None
@@ -13,27 +24,67 @@ class RecommendationService:
     def read_csv_data(self, user_info_path, user_ratings_path, item_info_path,
                       info_columns,  ratings_columns, item_columns,
                       info_sep, ratings_sep, item_sep):
+        """
+        Reads the csv files of dataset and saves it in the class
+
+        :param user_info_path: csv file path of users' info
+        :param user_ratings_path: csv file path of users' ratings to items
+        :param item_info_path: csv file path of items' info
+        :param info_columns: columns of users' info csv
+        :param ratings_columns: columns of users' ratings csv
+        :param item_columns: columns of items' info
+        :param info_sep: csv separator of users' info csv
+        :param ratings_sep: csv separator of users' ratings csv
+        :param item_sep: csv separator of items' info
+        """
         self.user_info = pd.read_csv(user_info_path, sep=info_sep, names=info_columns)
         self.user_ratings = pd.read_csv(user_ratings_path, sep=ratings_sep, names=ratings_columns)
         self.item_info = pd.read_csv(item_info_path, sep=item_sep, names=item_columns, encoding="ISO-8859-1")
 
     def cold_start_module(self, options=None):
+        """
+        Generates the ColdStart module with the currently saved dataset
+
+        :param options: options for the cold start module:
+            verbose: True/False
+        :return: returns the ColdStart object
+        """
         if options is None:
             options = {}
         return ColdStart(self.user_ratings, options=options)
 
     def similar_items_module(self, options=None):
+        """
+        Generates the SimilarItem module with the currently saved dataset
+
+        :param options: options for the cold start module:
+            verbose: True/False
+        :return: returns the SimilarItem object
+        """
         if options is None:
             options = {}
         return SimilarItems(self.user_ratings, self.item_info, options=options)
 
     def user_specific_module(self, options=None):
+        """
+        Generates the UserSpecific module with the currently saved dataset
+
+        :param options: options for the cold start module:
+            verbose: True/False
+            k: None/number of clusters if given then the process of finding optimal clusters won't happen.
+            top_n: number of predicted items. A table of predicted ratings for n unrated items of users is created
+                    for later querying.
+        :return: returns the UserSpecific object
+        """
         if options is None:
             options = {}
         return UserSpecific(self.user_ratings, self.user_info, self.item_info, options=options)
 
 
 if __name__ == "__main__":
+    """
+    Examples of how to use the library
+    """
     recommendation_service = RecommendationService()
 
     recommendation_service.read_csv_data(

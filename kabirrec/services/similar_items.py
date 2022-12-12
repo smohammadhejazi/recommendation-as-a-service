@@ -1,3 +1,8 @@
+"""
+This file contains ColdStart class/module
+"""
+
+
 from .module_base import ModuleBase
 from ..surprise import Dataset
 from ..surprise import KNNBasic
@@ -6,6 +11,12 @@ from ..surprise import Reader
 
 class SimilarItems(ModuleBase):
     def __init__(self, user_rating, item_info, options=None):
+        """
+        :param user_rating: Users' ratings csv
+        :param item_info: Items' info csv
+        :param options: Options dictionary
+        """
+
         if options is None:
             options = {}
         ModuleBase.__init__(self, user_rating, options)
@@ -13,16 +24,30 @@ class SimilarItems(ModuleBase):
         self.algo = None
 
     def name_to_id(self, name):
+        """
+        Get a name of item and returns its id from items' info csv
+        :param name: Name of item
+        :return: Id of item
+        """
         # csv reads ids as integer but we need string in inner_id
         movie = self.item_info[self.item_info["movie_title"] == name]
         return movie["movie_id"].item()
 
     def id_to_name(self, iid):
+        """
+        Get a id of item and returns its name from items' info csv
+        :param iid: Id of item
+        :return: Name of item
+        """
         # after converting to string, here we convert back
         movie = self.item_info[self.item_info["movie_id"] == int(iid)]
         return movie["movie_title"].item()
 
     def fit(self):
+        """
+        Fits the class and prepares the required things for recommend function
+        """
+
         if self.verbose:
             print("Fitting the algorithm...")
         reader = Reader(rating_scale=(1, 5))
@@ -38,6 +63,12 @@ class SimilarItems(ModuleBase):
             print("Fitting is done.")
 
     def recommend(self, item, k=10):
+        """
+        Recommend k items similar to the item given
+        :param item: item to find similar items to
+        :param k: number of similar items
+        :return: List of (id, names) of similar items
+        """
         if self.is_fit is False:
             raise ValueError("Algorithm is not fit.")
         if self.verbose:
@@ -55,7 +86,7 @@ class SimilarItems(ModuleBase):
             self.algo.trainset.to_raw_iid(inner_id) for inner_id in toy_story_neighbors_inner_ids
         )
 
-        toy_story_neighbors = (self.id_to_name(rid) for rid in toy_story_neighbors_rids)
+        toy_story_neighbors = ((rid, self.id_to_name(rid)) for rid in toy_story_neighbors_rids)
 
         if self.verbose:
             print("{} nearest items found.".format(k))

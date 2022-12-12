@@ -1,3 +1,8 @@
+"""
+This file contains ColdStart class/module.
+"""
+
+
 import time
 import pandas as pd
 import numpy as np
@@ -13,7 +18,19 @@ from ..surprise import Reader
 
 
 class UserSpecific(ModuleBase):
+    """
+    This class recommends items based on user's previous ratings.
+    First users are clustered using KMods, then using weighted slope one algorithm
+    unrated items are predicted and sorted for final recommendation.
+    """
     def __init__(self, user_rating, user_info, item_info, options=None):
+        """
+        :param user_rating: Users' ratings csv
+        :param user_info: Users' info csv
+        :param item_info: Items' ratings csv
+        :param options: Options dictionary
+        """
+
         if options is None:
             options = {}
         ModuleBase.__init__(self, user_rating, options)
@@ -26,20 +43,37 @@ class UserSpecific(ModuleBase):
         self.k_start = None
         self.k_end = None
         self.optimal_k = options.get("k", None)
+        self.top_n_dict = None
         self.manual_cluster = False if options.get("k", None) is None else True
         self.top_n = options.get("top_n", 10)
 
     def name_to_id(self, name):
+        """
+        Get a name of item and returns its id from items' info csv
+        :param name: Name of item
+        :return: Id of item
+        """
         # csv reads ids as integer but we need string in inner_id
         movie = self.item_info[self.item_info["movie_title"] == name]
         return movie["movie_id"].item()
 
     def id_to_name(self, iid):
+        """
+        Get a id of item and returns its name from items' info csv
+        :param iid: Id of item
+        :return: Name of item
+        """
         # after converting to string, here we convert back
         movie = self.item_info[self.item_info["movie_id"] == int(iid)]
         return movie["movie_title"].item()
 
     def set_optimal_k_clusters(self, k_start, k_end):
+        """
+        Find optimal number of clusters between k_start and k_end
+        :param k_start: start number to find optimal number of cluster
+        :param k_end: end number to find optimal number of cluster
+        :return: optimal number of clusters
+        """
         if self.verbose:
             print("Finding optimal cluster...")
         score = []
@@ -68,6 +102,14 @@ class UserSpecific(ModuleBase):
         return optimal_cluster
 
     def generate_virtual_rating_count(self, k):
+        """
+        This function clusters users into k different clusters. The return panda frames are used later
+        in weighted slope one algorithm.
+        :param k: number of clusters
+        :return: two panda frames:
+            virtual_rating: mean of item ratings of all the users in the cluster
+            virtual_count: number of ratings to items of all users in the cluster
+        """
         virtual_rating = pd.DataFrame(columns=["user_id", "item_id", "rating_mean"])
         virtual_count = pd.DataFrame(columns=["user_id", "item_id", "rating_count"])
 
@@ -98,6 +140,11 @@ class UserSpecific(ModuleBase):
         return virtual_rating, virtual_count
 
     def draw_clusters_graph(self, path=None):
+        """
+        Plots graph of fit_time, distortion and Silhouette score for different number of clusters.
+        This function can be used when automatic clustering is on.
+        :param path: path of the plot to be saved
+        """
         if self.is_fit is False:
             raise ValueError("Algorithm is not fit.")
         if self.manual_cluster:
@@ -133,7 +180,13 @@ class UserSpecific(ModuleBase):
             plt.savefig(path)
         plt.show()
 
-    def set_top_n(self, predictions, n=10):
+    def set_top_n(self, predictions, top_n=10):
+        """
+        Builds the prediction table of unrated items for all users
+        :param predictions: predictions of unrated items provided by algo.test
+        :param top_n: number of top items to be stored for later query
+        :return: prediction table
+        """
         # First map the predictions to each user.
         top_n = defaultdict(list)
         for uid, iid, true_r, est, _ in predictions:
@@ -142,11 +195,15 @@ class UserSpecific(ModuleBase):
         # Then sort the predictions for each user and retrieve the k highest ones.
         for uid, user_ratings in top_n.items():
             user_ratings.sort(key=lambda x: x[1], reverse=True)
-            top_n[uid] = user_ratings[:n]
+            top_n[uid] = user_ratings[:top_n]
 
-        self.top_n = top_n
+        self.top_n_dict = top_n
 
     def fit(self, k_start=1, k_end=2):
+        """
+        Fits the class and prepares the required things for recommend function.
+        First clusters users using KModes, then fits the weighted slope one algorithm for later use.
+        """
         if k_start >= k_end:
             raise ValueError("Error: k_start should be smaller than k_end")
         if self.verbose:
@@ -200,13 +257,27 @@ class UserSpecific(ModuleBase):
             print("Fitting is done.")
 
     def predict_rating(self, user_id, item_id):
+        """
+        Predict the rating of an item
+        :param user_id: specified user
+        :param item_id: specified item
+        :return: prediction object
+        """
+
         if self.is_fit is False:
             raise ValueError("Algorithm is not fit.")
         prediction_rating_object = self.algo.predict(user_id, item_id)
         return prediction_rating_object
 
     def recommend(self, user_id, n=10):
-        items = self.top_n[user_id]
+        """
+        Recommends n items based on user history
+        :param user_id: specified user
+        :param n: number of items to be recommended, max = self.top_n in options dictionary
+        :return: list of n items
+        """
+
+        items = self.top_n_dict[user_id]
         recommendation_table = []
         for i in range(n):
             entry = (items[i][0], self.id_to_name(items[i][0]), items[i][1])
