@@ -1,6 +1,6 @@
 FROM python:3-alpine
 
-RUN pip install flask kabirrec
+RUN pip install flask numpy Cython kabirrec
 
 WORKDIR /app
 
