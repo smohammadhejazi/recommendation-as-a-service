@@ -51,7 +51,7 @@ class RecommendationService:
         """
         if options is None:
             options = {}
-        return ColdStart(self.user_ratings, options=options)
+        return ColdStart(self.user_ratings, self.item_info, options=options)
 
     def similar_items_module(self, options=None):
         """

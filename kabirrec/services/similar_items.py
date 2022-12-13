@@ -19,29 +19,8 @@ class SimilarItems(ModuleBase):
 
         if options is None:
             options = {}
-        ModuleBase.__init__(self, user_rating, options)
-        self.item_info = item_info
+        ModuleBase.__init__(self, user_rating=user_rating, item_info=item_info, options=options)
         self.algo = None
-
-    def name_to_id(self, name):
-        """
-        Get a name of item and returns its id from items' info csv
-        :param name: Name of item
-        :return: Id of item
-        """
-        # csv reads ids as integer but we need string in inner_id
-        movie = self.item_info[self.item_info["movie_title"] == name]
-        return movie["movie_id"].item()
-
-    def id_to_name(self, iid):
-        """
-        Get a id of item and returns its name from items' info csv
-        :param iid: Id of item
-        :return: Name of item
-        """
-        # after converting to string, here we convert back
-        movie = self.item_info[self.item_info["movie_id"] == int(iid)]
-        return movie["movie_title"].item()
 
     def fit(self):
         """

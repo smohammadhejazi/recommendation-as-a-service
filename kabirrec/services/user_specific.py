@@ -33,9 +33,7 @@ class UserSpecific(ModuleBase):
 
         if options is None:
             options = {}
-        ModuleBase.__init__(self, user_rating, options)
-        self.user_info = user_info
-        self.item_info = item_info
+        ModuleBase.__init__(self, user_rating=user_rating, user_info=user_info, item_info=item_info, options=options)
         self.algo = None
         self.clusters_score = None
         self.clusters_cost = None
@@ -46,26 +44,6 @@ class UserSpecific(ModuleBase):
         self.top_n_dict = None
         self.manual_cluster = False if options.get("k", None) is None else True
         self.top_n = options.get("top_n", 10)
-
-    def name_to_id(self, name):
-        """
-        Get a name of item and returns its id from items' info csv
-        :param name: Name of item
-        :return: Id of item
-        """
-        # csv reads ids as integer but we need string in inner_id
-        movie = self.item_info[self.item_info["movie_title"] == name]
-        return movie["movie_id"].item()
-
-    def id_to_name(self, iid):
-        """
-        Get a id of item and returns its name from items' info csv
-        :param iid: Id of item
-        :return: Name of item
-        """
-        # after converting to string, here we convert back
-        movie = self.item_info[self.item_info["movie_id"] == int(iid)]
-        return movie["movie_title"].item()
 
     def set_optimal_k_clusters(self, k_start, k_end):
         """

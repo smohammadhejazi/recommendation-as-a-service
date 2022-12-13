@@ -11,7 +11,7 @@ class ColdStart(ModuleBase):
     This class represents ColdStart module which is used to build a table
     of all items sorted by their ratings from highest to lowest.
     """
-    def __init__(self, user_rating, options=None):
+    def __init__(self, user_rating, item_info, options=None):
         """
         :param user_rating: User ratings csv
         :param options: Options dictionary
@@ -19,7 +19,7 @@ class ColdStart(ModuleBase):
 
         if options is None:
             options = {}
-        ModuleBase.__init__(self, user_rating, options)
+        ModuleBase.__init__(self, user_rating=user_rating, item_info=item_info, options=options)
         self.popular_table = None
 
     def fit(self):
@@ -44,4 +44,7 @@ class ColdStart(ModuleBase):
 
         if self.is_fit is False:
             raise ValueError("Algorithm is not fit.")
-        return self.popular_table.head(n)
+        result = []
+        for index, row in self.popular_table.head(n).iterrows():
+            result.append((row["item_id"], self.id_to_name(row["item_id"]), row["rating"]))
+        return result
