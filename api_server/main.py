@@ -1,14 +1,17 @@
 import json
 from flask import Flask, request
 from kabirrec import RecommendationService
+from kabirrec.services import ColdStart
+from kabirrec.services import SimilarItems
+from kabirrec.services import UserSpecific
 
 # TODO change .. to .
 DEFAULT_DATASET_PATH = "../dataset/ml-100k/"
 
 recommendation_service = RecommendationService()
-cold_start = None
-similar_items = None
-user_specific = None
+cold_start: ColdStart = None
+similar_items: SimilarItems = None
+user_specific: UserSpecific = None
 
 
 app = Flask(__name__)
@@ -34,21 +37,61 @@ def load_csv():
 
 
 @app.route('/start-coldstart', methods=["POST"])
-def generate_cold_start():
+def start_cold_start():
+    global cold_start
     options = request.get_json()
     verbose = options.get("verbose", False)
     cold_start = recommendation_service.cold_start_module(options={"verbose": verbose})
     cold_start.fit()
-    return json.dumps({"message": "data was successfully loaded"}), 200
+    return json.dumps({"message": "ColdStart module is ready for use"}), 200
 
 
-@app.route('/coldstart')
+@app.route('/coldstart', methods=["POST"])
 def cold_start():
     options = request.get_json()
-    verbose = options.get("n", 10)
-    items = cold_start.recommend(5)
-    item_list = []
-    return json.dumps({"items_list"})
+    n = int(options.get("n", 10))
+    items = cold_start.recommend(n)
+    return json.dumps({"items_list": items})
+
+
+@app.route('/start-similaritems', methods=["POST"])
+def start_similar_items():
+    global similar_items
+    options = request.get_json()
+    verbose = options.get("verbose", False)
+    similar_items = recommendation_service.similar_items_module(options={"verbose": verbose})
+    similar_items.fit()
+    return json.dumps({"message": "SimilarItems module is ready for use"}), 200
+
+
+@app.route('/similaritems', methods=["POST"])
+def similar_items():
+    options = request.get_json()
+    item_name = options.get("name")
+    n = int(options.get("n", 10))
+    items = similar_items.recommend(item_name, n)
+    return json.dumps({"items_list": items})
+
+
+@app.route('/start-userspecific', methods=["POST"])
+def start_user_specific():
+    global user_specific
+    options = request.get_json()
+    verbose = options.get("verbose", False)
+    k = int(options.get("k", None))
+    top_n = int(options.get("top_n", None))
+    user_specific = recommendation_service.user_specific_module(options={"verbose": verbose, "k": k, "top_n": top_n})
+    user_specific.fit()
+    return json.dumps({"message": "UserSpecific module is ready for use"}), 200
+
+
+@app.route('/userspecific', methods=["POST"])
+def user_specific():
+    options = request.get_json()
+    userid = options.get("userid")
+    n = int(options.get("n", None))
+    items = user_specific.recommend(userid, n)
+    return json.dumps({"items_list": items})
 
 
 if __name__ == "__main__":
