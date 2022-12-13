@@ -20,4 +20,5 @@ if __name__ == "__main__":
     cold_start = recommendation_service.cold_start_module(options={"verbose": True})
     cold_start.fit()
     items = cold_start.recommend(5)
-    print(items.head(5))
+    for movie in items:
+        print(movie)
