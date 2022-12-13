@@ -41,33 +41,33 @@ class SimilarItems(ModuleBase):
         if self.verbose:
             print("Fitting is done.")
 
-    def recommend(self, item, k=10):
+    def recommend(self, item, n=10):
         """
         Recommend k items similar to the item given
         :param item: item to find similar items to
-        :param k: number of similar items
+        :param n: number of similar items
         :return: List of (id, names) of similar items
         """
         if self.is_fit is False:
             raise ValueError("Algorithm is not fit.")
         if self.verbose:
-            print("Finding {} nearest items...".format(k))
+            print("Finding {} nearest items...".format(n))
         toy_story_raw_id = self.name_to_id(item)
 
         # Convert into inner id of the train set
         toy_story_inner_id = self.algo.trainset.to_inner_iid(toy_story_raw_id)
 
         # Get the inner ids of the closest 10 movies
-        toy_story_neighbors_inner_ids = self.algo.get_neighbors(toy_story_inner_id, k=k)
+        toy_story_neighbors_inner_ids = self.algo.get_neighbors(toy_story_inner_id, k=n)
 
         # Convert inner ids to real ids
         toy_story_neighbors_rids = (
             self.algo.trainset.to_raw_iid(inner_id) for inner_id in toy_story_neighbors_inner_ids
         )
 
-        toy_story_neighbors = ((rid, self.id_to_name(rid)) for rid in toy_story_neighbors_rids)
+        toy_story_neighbors = [(rid, self.id_to_name(rid)) for rid in toy_story_neighbors_rids]
 
         if self.verbose:
-            print("{} nearest items found.".format(k))
+            print("{} nearest items found.".format(n))
 
         return toy_story_neighbors

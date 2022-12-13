@@ -46,5 +46,5 @@ class ColdStart(ModuleBase):
             raise ValueError("Algorithm is not fit.")
         result = []
         for index, row in self.popular_table.head(n).iterrows():
-            result.append((row["item_id"], self.id_to_name(row["item_id"]), row["rating"]))
+            result.append((int(row["item_id"]), self.id_to_name(row["item_id"]), int(row["rating"])))
         return result

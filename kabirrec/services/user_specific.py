@@ -166,16 +166,16 @@ class UserSpecific(ModuleBase):
         :return: prediction table
         """
         # First map the predictions to each user.
-        top_n = defaultdict(list)
+        top_n_dict = defaultdict(list)
         for uid, iid, true_r, est, _ in predictions:
-            top_n[uid].append((iid, est))
+            top_n_dict[uid].append((iid, est))
 
         # Then sort the predictions for each user and retrieve the k highest ones.
-        for uid, user_ratings in top_n.items():
+        for uid, user_ratings in top_n_dict.items():
             user_ratings.sort(key=lambda x: x[1], reverse=True)
-            top_n[uid] = user_ratings[:top_n]
+            top_n_dict[uid] = user_ratings[:top_n]
 
-        self.top_n_dict = top_n
+        self.top_n_dict = top_n_dict
 
     def fit(self, k_start=1, k_end=2):
         """
@@ -228,7 +228,7 @@ class UserSpecific(ModuleBase):
         test_set = train_set.build_anti_testset()
         predictions = self.algo.test(test_set)
 
-        self.set_top_n(predictions, n=self.top_n)
+        self.set_top_n(predictions, top_n=self.top_n)
         self.is_fit = True
         if self.verbose:
             print("Tables are built.")

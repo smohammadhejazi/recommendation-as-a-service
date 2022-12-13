@@ -107,7 +107,7 @@ if __name__ == "__main__":
 
     similar_items = recommendation_service.similar_items_module(options={"verbose": True})
     similar_items.fit()
-    items = similar_items.recommend("Toy Story (1995)", k=5)
+    items = similar_items.recommend("Toy Story (1995)", n=5)
     for movie in items:
         print(movie)
 
