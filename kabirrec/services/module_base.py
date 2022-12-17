@@ -17,8 +17,10 @@ class ModuleBase:
         self.user_info = user_info
         self.item_info = item_info
         self.options = options
-        self.verbose = self.options.get("verbose", False)
         self.is_fit = False
+        self.verbose = self.options.get("verbose", False)
+        if self.verbose is None:
+            self.verbose = False
 
     def name_to_id(self, name):
         """
@@ -26,7 +28,7 @@ class ModuleBase:
         :param name: Name of item
         :return: Id of item
         """
-        movie = self.item_info[self.item_info["movie_title"] == name]
+        movie = self.item_info[self.item_info["movie_title"] == name].head(1)
         return movie["movie_id"].item()
 
     def id_to_name(self, iid):
@@ -35,5 +37,5 @@ class ModuleBase:
         :param iid: Id of item
         :return: Name of item
         """
-        movie = self.item_info[self.item_info["movie_id"] == int(iid)]
+        movie = self.item_info[self.item_info["movie_id"] == int(iid)].head(1)
         return movie["movie_title"].item()

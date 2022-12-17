@@ -41,7 +41,7 @@ class SimilarItems(ModuleBase):
         if self.verbose:
             print("Fitting is done.")
 
-    def recommend(self, item, n=10):
+    def recommend(self, item: str, n: int = 10):
         """
         Recommend k items similar to the item given
         :param item: item to find similar items to

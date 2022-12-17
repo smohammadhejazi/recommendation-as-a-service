@@ -40,10 +40,12 @@ class UserSpecific(ModuleBase):
         self.clusters_fit_time = None
         self.k_start = None
         self.k_end = None
-        self.optimal_k = options.get("k", None)
         self.top_n_dict = None
-        self.manual_cluster = False if options.get("k", None) is None else True
+        self.optimal_k = options.get("k", None)
+        self.manual_cluster = False if self.optimal_k is None else True
         self.top_n = options.get("top_n", 10)
+        if self.top_n is None:
+            self.top_n = 10
 
     def set_optimal_k_clusters(self, k_start, k_end):
         """
@@ -247,7 +249,7 @@ class UserSpecific(ModuleBase):
         prediction_rating_object = self.algo.predict(user_id, item_id)
         return prediction_rating_object
 
-    def recommend(self, user_id, n=10):
+    def recommend(self, user_id: str, n: int = 10):
         """
         Recommends n items based on user history
         :param user_id: specified user
