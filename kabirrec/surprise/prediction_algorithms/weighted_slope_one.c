@@ -2155,6 +2155,7 @@ static const char __pyx_k_dev[] = "dev";
 static const char __pyx_k_doc[] = "__doc__";
 static const char __pyx_k_est[] = "est";
 static const char __pyx_k_fit[] = "fit";
+static const char __pyx_k_int[] = "int_";
 static const char __pyx_k_ir1[] = "ir1";
 static const char __pyx_k_ir2[] = "ir2";
 static const char __pyx_k_six[] = "six";
@@ -2172,7 +2173,6 @@ static const char __pyx_k_send[] = "send";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_close[] = "close";
 static const char __pyx_k_i_idx[] = "i_idx";
-static const char __pyx_k_int32[] = "int32";
 static const char __pyx_k_j_idx[] = "j_idx";
 static const char __pyx_k_numpy[] = "numpy";
 static const char __pyx_k_range[] = "range";
@@ -2249,7 +2249,7 @@ static PyObject *__pyx_n_s_i;
 static PyObject *__pyx_n_s_i_idx;
 static PyObject *__pyx_n_s_import;
 static PyObject *__pyx_n_s_init;
-static PyObject *__pyx_n_s_int32;
+static PyObject *__pyx_n_s_int;
 static PyObject *__pyx_n_s_ir1;
 static PyObject *__pyx_n_s_ir2;
 static PyObject *__pyx_n_s_iteritems;
@@ -2615,7 +2615,7 @@ static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_18weighted
  * 
  *         AlgoBase.fit(self, trainset)             # <<<<<<<<<<<<<<
  * 
- *         freq = np.zeros((trainset.n_items, trainset.n_items), np.int32)
+ *         freq = np.zeros((trainset.n_items, trainset.n_items), np.int_)
  */
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_AlgoBase); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -2672,7 +2672,7 @@ static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_18weighted
   /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":40
  *         AlgoBase.fit(self, trainset)
  * 
- *         freq = np.zeros((trainset.n_items, trainset.n_items), np.int32)             # <<<<<<<<<<<<<<
+ *         freq = np.zeros((trainset.n_items, trainset.n_items), np.int_)             # <<<<<<<<<<<<<<
  *         dev = np.zeros((trainset.n_items, trainset.n_items), np.double)
  * 
  */
@@ -2695,7 +2695,7 @@ static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_18weighted
   __pyx_t_2 = 0;
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_int32); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 40, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_int); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -2772,7 +2772,7 @@ static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_18weighted
 
   /* "kabirrec/surprise/prediction_algorithms/weighted_slope_one.pyx":41
  * 
- *         freq = np.zeros((trainset.n_items, trainset.n_items), np.int32)
+ *         freq = np.zeros((trainset.n_items, trainset.n_items), np.int_)
  *         dev = np.zeros((trainset.n_items, trainset.n_items), np.double)             # <<<<<<<<<<<<<<
  * 
  *         # Computation of freq and dev arrays.
@@ -5851,7 +5851,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_i_idx, __pyx_k_i_idx, sizeof(__pyx_k_i_idx), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
   {&__pyx_n_s_init, __pyx_k_init, sizeof(__pyx_k_init), 0, 0, 1, 1},
-  {&__pyx_n_s_int32, __pyx_k_int32, sizeof(__pyx_k_int32), 0, 0, 1, 1},
+  {&__pyx_n_s_int, __pyx_k_int, sizeof(__pyx_k_int), 0, 0, 1, 1},
   {&__pyx_n_s_ir1, __pyx_k_ir1, sizeof(__pyx_k_ir1), 0, 0, 1, 1},
   {&__pyx_n_s_ir2, __pyx_k_ir2, sizeof(__pyx_k_ir2), 0, 0, 1, 1},
   {&__pyx_n_s_iteritems, __pyx_k_iteritems, sizeof(__pyx_k_iteritems), 0, 0, 1, 1},
