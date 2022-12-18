@@ -5,8 +5,10 @@ from kabirrec.services import ColdStart
 from kabirrec.services import SimilarItems
 from kabirrec.services import UserSpecific
 
-# TODO change .. to .
-DEFAULT_DATASET_PATH = "../dataset/ml-100k/"
+# Runtime
+DEFAULT_DATASET_PATH = "./dataset/ml-100k/"
+# Test
+# DEFAULT_DATASET_PATH = "../dataset/ml-100k/"
 
 recommendation_service = RecommendationService()
 cold_start: ColdStart = None
@@ -154,6 +156,7 @@ def user_specific():
 
 
 if __name__ == "__main__":
-    # TODO change port later to 80
-    # app.run(host='0.0.0.0', port=8080)
-    app.run(host='localhost', port=7878)
+    # Runtime
+    app.run(host='0.0.0.0', port=8080)
+    # Test
+    # app.run(host='localhost', port=7878)

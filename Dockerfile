@@ -24,6 +24,7 @@ WORKDIR /app
 
 COPY --from=build /root/.local /root/.local
 ENV PATH=/root/.local/bin:$PATH
-
 COPY ./api_server ./
+
+EXPOSE 8080
 CMD [ "python", "server.py" ]
