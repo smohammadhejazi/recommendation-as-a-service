@@ -19,8 +19,6 @@ class ModuleBase:
         self.options = options
         self.is_fit = False
         self.verbose = self.options.get("verbose", False)
-        if self.verbose is None:
-            self.verbose = False
 
     def name_to_id(self, name):
         """
