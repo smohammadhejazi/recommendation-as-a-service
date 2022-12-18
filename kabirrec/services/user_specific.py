@@ -40,12 +40,9 @@ class UserSpecific(ModuleBase):
         self.clusters_fit_time = None
         self.k_start = None
         self.k_end = None
-        self.top_n_dict = None
+        self.sorted_predictions = None
         self.optimal_k = options.get("k", None)
         self.manual_cluster = False if self.optimal_k is None else True
-        self.top_n = options.get("top_n", 10)
-        if self.top_n is None:
-            self.top_n = 10
 
     def set_optimal_k_clusters(self, k_start, k_end):
         """
@@ -55,7 +52,7 @@ class UserSpecific(ModuleBase):
         :return: optimal number of clusters
         """
         if self.verbose:
-            print("Finding optimal cluster...")
+            print("Finding optimal cluster between {} and {}".format(k_start, k_end))
         score = []
         cost = []
         fit_time = []
@@ -160,31 +157,36 @@ class UserSpecific(ModuleBase):
             plt.savefig(path)
         plt.show()
 
-    def set_top_n(self, predictions, top_n=10):
+    def set_top_n(self, predictions):
         """
         Builds the prediction table of unrated items for all users
         :param predictions: predictions of unrated items provided by algo.test
-        :param top_n: number of top items to be stored for later query
         :return: prediction table
         """
         # First map the predictions to each user.
-        top_n_dict = defaultdict(list)
+        sorted_predictions = defaultdict(list)
         for uid, iid, true_r, est, _ in predictions:
-            top_n_dict[uid].append((iid, est))
+            sorted_predictions[uid].append((iid, est))
 
         # Then sort the predictions for each user and retrieve the k highest ones.
-        for uid, user_ratings in top_n_dict.items():
+        for uid, user_ratings in sorted_predictions.items():
             user_ratings.sort(key=lambda x: x[1], reverse=True)
-            top_n_dict[uid] = user_ratings[:top_n]
+            sorted_predictions[uid] = user_ratings
 
-        self.top_n_dict = top_n_dict
+        self.sorted_predictions = sorted_predictions
 
-    def fit(self, k_start=1, k_end=2):
+    def fit(self, k_start=None, k_end=None):
         """
         Fits the class and prepares the required things for recommend function.
         First clusters users using KModes, then fits the weighted slope one algorithm for later use.
         """
-        if k_start >= k_end:
+
+        if k_start is None:
+            k_start = 2
+        if k_end is None:
+            k_end = int(self.user_info.shape[0] / 2)
+
+        if not self.manual_cluster and k_start >= k_end:
             raise ValueError("Error: k_start should be smaller than k_end")
         if self.verbose:
             print("Fitting the algorithm...")
@@ -193,7 +195,7 @@ class UserSpecific(ModuleBase):
         self.k_end = k_end
 
         # get optimal number of clusters
-        if self.optimal_k is None:
+        if not self.manual_cluster:
             self.optimal_k = self.set_optimal_k_clusters(k_start, k_end)
 
         # cluster with optimal k
@@ -230,7 +232,7 @@ class UserSpecific(ModuleBase):
         test_set = train_set.build_anti_testset()
         predictions = self.algo.test(test_set)
 
-        self.set_top_n(predictions, top_n=self.top_n)
+        self.set_top_n(predictions)
         self.is_fit = True
         if self.verbose:
             print("Tables are built.")
@@ -249,15 +251,17 @@ class UserSpecific(ModuleBase):
         prediction_rating_object = self.algo.predict(user_id, item_id)
         return prediction_rating_object
 
-    def recommend(self, user_id: str, n: int = 10):
+    def recommend(self, user_id, n):
         """
         Recommends n items based on user history
         :param user_id: specified user
-        :param n: number of items to be recommended, max = self.top_n in options dictionary
+        :param n: number of items to be recommended
         :return: list of n items
         """
 
-        items = self.top_n_dict[user_id]
+        if self.is_fit is False:
+            raise ValueError("Algorithm is not fit.")
+        items = self.sorted_predictions[user_id]
         recommendation_table = []
         for i in range(n):
             entry = (items[i][0], self.id_to_name(items[i][0]), items[i][1])
