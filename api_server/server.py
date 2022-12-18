@@ -5,17 +5,11 @@ from kabirrec.services import ColdStart
 from kabirrec.services import SimilarItems
 from kabirrec.services import UserSpecific
 
-# Runtime
-DEFAULT_DATASET_PATH = "./dataset/ml-100k/"
-# Test
-# DEFAULT_DATASET_PATH = "../dataset/ml-100k/"
-
 recommendation_service = RecommendationService()
 cold_start: ColdStart = None
 similar_items: SimilarItems = None
 user_specific: UserSpecific = None
-DATA_LOADED = False
-
+data_loaded = False
 
 app = Flask(__name__)
 
@@ -31,9 +25,9 @@ def get_value(dictionary, key, key_type, default):
 
 @app.route('/load-csv', methods=["POST"])
 def load_csv():
-    global DATA_LOADED
+    global data_loaded
     options = request.get_json(silent=True)
-    path = get_value(options, "path", str, DEFAULT_DATASET_PATH)
+    path = get_value(options, "path", str, default_data_path)
 
     try:
         recommendation_service.read_csv_data(
@@ -50,14 +44,14 @@ def load_csv():
         )
     except FileNotFoundError as e:
         return json.dumps({"message": "path is invalid"}), 400
-    DATA_LOADED = True
+    data_loaded = True
     return json.dumps({"message": "data was successfully loaded"}), 200
 
 
 @app.route('/start-coldstart', methods=["POST"])
 def start_cold_start():
     global cold_start
-    if not DATA_LOADED:
+    if not data_loaded:
         return json.dumps({"message": "data is not loaded yet"}), 400
     options = request.get_json(silent=True)
     verbose = get_value(options, "verbose", bool, False)
@@ -69,7 +63,7 @@ def start_cold_start():
 
 @app.route('/coldstart', methods=["POST"])
 def cold_start():
-    if not DATA_LOADED:
+    if not data_loaded:
         return json.dumps({"message": "data is not loaded yet"}), 400
     options = request.get_json(silent=True)
     n = get_value(options, "n", int, 10)
@@ -84,7 +78,7 @@ def cold_start():
 @app.route('/start-similaritems', methods=["POST"])
 def start_similar_items():
     global similar_items
-    if not DATA_LOADED:
+    if not data_loaded:
         return json.dumps({"message": "data is not loaded yet"}), 400
     options = request.get_json(silent=True)
     verbose = get_value(options, "verbose", bool, False)
@@ -96,7 +90,7 @@ def start_similar_items():
 
 @app.route('/similaritems', methods=["POST"])
 def similar_items():
-    if not DATA_LOADED:
+    if not data_loaded:
         return json.dumps({"message": "data is not loaded yet"}), 400
     options = request.get_json(silent=True)
     if options is None or "item_name" not in options:
@@ -116,7 +110,7 @@ def similar_items():
 @app.route('/start-userspecific', methods=["POST"])
 def start_user_specific():
     global user_specific
-    if not DATA_LOADED:
+    if not data_loaded:
         return json.dumps({"message": "data is not loaded yet"}), 400
     options = request.get_json(silent=True)
     verbose = get_value(options, "verbose", bool, False)
@@ -138,7 +132,7 @@ def start_user_specific():
 
 @app.route('/userspecific', methods=["POST"])
 def user_specific():
-    if not DATA_LOADED:
+    if not data_loaded:
         return json.dumps({"message": "data is not loaded yet"}), 400
     options = request.get_json(silent=True)
     if options is None or "userid" not in options:
@@ -156,7 +150,8 @@ def user_specific():
 
 
 if __name__ == "__main__":
-    # Runtime
-    app.run(host='0.0.0.0', port=8080)
-    # Test
-    # app.run(host='localhost', port=7878)
+    global default_data_path
+    with open("./config.json") as file:
+        config = json.load(file)
+    default_data_path = config["default_data_path"]
+    app.run(host=config["host"], port=config["port"])
