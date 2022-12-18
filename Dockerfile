@@ -14,7 +14,7 @@ WORKDIR /app
 
 RUN apt-get update
 RUN apt-get install -y gcc
-COPY ./requirements.txt ./setup.py ./
+COPY ./requirements.txt ./README.md ./setup.py ./
 COPY ./kabirrec ./kabirrec
 RUN pip install --user .
 
