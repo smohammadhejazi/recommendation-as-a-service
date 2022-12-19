@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: kabirrec-app
   creationTimestamp: null
   labels:
-    app: python
-  name: python
+    app: kabirrec-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: python
+      app: kabirrec-app
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: python
+        app: kabirrec-app
     spec:
       containers:
-      - image: mohammadhejazi/python-server:1.0
-        name: python-server
+      - image: kabirrec:2.0
+        name: kabirrec-server
         resources: {}
         ports:
           - containerPort: 8080
@@ -28,8 +28,15 @@ spec:
             subPath: config.json
             name: config-map
             readOnly: true
+          - mountPath: /app/dataset
+            name: dataset
       volumes:
         - name: config-map
           configMap:
-            name: server-config
+            name: app-config
+        - name: dataset
+          hostPath:
+            path: /dataset
+            type: Directory
 status: {}
+
