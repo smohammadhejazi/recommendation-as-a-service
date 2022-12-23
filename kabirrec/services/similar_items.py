@@ -6,7 +6,18 @@ This file contains ColdStart class/module
 from .module_base import ModuleBase
 from ..surprise import Dataset
 from ..surprise import KNNBasic
+from ..surprise import KNNWithZScore
+from ..surprise import KNNWithMeans
+from ..surprise import KNNBaseline
 from ..surprise import Reader
+
+
+ALGOS = {
+    "knnbasic": KNNBasic,
+    "knnwithzscore": KNNWithZScore,
+    "knnwithmeans": KNNWithMeans,
+    "knnbaseline": KNNBaseline
+}
 
 
 class SimilarItems(ModuleBase):
@@ -20,7 +31,15 @@ class SimilarItems(ModuleBase):
         if options is None:
             options = {}
         ModuleBase.__init__(self, user_rating=user_rating, item_info=item_info, options=options)
-        self.algo = None
+
+        self.algo_class = ALGOS[options.get("algo", "knnbasic").lower()]
+        self.sim_options = options.get("sim_options", {"name": "pearson_baseline", "user_based": False})
+        self.bsl_options = options.get("bsl_options", {})
+        self.k = options.get("k", 40)
+        self.min_k = options.get("min_k", 1)
+        self.algo = self.algo_class(k=self.k, min_k=self.min_k,
+                                    sim_options=self.sim_options, bsl_options=self.bsl_options,
+                                    verbose=self.verbose)
 
     def fit(self):
         """
@@ -33,9 +52,6 @@ class SimilarItems(ModuleBase):
         data = Dataset.load_from_df(self.user_rating[["user_id", "item_id", "rating"]], reader)
         train_set = data.build_full_trainset()
 
-        sim_options = {"name": "pearson_baseline", "user_based": False}
-        self.algo = KNNBasic(sim_options=sim_options)
-        self.algo.verbose = self.verbose
         self.algo.fit(train_set)
         self.is_fit = True
         if self.verbose:

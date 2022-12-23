@@ -17,7 +17,7 @@ if __name__ == "__main__":
         info_sep="|", ratings_sep="\t", item_sep="|"
     )
 
-    similar_items = recommendation_service.similar_items_module(options={"verbose": True})
+    similar_items = recommendation_service.similar_items_module(options={"algo": "KNNBasic", "verbose": True})
     similar_items.fit()
     items = similar_items.recommend("Toy Story (1995)", n=5)
     for movie in items:
