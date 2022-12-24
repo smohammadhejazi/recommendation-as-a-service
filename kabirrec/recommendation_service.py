@@ -37,6 +37,7 @@ class RecommendationService:
         :param ratings_sep: csv separator of users' ratings csv
         :param item_sep: csv separator of items' info
         """
+
         self.user_info = pd.read_csv(user_info_path, sep=info_sep, names=info_columns)
         self.user_ratings = pd.read_csv(user_ratings_path, sep=ratings_sep, names=ratings_columns)
         self.item_info = pd.read_csv(item_info_path, sep=item_sep, names=item_columns, encoding="ISO-8859-1")
@@ -49,6 +50,7 @@ class RecommendationService:
             verbose: True/False
         :return: returns the ColdStart object
         """
+
         if options is None:
             options = {}
         return ColdStart(self.user_ratings, self.item_info, options=options)
@@ -61,6 +63,7 @@ class RecommendationService:
             verbose: True/False
         :return: returns the SimilarItem object
         """
+
         if options is None:
             options = {}
         return SimilarItems(self.user_ratings, self.item_info, options=options)
@@ -76,6 +79,7 @@ class RecommendationService:
                     for later querying.
         :return: returns the UserSpecific object
         """
+
         if options is None:
             options = {}
         return UserSpecific(self.user_ratings, self.user_info, self.item_info, options=options)
@@ -85,6 +89,7 @@ if __name__ == "__main__":
     """
     Examples of how to use the library
     """
+
     recommendation_service = RecommendationService()
 
     recommendation_service.read_csv_data(
