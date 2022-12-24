@@ -94,6 +94,74 @@ All items are ranked.
 257      258    1936
 173      174    1786
 ```
+## API Server
+**/api_server** folder contains an API server desinged to use Kabirrec as a live service. It can load database, fit the algorithm and use them live by sending HTTP request to it's different routes.
+
+Each route takes a post request with a JSON object as it's options and reponds a JSON object. There are lots of options that can be used to further optimize the algorithm to your own needs but if none is given, the default setting will be applyed.
+
+These routes and their JSON options are as follows:
+Notes: 
+- All the routes begin with the server name:port and then the route
+- All the routes require POST request.
+- The default value is written in parentheses.
+
+For configuring sim_options and bsl_options please check the following [link](https://surprise.readthedocs.io/en/stable/prediction_algorithms.html# "configuration options").
+
+Routes and options:
+- **/load-csv** : Load csv database (it should be in the format of MovieLens ml-100k)
+	- path: path of the database ("./dataset/ml-100k/")
+	- verbose: output logs (false)
+    
+	returns JSON object {"message": "message content"}
+
+
+- **/start-coldstart** : Start ColdStart module
+	- verbose: output logs (false)
+
+	returns JSON object {"message": "message content"}
+
+
+- **/coldstart**: Use ColdStart module
+	- n: number of item recommendations (10)
+	- verbose: output logs (false)
+
+	returns JSON object {"items_list": [list of popular items]}
+
+
+- **/start-similaritems** : Start SimilarItems module
+	- algo: path of the database ("knnbasic")
+	- k: The (max) number of neighbors to take into account for aggregation (40)
+	- min_k: The minimum number of neighbors to take into account foraggregation. If there are not enough neighbors, the prediction is set to the global mean of all ratings (1)
+	- sim_options: A dictionary of options for the similarity measure ({"name": "pearson_baseline", "user_based": False})
+	- bsl_options: A dictionary of options for the baseline estimates computation. Only when algo is KNNBaseline (empty dict {})
+	- verbose: output logs (false)
+
+	returns JSON object {"message": "message content"}
+
+
+- **/similaritems** : Use SimilarItems module
+	- item_name: name of the item (must be given)
+	- n: number of item recommendations (10)
+
+	returns JSON object {"items_list": [list of popular items]}
+
+
+- **/start-userspecific** : Start UserSpecific module
+	- k: number of the manual clusters, if given k_start and k_end are not taken into account (None)
+	- k_start: start number of the range to look for optimal cluster, range[k_start, k_end] (2)
+	- k_end: end number of the range to look for optimal cluster, range[k_start, k_end] (number of users / 2)
+	- verbose: output logs (false)
+
+	returns JSON object {"message": "message content"}
+
+
+- **/userspecific** : Use UserSpecific module
+	- item_name: name of the user (must be given)
+	- n: number of item recommendations (10)
+
+	returns JSON object {"items_list": [list of popular items]}
+
+
 ## More Information
 For more information on how to use the library, look at comments in the codes.
 
