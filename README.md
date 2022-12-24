@@ -4,12 +4,12 @@
 **KabirRec** is a Python recommendation service that uses **surprise** and **scikit-learn**.
 
 It has three main services:
-- Cold Start Recommendation: Recomnends the most polular items
-- Similar Items Recommendation: Recomnends similar items to the item given
+- Cold Start Recommendation: Recommends the most popular items
+- Similar Items Recommendation: Recommends similar items to the item given
 - User Specific Recommendation: Recommends the best items to a user based on their history.
 
 # Getting started
-Its easy to use each service, first you need to create the RecommendationService object. Then read your csv data. We use ml-100k which has user info, user ratings, item info. We need to specify the columns as well as each csv seperators.
+Its easy to use each service, first you need to create the RecommendationService object. Then read your csv data. We use ml-100k which has user info, user ratings, item info. We need to specify the columns as well as each csv separators.
 ```
 recommendation_service = RecommendationService()
 
@@ -95,9 +95,9 @@ All items are ranked.
 173      174    1786
 ```
 ## API Server
-**/api_server** folder contains an API server desinged to use Kabirrec as a live service. It can load database, fit the algorithm and use them live by sending HTTP request to it's different routes.
+**/api_server** folder contains an API server designed to use Kabirrec as a live service. It can load database, fit the algorithm and use them live by sending HTTP request to it's different routes.
 
-Each route takes a post request with a JSON object as it's options and reponds a JSON object. There are lots of options that can be used to further optimize the algorithm to your own needs but if none is given, the default setting will be applyed.
+Each route takes a post request with a JSON object as it's options and responds a JSON object. There are lots of options that can be used to further optimize the algorithm to your own needs but if none is given, the default setting will be applied.
 
 These routes and their JSON options are as follows:
 Notes: 
@@ -131,7 +131,7 @@ Routes and options:
 - **/start-similaritems** : Start SimilarItems module
 	- algo: path of the database ("knnbasic")
 	- k: The (max) number of neighbors to take into account for aggregation (40)
-	- min_k: The minimum number of neighbors to take into account foraggregation. If there are not enough neighbors, the prediction is set to the global mean of all ratings (1)
+	- min_k: The minimum number of neighbors to take into account for aggregation. If there are not enough neighbors, the prediction is set to the global mean of all ratings (1)
 	- sim_options: A dictionary of options for the similarity measure ({"name": "pearson_baseline", "user_based": False})
 	- bsl_options: A dictionary of options for the baseline estimates computation. Only when algo is KNNBaseline (empty dict {})
 	- verbose: output logs (false)
@@ -163,7 +163,7 @@ Routes and options:
 
 
 ## More Information
-For more information on how to use the library, look at comments in the codes.
+For more information on how to use the library, look at comments in the codes and Surprise library [website](https://surpriselib.com "surprise library website").
 
 # Installation
 You can use pip (you'll need a C compiler and numpy library):
