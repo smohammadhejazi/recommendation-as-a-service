@@ -28,7 +28,10 @@ def load_csv():
     global data_loaded
     options = request.get_json(silent=True)
     path = get_value(options, "path", str, default_data_path)
+    verbose = get_value(options, "verbose", bool, False)
 
+    if verbose:
+        print("Reading database...")
     try:
         recommendation_service.read_csv_data(
             user_info_path=path + "u.user",
@@ -43,8 +46,11 @@ def load_csv():
             info_sep="|", ratings_sep="\t", item_sep="|"
         )
     except FileNotFoundError as e:
+        if verbose:
+            print("Invalid database path.")
         return json.dumps({"message": "path is invalid"}), 400
     data_loaded = True
+    print("Database loaded")
     return json.dumps({"message": "data was successfully loaded"}), 200
 
 
@@ -66,6 +72,7 @@ def cold_start():
     if not data_loaded:
         return json.dumps({"message": "data is not loaded yet"}), 400
     options = request.get_json(silent=True)
+
     n = get_value(options, "n", int, 10)
 
     try:
@@ -81,9 +88,17 @@ def start_similar_items():
     if not data_loaded:
         return json.dumps({"message": "data is not loaded yet"}), 400
     options = request.get_json(silent=True)
-    verbose = get_value(options, "verbose", bool, False)
 
-    similar_items = recommendation_service.similar_items_module(options={"verbose": verbose})
+    verbose = get_value(options, "verbose", bool, False)
+    algo = get_value(options, "algo", str, "knnbasic")
+    sim_options = get_value(options, "sim_options", dict, {"name": "pearson_baseline", "user_based": False})
+    bsl_options = get_value(options, "bsl_options", dict, {})
+    k = get_value(options, "k", int, 40)
+    min_k = get_value(options, "min_k", int, 1)
+
+    similar_items = recommendation_service.similar_items_module(
+        options={"algo": algo, "k": k, "min_k": min_k,
+                 "sim_options": sim_options, "bsl_options": bsl_options, "verbose": verbose})
     similar_items.fit()
     return json.dumps({"message": "SimilarItems module is ready for use"}), 200
 
@@ -95,6 +110,7 @@ def similar_items():
     options = request.get_json(silent=True)
     if options is None or "item_name" not in options:
         return json.dumps({"message": "item_name is required"})
+
     item_name = get_value(options, "item_name", str, None)
     n = get_value(options, "n", int, 10)
 
@@ -112,11 +128,13 @@ def start_user_specific():
     global user_specific
     if not data_loaded:
         return json.dumps({"message": "data is not loaded yet"}), 400
+
     options = request.get_json(silent=True)
     verbose = get_value(options, "verbose", bool, False)
     k = get_value(options, "k", int, None)
     k_start = get_value(options, "k_start", int, None)
     k_end = get_value(options, "k_end", int, None)
+
     if k is None:
         if k_start is not None and k_start < 2:
             return json.dumps({"k_start": "k_start should should be bigger than 1"}), 400
@@ -137,6 +155,7 @@ def user_specific():
     options = request.get_json(silent=True)
     if options is None or "userid" not in options:
         return json.dumps({"message": "userid is required"})
+
     userid = get_value(options, "userid", int, None)
     n = get_value(options, "n", int, 10)
 
