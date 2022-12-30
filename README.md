@@ -109,7 +109,10 @@ For configuring sim_options and bsl_options please check the following [link](ht
 
 Routes and options:
 - **/load-csv** : Load csv database (it should be in the format of MovieLens ml-100k)
-	- path: path of the database ("./dataset/ml-100k/")
+	- path: path of the database ("./dataset")
+    - name: path of the database ("ml-100k")
+	- url: path of the database (None)
+	- extract: path of the database (false)
 	- verbose: output logs (false)
     
 	returns JSON object {"message": "message content"}
