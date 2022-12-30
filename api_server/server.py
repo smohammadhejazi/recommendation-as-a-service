@@ -1,4 +1,7 @@
 import json
+import requests
+import zipfile
+import os
 from flask import Flask, request
 from kabirrec import RecommendationService
 from kabirrec.services import ColdStart
@@ -10,6 +13,8 @@ cold_start: ColdStart = None
 similar_items: SimilarItems = None
 user_specific: UserSpecific = None
 data_loaded = False
+CONFIG = {}
+
 
 app = Flask(__name__)
 
@@ -27,16 +32,36 @@ def get_value(dictionary, key, key_type, default):
 def load_csv():
     global data_loaded
     options = request.get_json(silent=True)
-    path = get_value(options, "path", str, default_data_path)
     verbose = get_value(options, "verbose", bool, False)
+    path = get_value(options, "path", str, CONFIG["default_data_path"]).strip("/")
+    name = get_value(options, "name", str, CONFIG["default_dataset_name"]).strip("/")
+    url = get_value(options, "url", str, None)
+    extract = get_value(options, "extract", bool, False)
 
     if verbose:
         print("Reading database...")
     try:
+        if url is not None:
+            if verbose:
+                print("Downloading...")
+            response = requests.get(url)
+            zip_path = path + "/" + os.path.basename(url)
+            extract_path = path + "/"
+            open(zip_path, "wb").write(response.content)
+            if verbose:
+                print("Download done.")
+            if extract:
+                if verbose:
+                    print("Extracting...")
+                with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+                    zip_ref.extractall(extract_path)
+                if verbose:
+                    print("Extraction done.")
+        base = path + "/" + name + "/"
         recommendation_service.read_csv_data(
-            user_info_path=path + "u.user",
-            user_ratings_path=path + "u.data",
-            item_info_path=path + "u.item",
+            user_info_path=base + "u.user",
+            user_ratings_path=base + "u.data",
+            item_info_path=base + "u.item",
             info_columns=["user_id", "age", "gender", "occupation", "zip_code"],
             ratings_columns=["user_id", "item_id", "rating", "timestamp"],
             item_columns=["movie_id", "movie_title", "release_date", "video_release_date", "imdb_url", "unknown",
@@ -168,9 +193,12 @@ def user_specific():
     return json.dumps({"items_list": items})
 
 
-if __name__ == "__main__":
-    global default_data_path
+def read_config():
+    global CONFIG
     with open("./config.json") as file:
-        config = json.load(file)
-    default_data_path = config["default_data_path"]
-    app.run(host=config["host"], port=config["port"])
+        CONFIG = json.load(file)
+
+
+if __name__ == "__main__":
+    read_config()
+    app.run(host=CONFIG["host"], port=CONFIG["port"])
