@@ -30,6 +30,8 @@ spec:
             readOnly: true
           - mountPath: /app/dataset
             name: dataset
+          - mountPath: "/app/models"
+            name: model-storage
       volumes:
         - name: config-map
           configMap:
@@ -38,5 +40,8 @@ spec:
           hostPath:
             path: /dataset
             type: Directory
+        - name: model-storage
+            persistentVolumeClaim:
+            claimName: model-volume-claim
 status: {}
 
