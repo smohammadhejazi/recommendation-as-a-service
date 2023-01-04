@@ -1,0 +1,1 @@
+User models are saved in this directory as a placeholder for distributed database.
