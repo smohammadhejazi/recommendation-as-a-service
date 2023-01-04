@@ -72,7 +72,7 @@ def create_model():
     # auth check
     if not is_token_valid(userid, token):
         print_log(verbose, f"Error: Invalid token | userid:{userid} - token:{token}")
-        return json.dumps({"message": "model_name is invalid"}), 400
+        return json.dumps({"message": "token is invalid"}), 400
 
     # creating model
     recommendation_service = RecommendationService()
@@ -99,16 +99,16 @@ def load_csv():
     user_info_path = get_value(options, "user_info_path", str, "u.user")
     user_ratings_path = get_value(options, "user_ratings_path", str, "u.data")
     item_info_path = get_value(options, "item_info_path", str, "u.item")
-    info_columns = get_value(options, "info_columns", str, ["user_id", "age", "gender", "occupation", "zip_code"])
-    ratings_columns = get_value(options, "ratings_columns", str, ["user_id", "item_id", "rating", "timestamp"])
+    user_info_columns = get_value(options, "user_info_columns", str, ["user_id", "age", "gender", "occupation", "zip_code"])
+    user_ratings_columns = get_value(options, "ratings_columns", str, ["user_id", "item_id", "rating", "timestamp"])
     item_columns = get_value(options, "item_columns", str, ["movie_id", "movie_title", "release_date",
                                                             "video_release_date", "imdb_url", "unknown",
                                                             "action", "adventure", "animation", "children's",
                                                             "comedy", "crime", "documentary", "drama", "fantasy",
                                                             "film_noir", "horror", "musical", "mystery", "romance",
                                                             "sci-fi", "thriller", "war", "western"])
-    info_sep = get_value(options, "info_sep", str, "|")
-    ratings_sep = get_value(options, "ratings_sep", str, "\t")
+    user_info_sep = get_value(options, "info_sep", str, "|")
+    user_ratings_sep = get_value(options, "ratings_sep", str, "\t")
     item_sep = get_value(options, "item_sep", str, "|")
 
     # parameters check
@@ -119,7 +119,7 @@ def load_csv():
     # auth check
     if not is_token_valid(userid, token):
         print_log(verbose, f"Error: Invalid token | userid:{userid} - token:{token}")
-        return json.dumps({"message": "model_name is invalid"}), 400
+        return json.dumps({"message": "token is invalid"}), 400
 
     # load model
     recommendation_service = load_model(userid, model_name)
@@ -147,10 +147,10 @@ def load_csv():
             user_info_path=base + user_info_path,
             user_ratings_path=base + user_ratings_path,
             item_info_path=base + item_info_path,
-            info_columns=info_columns,
-            ratings_columns=ratings_columns,
+            user_info_columns=user_info_columns,
+            user_ratings_columns=user_ratings_columns,
             item_columns=item_columns,
-            info_sep=info_sep, ratings_sep=ratings_sep, item_sep=item_sep
+            user_info_sep=user_info_sep, user_ratings_sep=user_ratings_sep, item_sep=item_sep
         )
         save_model(userid, model_name, recommendation_service)
         print_log(verbose, f"Log: Database loaded | userid:{userid} - model_name:{model_name}")
@@ -179,7 +179,7 @@ def start_cold_start():
     # auth check
     if not is_token_valid(userid, token):
         print_log(verbose, f"Error: Invalid token | userid:{userid} - token:{token}")
-        return json.dumps({"message": "model_name is invalid"}), 400
+        return json.dumps({"message": "token is invalid"}), 400
 
     # load model
     recommendation_service = load_model(userid, model_name)
@@ -189,8 +189,8 @@ def start_cold_start():
 
     # dataset check
     if not recommendation_service.data_loaded:
-        print_log(verbose, f"Error: Data is not loaded yet | userid:{userid} - model_name:{model_name}")
-        return json.dumps({"message": "data is not loaded yet"}), 400
+        print_log(verbose, f"Error: Dataset is not loaded yet | userid:{userid} - model_name:{model_name}")
+        return json.dumps({"message": "dataset is not loaded yet"}), 400
 
     # fitting
     print_log(verbose, f"Log: Fitting ColdStart | userid:{userid} - model_name:{model_name}")
@@ -221,7 +221,7 @@ def cold_start():
     # auth check
     if not is_token_valid(userid, token):
         print_log(verbose, f"Error: Invalid token | userid:{userid} - token:{token}")
-        return json.dumps({"message": "model_name is invalid"}), 400
+        return json.dumps({"message": "token is invalid"}), 400
 
     # load model
     recommendation_service = load_model(userid, model_name)
@@ -231,8 +231,8 @@ def cold_start():
 
     # dataset check
     if not recommendation_service.data_loaded:
-        print_log(verbose, f"Error: Data is not loaded yet | userid:{userid} - model_name:{model_name}")
-        return json.dumps({"message": "data is not loaded yet"}), 400
+        print_log(verbose, f"Error: Dataset is not loaded yet | userid:{userid} - model_name:{model_name}")
+        return json.dumps({"message": "dataset is not loaded yet"}), 400
 
     # recommendation
     try:
@@ -269,7 +269,7 @@ def start_similar_items():
     # auth check
     if not is_token_valid(userid, token):
         print_log(verbose, f"Error: Invalid token | userid:{userid} - token:{token}")
-        return json.dumps({"message": "model_name is invalid"}), 400
+        return json.dumps({"message": "token is invalid"}), 400
 
     # load model
     recommendation_service = load_model(userid, model_name)
@@ -279,8 +279,8 @@ def start_similar_items():
 
     # dataset check
     if not recommendation_service.data_loaded:
-        print_log(verbose, f"Error: Data is not loaded yet | userid:{userid} - model_name:{model_name}")
-        return json.dumps({"message": "data is not loaded yet"}), 400
+        print_log(verbose, f"Error: Dataset is not loaded yet | userid:{userid} - model_name:{model_name}")
+        return json.dumps({"message": "dataset is not loaded yet"}), 400
 
     # fitting
     print_log(verbose, f"Log: Fitting SimilarItem | userid:{userid} - model_name:{model_name}")
@@ -314,7 +314,7 @@ def similar_items():
     # auth check
     if not is_token_valid(userid, token):
         print_log(verbose, f"Error: Invalid token | userid:{userid} - token:{token}")
-        return json.dumps({"message": "model_name is invalid"}), 400
+        return json.dumps({"message": "token is invalid"}), 400
 
     # load model
     recommendation_service = load_model(userid, model_name)
@@ -324,8 +324,8 @@ def similar_items():
 
     # dataset check
     if not recommendation_service.data_loaded:
-        print_log(verbose, f"Error: Data is not loaded yet | userid:{userid} - model_name:{model_name}")
-        return json.dumps({"message": "data is not loaded yet"}), 400
+        print_log(verbose, f"Error: Dataset is not loaded yet | userid:{userid} - model_name:{model_name}")
+        return json.dumps({"message": "dataset is not loaded yet"}), 400
 
     # recommendation
     try:
@@ -359,7 +359,7 @@ def start_user_specific():
     # auth check
     if not is_token_valid(userid, token):
         print_log(verbose, f"Error: Invalid token | userid:{userid} - token:{token}")
-        return json.dumps({"message": "model_name is invalid"}), 400
+        return json.dumps({"message": "token is invalid"}), 400
 
     # load model
     recommendation_service = load_model(userid, model_name)
@@ -369,8 +369,8 @@ def start_user_specific():
 
     # dataset check
     if not recommendation_service.data_loaded:
-        print_log(verbose, f"Error: Data is not loaded yet | userid:{userid} - model_name:{model_name}")
-        return json.dumps({"message": "data is not loaded yet"}), 400
+        print_log(verbose, f"Error: Dataset is not loaded yet | userid:{userid} - model_name:{model_name}")
+        return json.dumps({"message": "dataset is not loaded yet"}), 400
 
     # fitting
     if k is None:
@@ -399,7 +399,7 @@ def user_specific():
     token = request.headers.get("Authorization", None)
     model_name = get_value(options, "model_name", str, None)
     verbose = get_value(options, "verbose", bool, False)
-    dataset_userid = get_value(options, "userid", int, None)
+    dataset_userid = get_value(options, "dataset_userid", int, None)
     n = get_value(options, "n", int, 10)
 
     # parameters check
@@ -410,7 +410,7 @@ def user_specific():
     # auth check
     if not is_token_valid(userid, token):
         print_log(verbose, f"Error: Invalid token | userid:{userid} - token:{token}")
-        return json.dumps({"message": "model_name is invalid"}), 400
+        return json.dumps({"message": "token is invalid"}), 400
 
     # load model
     recommendation_service = load_model(userid, model_name)
@@ -420,8 +420,8 @@ def user_specific():
 
     # dataset check
     if not recommendation_service.data_loaded:
-        print_log(verbose, f"Error: Data is not loaded yet | userid:{userid} - model_name:{model_name}")
-        return json.dumps({"message": "data is not loaded yet"}), 400
+        print_log(verbose, f"Error: Dataset is not loaded yet | userid:{userid} - model_name:{model_name}")
+        return json.dumps({"message": "dataset is not loaded yet"}), 400
 
     try:
         print_log(verbose, f"Log: UserSpecific used | userid:{userid} - model_name:{model_name}")
