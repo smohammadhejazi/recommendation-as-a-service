@@ -17,9 +17,13 @@ class RecommendationService:
     """
 
     def __init__(self):
+        self.data_loaded = False
         self.user_info = None
         self.user_ratings = None
         self.item_info = None
+        self.cold_start = None
+        self.similar_items = None
+        self.user_specific = None
 
     def read_csv_data(self, user_info_path, user_ratings_path, item_info_path,
                       info_columns,  ratings_columns, item_columns,
@@ -41,6 +45,7 @@ class RecommendationService:
         self.user_info = pd.read_csv(user_info_path, sep=info_sep, names=info_columns)
         self.user_ratings = pd.read_csv(user_ratings_path, sep=ratings_sep, names=ratings_columns)
         self.item_info = pd.read_csv(item_info_path, sep=item_sep, names=item_columns, encoding="ISO-8859-1")
+        self.data_loaded = True
 
     def cold_start_module(self, options=None):
         """
@@ -53,7 +58,8 @@ class RecommendationService:
 
         if options is None:
             options = {}
-        return ColdStart(self.user_ratings, self.item_info, options=options)
+        self.cold_start = ColdStart(self.user_ratings, self.item_info, options=options)
+        return self.cold_start
 
     def similar_items_module(self, options=None):
         """
@@ -66,7 +72,8 @@ class RecommendationService:
 
         if options is None:
             options = {}
-        return SimilarItems(self.user_ratings, self.item_info, options=options)
+        self.similar_items = SimilarItems(self.user_ratings, self.item_info, options=options)
+        return self.similar_items
 
     def user_specific_module(self, options=None):
         """
@@ -82,7 +89,8 @@ class RecommendationService:
 
         if options is None:
             options = {}
-        return UserSpecific(self.user_ratings, self.user_info, self.item_info, options=options)
+        self.user_specific = UserSpecific(self.user_ratings, self.user_info, self.item_info, options=options)
+        return self.user_specific
 
 
 if __name__ == "__main__":
