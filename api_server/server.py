@@ -91,8 +91,8 @@ def load_csv():
     token = request.headers.get("Authorization", None)
     model_name = get_value(options, "model_name", str, None)
     verbose = get_value(options, "verbose", bool, False)
-    path = get_value(options, "path", str, CONFIG["default_data_path"]).strip("/")
-    name = get_value(options, "name", str, CONFIG["default_dataset_name"]).strip("/")
+    path = get_value(options, "path", str, CONFIG["datasets_path"]).strip("/")
+    name = get_value(options, "name", str, CONFIG["dataset_name"]).strip("/")
     url = get_value(options, "url", str, None)
     extract = get_value(options, "extract", bool, False)
     # CSV
