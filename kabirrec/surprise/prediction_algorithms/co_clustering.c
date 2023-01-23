@@ -13,12 +13,12 @@
         "include_dirs": [
             "C:\\Users\\Mohammad\\AppData\\Roaming\\Python\\Python310\\site-packages\\numpy\\core\\include"
         ],
-        "name": "surprise.prediction_algorithms.co_clustering",
+        "name": "kabirrec.surprise.prediction_algorithms.co_clustering",
         "sources": [
-            "surprise/prediction_algorithms/co_clustering.pyx"
+            "kabirrec/surprise/prediction_algorithms/co_clustering.pyx"
         ]
     },
-    "module_name": "surprise.prediction_algorithms.co_clustering"
+    "module_name": "kabirrec.surprise.prediction_algorithms.co_clustering"
 }
 END: Cython Metadata */
 
@@ -33,7 +33,7 @@ END: Cython Metadata */
 #else
 #define CYTHON_ABI "0_29_32"
 #define CYTHON_HEX_VERSION 0x001D20F0
-#define CYTHON_FUTURE_DIVISION 1
+#define CYTHON_FUTURE_DIVISION 0
 #include <stddef.h>
 #ifndef offsetof
   #define offsetof(type, member) ( (size_t) & ((type*)0) -> member )
@@ -760,8 +760,8 @@ static CYTHON_INLINE float __PYX_NAN() {
   #endif
 #endif
 
-#define __PYX_HAVE__surprise__prediction_algorithms__co_clustering
-#define __PYX_HAVE_API__surprise__prediction_algorithms__co_clustering
+#define __PYX_HAVE__kabirrec__surprise__prediction_algorithms__co_clustering
+#define __PYX_HAVE_API__kabirrec__surprise__prediction_algorithms__co_clustering
 /* Early includes */
 #include <string.h>
 #include <stdio.h>
@@ -1004,7 +1004,7 @@ static const char *__pyx_filename;
 
 
 static const char *__pyx_f[] = {
-  "surprise\\prediction_algorithms\\co_clustering.pyx",
+  "kabirrec\\surprise\\prediction_algorithms\\co_clustering.pyx",
   "__init__.pxd",
   "type.pxd",
 };
@@ -1626,6 +1626,13 @@ static CYTHON_INLINE void __Pyx_ErrFetchInState(PyThreadState *tstate, PyObject 
         __Pyx__ArgTypeTest(obj, type, name, exact))
 static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact);
 
+/* DivInt[__pyx_t_5numpy_int_t].proto */
+static CYTHON_INLINE __pyx_t_5numpy_int_t __Pyx_div___pyx_t_5numpy_int_t(__pyx_t_5numpy_int_t, __pyx_t_5numpy_int_t);
+
+/* UnaryNegOverflows.proto */
+#define UNARY_NEG_WOULD_OVERFLOW(x)\
+        (((x) < 0) & ((unsigned long)(x) == 0-(unsigned long)(x)))
+
 /* ObjectGetItem.proto */
 #if CYTHON_USE_TYPE_SLOTS
 static CYTHON_INLINE PyObject *__Pyx_PyObject_GetItem(PyObject *obj, PyObject* key);
@@ -1822,6 +1829,13 @@ typedef struct {
 #define __Pyx_HAS_GCC_DIAGNOSTIC
 #endif
 
+/* Print.proto */
+static int __Pyx_Print(PyObject*, PyObject *, int);
+#if CYTHON_COMPILING_IN_PYPY || PY_MAJOR_VERSION >= 3
+static PyObject* __pyx_print = 0;
+static PyObject* __pyx_print_kwargs = 0;
+#endif
+
 /* RealImag.proto */
 #if CYTHON_CCOMPLEX
   #ifdef __cplusplus
@@ -1932,6 +1946,9 @@ static CYTHON_INLINE npy_long __Pyx_PyInt_As_npy_long(PyObject *);
 /* CIntFromPy.proto */
 static CYTHON_INLINE long __Pyx_PyInt_As_long(PyObject *);
 
+/* PrintOne.proto */
+static int __Pyx_PrintOne(PyObject* stream, PyObject *o);
+
 /* CIntToPy.proto */
 static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value);
 
@@ -1993,16 +2010,15 @@ static PyTypeObject *__pyx_ptype_5numpy_flexible = 0;
 static PyTypeObject *__pyx_ptype_5numpy_character = 0;
 static PyTypeObject *__pyx_ptype_5numpy_ufunc = 0;
 
-/* Module declarations from 'surprise.prediction_algorithms.co_clustering' */
+/* Module declarations from 'kabirrec.surprise.prediction_algorithms.co_clustering' */
 static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_5numpy_int_t = { "int_t", NULL, sizeof(__pyx_t_5numpy_int_t), { 0 }, 0, IS_UNSIGNED(__pyx_t_5numpy_int_t) ? 'U' : 'I', IS_UNSIGNED(__pyx_t_5numpy_int_t), 0 };
 static __Pyx_TypeInfo __Pyx_TypeInfo_nn___pyx_t_5numpy_double_t = { "double_t", NULL, sizeof(__pyx_t_5numpy_double_t), { 0 }, 0, 'R', 0, 0 };
-#define __Pyx_MODULE_NAME "surprise.prediction_algorithms.co_clustering"
-extern int __pyx_module_is_main_surprise__prediction_algorithms__co_clustering;
-int __pyx_module_is_main_surprise__prediction_algorithms__co_clustering = 0;
+#define __Pyx_MODULE_NAME "kabirrec.surprise.prediction_algorithms.co_clustering"
+extern int __pyx_module_is_main_kabirrec__surprise__prediction_algorithms__co_clustering;
+int __pyx_module_is_main_kabirrec__surprise__prediction_algorithms__co_clustering = 0;
 
-/* Implementation of 'surprise.prediction_algorithms.co_clustering' */
+/* Implementation of 'kabirrec.surprise.prediction_algorithms.co_clustering' */
 static PyObject *__pyx_builtin_range;
-static PyObject *__pyx_builtin_print;
 static PyObject *__pyx_builtin_ImportError;
 static const char __pyx_k_i[] = "i";
 static const char __pyx_k_r[] = "r";
@@ -2014,12 +2030,14 @@ static const char __pyx_k_np[] = "np";
 static const char __pyx_k_uc[] = "uc";
 static const char __pyx_k_ur[] = "ur";
 static const char __pyx_k_doc[] = "__doc__";
+static const char __pyx_k_end[] = "end";
 static const char __pyx_k_est[] = "est";
 static const char __pyx_k_fit[] = "fit";
 static const char __pyx_k_i_2[] = "_i";
-static const char __pyx_k_int[] = "int";
+static const char __pyx_k_int[] = "int_";
 static const char __pyx_k_rng[] = "rng";
 static const char __pyx_k_u_2[] = "_u";
+static const char __pyx_k_file[] = "file";
 static const char __pyx_k_init[] = "__init__";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_mean[] = "mean";
@@ -2086,9 +2104,9 @@ static const char __pyx_k_CoClustering_compute_averages[] = "CoClustering.comput
 static const char __pyx_k_numpy_core_multiarray_failed_to[] = "numpy.core.multiarray failed to import";
 static const char __pyx_k_the_mod_co_clustering_module_in[] = "\nthe :mod:`co_clustering` module includes the :class:`CoClustering` algorithm.\n";
 static const char __pyx_k_A_collaborative_filtering_algori[] = "A collaborative filtering algorithm based on co-clustering.\n\n    This is a straightforward implementation of :cite:`George:2005`.\n\n    Basically, users and items are assigned some clusters :math:`C_u`,\n    :math:`C_i`, and some co-clusters :math:`C_{ui}`.\n\n    The prediction :math:`\\hat{r}_{ui}` is set as:\n\n    .. math::\n        \\hat{r}_{ui} = \\overline{C_{ui}} + (\\mu_u - \\overline{C_u}) + (\\mu_i\n        - \\overline{C_i}),\n\n    where :math:`\\overline{C_{ui}}` is the average rating of co-cluster\n    :math:`C_{ui}`, :math:`\\overline{C_u}` is the average rating of\n    :math:`u`'s cluster, and :math:`\\overline{C_i}` is the average rating of\n    :math:`i`'s cluster. If the user is unknown, the prediction is\n    :math:`\\hat{r}_{ui} = \\mu_i`. If the item is unknown, the prediction is\n    :math:`\\hat{r}_{ui} = \\mu_u`. If both the user and the item are unknown,\n    the prediction is :math:`\\hat{r}_{ui} = \\mu`.\n\n    Clusters are assigned using a straightforward optimization method, much\n    like k-means.\n\n    Args:\n       n_cltr_u(int): Number of user clusters. Default is ``3``.\n       n_cltr_i(int): Number of item clusters. Default is ``3``.\n       n_epochs(int): Number of iteration of the optimization loop. Default is\n           ``20``.\n       random_state(int, RandomState instance from numpy, or ``None``):\n           Determines the RNG that will be used for initialization. If\n           int, ``random_state`` will be used as a seed for a new RNG. This is\n           useful to get the same initialization over multiple calls to\n           ``fit()``.  If RandomState instance, this same instance is used as\n           RNG. If ``None``, the current RNG from numpy is used.  Default is\n           ``None``.\n       verbose(bool): If True, the current epoch will be printed. Default is\n           ``False``.\n\n    ";
+static const char __pyx_k_kabirrec_surprise_prediction_alg[] = "kabirrec.surprise.prediction_algorithms.co_clustering";
 static const char __pyx_k_numpy_core_umath_failed_to_impor[] = "numpy.core.umath failed to import";
-static const char __pyx_k_surprise_prediction_algorithms_c[] = "surprise.prediction_algorithms.co_clustering";
-static const char __pyx_k_surprise_prediction_algorithms_c_2[] = "surprise\\prediction_algorithms\\co_clustering.pyx";
+static const char __pyx_k_kabirrec_surprise_prediction_alg_2[] = "kabirrec\\surprise\\prediction_algorithms\\co_clustering.pyx";
 static PyObject *__pyx_kp_s_A_collaborative_filtering_algori;
 static PyObject *__pyx_n_s_AlgoBase;
 static PyObject *__pyx_n_s_CoClustering;
@@ -2097,7 +2115,7 @@ static PyObject *__pyx_n_s_CoClustering_compute_averages;
 static PyObject *__pyx_n_s_CoClustering_estimate;
 static PyObject *__pyx_n_s_CoClustering_fit;
 static PyObject *__pyx_n_s_ImportError;
-static PyObject *__pyx_kp_u_Processing_epoch;
+static PyObject *__pyx_kp_s_Processing_epoch;
 static PyObject *__pyx_n_s__6;
 static PyObject *__pyx_n_s_algo_base;
 static PyObject *__pyx_n_s_all_items;
@@ -2116,10 +2134,12 @@ static PyObject *__pyx_n_s_count_cltr_u;
 static PyObject *__pyx_n_s_count_cocltr;
 static PyObject *__pyx_n_s_doc;
 static PyObject *__pyx_n_s_double;
+static PyObject *__pyx_n_s_end;
 static PyObject *__pyx_n_s_epoch;
 static PyObject *__pyx_n_s_errors;
 static PyObject *__pyx_n_s_est;
 static PyObject *__pyx_n_s_estimate;
+static PyObject *__pyx_n_s_file;
 static PyObject *__pyx_n_s_fit;
 static PyObject *__pyx_n_s_format;
 static PyObject *__pyx_n_s_get_rng;
@@ -2132,6 +2152,8 @@ static PyObject *__pyx_n_s_init;
 static PyObject *__pyx_n_s_int;
 static PyObject *__pyx_n_s_ir;
 static PyObject *__pyx_n_s_item_mean;
+static PyObject *__pyx_n_s_kabirrec_surprise_prediction_alg;
+static PyObject *__pyx_kp_s_kabirrec_surprise_prediction_alg_2;
 static PyObject *__pyx_n_s_knows_item;
 static PyObject *__pyx_n_s_knows_user;
 static PyObject *__pyx_n_s_main;
@@ -2146,8 +2168,8 @@ static PyObject *__pyx_n_s_n_users;
 static PyObject *__pyx_n_s_name;
 static PyObject *__pyx_n_s_np;
 static PyObject *__pyx_n_s_numpy;
-static PyObject *__pyx_kp_u_numpy_core_multiarray_failed_to;
-static PyObject *__pyx_kp_u_numpy_core_umath_failed_to_impor;
+static PyObject *__pyx_kp_s_numpy_core_multiarray_failed_to;
+static PyObject *__pyx_kp_s_numpy_core_umath_failed_to_impor;
 static PyObject *__pyx_n_s_prepare;
 static PyObject *__pyx_n_s_print;
 static PyObject *__pyx_n_s_qualname;
@@ -2161,8 +2183,6 @@ static PyObject *__pyx_n_s_size;
 static PyObject *__pyx_n_s_sum_cltr_i;
 static PyObject *__pyx_n_s_sum_cltr_u;
 static PyObject *__pyx_n_s_sum_cocltr;
-static PyObject *__pyx_n_s_surprise_prediction_algorithms_c;
-static PyObject *__pyx_kp_s_surprise_prediction_algorithms_c_2;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_trainset;
 static PyObject *__pyx_n_s_u;
@@ -2173,10 +2193,10 @@ static PyObject *__pyx_n_s_user_mean;
 static PyObject *__pyx_n_s_utils;
 static PyObject *__pyx_n_s_verbose;
 static PyObject *__pyx_n_s_zeros;
-static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12CoClustering___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_n_cltr_u, PyObject *__pyx_v_n_cltr_i, PyObject *__pyx_v_n_epochs, PyObject *__pyx_v_random_state, PyObject *__pyx_v_verbose); /* proto */
-static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_2fit(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_trainset); /* proto */
-static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_4compute_averages(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyArrayObject *__pyx_v_cltr_u, PyArrayObject *__pyx_v_cltr_i); /* proto */
-static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_6estimate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_u, PyObject *__pyx_v_i); /* proto */
+static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_n_cltr_u, PyObject *__pyx_v_n_cltr_i, PyObject *__pyx_v_n_epochs, PyObject *__pyx_v_random_state, PyObject *__pyx_v_verbose); /* proto */
+static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_2fit(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_trainset); /* proto */
+static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_4compute_averages(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyArrayObject *__pyx_v_cltr_u, PyArrayObject *__pyx_v_cltr_i); /* proto */
+static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_6estimate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_u, PyObject *__pyx_v_i); /* proto */
 static PyObject *__pyx_int_3;
 static PyObject *__pyx_int_20;
 static PyObject *__pyx_tuple_;
@@ -2192,7 +2212,7 @@ static PyObject *__pyx_codeobj__10;
 static PyObject *__pyx_codeobj__12;
 /* Late includes */
 
-/* "surprise/prediction_algorithms/co_clustering.pyx":57
+/* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":57
  *     """
  * 
  *     def __init__(self, n_cltr_u=3, n_cltr_i=3, n_epochs=20, random_state=None,             # <<<<<<<<<<<<<<
@@ -2201,9 +2221,9 @@ static PyObject *__pyx_codeobj__12;
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_1__init__ = {"__init__", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_1__init__, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_1__init__ = {"__init__", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_1__init__, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_1__init__(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_n_cltr_u = 0;
   PyObject *__pyx_v_n_cltr_i = 0;
@@ -2224,7 +2244,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_13co_clustering_12Co
     values[3] = ((PyObject *)((PyObject *)__pyx_int_20));
     values[4] = ((PyObject *)((PyObject *)Py_None));
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":58
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":58
  * 
  *     def __init__(self, n_cltr_u=3, n_cltr_i=3, n_epochs=20, random_state=None,
  *                  verbose=False):             # <<<<<<<<<<<<<<
@@ -2318,13 +2338,13 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("__init__", 0, 1, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 57, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("surprise.prediction_algorithms.co_clustering.CoClustering.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("kabirrec.surprise.prediction_algorithms.co_clustering.CoClustering.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12CoClustering___init__(__pyx_self, __pyx_v_self, __pyx_v_n_cltr_u, __pyx_v_n_cltr_i, __pyx_v_n_epochs, __pyx_v_random_state, __pyx_v_verbose);
+  __pyx_r = __pyx_pf_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering___init__(__pyx_self, __pyx_v_self, __pyx_v_n_cltr_u, __pyx_v_n_cltr_i, __pyx_v_n_epochs, __pyx_v_random_state, __pyx_v_verbose);
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":57
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":57
  *     """
  * 
  *     def __init__(self, n_cltr_u=3, n_cltr_i=3, n_epochs=20, random_state=None,             # <<<<<<<<<<<<<<
@@ -2337,7 +2357,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_13co_clustering_12Co
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12CoClustering___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_n_cltr_u, PyObject *__pyx_v_n_cltr_i, PyObject *__pyx_v_n_epochs, PyObject *__pyx_v_random_state, PyObject *__pyx_v_verbose) {
+static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_n_cltr_u, PyObject *__pyx_v_n_cltr_i, PyObject *__pyx_v_n_epochs, PyObject *__pyx_v_random_state, PyObject *__pyx_v_verbose) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -2348,7 +2368,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":60
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":60
  *                  verbose=False):
  * 
  *         AlgoBase.__init__(self)             # <<<<<<<<<<<<<<
@@ -2377,7 +2397,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":62
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":62
  *         AlgoBase.__init__(self)
  * 
  *         self.n_cltr_u = n_cltr_u             # <<<<<<<<<<<<<<
@@ -2386,7 +2406,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_n_cltr_u, __pyx_v_n_cltr_u) < 0) __PYX_ERR(0, 62, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":63
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":63
  * 
  *         self.n_cltr_u = n_cltr_u
  *         self.n_cltr_i = n_cltr_i             # <<<<<<<<<<<<<<
@@ -2395,7 +2415,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_n_cltr_i, __pyx_v_n_cltr_i) < 0) __PYX_ERR(0, 63, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":64
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":64
  *         self.n_cltr_u = n_cltr_u
  *         self.n_cltr_i = n_cltr_i
  *         self.n_epochs = n_epochs             # <<<<<<<<<<<<<<
@@ -2404,7 +2424,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_n_epochs, __pyx_v_n_epochs) < 0) __PYX_ERR(0, 64, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":65
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":65
  *         self.n_cltr_i = n_cltr_i
  *         self.n_epochs = n_epochs
  *         self.verbose=verbose             # <<<<<<<<<<<<<<
@@ -2413,7 +2433,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_verbose, __pyx_v_verbose) < 0) __PYX_ERR(0, 65, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":66
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":66
  *         self.n_epochs = n_epochs
  *         self.verbose=verbose
  *         self.random_state = random_state             # <<<<<<<<<<<<<<
@@ -2422,7 +2442,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_random_state, __pyx_v_random_state) < 0) __PYX_ERR(0, 66, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":57
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":57
  *     """
  * 
  *     def __init__(self, n_cltr_u=3, n_cltr_i=3, n_epochs=20, random_state=None,             # <<<<<<<<<<<<<<
@@ -2437,7 +2457,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_AddTraceback("surprise.prediction_algorithms.co_clustering.CoClustering.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("kabirrec.surprise.prediction_algorithms.co_clustering.CoClustering.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -2445,7 +2465,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   return __pyx_r;
 }
 
-/* "surprise/prediction_algorithms/co_clustering.pyx":68
+/* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":68
  *         self.random_state = random_state
  * 
  *     def fit(self, trainset):             # <<<<<<<<<<<<<<
@@ -2454,9 +2474,9 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_3fit(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_3fit = {"fit", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_3fit, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_3fit(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_3fit(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_3fit = {"fit", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_3fit, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_3fit(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_trainset = 0;
   int __pyx_lineno = 0;
@@ -2507,18 +2527,18 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("fit", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 68, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("surprise.prediction_algorithms.co_clustering.CoClustering.fit", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("kabirrec.surprise.prediction_algorithms.co_clustering.CoClustering.fit", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_2fit(__pyx_self, __pyx_v_self, __pyx_v_trainset);
+  __pyx_r = __pyx_pf_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_2fit(__pyx_self, __pyx_v_self, __pyx_v_trainset);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_2fit(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_trainset) {
+static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_2fit(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_trainset) {
   PyArrayObject *__pyx_v_user_mean = 0;
   PyArrayObject *__pyx_v_item_mean = 0;
   PyArrayObject *__pyx_v_cltr_u = 0;
@@ -2632,7 +2652,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_pybuffernd_errors.data = NULL;
   __pyx_pybuffernd_errors.rcbuffer = &__pyx_pybuffer_errors;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":73
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":73
  *         # https://github.com/zenogantner/MyMediaLite/blob/master/src/MyMediaLite/RatingPrediction/CoClustering.cs
  * 
  *         AlgoBase.fit(self, trainset)             # <<<<<<<<<<<<<<
@@ -2691,7 +2711,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":93
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":93
  * 
  *         # Randomly assign users and items to intial clusters
  *         rng = get_rng(self.random_state)             # <<<<<<<<<<<<<<
@@ -2721,7 +2741,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_v_rng = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":94
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":94
  *         # Randomly assign users and items to intial clusters
  *         rng = get_rng(self.random_state)
  *         cltr_u = rng.randint(self.n_cltr_u, size=trainset.n_users)             # <<<<<<<<<<<<<<
@@ -2771,7 +2791,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_v_cltr_u = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":95
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":95
  *         rng = get_rng(self.random_state)
  *         cltr_u = rng.randint(self.n_cltr_u, size=trainset.n_users)
  *         cltr_i = rng.randint(self.n_cltr_i, size=trainset.n_items)             # <<<<<<<<<<<<<<
@@ -2821,7 +2841,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_v_cltr_i = ((PyArrayObject *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":98
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":98
  * 
  *         # Compute user and item means
  *         user_mean = np.zeros(self.trainset.n_users, np.double)             # <<<<<<<<<<<<<<
@@ -2915,7 +2935,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_v_user_mean = ((PyArrayObject *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":99
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":99
  *         # Compute user and item means
  *         user_mean = np.zeros(self.trainset.n_users, np.double)
  *         item_mean = np.zeros(self.trainset.n_items, np.double)             # <<<<<<<<<<<<<<
@@ -3009,7 +3029,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_v_item_mean = ((PyArrayObject *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":100
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":100
  *         user_mean = np.zeros(self.trainset.n_users, np.double)
  *         item_mean = np.zeros(self.trainset.n_items, np.double)
  *         for u in trainset.all_users():             # <<<<<<<<<<<<<<
@@ -3077,7 +3097,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_u = __pyx_t_4;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":101
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":101
  *         item_mean = np.zeros(self.trainset.n_items, np.double)
  *         for u in trainset.all_users():
  *             user_mean[u] = np.mean([r for (_, r) in trainset.ur[u]])             # <<<<<<<<<<<<<<
@@ -3223,7 +3243,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     }
     *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_user_mean.rcbuffer->pybuffer.buf, __pyx_t_24, __pyx_pybuffernd_user_mean.diminfo[0].strides) = __pyx_t_23;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":100
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":100
  *         user_mean = np.zeros(self.trainset.n_users, np.double)
  *         item_mean = np.zeros(self.trainset.n_items, np.double)
  *         for u in trainset.all_users():             # <<<<<<<<<<<<<<
@@ -3233,7 +3253,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   }
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":102
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":102
  *         for u in trainset.all_users():
  *             user_mean[u] = np.mean([r for (_, r) in trainset.ur[u]])
  *         for i in trainset.all_items():             # <<<<<<<<<<<<<<
@@ -3301,7 +3321,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
     __pyx_v_i = __pyx_t_4;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":103
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":103
  *             user_mean[u] = np.mean([r for (_, r) in trainset.ur[u]])
  *         for i in trainset.all_items():
  *             item_mean[i] = np.mean([r for (_, r) in trainset.ir[i]])             # <<<<<<<<<<<<<<
@@ -3447,7 +3467,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     }
     *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_item_mean.rcbuffer->pybuffer.buf, __pyx_t_24, __pyx_pybuffernd_item_mean.diminfo[0].strides) = __pyx_t_23;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":102
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":102
  *         for u in trainset.all_users():
  *             user_mean[u] = np.mean([r for (_, r) in trainset.ur[u]])
  *         for i in trainset.all_items():             # <<<<<<<<<<<<<<
@@ -3457,7 +3477,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":107
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":107
  *         # Optimization loop. This could be optimized a bit by checking if
  *         # clusters where effectively updated and early stop if they did not.
  *         for epoch in range(self.n_epochs):             # <<<<<<<<<<<<<<
@@ -3512,7 +3532,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     __Pyx_XDECREF_SET(__pyx_v_epoch, __pyx_t_12);
     __pyx_t_12 = 0;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":109
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":109
  *         for epoch in range(self.n_epochs):
  * 
  *             if self.verbose:             # <<<<<<<<<<<<<<
@@ -3525,14 +3545,14 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
     if (__pyx_t_25) {
 
-      /* "surprise/prediction_algorithms/co_clustering.pyx":110
+      /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":110
  * 
  *             if self.verbose:
  *                 print("Processing epoch {}".format(epoch))             # <<<<<<<<<<<<<<
  * 
  *             # Update averages of clusters
  */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_Processing_epoch, __pyx_n_s_format); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 110, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_kp_s_Processing_epoch, __pyx_n_s_format); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 110, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_2 = NULL;
       if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
@@ -3549,12 +3569,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
       if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 110, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_12); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 110, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
+      if (__Pyx_PrintOne(0, __pyx_t_12) < 0) __PYX_ERR(0, 110, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "surprise/prediction_algorithms/co_clustering.pyx":109
+      /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":109
  *         for epoch in range(self.n_epochs):
  * 
  *             if self.verbose:             # <<<<<<<<<<<<<<
@@ -3563,17 +3581,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
     }
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":113
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":113
  * 
  *             # Update averages of clusters
  *             avg_cltr_u, avg_cltr_i, avg_cocltr = self.compute_averages(cltr_u,             # <<<<<<<<<<<<<<
  *                                                                        cltr_i)
  *             # set user cluster to the one that minimizes squarred error of all
  */
-    __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_compute_averages); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 113, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_12);
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_compute_averages); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 113, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":114
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":114
  *             # Update averages of clusters
  *             avg_cltr_u, avg_cltr_i, avg_cocltr = self.compute_averages(cltr_u,
  *                                                                        cltr_i)             # <<<<<<<<<<<<<<
@@ -3582,30 +3600,30 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
     __pyx_t_2 = NULL;
     __pyx_t_4 = 0;
-    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_12))) {
-      __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_12);
+    if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
+      __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_3);
       if (likely(__pyx_t_2)) {
-        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_12);
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
         __Pyx_INCREF(__pyx_t_2);
         __Pyx_INCREF(function);
-        __Pyx_DECREF_SET(__pyx_t_12, function);
+        __Pyx_DECREF_SET(__pyx_t_3, function);
         __pyx_t_4 = 1;
       }
     }
     #if CYTHON_FAST_PYCALL
-    if (PyFunction_Check(__pyx_t_12)) {
+    if (PyFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[3] = {__pyx_t_2, ((PyObject *)__pyx_v_cltr_u), ((PyObject *)__pyx_v_cltr_i)};
-      __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 113, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 113, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_GOTREF(__pyx_t_12);
     } else
     #endif
     #if CYTHON_FAST_PYCCALL
-    if (__Pyx_PyFastCFunction_Check(__pyx_t_12)) {
+    if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[3] = {__pyx_t_2, ((PyObject *)__pyx_v_cltr_u), ((PyObject *)__pyx_v_cltr_i)};
-      __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 113, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 113, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_GOTREF(__pyx_t_12);
     } else
     #endif
     {
@@ -3620,13 +3638,13 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
       __Pyx_INCREF(((PyObject *)__pyx_v_cltr_i));
       __Pyx_GIVEREF(((PyObject *)__pyx_v_cltr_i));
       PyTuple_SET_ITEM(__pyx_t_11, 1+__pyx_t_4, ((PyObject *)__pyx_v_cltr_i));
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_11, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 113, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_11, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 113, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
     }
-    __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-    if ((likely(PyTuple_CheckExact(__pyx_t_3))) || (PyList_CheckExact(__pyx_t_3))) {
-      PyObject* sequence = __pyx_t_3;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if ((likely(PyTuple_CheckExact(__pyx_t_12))) || (PyList_CheckExact(__pyx_t_12))) {
+      PyObject* sequence = __pyx_t_12;
       Py_ssize_t size = __Pyx_PySequence_SIZE(sequence);
       if (unlikely(size != 3)) {
         if (size > 3) __Pyx_RaiseTooManyValuesError(3);
@@ -3635,34 +3653,34 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
-        __pyx_t_12 = PyTuple_GET_ITEM(sequence, 0); 
+        __pyx_t_3 = PyTuple_GET_ITEM(sequence, 0); 
         __pyx_t_11 = PyTuple_GET_ITEM(sequence, 1); 
         __pyx_t_2 = PyTuple_GET_ITEM(sequence, 2); 
       } else {
-        __pyx_t_12 = PyList_GET_ITEM(sequence, 0); 
+        __pyx_t_3 = PyList_GET_ITEM(sequence, 0); 
         __pyx_t_11 = PyList_GET_ITEM(sequence, 1); 
         __pyx_t_2 = PyList_GET_ITEM(sequence, 2); 
       }
-      __Pyx_INCREF(__pyx_t_12);
+      __Pyx_INCREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_t_11);
       __Pyx_INCREF(__pyx_t_2);
       #else
-      __pyx_t_12 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 113, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
+      __pyx_t_3 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 113, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_11 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 113, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
       __pyx_t_2 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 113, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       #endif
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_5 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 113, __pyx_L1_error)
+      __pyx_t_5 = PyObject_GetIter(__pyx_t_12); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 113, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __pyx_t_22 = Py_TYPE(__pyx_t_5)->tp_iternext;
-      index = 0; __pyx_t_12 = __pyx_t_22(__pyx_t_5); if (unlikely(!__pyx_t_12)) goto __pyx_L18_unpacking_failed;
-      __Pyx_GOTREF(__pyx_t_12);
+      index = 0; __pyx_t_3 = __pyx_t_22(__pyx_t_5); if (unlikely(!__pyx_t_3)) goto __pyx_L18_unpacking_failed;
+      __Pyx_GOTREF(__pyx_t_3);
       index = 1; __pyx_t_11 = __pyx_t_22(__pyx_t_5); if (unlikely(!__pyx_t_11)) goto __pyx_L18_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_11);
       index = 2; __pyx_t_2 = __pyx_t_22(__pyx_t_5); if (unlikely(!__pyx_t_2)) goto __pyx_L18_unpacking_failed;
@@ -3679,17 +3697,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
       __pyx_L19_unpacking_done:;
     }
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":113
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":113
  * 
  *             # Update averages of clusters
  *             avg_cltr_u, avg_cltr_i, avg_cocltr = self.compute_averages(cltr_u,             # <<<<<<<<<<<<<<
  *                                                                        cltr_i)
  *             # set user cluster to the one that minimizes squarred error of all
  */
-    if (!(likely(((__pyx_t_12) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_12, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 113, __pyx_L1_error)
+    if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 113, __pyx_L1_error)
     if (!(likely(((__pyx_t_11) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_11, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 113, __pyx_L1_error)
     if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 113, __pyx_L1_error)
-    __pyx_t_26 = ((PyArrayObject *)__pyx_t_12);
+    __pyx_t_26 = ((PyArrayObject *)__pyx_t_3);
     {
       __Pyx_BufFmt_StackElem __pyx_stack[1];
       __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_avg_cltr_u.rcbuffer->pybuffer);
@@ -3708,8 +3726,8 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
       if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 113, __pyx_L1_error)
     }
     __pyx_t_26 = 0;
-    __Pyx_XDECREF_SET(__pyx_v_avg_cltr_u, ((PyArrayObject *)__pyx_t_12));
-    __pyx_t_12 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_avg_cltr_u, ((PyArrayObject *)__pyx_t_3));
+    __pyx_t_3 = 0;
     __pyx_t_27 = ((PyArrayObject *)__pyx_t_11);
     {
       __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -3753,7 +3771,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     __Pyx_XDECREF_SET(__pyx_v_avg_cocltr, ((PyArrayObject *)__pyx_t_2));
     __pyx_t_2 = 0;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":117
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":117
  *             # set user cluster to the one that minimizes squarred error of all
  *             # the user's ratings.
  *             for u in self.trainset.all_users():             # <<<<<<<<<<<<<<
@@ -3775,42 +3793,42 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
         __Pyx_DECREF_SET(__pyx_t_11, function);
       }
     }
-    __pyx_t_3 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_11, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_11);
+    __pyx_t_12 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_11, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_11);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
+    if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 117, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_12);
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-    if (likely(PyList_CheckExact(__pyx_t_3)) || PyTuple_CheckExact(__pyx_t_3)) {
-      __pyx_t_11 = __pyx_t_3; __Pyx_INCREF(__pyx_t_11); __pyx_t_17 = 0;
+    if (likely(PyList_CheckExact(__pyx_t_12)) || PyTuple_CheckExact(__pyx_t_12)) {
+      __pyx_t_11 = __pyx_t_12; __Pyx_INCREF(__pyx_t_11); __pyx_t_17 = 0;
       __pyx_t_18 = NULL;
     } else {
-      __pyx_t_17 = -1; __pyx_t_11 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 117, __pyx_L1_error)
+      __pyx_t_17 = -1; __pyx_t_11 = PyObject_GetIter(__pyx_t_12); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 117, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_11);
       __pyx_t_18 = Py_TYPE(__pyx_t_11)->tp_iternext; if (unlikely(!__pyx_t_18)) __PYX_ERR(0, 117, __pyx_L1_error)
     }
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
     for (;;) {
       if (likely(!__pyx_t_18)) {
         if (likely(PyList_CheckExact(__pyx_t_11))) {
           if (__pyx_t_17 >= PyList_GET_SIZE(__pyx_t_11)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_3 = PyList_GET_ITEM(__pyx_t_11, __pyx_t_17); __Pyx_INCREF(__pyx_t_3); __pyx_t_17++; if (unlikely(0 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
+          __pyx_t_12 = PyList_GET_ITEM(__pyx_t_11, __pyx_t_17); __Pyx_INCREF(__pyx_t_12); __pyx_t_17++; if (unlikely(0 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
           #else
-          __pyx_t_3 = PySequence_ITEM(__pyx_t_11, __pyx_t_17); __pyx_t_17++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_3);
+          __pyx_t_12 = PySequence_ITEM(__pyx_t_11, __pyx_t_17); __pyx_t_17++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 117, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_12);
           #endif
         } else {
           if (__pyx_t_17 >= PyTuple_GET_SIZE(__pyx_t_11)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_11, __pyx_t_17); __Pyx_INCREF(__pyx_t_3); __pyx_t_17++; if (unlikely(0 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
+          __pyx_t_12 = PyTuple_GET_ITEM(__pyx_t_11, __pyx_t_17); __Pyx_INCREF(__pyx_t_12); __pyx_t_17++; if (unlikely(0 < 0)) __PYX_ERR(0, 117, __pyx_L1_error)
           #else
-          __pyx_t_3 = PySequence_ITEM(__pyx_t_11, __pyx_t_17); __pyx_t_17++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 117, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_3);
+          __pyx_t_12 = PySequence_ITEM(__pyx_t_11, __pyx_t_17); __pyx_t_17++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 117, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_12);
           #endif
         }
       } else {
-        __pyx_t_3 = __pyx_t_18(__pyx_t_11);
-        if (unlikely(!__pyx_t_3)) {
+        __pyx_t_12 = __pyx_t_18(__pyx_t_11);
+        if (unlikely(!__pyx_t_12)) {
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
@@ -3818,13 +3836,13 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
           }
           break;
         }
-        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_GOTREF(__pyx_t_12);
       }
-      __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 117, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_4 = __Pyx_PyInt_As_int(__pyx_t_12); if (unlikely((__pyx_t_4 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 117, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __pyx_v_u = __pyx_t_4;
 
-      /* "surprise/prediction_algorithms/co_clustering.pyx":118
+      /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":118
  *             # the user's ratings.
  *             for u in self.trainset.all_users():
  *                 errors = np.zeros(self.n_cltr_u, np.double)             # <<<<<<<<<<<<<<
@@ -3833,8 +3851,8 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
       __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 118, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_zeros); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 118, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 118, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_cltr_u); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 118, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
@@ -3845,32 +3863,32 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_t_5 = NULL;
       __pyx_t_4 = 0;
-      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_12))) {
-        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_12);
+      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
+        __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_3);
         if (likely(__pyx_t_5)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_12);
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
           __Pyx_INCREF(__pyx_t_5);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_12, function);
+          __Pyx_DECREF_SET(__pyx_t_3, function);
           __pyx_t_4 = 1;
         }
       }
       #if CYTHON_FAST_PYCALL
-      if (PyFunction_Check(__pyx_t_12)) {
+      if (PyFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_2, __pyx_t_19};
-        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 118, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 118, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_GOTREF(__pyx_t_12);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
       } else
       #endif
       #if CYTHON_FAST_PYCCALL
-      if (__Pyx_PyFastCFunction_Check(__pyx_t_12)) {
+      if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_2, __pyx_t_19};
-        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 118, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 118, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_GOTREF(__pyx_t_12);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
       } else
@@ -3887,13 +3905,13 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
         PyTuple_SET_ITEM(__pyx_t_20, 1+__pyx_t_4, __pyx_t_19);
         __pyx_t_2 = 0;
         __pyx_t_19 = 0;
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_20, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 118, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
+        __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_20, NULL); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 118, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_12);
         __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
       }
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 118, __pyx_L1_error)
-      __pyx_t_29 = ((PyArrayObject *)__pyx_t_3);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      if (!(likely(((__pyx_t_12) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_12, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 118, __pyx_L1_error)
+      __pyx_t_29 = ((PyArrayObject *)__pyx_t_12);
       {
         __Pyx_BufFmt_StackElem __pyx_stack[1];
         __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_errors.rcbuffer->pybuffer);
@@ -3912,70 +3930,70 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
         if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 118, __pyx_L1_error)
       }
       __pyx_t_29 = 0;
-      __Pyx_XDECREF_SET(__pyx_v_errors, ((PyArrayObject *)__pyx_t_3));
-      __pyx_t_3 = 0;
+      __Pyx_XDECREF_SET(__pyx_v_errors, ((PyArrayObject *)__pyx_t_12));
+      __pyx_t_12 = 0;
 
-      /* "surprise/prediction_algorithms/co_clustering.pyx":119
+      /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":119
  *             for u in self.trainset.all_users():
  *                 errors = np.zeros(self.n_cltr_u, np.double)
  *                 for uc in range(self.n_cltr_u):             # <<<<<<<<<<<<<<
  *                     for i, r in self.trainset.ur[u]:
  *                         ic = cltr_i[i]
  */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_cltr_u); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 119, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_30 = __Pyx_PyInt_As_long(__pyx_t_3); if (unlikely((__pyx_t_30 == (long)-1) && PyErr_Occurred())) __PYX_ERR(0, 119, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_cltr_u); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 119, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
+      __pyx_t_30 = __Pyx_PyInt_As_long(__pyx_t_12); if (unlikely((__pyx_t_30 == (long)-1) && PyErr_Occurred())) __PYX_ERR(0, 119, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __pyx_t_31 = __pyx_t_30;
       for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_31; __pyx_t_4+=1) {
         __pyx_v_uc = __pyx_t_4;
 
-        /* "surprise/prediction_algorithms/co_clustering.pyx":120
+        /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":120
  *                 errors = np.zeros(self.n_cltr_u, np.double)
  *                 for uc in range(self.n_cltr_u):
  *                     for i, r in self.trainset.ur[u]:             # <<<<<<<<<<<<<<
  *                         ic = cltr_i[i]
  *                         est = (avg_cocltr[uc, ic] +
  */
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_ur); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 120, __pyx_L1_error)
+        __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 120, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_12);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_12, __pyx_v_u, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_ur); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-        if (likely(PyList_CheckExact(__pyx_t_3)) || PyTuple_CheckExact(__pyx_t_3)) {
-          __pyx_t_12 = __pyx_t_3; __Pyx_INCREF(__pyx_t_12); __pyx_t_32 = 0;
+        __pyx_t_12 = __Pyx_GetItemInt(__pyx_t_3, __pyx_v_u, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 120, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_12);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        if (likely(PyList_CheckExact(__pyx_t_12)) || PyTuple_CheckExact(__pyx_t_12)) {
+          __pyx_t_3 = __pyx_t_12; __Pyx_INCREF(__pyx_t_3); __pyx_t_32 = 0;
           __pyx_t_33 = NULL;
         } else {
-          __pyx_t_32 = -1; __pyx_t_12 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 120, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_12);
-          __pyx_t_33 = Py_TYPE(__pyx_t_12)->tp_iternext; if (unlikely(!__pyx_t_33)) __PYX_ERR(0, 120, __pyx_L1_error)
+          __pyx_t_32 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_12); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_3);
+          __pyx_t_33 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_33)) __PYX_ERR(0, 120, __pyx_L1_error)
         }
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         for (;;) {
           if (likely(!__pyx_t_33)) {
-            if (likely(PyList_CheckExact(__pyx_t_12))) {
-              if (__pyx_t_32 >= PyList_GET_SIZE(__pyx_t_12)) break;
+            if (likely(PyList_CheckExact(__pyx_t_3))) {
+              if (__pyx_t_32 >= PyList_GET_SIZE(__pyx_t_3)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_3 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_32); __Pyx_INCREF(__pyx_t_3); __pyx_t_32++; if (unlikely(0 < 0)) __PYX_ERR(0, 120, __pyx_L1_error)
+              __pyx_t_12 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_32); __Pyx_INCREF(__pyx_t_12); __pyx_t_32++; if (unlikely(0 < 0)) __PYX_ERR(0, 120, __pyx_L1_error)
               #else
-              __pyx_t_3 = PySequence_ITEM(__pyx_t_12, __pyx_t_32); __pyx_t_32++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
-              __Pyx_GOTREF(__pyx_t_3);
+              __pyx_t_12 = PySequence_ITEM(__pyx_t_3, __pyx_t_32); __pyx_t_32++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 120, __pyx_L1_error)
+              __Pyx_GOTREF(__pyx_t_12);
               #endif
             } else {
-              if (__pyx_t_32 >= PyTuple_GET_SIZE(__pyx_t_12)) break;
+              if (__pyx_t_32 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_12, __pyx_t_32); __Pyx_INCREF(__pyx_t_3); __pyx_t_32++; if (unlikely(0 < 0)) __PYX_ERR(0, 120, __pyx_L1_error)
+              __pyx_t_12 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_32); __Pyx_INCREF(__pyx_t_12); __pyx_t_32++; if (unlikely(0 < 0)) __PYX_ERR(0, 120, __pyx_L1_error)
               #else
-              __pyx_t_3 = PySequence_ITEM(__pyx_t_12, __pyx_t_32); __pyx_t_32++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 120, __pyx_L1_error)
-              __Pyx_GOTREF(__pyx_t_3);
+              __pyx_t_12 = PySequence_ITEM(__pyx_t_3, __pyx_t_32); __pyx_t_32++; if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 120, __pyx_L1_error)
+              __Pyx_GOTREF(__pyx_t_12);
               #endif
             }
           } else {
-            __pyx_t_3 = __pyx_t_33(__pyx_t_12);
-            if (unlikely(!__pyx_t_3)) {
+            __pyx_t_12 = __pyx_t_33(__pyx_t_3);
+            if (unlikely(!__pyx_t_12)) {
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
                 if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
@@ -3983,10 +4001,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
               }
               break;
             }
-            __Pyx_GOTREF(__pyx_t_3);
+            __Pyx_GOTREF(__pyx_t_12);
           }
-          if ((likely(PyTuple_CheckExact(__pyx_t_3))) || (PyList_CheckExact(__pyx_t_3))) {
-            PyObject* sequence = __pyx_t_3;
+          if ((likely(PyTuple_CheckExact(__pyx_t_12))) || (PyList_CheckExact(__pyx_t_12))) {
+            PyObject* sequence = __pyx_t_12;
             Py_ssize_t size = __Pyx_PySequence_SIZE(sequence);
             if (unlikely(size != 2)) {
               if (size > 2) __Pyx_RaiseTooManyValuesError(2);
@@ -4009,12 +4027,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
             __pyx_t_19 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 120, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_19);
             #endif
-            __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+            __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
           } else {
             Py_ssize_t index = -1;
-            __pyx_t_2 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
+            __pyx_t_2 = PyObject_GetIter(__pyx_t_12); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
-            __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+            __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
             __pyx_t_22 = Py_TYPE(__pyx_t_2)->tp_iternext;
             index = 0; __pyx_t_20 = __pyx_t_22(__pyx_t_2); if (unlikely(!__pyx_t_20)) goto __pyx_L26_unpacking_failed;
             __Pyx_GOTREF(__pyx_t_20);
@@ -4038,7 +4056,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
           __pyx_v_i = __pyx_t_34;
           __pyx_v_r = __pyx_t_35;
 
-          /* "surprise/prediction_algorithms/co_clustering.pyx":121
+          /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":121
  *                 for uc in range(self.n_cltr_u):
  *                     for i, r in self.trainset.ur[u]:
  *                         ic = cltr_i[i]             # <<<<<<<<<<<<<<
@@ -4057,7 +4075,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
           }
           __pyx_v_ic = (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_cltr_i.rcbuffer->pybuffer.buf, __pyx_t_24, __pyx_pybuffernd_cltr_i.diminfo[0].strides));
 
-          /* "surprise/prediction_algorithms/co_clustering.pyx":122
+          /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":122
  *                     for i, r in self.trainset.ur[u]:
  *                         ic = cltr_i[i]
  *                         est = (avg_cocltr[uc, ic] +             # <<<<<<<<<<<<<<
@@ -4080,7 +4098,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
             __PYX_ERR(0, 122, __pyx_L1_error)
           }
 
-          /* "surprise/prediction_algorithms/co_clustering.pyx":123
+          /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":123
  *                         ic = cltr_i[i]
  *                         est = (avg_cocltr[uc, ic] +
  *                                user_mean[u] - avg_cltr_u[uc] +             # <<<<<<<<<<<<<<
@@ -4098,7 +4116,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
             __PYX_ERR(0, 123, __pyx_L1_error)
           }
 
-          /* "surprise/prediction_algorithms/co_clustering.pyx":122
+          /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":122
  *                     for i, r in self.trainset.ur[u]:
  *                         ic = cltr_i[i]
  *                         est = (avg_cocltr[uc, ic] +             # <<<<<<<<<<<<<<
@@ -4116,7 +4134,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
             __PYX_ERR(0, 123, __pyx_L1_error)
           }
 
-          /* "surprise/prediction_algorithms/co_clustering.pyx":124
+          /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":124
  *                         est = (avg_cocltr[uc, ic] +
  *                                user_mean[u] - avg_cltr_u[uc] +
  *                                item_mean[i] - avg_cltr_i[ic])             # <<<<<<<<<<<<<<
@@ -4134,7 +4152,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
             __PYX_ERR(0, 124, __pyx_L1_error)
           }
 
-          /* "surprise/prediction_algorithms/co_clustering.pyx":123
+          /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":123
  *                         ic = cltr_i[i]
  *                         est = (avg_cocltr[uc, ic] +
  *                                user_mean[u] - avg_cltr_u[uc] +             # <<<<<<<<<<<<<<
@@ -4152,7 +4170,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
             __PYX_ERR(0, 124, __pyx_L1_error)
           }
 
-          /* "surprise/prediction_algorithms/co_clustering.pyx":124
+          /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":124
  *                         est = (avg_cocltr[uc, ic] +
  *                                user_mean[u] - avg_cltr_u[uc] +
  *                                item_mean[i] - avg_cltr_i[ic])             # <<<<<<<<<<<<<<
@@ -4161,7 +4179,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
           __pyx_v_est = (((((*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_avg_cocltr.rcbuffer->pybuffer.buf, __pyx_t_24, __pyx_pybuffernd_avg_cocltr.diminfo[0].strides, __pyx_t_36, __pyx_pybuffernd_avg_cocltr.diminfo[1].strides)) + (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_user_mean.rcbuffer->pybuffer.buf, __pyx_t_37, __pyx_pybuffernd_user_mean.diminfo[0].strides))) - (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_avg_cltr_u.rcbuffer->pybuffer.buf, __pyx_t_38, __pyx_pybuffernd_avg_cltr_u.diminfo[0].strides))) + (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_item_mean.rcbuffer->pybuffer.buf, __pyx_t_39, __pyx_pybuffernd_item_mean.diminfo[0].strides))) - (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_avg_cltr_i.rcbuffer->pybuffer.buf, __pyx_t_40, __pyx_pybuffernd_avg_cltr_i.diminfo[0].strides)));
 
-          /* "surprise/prediction_algorithms/co_clustering.pyx":125
+          /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":125
  *                                user_mean[u] - avg_cltr_u[uc] +
  *                                item_mean[i] - avg_cltr_i[ic])
  *                         errors[uc] += (r - est)**2             # <<<<<<<<<<<<<<
@@ -4180,7 +4198,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
           }
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_errors.rcbuffer->pybuffer.buf, __pyx_t_40, __pyx_pybuffernd_errors.diminfo[0].strides) += pow((__pyx_v_r - __pyx_v_est), 2.0);
 
-          /* "surprise/prediction_algorithms/co_clustering.pyx":120
+          /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":120
  *                 errors = np.zeros(self.n_cltr_u, np.double)
  *                 for uc in range(self.n_cltr_u):
  *                     for i, r in self.trainset.ur[u]:             # <<<<<<<<<<<<<<
@@ -4188,38 +4206,38 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  *                         est = (avg_cocltr[uc, ic] +
  */
         }
-        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       }
 
-      /* "surprise/prediction_algorithms/co_clustering.pyx":126
+      /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":126
  *                                item_mean[i] - avg_cltr_i[ic])
  *                         errors[uc] += (r - est)**2
  *                 cltr_u[u] = np.argmin(errors)             # <<<<<<<<<<<<<<
  * 
  *             # set item cluster to the one that minimizes squarred error over
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 126, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_argmin); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 126, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_np); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 126, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
+      __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_argmin); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 126, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_19);
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = NULL;
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      __pyx_t_12 = NULL;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_19))) {
-        __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_19);
-        if (likely(__pyx_t_3)) {
+        __pyx_t_12 = PyMethod_GET_SELF(__pyx_t_19);
+        if (likely(__pyx_t_12)) {
           PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_19);
-          __Pyx_INCREF(__pyx_t_3);
+          __Pyx_INCREF(__pyx_t_12);
           __Pyx_INCREF(function);
           __Pyx_DECREF_SET(__pyx_t_19, function);
         }
       }
-      __pyx_t_12 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_19, __pyx_t_3, ((PyObject *)__pyx_v_errors)) : __Pyx_PyObject_CallOneArg(__pyx_t_19, ((PyObject *)__pyx_v_errors));
-      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 126, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
+      __pyx_t_3 = (__pyx_t_12) ? __Pyx_PyObject_Call2Args(__pyx_t_19, __pyx_t_12, ((PyObject *)__pyx_v_errors)) : __Pyx_PyObject_CallOneArg(__pyx_t_19, ((PyObject *)__pyx_v_errors));
+      __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 126, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
-      __pyx_t_41 = __Pyx_PyInt_As_npy_long(__pyx_t_12); if (unlikely((__pyx_t_41 == ((npy_long)-1)) && PyErr_Occurred())) __PYX_ERR(0, 126, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+      __pyx_t_41 = __Pyx_PyInt_As_npy_long(__pyx_t_3); if (unlikely((__pyx_t_41 == ((npy_long)-1)) && PyErr_Occurred())) __PYX_ERR(0, 126, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __pyx_t_40 = __pyx_v_u;
       __pyx_t_4 = -1;
       if (__pyx_t_40 < 0) {
@@ -4232,7 +4250,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
       }
       *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_cltr_u.rcbuffer->pybuffer.buf, __pyx_t_40, __pyx_pybuffernd_cltr_u.diminfo[0].strides) = __pyx_t_41;
 
-      /* "surprise/prediction_algorithms/co_clustering.pyx":117
+      /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":117
  *             # set user cluster to the one that minimizes squarred error of all
  *             # the user's ratings.
  *             for u in self.trainset.all_users():             # <<<<<<<<<<<<<<
@@ -4242,30 +4260,30 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     }
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":130
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":130
  *             # set item cluster to the one that minimizes squarred error over
  *             # all the item's ratings.
  *             for i in self.trainset.all_items():             # <<<<<<<<<<<<<<
  *                 errors = np.zeros(self.n_cltr_i, np.double)
  *                 for ic in range(self.n_cltr_i):
  */
-    __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 130, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_12);
-    __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_all_items); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 130, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 130, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_all_items); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 130, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_19);
-    __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-    __pyx_t_12 = NULL;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_3 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_19))) {
-      __pyx_t_12 = PyMethod_GET_SELF(__pyx_t_19);
-      if (likely(__pyx_t_12)) {
+      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_19);
+      if (likely(__pyx_t_3)) {
         PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_19);
-        __Pyx_INCREF(__pyx_t_12);
+        __Pyx_INCREF(__pyx_t_3);
         __Pyx_INCREF(function);
         __Pyx_DECREF_SET(__pyx_t_19, function);
       }
     }
-    __pyx_t_11 = (__pyx_t_12) ? __Pyx_PyObject_CallOneArg(__pyx_t_19, __pyx_t_12) : __Pyx_PyObject_CallNoArg(__pyx_t_19);
-    __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
+    __pyx_t_11 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_19, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_19);
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 130, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_11);
     __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
@@ -4313,20 +4331,20 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
       __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
       __pyx_v_i = __pyx_t_4;
 
-      /* "surprise/prediction_algorithms/co_clustering.pyx":131
+      /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":131
  *             # all the item's ratings.
  *             for i in self.trainset.all_items():
  *                 errors = np.zeros(self.n_cltr_i, np.double)             # <<<<<<<<<<<<<<
  *                 for ic in range(self.n_cltr_i):
  *                     for u, r in self.trainset.ir[i]:
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_np); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 131, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_12);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 131, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 131, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-      __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_cltr_i); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 131, __pyx_L1_error)
+      __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 131, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_12);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_cltr_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 131, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
       __Pyx_GetModuleGlobalName(__pyx_t_20, __pyx_n_s_np); if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 131, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_20);
       __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_20, __pyx_n_s_double); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 131, __pyx_L1_error)
@@ -4334,33 +4352,33 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
       __Pyx_DECREF(__pyx_t_20); __pyx_t_20 = 0;
       __pyx_t_20 = NULL;
       __pyx_t_4 = 0;
-      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
-        __pyx_t_20 = PyMethod_GET_SELF(__pyx_t_3);
+      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_12))) {
+        __pyx_t_20 = PyMethod_GET_SELF(__pyx_t_12);
         if (likely(__pyx_t_20)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_12);
           __Pyx_INCREF(__pyx_t_20);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_3, function);
+          __Pyx_DECREF_SET(__pyx_t_12, function);
           __pyx_t_4 = 1;
         }
       }
       #if CYTHON_FAST_PYCALL
-      if (PyFunction_Check(__pyx_t_3)) {
-        PyObject *__pyx_temp[3] = {__pyx_t_20, __pyx_t_12, __pyx_t_2};
-        __pyx_t_11 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 131, __pyx_L1_error)
+      if (PyFunction_Check(__pyx_t_12)) {
+        PyObject *__pyx_temp[3] = {__pyx_t_20, __pyx_t_3, __pyx_t_2};
+        __pyx_t_11 = __Pyx_PyFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 131, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_20); __pyx_t_20 = 0;
         __Pyx_GOTREF(__pyx_t_11);
-        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       } else
       #endif
       #if CYTHON_FAST_PYCCALL
-      if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
-        PyObject *__pyx_temp[3] = {__pyx_t_20, __pyx_t_12, __pyx_t_2};
-        __pyx_t_11 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 131, __pyx_L1_error)
+      if (__Pyx_PyFastCFunction_Check(__pyx_t_12)) {
+        PyObject *__pyx_temp[3] = {__pyx_t_20, __pyx_t_3, __pyx_t_2};
+        __pyx_t_11 = __Pyx_PyCFunction_FastCall(__pyx_t_12, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 131, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_20); __pyx_t_20 = 0;
         __Pyx_GOTREF(__pyx_t_11);
-        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       } else
       #endif
@@ -4370,17 +4388,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
         if (__pyx_t_20) {
           __Pyx_GIVEREF(__pyx_t_20); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_20); __pyx_t_20 = NULL;
         }
-        __Pyx_GIVEREF(__pyx_t_12);
-        PyTuple_SET_ITEM(__pyx_t_5, 0+__pyx_t_4, __pyx_t_12);
+        __Pyx_GIVEREF(__pyx_t_3);
+        PyTuple_SET_ITEM(__pyx_t_5, 0+__pyx_t_4, __pyx_t_3);
         __Pyx_GIVEREF(__pyx_t_2);
         PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_4, __pyx_t_2);
-        __pyx_t_12 = 0;
+        __pyx_t_3 = 0;
         __pyx_t_2 = 0;
-        __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 131, __pyx_L1_error)
+        __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_5, NULL); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 131, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       }
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       if (!(likely(((__pyx_t_11) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_11, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 131, __pyx_L1_error)
       __pyx_t_29 = ((PyArrayObject *)__pyx_t_11);
       {
@@ -4404,7 +4422,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
       __Pyx_XDECREF_SET(__pyx_v_errors, ((PyArrayObject *)__pyx_t_11));
       __pyx_t_11 = 0;
 
-      /* "surprise/prediction_algorithms/co_clustering.pyx":132
+      /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":132
  *             for i in self.trainset.all_items():
  *                 errors = np.zeros(self.n_cltr_i, np.double)
  *                 for ic in range(self.n_cltr_i):             # <<<<<<<<<<<<<<
@@ -4419,7 +4437,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
       for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_31; __pyx_t_4+=1) {
         __pyx_v_ic = __pyx_t_4;
 
-        /* "surprise/prediction_algorithms/co_clustering.pyx":133
+        /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":133
  *                 errors = np.zeros(self.n_cltr_i, np.double)
  *                 for ic in range(self.n_cltr_i):
  *                     for u, r in self.trainset.ir[i]:             # <<<<<<<<<<<<<<
@@ -4428,42 +4446,42 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
         __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 133, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
-        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_ir); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 133, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_3);
+        __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_ir); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 133, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_12);
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-        __pyx_t_11 = __Pyx_GetItemInt(__pyx_t_3, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 133, __pyx_L1_error)
+        __pyx_t_11 = __Pyx_GetItemInt(__pyx_t_12, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 133, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_11);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
         if (likely(PyList_CheckExact(__pyx_t_11)) || PyTuple_CheckExact(__pyx_t_11)) {
-          __pyx_t_3 = __pyx_t_11; __Pyx_INCREF(__pyx_t_3); __pyx_t_32 = 0;
+          __pyx_t_12 = __pyx_t_11; __Pyx_INCREF(__pyx_t_12); __pyx_t_32 = 0;
           __pyx_t_33 = NULL;
         } else {
-          __pyx_t_32 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_11); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 133, __pyx_L1_error)
-          __Pyx_GOTREF(__pyx_t_3);
-          __pyx_t_33 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_33)) __PYX_ERR(0, 133, __pyx_L1_error)
+          __pyx_t_32 = -1; __pyx_t_12 = PyObject_GetIter(__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 133, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_12);
+          __pyx_t_33 = Py_TYPE(__pyx_t_12)->tp_iternext; if (unlikely(!__pyx_t_33)) __PYX_ERR(0, 133, __pyx_L1_error)
         }
         __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
         for (;;) {
           if (likely(!__pyx_t_33)) {
-            if (likely(PyList_CheckExact(__pyx_t_3))) {
-              if (__pyx_t_32 >= PyList_GET_SIZE(__pyx_t_3)) break;
+            if (likely(PyList_CheckExact(__pyx_t_12))) {
+              if (__pyx_t_32 >= PyList_GET_SIZE(__pyx_t_12)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_11 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_32); __Pyx_INCREF(__pyx_t_11); __pyx_t_32++; if (unlikely(0 < 0)) __PYX_ERR(0, 133, __pyx_L1_error)
+              __pyx_t_11 = PyList_GET_ITEM(__pyx_t_12, __pyx_t_32); __Pyx_INCREF(__pyx_t_11); __pyx_t_32++; if (unlikely(0 < 0)) __PYX_ERR(0, 133, __pyx_L1_error)
               #else
-              __pyx_t_11 = PySequence_ITEM(__pyx_t_3, __pyx_t_32); __pyx_t_32++; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 133, __pyx_L1_error)
+              __pyx_t_11 = PySequence_ITEM(__pyx_t_12, __pyx_t_32); __pyx_t_32++; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 133, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_11);
               #endif
             } else {
-              if (__pyx_t_32 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
+              if (__pyx_t_32 >= PyTuple_GET_SIZE(__pyx_t_12)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_11 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_32); __Pyx_INCREF(__pyx_t_11); __pyx_t_32++; if (unlikely(0 < 0)) __PYX_ERR(0, 133, __pyx_L1_error)
+              __pyx_t_11 = PyTuple_GET_ITEM(__pyx_t_12, __pyx_t_32); __Pyx_INCREF(__pyx_t_11); __pyx_t_32++; if (unlikely(0 < 0)) __PYX_ERR(0, 133, __pyx_L1_error)
               #else
-              __pyx_t_11 = PySequence_ITEM(__pyx_t_3, __pyx_t_32); __pyx_t_32++; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 133, __pyx_L1_error)
+              __pyx_t_11 = PySequence_ITEM(__pyx_t_12, __pyx_t_32); __pyx_t_32++; if (unlikely(!__pyx_t_11)) __PYX_ERR(0, 133, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_11);
               #endif
             }
           } else {
-            __pyx_t_11 = __pyx_t_33(__pyx_t_3);
+            __pyx_t_11 = __pyx_t_33(__pyx_t_12);
             if (unlikely(!__pyx_t_11)) {
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
@@ -4501,20 +4519,20 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
             __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
           } else {
             Py_ssize_t index = -1;
-            __pyx_t_12 = PyObject_GetIter(__pyx_t_11); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 133, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_12);
+            __pyx_t_3 = PyObject_GetIter(__pyx_t_11); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 133, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_3);
             __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-            __pyx_t_22 = Py_TYPE(__pyx_t_12)->tp_iternext;
-            index = 0; __pyx_t_5 = __pyx_t_22(__pyx_t_12); if (unlikely(!__pyx_t_5)) goto __pyx_L34_unpacking_failed;
+            __pyx_t_22 = Py_TYPE(__pyx_t_3)->tp_iternext;
+            index = 0; __pyx_t_5 = __pyx_t_22(__pyx_t_3); if (unlikely(!__pyx_t_5)) goto __pyx_L34_unpacking_failed;
             __Pyx_GOTREF(__pyx_t_5);
-            index = 1; __pyx_t_2 = __pyx_t_22(__pyx_t_12); if (unlikely(!__pyx_t_2)) goto __pyx_L34_unpacking_failed;
+            index = 1; __pyx_t_2 = __pyx_t_22(__pyx_t_3); if (unlikely(!__pyx_t_2)) goto __pyx_L34_unpacking_failed;
             __Pyx_GOTREF(__pyx_t_2);
-            if (__Pyx_IternextUnpackEndCheck(__pyx_t_22(__pyx_t_12), 2) < 0) __PYX_ERR(0, 133, __pyx_L1_error)
+            if (__Pyx_IternextUnpackEndCheck(__pyx_t_22(__pyx_t_3), 2) < 0) __PYX_ERR(0, 133, __pyx_L1_error)
             __pyx_t_22 = NULL;
-            __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+            __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
             goto __pyx_L35_unpacking_done;
             __pyx_L34_unpacking_failed:;
-            __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
+            __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
             __pyx_t_22 = NULL;
             if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
             __PYX_ERR(0, 133, __pyx_L1_error)
@@ -4527,7 +4545,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
           __pyx_v_u = __pyx_t_35;
           __pyx_v_r = __pyx_t_34;
 
-          /* "surprise/prediction_algorithms/co_clustering.pyx":134
+          /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":134
  *                 for ic in range(self.n_cltr_i):
  *                     for u, r in self.trainset.ir[i]:
  *                         uc = cltr_u[u]             # <<<<<<<<<<<<<<
@@ -4546,7 +4564,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
           }
           __pyx_v_uc = (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_cltr_u.rcbuffer->pybuffer.buf, __pyx_t_40, __pyx_pybuffernd_cltr_u.diminfo[0].strides));
 
-          /* "surprise/prediction_algorithms/co_clustering.pyx":135
+          /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":135
  *                     for u, r in self.trainset.ir[i]:
  *                         uc = cltr_u[u]
  *                         est = (avg_cocltr[uc, ic] +             # <<<<<<<<<<<<<<
@@ -4569,7 +4587,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
             __PYX_ERR(0, 135, __pyx_L1_error)
           }
 
-          /* "surprise/prediction_algorithms/co_clustering.pyx":136
+          /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":136
  *                         uc = cltr_u[u]
  *                         est = (avg_cocltr[uc, ic] +
  *                                user_mean[u] - avg_cltr_u[uc] +             # <<<<<<<<<<<<<<
@@ -4587,7 +4605,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
             __PYX_ERR(0, 136, __pyx_L1_error)
           }
 
-          /* "surprise/prediction_algorithms/co_clustering.pyx":135
+          /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":135
  *                     for u, r in self.trainset.ir[i]:
  *                         uc = cltr_u[u]
  *                         est = (avg_cocltr[uc, ic] +             # <<<<<<<<<<<<<<
@@ -4605,7 +4623,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
             __PYX_ERR(0, 136, __pyx_L1_error)
           }
 
-          /* "surprise/prediction_algorithms/co_clustering.pyx":137
+          /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":137
  *                         est = (avg_cocltr[uc, ic] +
  *                                user_mean[u] - avg_cltr_u[uc] +
  *                                item_mean[i] - avg_cltr_i[ic])             # <<<<<<<<<<<<<<
@@ -4623,7 +4641,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
             __PYX_ERR(0, 137, __pyx_L1_error)
           }
 
-          /* "surprise/prediction_algorithms/co_clustering.pyx":136
+          /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":136
  *                         uc = cltr_u[u]
  *                         est = (avg_cocltr[uc, ic] +
  *                                user_mean[u] - avg_cltr_u[uc] +             # <<<<<<<<<<<<<<
@@ -4641,7 +4659,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
             __PYX_ERR(0, 137, __pyx_L1_error)
           }
 
-          /* "surprise/prediction_algorithms/co_clustering.pyx":137
+          /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":137
  *                         est = (avg_cocltr[uc, ic] +
  *                                user_mean[u] - avg_cltr_u[uc] +
  *                                item_mean[i] - avg_cltr_i[ic])             # <<<<<<<<<<<<<<
@@ -4650,7 +4668,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
           __pyx_v_est = (((((*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_avg_cocltr.rcbuffer->pybuffer.buf, __pyx_t_40, __pyx_pybuffernd_avg_cocltr.diminfo[0].strides, __pyx_t_39, __pyx_pybuffernd_avg_cocltr.diminfo[1].strides)) + (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_user_mean.rcbuffer->pybuffer.buf, __pyx_t_38, __pyx_pybuffernd_user_mean.diminfo[0].strides))) - (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_avg_cltr_u.rcbuffer->pybuffer.buf, __pyx_t_37, __pyx_pybuffernd_avg_cltr_u.diminfo[0].strides))) + (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_item_mean.rcbuffer->pybuffer.buf, __pyx_t_36, __pyx_pybuffernd_item_mean.diminfo[0].strides))) - (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_avg_cltr_i.rcbuffer->pybuffer.buf, __pyx_t_24, __pyx_pybuffernd_avg_cltr_i.diminfo[0].strides)));
 
-          /* "surprise/prediction_algorithms/co_clustering.pyx":138
+          /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":138
  *                                user_mean[u] - avg_cltr_u[uc] +
  *                                item_mean[i] - avg_cltr_i[ic])
  *                         errors[ic] += (r - est)**2             # <<<<<<<<<<<<<<
@@ -4669,7 +4687,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
           }
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_errors.rcbuffer->pybuffer.buf, __pyx_t_24, __pyx_pybuffernd_errors.diminfo[0].strides) += pow((__pyx_v_r - __pyx_v_est), 2.0);
 
-          /* "surprise/prediction_algorithms/co_clustering.pyx":133
+          /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":133
  *                 errors = np.zeros(self.n_cltr_i, np.double)
  *                 for ic in range(self.n_cltr_i):
  *                     for u, r in self.trainset.ir[i]:             # <<<<<<<<<<<<<<
@@ -4677,10 +4695,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  *                         est = (avg_cocltr[uc, ic] +
  */
         }
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       }
 
-      /* "surprise/prediction_algorithms/co_clustering.pyx":139
+      /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":139
  *                                item_mean[i] - avg_cltr_i[ic])
  *                         errors[ic] += (r - est)**2
  *                 cltr_i[i] = np.argmin(errors)             # <<<<<<<<<<<<<<
@@ -4702,13 +4720,13 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
           __Pyx_DECREF_SET(__pyx_t_2, function);
         }
       }
-      __pyx_t_3 = (__pyx_t_11) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_11, ((PyObject *)__pyx_v_errors)) : __Pyx_PyObject_CallOneArg(__pyx_t_2, ((PyObject *)__pyx_v_errors));
+      __pyx_t_12 = (__pyx_t_11) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_11, ((PyObject *)__pyx_v_errors)) : __Pyx_PyObject_CallOneArg(__pyx_t_2, ((PyObject *)__pyx_v_errors));
       __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 139, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_3);
+      if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 139, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_12);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_41 = __Pyx_PyInt_As_npy_long(__pyx_t_3); if (unlikely((__pyx_t_41 == ((npy_long)-1)) && PyErr_Occurred())) __PYX_ERR(0, 139, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_41 = __Pyx_PyInt_As_npy_long(__pyx_t_12); if (unlikely((__pyx_t_41 == ((npy_long)-1)) && PyErr_Occurred())) __PYX_ERR(0, 139, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
       __pyx_t_24 = __pyx_v_i;
       __pyx_t_4 = -1;
       if (__pyx_t_24 < 0) {
@@ -4721,7 +4739,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
       }
       *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_cltr_i.rcbuffer->pybuffer.buf, __pyx_t_24, __pyx_pybuffernd_cltr_i.diminfo[0].strides) = __pyx_t_41;
 
-      /* "surprise/prediction_algorithms/co_clustering.pyx":130
+      /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":130
  *             # set item cluster to the one that minimizes squarred error over
  *             # all the item's ratings.
  *             for i in self.trainset.all_items():             # <<<<<<<<<<<<<<
@@ -4731,7 +4749,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     }
     __Pyx_DECREF(__pyx_t_19); __pyx_t_19 = 0;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":107
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":107
  *         # Optimization loop. This could be optimized a bit by checking if
  *         # clusters where effectively updated and early stop if they did not.
  *         for epoch in range(self.n_epochs):             # <<<<<<<<<<<<<<
@@ -4741,7 +4759,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":142
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":142
  * 
  *         # Compute averages one last time as clusters may have change
  *         avg_cltr_u, avg_cltr_i, avg_cocltr = self.compute_averages(cltr_u,             # <<<<<<<<<<<<<<
@@ -4751,20 +4769,20 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_t_19 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_compute_averages); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 142, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_19);
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":143
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":143
  *         # Compute averages one last time as clusters may have change
  *         avg_cltr_u, avg_cltr_i, avg_cocltr = self.compute_averages(cltr_u,
  *                                                                    cltr_i)             # <<<<<<<<<<<<<<
  *         # Set cdefed arrays as attributes as they are needed for prediction
  *         self.cltr_u = cltr_u
  */
-  __pyx_t_3 = NULL;
+  __pyx_t_12 = NULL;
   __pyx_t_4 = 0;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_19))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_19);
-    if (likely(__pyx_t_3)) {
+    __pyx_t_12 = PyMethod_GET_SELF(__pyx_t_19);
+    if (likely(__pyx_t_12)) {
       PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_19);
-      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_12);
       __Pyx_INCREF(function);
       __Pyx_DECREF_SET(__pyx_t_19, function);
       __pyx_t_4 = 1;
@@ -4772,25 +4790,25 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   }
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_19)) {
-    PyObject *__pyx_temp[3] = {__pyx_t_3, ((PyObject *)__pyx_v_cltr_u), ((PyObject *)__pyx_v_cltr_i)};
+    PyObject *__pyx_temp[3] = {__pyx_t_12, ((PyObject *)__pyx_v_cltr_u), ((PyObject *)__pyx_v_cltr_i)};
     __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_19, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 142, __pyx_L1_error)
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
   #endif
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_19)) {
-    PyObject *__pyx_temp[3] = {__pyx_t_3, ((PyObject *)__pyx_v_cltr_u), ((PyObject *)__pyx_v_cltr_i)};
+    PyObject *__pyx_temp[3] = {__pyx_t_12, ((PyObject *)__pyx_v_cltr_u), ((PyObject *)__pyx_v_cltr_i)};
     __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_19, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 142, __pyx_L1_error)
-    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
   #endif
   {
     __pyx_t_2 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 142, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    if (__pyx_t_3) {
-      __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_3); __pyx_t_3 = NULL;
+    if (__pyx_t_12) {
+      __Pyx_GIVEREF(__pyx_t_12); PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_12); __pyx_t_12 = NULL;
     }
     __Pyx_INCREF(((PyObject *)__pyx_v_cltr_u));
     __Pyx_GIVEREF(((PyObject *)__pyx_v_cltr_u));
@@ -4815,22 +4833,22 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     if (likely(PyTuple_CheckExact(sequence))) {
       __pyx_t_19 = PyTuple_GET_ITEM(sequence, 0); 
       __pyx_t_2 = PyTuple_GET_ITEM(sequence, 1); 
-      __pyx_t_3 = PyTuple_GET_ITEM(sequence, 2); 
+      __pyx_t_12 = PyTuple_GET_ITEM(sequence, 2); 
     } else {
       __pyx_t_19 = PyList_GET_ITEM(sequence, 0); 
       __pyx_t_2 = PyList_GET_ITEM(sequence, 1); 
-      __pyx_t_3 = PyList_GET_ITEM(sequence, 2); 
+      __pyx_t_12 = PyList_GET_ITEM(sequence, 2); 
     }
     __Pyx_INCREF(__pyx_t_19);
     __Pyx_INCREF(__pyx_t_2);
-    __Pyx_INCREF(__pyx_t_3);
+    __Pyx_INCREF(__pyx_t_12);
     #else
     __pyx_t_19 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 142, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_19);
     __pyx_t_2 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 142, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 142, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_12 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_12)) __PYX_ERR(0, 142, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_12);
     #endif
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   } else {
@@ -4843,8 +4861,8 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     __Pyx_GOTREF(__pyx_t_19);
     index = 1; __pyx_t_2 = __pyx_t_22(__pyx_t_11); if (unlikely(!__pyx_t_2)) goto __pyx_L36_unpacking_failed;
     __Pyx_GOTREF(__pyx_t_2);
-    index = 2; __pyx_t_3 = __pyx_t_22(__pyx_t_11); if (unlikely(!__pyx_t_3)) goto __pyx_L36_unpacking_failed;
-    __Pyx_GOTREF(__pyx_t_3);
+    index = 2; __pyx_t_12 = __pyx_t_22(__pyx_t_11); if (unlikely(!__pyx_t_12)) goto __pyx_L36_unpacking_failed;
+    __Pyx_GOTREF(__pyx_t_12);
     if (__Pyx_IternextUnpackEndCheck(__pyx_t_22(__pyx_t_11), 3) < 0) __PYX_ERR(0, 142, __pyx_L1_error)
     __pyx_t_22 = NULL;
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
@@ -4857,7 +4875,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     __pyx_L37_unpacking_done:;
   }
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":142
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":142
  * 
  *         # Compute averages one last time as clusters may have change
  *         avg_cltr_u, avg_cltr_i, avg_cocltr = self.compute_averages(cltr_u,             # <<<<<<<<<<<<<<
@@ -4866,7 +4884,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
   if (!(likely(((__pyx_t_19) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_19, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 142, __pyx_L1_error)
   if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 142, __pyx_L1_error)
-  if (!(likely(((__pyx_t_3) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_3, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 142, __pyx_L1_error)
+  if (!(likely(((__pyx_t_12) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_12, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 142, __pyx_L1_error)
   __pyx_t_26 = ((PyArrayObject *)__pyx_t_19);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -4909,7 +4927,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_t_27 = 0;
   __Pyx_XDECREF_SET(__pyx_v_avg_cltr_i, ((PyArrayObject *)__pyx_t_2));
   __pyx_t_2 = 0;
-  __pyx_t_28 = ((PyArrayObject *)__pyx_t_3);
+  __pyx_t_28 = ((PyArrayObject *)__pyx_t_12);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_avg_cocltr.rcbuffer->pybuffer);
@@ -4928,10 +4946,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 142, __pyx_L1_error)
   }
   __pyx_t_28 = 0;
-  __Pyx_XDECREF_SET(__pyx_v_avg_cocltr, ((PyArrayObject *)__pyx_t_3));
-  __pyx_t_3 = 0;
+  __Pyx_XDECREF_SET(__pyx_v_avg_cocltr, ((PyArrayObject *)__pyx_t_12));
+  __pyx_t_12 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":145
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":145
  *                                                                    cltr_i)
  *         # Set cdefed arrays as attributes as they are needed for prediction
  *         self.cltr_u = cltr_u             # <<<<<<<<<<<<<<
@@ -4940,7 +4958,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_cltr_u, ((PyObject *)__pyx_v_cltr_u)) < 0) __PYX_ERR(0, 145, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":146
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":146
  *         # Set cdefed arrays as attributes as they are needed for prediction
  *         self.cltr_u = cltr_u
  *         self.cltr_i = cltr_i             # <<<<<<<<<<<<<<
@@ -4949,7 +4967,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_cltr_i, ((PyObject *)__pyx_v_cltr_i)) < 0) __PYX_ERR(0, 146, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":148
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":148
  *         self.cltr_i = cltr_i
  * 
  *         self.user_mean = user_mean             # <<<<<<<<<<<<<<
@@ -4958,7 +4976,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_user_mean, ((PyObject *)__pyx_v_user_mean)) < 0) __PYX_ERR(0, 148, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":149
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":149
  * 
  *         self.user_mean = user_mean
  *         self.item_mean = item_mean             # <<<<<<<<<<<<<<
@@ -4967,7 +4985,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_item_mean, ((PyObject *)__pyx_v_item_mean)) < 0) __PYX_ERR(0, 149, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":151
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":151
  *         self.item_mean = item_mean
  * 
  *         self.avg_cltr_u = avg_cltr_u             # <<<<<<<<<<<<<<
@@ -4976,7 +4994,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_avg_cltr_u, ((PyObject *)__pyx_v_avg_cltr_u)) < 0) __PYX_ERR(0, 151, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":152
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":152
  * 
  *         self.avg_cltr_u = avg_cltr_u
  *         self.avg_cltr_i = avg_cltr_i             # <<<<<<<<<<<<<<
@@ -4985,7 +5003,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_avg_cltr_i, ((PyObject *)__pyx_v_avg_cltr_i)) < 0) __PYX_ERR(0, 152, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":153
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":153
  *         self.avg_cltr_u = avg_cltr_u
  *         self.avg_cltr_i = avg_cltr_i
  *         self.avg_cocltr = avg_cocltr             # <<<<<<<<<<<<<<
@@ -4994,7 +5012,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_avg_cocltr, ((PyObject *)__pyx_v_avg_cocltr)) < 0) __PYX_ERR(0, 153, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":155
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":155
  *         self.avg_cocltr = avg_cocltr
  * 
  *         return self             # <<<<<<<<<<<<<<
@@ -5006,7 +5024,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":68
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":68
  *         self.random_state = random_state
  * 
  *     def fit(self, trainset):             # <<<<<<<<<<<<<<
@@ -5038,7 +5056,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_item_mean.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_user_mean.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("surprise.prediction_algorithms.co_clustering.CoClustering.fit", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("kabirrec.surprise.prediction_algorithms.co_clustering.CoClustering.fit", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -5067,7 +5085,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   return __pyx_r;
 }
 
-/* "surprise/prediction_algorithms/co_clustering.pyx":157
+/* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":157
  *         return self
  * 
  *     def compute_averages(self, np.ndarray[np.int_t] cltr_u,             # <<<<<<<<<<<<<<
@@ -5076,10 +5094,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_5compute_averages(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_4compute_averages[] = "Compute cluster averages.\n\n        Args:\n            cltr_u: current user clusters\n            cltr_i: current item clusters\n\n        Returns:\n            Three arrays: averages of user clusters, item clusters and\n            co-clusters.\n        ";
-static PyMethodDef __pyx_mdef_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_5compute_averages = {"compute_averages", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_5compute_averages, METH_VARARGS|METH_KEYWORDS, __pyx_doc_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_4compute_averages};
-static PyObject *__pyx_pw_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_5compute_averages(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_5compute_averages(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static char __pyx_doc_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_4compute_averages[] = "Compute cluster averages.\n\n        Args:\n            cltr_u: current user clusters\n            cltr_i: current item clusters\n\n        Returns:\n            Three arrays: averages of user clusters, item clusters and\n            co-clusters.\n        ";
+static PyMethodDef __pyx_mdef_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_5compute_averages = {"compute_averages", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_5compute_averages, METH_VARARGS|METH_KEYWORDS, __pyx_doc_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_4compute_averages};
+static PyObject *__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_5compute_averages(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyArrayObject *__pyx_v_cltr_u = 0;
   PyArrayObject *__pyx_v_cltr_i = 0;
@@ -5141,13 +5159,13 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("compute_averages", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 157, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("surprise.prediction_algorithms.co_clustering.CoClustering.compute_averages", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("kabirrec.surprise.prediction_algorithms.co_clustering.CoClustering.compute_averages", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_cltr_u), __pyx_ptype_5numpy_ndarray, 1, "cltr_u", 0))) __PYX_ERR(0, 157, __pyx_L1_error)
   if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_cltr_i), __pyx_ptype_5numpy_ndarray, 1, "cltr_i", 0))) __PYX_ERR(0, 158, __pyx_L1_error)
-  __pyx_r = __pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_4compute_averages(__pyx_self, __pyx_v_self, __pyx_v_cltr_u, __pyx_v_cltr_i);
+  __pyx_r = __pyx_pf_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_4compute_averages(__pyx_self, __pyx_v_self, __pyx_v_cltr_u, __pyx_v_cltr_i);
 
   /* function exit code */
   goto __pyx_L0;
@@ -5158,7 +5176,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_13co_clustering_12Co
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_4compute_averages(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyArrayObject *__pyx_v_cltr_u, PyArrayObject *__pyx_v_cltr_i) {
+static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_4compute_averages(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyArrayObject *__pyx_v_cltr_u, PyArrayObject *__pyx_v_cltr_i) {
   PyArrayObject *__pyx_v_count_cltr_u = 0;
   PyArrayObject *__pyx_v_count_cltr_i = 0;
   PyArrayObject *__pyx_v_count_cocltr = 0;
@@ -5291,7 +5309,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   }
   __pyx_pybuffernd_cltr_i.diminfo[0].strides = __pyx_pybuffernd_cltr_i.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_cltr_i.diminfo[0].shape = __pyx_pybuffernd_cltr_i.rcbuffer->pybuffer.shape[0];
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":186
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":186
  * 
  *         cdef int u, i, r, uc, ic
  *         cdef double global_mean = self.trainset.global_mean             # <<<<<<<<<<<<<<
@@ -5307,12 +5325,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_global_mean = __pyx_t_3;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":189
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":189
  * 
  *         # Initialize everything to zero
- *         count_cltr_u = np.zeros(self.n_cltr_u, np.int)             # <<<<<<<<<<<<<<
- *         count_cltr_i = np.zeros(self.n_cltr_i, np.int)
- *         count_cocltr = np.zeros((self.n_cltr_u, self.n_cltr_i), np.int)
+ *         count_cltr_u = np.zeros(self.n_cltr_u, np.int_)             # <<<<<<<<<<<<<<
+ *         count_cltr_i = np.zeros(self.n_cltr_i, np.int_)
+ *         count_cocltr = np.zeros((self.n_cltr_u, self.n_cltr_i), np.int_)
  */
   __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 189, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -5398,11 +5416,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_v_count_cltr_u = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":190
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":190
  *         # Initialize everything to zero
- *         count_cltr_u = np.zeros(self.n_cltr_u, np.int)
- *         count_cltr_i = np.zeros(self.n_cltr_i, np.int)             # <<<<<<<<<<<<<<
- *         count_cocltr = np.zeros((self.n_cltr_u, self.n_cltr_i), np.int)
+ *         count_cltr_u = np.zeros(self.n_cltr_u, np.int_)
+ *         count_cltr_i = np.zeros(self.n_cltr_i, np.int_)             # <<<<<<<<<<<<<<
+ *         count_cocltr = np.zeros((self.n_cltr_u, self.n_cltr_i), np.int_)
  * 
  */
   __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 190, __pyx_L1_error)
@@ -5489,12 +5507,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_v_count_cltr_i = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":191
- *         count_cltr_u = np.zeros(self.n_cltr_u, np.int)
- *         count_cltr_i = np.zeros(self.n_cltr_i, np.int)
- *         count_cocltr = np.zeros((self.n_cltr_u, self.n_cltr_i), np.int)             # <<<<<<<<<<<<<<
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":191
+ *         count_cltr_u = np.zeros(self.n_cltr_u, np.int_)
+ *         count_cltr_i = np.zeros(self.n_cltr_i, np.int_)
+ *         count_cocltr = np.zeros((self.n_cltr_u, self.n_cltr_i), np.int_)             # <<<<<<<<<<<<<<
  * 
- *         sum_cltr_u = np.zeros(self.n_cltr_u, np.int)
+ *         sum_cltr_u = np.zeros(self.n_cltr_u, np.int_)
  */
   __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 191, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
@@ -5590,12 +5608,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_v_count_cocltr = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":193
- *         count_cocltr = np.zeros((self.n_cltr_u, self.n_cltr_i), np.int)
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":193
+ *         count_cocltr = np.zeros((self.n_cltr_u, self.n_cltr_i), np.int_)
  * 
- *         sum_cltr_u = np.zeros(self.n_cltr_u, np.int)             # <<<<<<<<<<<<<<
- *         sum_cltr_i = np.zeros(self.n_cltr_i, np.int)
- *         sum_cocltr = np.zeros((self.n_cltr_u, self.n_cltr_i), np.int)
+ *         sum_cltr_u = np.zeros(self.n_cltr_u, np.int_)             # <<<<<<<<<<<<<<
+ *         sum_cltr_i = np.zeros(self.n_cltr_i, np.int_)
+ *         sum_cocltr = np.zeros((self.n_cltr_u, self.n_cltr_i), np.int_)
  */
   __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 193, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
@@ -5681,11 +5699,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_v_sum_cltr_u = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":194
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":194
  * 
- *         sum_cltr_u = np.zeros(self.n_cltr_u, np.int)
- *         sum_cltr_i = np.zeros(self.n_cltr_i, np.int)             # <<<<<<<<<<<<<<
- *         sum_cocltr = np.zeros((self.n_cltr_u, self.n_cltr_i), np.int)
+ *         sum_cltr_u = np.zeros(self.n_cltr_u, np.int_)
+ *         sum_cltr_i = np.zeros(self.n_cltr_i, np.int_)             # <<<<<<<<<<<<<<
+ *         sum_cocltr = np.zeros((self.n_cltr_u, self.n_cltr_i), np.int_)
  * 
  */
   __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 194, __pyx_L1_error)
@@ -5772,10 +5790,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_v_sum_cltr_i = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":195
- *         sum_cltr_u = np.zeros(self.n_cltr_u, np.int)
- *         sum_cltr_i = np.zeros(self.n_cltr_i, np.int)
- *         sum_cocltr = np.zeros((self.n_cltr_u, self.n_cltr_i), np.int)             # <<<<<<<<<<<<<<
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":195
+ *         sum_cltr_u = np.zeros(self.n_cltr_u, np.int_)
+ *         sum_cltr_i = np.zeros(self.n_cltr_i, np.int_)
+ *         sum_cocltr = np.zeros((self.n_cltr_u, self.n_cltr_i), np.int_)             # <<<<<<<<<<<<<<
  * 
  *         avg_cltr_u = np.zeros(self.n_cltr_u, np.double)
  */
@@ -5873,8 +5891,8 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_v_sum_cocltr = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":197
- *         sum_cocltr = np.zeros((self.n_cltr_u, self.n_cltr_i), np.int)
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":197
+ *         sum_cocltr = np.zeros((self.n_cltr_u, self.n_cltr_i), np.int_)
  * 
  *         avg_cltr_u = np.zeros(self.n_cltr_u, np.double)             # <<<<<<<<<<<<<<
  *         avg_cltr_i = np.zeros(self.n_cltr_i, np.double)
@@ -5964,7 +5982,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_v_avg_cltr_u = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":198
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":198
  * 
  *         avg_cltr_u = np.zeros(self.n_cltr_u, np.double)
  *         avg_cltr_i = np.zeros(self.n_cltr_i, np.double)             # <<<<<<<<<<<<<<
@@ -6055,7 +6073,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_v_avg_cltr_i = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":199
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":199
  *         avg_cltr_u = np.zeros(self.n_cltr_u, np.double)
  *         avg_cltr_i = np.zeros(self.n_cltr_i, np.double)
  *         avg_cocltr = np.zeros((self.n_cltr_u, self.n_cltr_i), np.double)             # <<<<<<<<<<<<<<
@@ -6156,7 +6174,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_v_avg_cocltr = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":202
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":202
  * 
  *         # Compute counts and sums for every cluster.
  *         for u, i, r in self.trainset.all_ratings():             # <<<<<<<<<<<<<<
@@ -6286,7 +6304,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     __pyx_v_i = __pyx_t_24;
     __pyx_v_r = __pyx_t_25;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":203
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":203
  *         # Compute counts and sums for every cluster.
  *         for u, i, r in self.trainset.all_ratings():
  *             uc = cltr_u[u]             # <<<<<<<<<<<<<<
@@ -6305,7 +6323,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     }
     __pyx_v_uc = (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_cltr_u.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd_cltr_u.diminfo[0].strides));
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":204
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":204
  *         for u, i, r in self.trainset.all_ratings():
  *             uc = cltr_u[u]
  *             ic = cltr_i[i]             # <<<<<<<<<<<<<<
@@ -6324,7 +6342,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     }
     __pyx_v_ic = (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_cltr_i.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd_cltr_i.diminfo[0].strides));
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":206
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":206
  *             ic = cltr_i[i]
  * 
  *             count_cltr_u[uc] += 1             # <<<<<<<<<<<<<<
@@ -6343,7 +6361,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     }
     *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_count_cltr_u.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd_count_cltr_u.diminfo[0].strides) += 1;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":207
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":207
  * 
  *             count_cltr_u[uc] += 1
  *             count_cltr_i[ic] += 1             # <<<<<<<<<<<<<<
@@ -6362,7 +6380,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     }
     *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_count_cltr_i.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd_count_cltr_i.diminfo[0].strides) += 1;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":208
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":208
  *             count_cltr_u[uc] += 1
  *             count_cltr_i[ic] += 1
  *             count_cocltr[uc, ic] += 1             # <<<<<<<<<<<<<<
@@ -6386,7 +6404,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     }
     *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_count_cocltr.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd_count_cocltr.diminfo[0].strides, __pyx_t_27, __pyx_pybuffernd_count_cocltr.diminfo[1].strides) += 1;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":210
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":210
  *             count_cocltr[uc, ic] += 1
  * 
  *             sum_cltr_u[uc] += r             # <<<<<<<<<<<<<<
@@ -6405,7 +6423,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     }
     *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_sum_cltr_u.rcbuffer->pybuffer.buf, __pyx_t_27, __pyx_pybuffernd_sum_cltr_u.diminfo[0].strides) += __pyx_v_r;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":211
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":211
  * 
  *             sum_cltr_u[uc] += r
  *             sum_cltr_i[ic] += r             # <<<<<<<<<<<<<<
@@ -6424,7 +6442,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     }
     *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_sum_cltr_i.rcbuffer->pybuffer.buf, __pyx_t_27, __pyx_pybuffernd_sum_cltr_i.diminfo[0].strides) += __pyx_v_r;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":212
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":212
  *             sum_cltr_u[uc] += r
  *             sum_cltr_i[ic] += r
  *             sum_cocltr[uc, ic] += r             # <<<<<<<<<<<<<<
@@ -6448,7 +6466,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     }
     *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_sum_cocltr.rcbuffer->pybuffer.buf, __pyx_t_27, __pyx_pybuffernd_sum_cocltr.diminfo[0].strides, __pyx_t_26, __pyx_pybuffernd_sum_cocltr.diminfo[1].strides) += __pyx_v_r;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":202
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":202
  * 
  *         # Compute counts and sums for every cluster.
  *         for u, i, r in self.trainset.all_ratings():             # <<<<<<<<<<<<<<
@@ -6458,7 +6476,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   }
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":215
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":215
  * 
  *         # Then set the averages for users...
  *         for uc in range(self.n_cltr_u):             # <<<<<<<<<<<<<<
@@ -6473,7 +6491,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   for (__pyx_t_25 = 0; __pyx_t_25 < __pyx_t_29; __pyx_t_25+=1) {
     __pyx_v_uc = __pyx_t_25;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":216
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":216
  *         # Then set the averages for users...
  *         for uc in range(self.n_cltr_u):
  *             if count_cltr_u[uc]:             # <<<<<<<<<<<<<<
@@ -6493,7 +6511,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     __pyx_t_30 = ((*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_count_cltr_u.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd_count_cltr_u.diminfo[0].strides)) != 0);
     if (__pyx_t_30) {
 
-      /* "surprise/prediction_algorithms/co_clustering.pyx":217
+      /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":217
  *         for uc in range(self.n_cltr_u):
  *             if count_cltr_u[uc]:
  *                 avg_cltr_u[uc] = sum_cltr_u[uc] / count_cltr_u[uc]             # <<<<<<<<<<<<<<
@@ -6523,7 +6541,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
       }
       __pyx_t_32 = (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_count_cltr_u.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd_count_cltr_u.diminfo[0].strides));
       if (unlikely(__pyx_t_32 == 0)) {
-        PyErr_SetString(PyExc_ZeroDivisionError, "float division");
+        PyErr_SetString(PyExc_ZeroDivisionError, "integer division or modulo by zero");
+        __PYX_ERR(0, 217, __pyx_L1_error)
+      }
+      else if (sizeof(__pyx_t_5numpy_int_t) == sizeof(long) && (!(((__pyx_t_5numpy_int_t)-1) > 0)) && unlikely(__pyx_t_32 == (__pyx_t_5numpy_int_t)-1)  && unlikely(UNARY_NEG_WOULD_OVERFLOW(__pyx_t_31))) {
+        PyErr_SetString(PyExc_OverflowError, "value too large to perform division");
         __PYX_ERR(0, 217, __pyx_L1_error)
       }
       __pyx_t_26 = __pyx_v_uc;
@@ -6536,9 +6558,9 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
         __Pyx_RaiseBufferIndexError(__pyx_t_24);
         __PYX_ERR(0, 217, __pyx_L1_error)
       }
-      *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_avg_cltr_u.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd_avg_cltr_u.diminfo[0].strides) = (((double)__pyx_t_31) / ((double)__pyx_t_32));
+      *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_avg_cltr_u.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd_avg_cltr_u.diminfo[0].strides) = __Pyx_div___pyx_t_5numpy_int_t(__pyx_t_31, __pyx_t_32);
 
-      /* "surprise/prediction_algorithms/co_clustering.pyx":216
+      /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":216
  *         # Then set the averages for users...
  *         for uc in range(self.n_cltr_u):
  *             if count_cltr_u[uc]:             # <<<<<<<<<<<<<<
@@ -6548,7 +6570,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
       goto __pyx_L9;
     }
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":219
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":219
  *                 avg_cltr_u[uc] = sum_cltr_u[uc] / count_cltr_u[uc]
  *             else:
  *                 avg_cltr_u[uc] = global_mean             # <<<<<<<<<<<<<<
@@ -6571,7 +6593,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     __pyx_L9:;
   }
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":222
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":222
  * 
  *         # ... for items
  *         for ic in range(self.n_cltr_i):             # <<<<<<<<<<<<<<
@@ -6586,7 +6608,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   for (__pyx_t_25 = 0; __pyx_t_25 < __pyx_t_29; __pyx_t_25+=1) {
     __pyx_v_ic = __pyx_t_25;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":223
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":223
  *         # ... for items
  *         for ic in range(self.n_cltr_i):
  *             if count_cltr_i[ic]:             # <<<<<<<<<<<<<<
@@ -6606,7 +6628,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     __pyx_t_30 = ((*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_count_cltr_i.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd_count_cltr_i.diminfo[0].strides)) != 0);
     if (__pyx_t_30) {
 
-      /* "surprise/prediction_algorithms/co_clustering.pyx":224
+      /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":224
  *         for ic in range(self.n_cltr_i):
  *             if count_cltr_i[ic]:
  *                 avg_cltr_i[ic] = sum_cltr_i[ic] / count_cltr_i[ic]             # <<<<<<<<<<<<<<
@@ -6636,7 +6658,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
       }
       __pyx_t_31 = (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_count_cltr_i.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd_count_cltr_i.diminfo[0].strides));
       if (unlikely(__pyx_t_31 == 0)) {
-        PyErr_SetString(PyExc_ZeroDivisionError, "float division");
+        PyErr_SetString(PyExc_ZeroDivisionError, "integer division or modulo by zero");
+        __PYX_ERR(0, 224, __pyx_L1_error)
+      }
+      else if (sizeof(__pyx_t_5numpy_int_t) == sizeof(long) && (!(((__pyx_t_5numpy_int_t)-1) > 0)) && unlikely(__pyx_t_31 == (__pyx_t_5numpy_int_t)-1)  && unlikely(UNARY_NEG_WOULD_OVERFLOW(__pyx_t_32))) {
+        PyErr_SetString(PyExc_OverflowError, "value too large to perform division");
         __PYX_ERR(0, 224, __pyx_L1_error)
       }
       __pyx_t_26 = __pyx_v_ic;
@@ -6649,9 +6675,9 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
         __Pyx_RaiseBufferIndexError(__pyx_t_24);
         __PYX_ERR(0, 224, __pyx_L1_error)
       }
-      *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_avg_cltr_i.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd_avg_cltr_i.diminfo[0].strides) = (((double)__pyx_t_32) / ((double)__pyx_t_31));
+      *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_avg_cltr_i.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd_avg_cltr_i.diminfo[0].strides) = __Pyx_div___pyx_t_5numpy_int_t(__pyx_t_32, __pyx_t_31);
 
-      /* "surprise/prediction_algorithms/co_clustering.pyx":223
+      /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":223
  *         # ... for items
  *         for ic in range(self.n_cltr_i):
  *             if count_cltr_i[ic]:             # <<<<<<<<<<<<<<
@@ -6661,7 +6687,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
       goto __pyx_L12;
     }
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":226
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":226
  *                 avg_cltr_i[ic] = sum_cltr_i[ic] / count_cltr_i[ic]
  *             else:
  *                 avg_cltr_i[ic] = global_mean             # <<<<<<<<<<<<<<
@@ -6684,7 +6710,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     __pyx_L12:;
   }
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":229
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":229
  * 
  *         # ... and for co-clusters
  *         for uc in range(self.n_cltr_u):             # <<<<<<<<<<<<<<
@@ -6699,7 +6725,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   for (__pyx_t_25 = 0; __pyx_t_25 < __pyx_t_29; __pyx_t_25+=1) {
     __pyx_v_uc = __pyx_t_25;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":230
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":230
  *         # ... and for co-clusters
  *         for uc in range(self.n_cltr_u):
  *             for ic in range(self.n_cltr_i):             # <<<<<<<<<<<<<<
@@ -6714,7 +6740,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     for (__pyx_t_24 = 0; __pyx_t_24 < __pyx_t_34; __pyx_t_24+=1) {
       __pyx_v_ic = __pyx_t_24;
 
-      /* "surprise/prediction_algorithms/co_clustering.pyx":231
+      /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":231
  *         for uc in range(self.n_cltr_u):
  *             for ic in range(self.n_cltr_i):
  *                 if count_cocltr[uc, ic]:             # <<<<<<<<<<<<<<
@@ -6739,7 +6765,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
       __pyx_t_30 = ((*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_count_cocltr.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd_count_cocltr.diminfo[0].strides, __pyx_t_27, __pyx_pybuffernd_count_cocltr.diminfo[1].strides)) != 0);
       if (__pyx_t_30) {
 
-        /* "surprise/prediction_algorithms/co_clustering.pyx":232
+        /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":232
  *             for ic in range(self.n_cltr_i):
  *                 if count_cocltr[uc, ic]:
  *                     avg_cocltr[uc, ic] = (sum_cocltr[uc, ic] /             # <<<<<<<<<<<<<<
@@ -6763,7 +6789,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
         }
         __pyx_t_31 = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_sum_cocltr.rcbuffer->pybuffer.buf, __pyx_t_27, __pyx_pybuffernd_sum_cocltr.diminfo[0].strides, __pyx_t_26, __pyx_pybuffernd_sum_cocltr.diminfo[1].strides));
 
-        /* "surprise/prediction_algorithms/co_clustering.pyx":233
+        /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":233
  *                 if count_cocltr[uc, ic]:
  *                     avg_cocltr[uc, ic] = (sum_cocltr[uc, ic] /
  *                                           count_cocltr[uc, ic])             # <<<<<<<<<<<<<<
@@ -6787,7 +6813,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
         }
         __pyx_t_32 = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_int_t *, __pyx_pybuffernd_count_cocltr.rcbuffer->pybuffer.buf, __pyx_t_26, __pyx_pybuffernd_count_cocltr.diminfo[0].strides, __pyx_t_27, __pyx_pybuffernd_count_cocltr.diminfo[1].strides));
 
-        /* "surprise/prediction_algorithms/co_clustering.pyx":232
+        /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":232
  *             for ic in range(self.n_cltr_i):
  *                 if count_cocltr[uc, ic]:
  *                     avg_cocltr[uc, ic] = (sum_cocltr[uc, ic] /             # <<<<<<<<<<<<<<
@@ -6795,7 +6821,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  *                 else:
  */
         if (unlikely(__pyx_t_32 == 0)) {
-          PyErr_SetString(PyExc_ZeroDivisionError, "float division");
+          PyErr_SetString(PyExc_ZeroDivisionError, "integer division or modulo by zero");
+          __PYX_ERR(0, 232, __pyx_L1_error)
+        }
+        else if (sizeof(__pyx_t_5numpy_int_t) == sizeof(long) && (!(((__pyx_t_5numpy_int_t)-1) > 0)) && unlikely(__pyx_t_32 == (__pyx_t_5numpy_int_t)-1)  && unlikely(UNARY_NEG_WOULD_OVERFLOW(__pyx_t_31))) {
+          PyErr_SetString(PyExc_OverflowError, "value too large to perform division");
           __PYX_ERR(0, 232, __pyx_L1_error)
         }
         __pyx_t_27 = __pyx_v_uc;
@@ -6813,9 +6843,9 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
           __Pyx_RaiseBufferIndexError(__pyx_t_7);
           __PYX_ERR(0, 232, __pyx_L1_error)
         }
-        *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_avg_cocltr.rcbuffer->pybuffer.buf, __pyx_t_27, __pyx_pybuffernd_avg_cocltr.diminfo[0].strides, __pyx_t_26, __pyx_pybuffernd_avg_cocltr.diminfo[1].strides) = (((double)__pyx_t_31) / ((double)__pyx_t_32));
+        *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_avg_cocltr.rcbuffer->pybuffer.buf, __pyx_t_27, __pyx_pybuffernd_avg_cocltr.diminfo[0].strides, __pyx_t_26, __pyx_pybuffernd_avg_cocltr.diminfo[1].strides) = __Pyx_div___pyx_t_5numpy_int_t(__pyx_t_31, __pyx_t_32);
 
-        /* "surprise/prediction_algorithms/co_clustering.pyx":231
+        /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":231
  *         for uc in range(self.n_cltr_u):
  *             for ic in range(self.n_cltr_i):
  *                 if count_cocltr[uc, ic]:             # <<<<<<<<<<<<<<
@@ -6825,7 +6855,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
         goto __pyx_L17;
       }
 
-      /* "surprise/prediction_algorithms/co_clustering.pyx":235
+      /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":235
  *                                           count_cocltr[uc, ic])
  *                 else:
  *                     avg_cocltr[uc, ic] = global_mean             # <<<<<<<<<<<<<<
@@ -6854,7 +6884,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     }
   }
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":237
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":237
  *                     avg_cocltr[uc, ic] = global_mean
  * 
  *         return avg_cltr_u, avg_cltr_i, avg_cocltr             # <<<<<<<<<<<<<<
@@ -6877,7 +6907,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_t_6 = 0;
   goto __pyx_L0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":157
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":157
  *         return self
  * 
  *     def compute_averages(self, np.ndarray[np.int_t] cltr_u,             # <<<<<<<<<<<<<<
@@ -6909,7 +6939,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_sum_cltr_u.rcbuffer->pybuffer);
     __Pyx_SafeReleaseBuffer(&__pyx_pybuffernd_sum_cocltr.rcbuffer->pybuffer);
   __Pyx_ErrRestore(__pyx_type, __pyx_value, __pyx_tb);}
-  __Pyx_AddTraceback("surprise.prediction_algorithms.co_clustering.CoClustering.compute_averages", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("kabirrec.surprise.prediction_algorithms.co_clustering.CoClustering.compute_averages", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   goto __pyx_L2;
   __pyx_L0:;
@@ -6939,7 +6969,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   return __pyx_r;
 }
 
-/* "surprise/prediction_algorithms/co_clustering.pyx":239
+/* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":239
  *         return avg_cltr_u, avg_cltr_i, avg_cocltr
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
@@ -6948,9 +6978,9 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_7estimate(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_7estimate = {"estimate", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_7estimate, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_7estimate(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_7estimate(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_7estimate = {"estimate", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_7estimate, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_7estimate(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_u = 0;
   PyObject *__pyx_v_i = 0;
@@ -7012,18 +7042,18 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_L5_argtuple_error:;
   __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 239, __pyx_L3_error)
   __pyx_L3_error:;
-  __Pyx_AddTraceback("surprise.prediction_algorithms.co_clustering.CoClustering.estimate", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("kabirrec.surprise.prediction_algorithms.co_clustering.CoClustering.estimate", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_6estimate(__pyx_self, __pyx_v_self, __pyx_v_u, __pyx_v_i);
+  __pyx_r = __pyx_pf_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_6estimate(__pyx_self, __pyx_v_self, __pyx_v_u, __pyx_v_i);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_6estimate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_u, PyObject *__pyx_v_i) {
+static PyObject *__pyx_pf_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_6estimate(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_u, PyObject *__pyx_v_i) {
   int __pyx_v__u;
   int __pyx_v__i;
   int __pyx_v_uc;
@@ -7044,7 +7074,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("estimate", 0);
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":241
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":241
  *     def estimate(self, u, i):
  * 
  *         if not (self.trainset.knows_user(u) and self.trainset.knows_item(i)):             # <<<<<<<<<<<<<<
@@ -7105,7 +7135,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_t_5 = ((!__pyx_t_1) != 0);
   if (__pyx_t_5) {
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":242
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":242
  * 
  *         if not (self.trainset.knows_user(u) and self.trainset.knows_item(i)):
  *             return self.trainset.global_mean             # <<<<<<<<<<<<<<
@@ -7122,7 +7152,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     __pyx_t_3 = 0;
     goto __pyx_L0;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":241
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":241
  *     def estimate(self, u, i):
  * 
  *         if not (self.trainset.knows_user(u) and self.trainset.knows_item(i)):             # <<<<<<<<<<<<<<
@@ -7131,7 +7161,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
   }
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":244
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":244
  *             return self.trainset.global_mean
  * 
  *         if not self.trainset.knows_user(u):             # <<<<<<<<<<<<<<
@@ -7163,7 +7193,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_t_1 = ((!__pyx_t_5) != 0);
   if (__pyx_t_1) {
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":245
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":245
  * 
  *         if not self.trainset.knows_user(u):
  *             return self.cltr_i[i]             # <<<<<<<<<<<<<<
@@ -7180,7 +7210,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     __pyx_t_4 = 0;
     goto __pyx_L0;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":244
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":244
  *             return self.trainset.global_mean
  * 
  *         if not self.trainset.knows_user(u):             # <<<<<<<<<<<<<<
@@ -7189,7 +7219,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
   }
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":247
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":247
  *             return self.cltr_i[i]
  * 
  *         if not self.trainset.knows_item(i):             # <<<<<<<<<<<<<<
@@ -7221,7 +7251,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_t_5 = ((!__pyx_t_1) != 0);
   if (__pyx_t_5) {
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":248
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":248
  * 
  *         if not self.trainset.knows_item(i):
  *             return self.cltr_u[u]             # <<<<<<<<<<<<<<
@@ -7238,7 +7268,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
     __pyx_t_2 = 0;
     goto __pyx_L0;
 
-    /* "surprise/prediction_algorithms/co_clustering.pyx":247
+    /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":247
  *             return self.cltr_i[i]
  * 
  *         if not self.trainset.knows_item(i):             # <<<<<<<<<<<<<<
@@ -7247,7 +7277,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
  */
   }
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":252
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":252
  *         # I doubt cdefing makes any difference here as cython has no clue about
  *         # arrays self.stuff... But maybe?
  *         cdef int _u = u             # <<<<<<<<<<<<<<
@@ -7257,7 +7287,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_t_6 = __Pyx_PyInt_As_int(__pyx_v_u); if (unlikely((__pyx_t_6 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 252, __pyx_L1_error)
   __pyx_v__u = __pyx_t_6;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":253
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":253
  *         # arrays self.stuff... But maybe?
  *         cdef int _u = u
  *         cdef int _i = i             # <<<<<<<<<<<<<<
@@ -7267,7 +7297,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_t_6 = __Pyx_PyInt_As_int(__pyx_v_i); if (unlikely((__pyx_t_6 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 253, __pyx_L1_error)
   __pyx_v__i = __pyx_t_6;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":254
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":254
  *         cdef int _u = u
  *         cdef int _i = i
  *         cdef int uc = self.cltr_u[_u]             # <<<<<<<<<<<<<<
@@ -7283,7 +7313,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __pyx_v_uc = __pyx_t_6;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":255
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":255
  *         cdef int _i = i
  *         cdef int uc = self.cltr_u[_u]
  *         cdef int ic = self.cltr_i[_i]             # <<<<<<<<<<<<<<
@@ -7299,7 +7329,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_ic = __pyx_t_6;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":258
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":258
  *         cdef double est
  * 
  *         est = (self.avg_cocltr[uc, ic] +             # <<<<<<<<<<<<<<
@@ -7325,7 +7355,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":259
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":259
  * 
  *         est = (self.avg_cocltr[uc, ic] +
  *                self.user_mean[_u] - self.avg_cltr_u[uc] +             # <<<<<<<<<<<<<<
@@ -7338,7 +7368,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":258
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":258
  *         cdef double est
  * 
  *         est = (self.avg_cocltr[uc, ic] +             # <<<<<<<<<<<<<<
@@ -7350,7 +7380,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":259
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":259
  * 
  *         est = (self.avg_cocltr[uc, ic] +
  *                self.user_mean[_u] - self.avg_cltr_u[uc] +             # <<<<<<<<<<<<<<
@@ -7367,7 +7397,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":260
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":260
  *         est = (self.avg_cocltr[uc, ic] +
  *                self.user_mean[_u] - self.avg_cltr_u[uc] +
  *                self.item_mean[_i] - self.avg_cltr_i[ic])             # <<<<<<<<<<<<<<
@@ -7380,7 +7410,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":259
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":259
  * 
  *         est = (self.avg_cocltr[uc, ic] +
  *                self.user_mean[_u] - self.avg_cltr_u[uc] +             # <<<<<<<<<<<<<<
@@ -7392,7 +7422,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":260
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":260
  *         est = (self.avg_cocltr[uc, ic] +
  *                self.user_mean[_u] - self.avg_cltr_u[uc] +
  *                self.item_mean[_i] - self.avg_cltr_i[ic])             # <<<<<<<<<<<<<<
@@ -7412,7 +7442,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __pyx_v_est = __pyx_t_8;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":262
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":262
  *                self.item_mean[_i] - self.avg_cltr_i[ic])
  * 
  *         return est             # <<<<<<<<<<<<<<
@@ -7424,7 +7454,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __pyx_t_7 = 0;
   goto __pyx_L0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":239
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":239
  *         return avg_cltr_u, avg_cltr_i, avg_cocltr
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
@@ -7438,7 +7468,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_13co_clustering_12Co
   __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
   __Pyx_XDECREF(__pyx_t_7);
-  __Pyx_AddTraceback("surprise.prediction_algorithms.co_clustering.CoClustering.estimate", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("kabirrec.surprise.prediction_algorithms.co_clustering.CoClustering.estimate", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -8517,7 +8547,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_CoClustering_estimate, __pyx_k_CoClustering_estimate, sizeof(__pyx_k_CoClustering_estimate), 0, 0, 1, 1},
   {&__pyx_n_s_CoClustering_fit, __pyx_k_CoClustering_fit, sizeof(__pyx_k_CoClustering_fit), 0, 0, 1, 1},
   {&__pyx_n_s_ImportError, __pyx_k_ImportError, sizeof(__pyx_k_ImportError), 0, 0, 1, 1},
-  {&__pyx_kp_u_Processing_epoch, __pyx_k_Processing_epoch, sizeof(__pyx_k_Processing_epoch), 0, 1, 0, 0},
+  {&__pyx_kp_s_Processing_epoch, __pyx_k_Processing_epoch, sizeof(__pyx_k_Processing_epoch), 0, 0, 1, 0},
   {&__pyx_n_s__6, __pyx_k__6, sizeof(__pyx_k__6), 0, 0, 1, 1},
   {&__pyx_n_s_algo_base, __pyx_k_algo_base, sizeof(__pyx_k_algo_base), 0, 0, 1, 1},
   {&__pyx_n_s_all_items, __pyx_k_all_items, sizeof(__pyx_k_all_items), 0, 0, 1, 1},
@@ -8536,10 +8566,12 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_count_cocltr, __pyx_k_count_cocltr, sizeof(__pyx_k_count_cocltr), 0, 0, 1, 1},
   {&__pyx_n_s_doc, __pyx_k_doc, sizeof(__pyx_k_doc), 0, 0, 1, 1},
   {&__pyx_n_s_double, __pyx_k_double, sizeof(__pyx_k_double), 0, 0, 1, 1},
+  {&__pyx_n_s_end, __pyx_k_end, sizeof(__pyx_k_end), 0, 0, 1, 1},
   {&__pyx_n_s_epoch, __pyx_k_epoch, sizeof(__pyx_k_epoch), 0, 0, 1, 1},
   {&__pyx_n_s_errors, __pyx_k_errors, sizeof(__pyx_k_errors), 0, 0, 1, 1},
   {&__pyx_n_s_est, __pyx_k_est, sizeof(__pyx_k_est), 0, 0, 1, 1},
   {&__pyx_n_s_estimate, __pyx_k_estimate, sizeof(__pyx_k_estimate), 0, 0, 1, 1},
+  {&__pyx_n_s_file, __pyx_k_file, sizeof(__pyx_k_file), 0, 0, 1, 1},
   {&__pyx_n_s_fit, __pyx_k_fit, sizeof(__pyx_k_fit), 0, 0, 1, 1},
   {&__pyx_n_s_format, __pyx_k_format, sizeof(__pyx_k_format), 0, 0, 1, 1},
   {&__pyx_n_s_get_rng, __pyx_k_get_rng, sizeof(__pyx_k_get_rng), 0, 0, 1, 1},
@@ -8552,6 +8584,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_int, __pyx_k_int, sizeof(__pyx_k_int), 0, 0, 1, 1},
   {&__pyx_n_s_ir, __pyx_k_ir, sizeof(__pyx_k_ir), 0, 0, 1, 1},
   {&__pyx_n_s_item_mean, __pyx_k_item_mean, sizeof(__pyx_k_item_mean), 0, 0, 1, 1},
+  {&__pyx_n_s_kabirrec_surprise_prediction_alg, __pyx_k_kabirrec_surprise_prediction_alg, sizeof(__pyx_k_kabirrec_surprise_prediction_alg), 0, 0, 1, 1},
+  {&__pyx_kp_s_kabirrec_surprise_prediction_alg_2, __pyx_k_kabirrec_surprise_prediction_alg_2, sizeof(__pyx_k_kabirrec_surprise_prediction_alg_2), 0, 0, 1, 0},
   {&__pyx_n_s_knows_item, __pyx_k_knows_item, sizeof(__pyx_k_knows_item), 0, 0, 1, 1},
   {&__pyx_n_s_knows_user, __pyx_k_knows_user, sizeof(__pyx_k_knows_user), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
@@ -8566,8 +8600,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
   {&__pyx_n_s_np, __pyx_k_np, sizeof(__pyx_k_np), 0, 0, 1, 1},
   {&__pyx_n_s_numpy, __pyx_k_numpy, sizeof(__pyx_k_numpy), 0, 0, 1, 1},
-  {&__pyx_kp_u_numpy_core_multiarray_failed_to, __pyx_k_numpy_core_multiarray_failed_to, sizeof(__pyx_k_numpy_core_multiarray_failed_to), 0, 1, 0, 0},
-  {&__pyx_kp_u_numpy_core_umath_failed_to_impor, __pyx_k_numpy_core_umath_failed_to_impor, sizeof(__pyx_k_numpy_core_umath_failed_to_impor), 0, 1, 0, 0},
+  {&__pyx_kp_s_numpy_core_multiarray_failed_to, __pyx_k_numpy_core_multiarray_failed_to, sizeof(__pyx_k_numpy_core_multiarray_failed_to), 0, 0, 1, 0},
+  {&__pyx_kp_s_numpy_core_umath_failed_to_impor, __pyx_k_numpy_core_umath_failed_to_impor, sizeof(__pyx_k_numpy_core_umath_failed_to_impor), 0, 0, 1, 0},
   {&__pyx_n_s_prepare, __pyx_k_prepare, sizeof(__pyx_k_prepare), 0, 0, 1, 1},
   {&__pyx_n_s_print, __pyx_k_print, sizeof(__pyx_k_print), 0, 0, 1, 1},
   {&__pyx_n_s_qualname, __pyx_k_qualname, sizeof(__pyx_k_qualname), 0, 0, 1, 1},
@@ -8581,8 +8615,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_sum_cltr_i, __pyx_k_sum_cltr_i, sizeof(__pyx_k_sum_cltr_i), 0, 0, 1, 1},
   {&__pyx_n_s_sum_cltr_u, __pyx_k_sum_cltr_u, sizeof(__pyx_k_sum_cltr_u), 0, 0, 1, 1},
   {&__pyx_n_s_sum_cocltr, __pyx_k_sum_cocltr, sizeof(__pyx_k_sum_cocltr), 0, 0, 1, 1},
-  {&__pyx_n_s_surprise_prediction_algorithms_c, __pyx_k_surprise_prediction_algorithms_c, sizeof(__pyx_k_surprise_prediction_algorithms_c), 0, 0, 1, 1},
-  {&__pyx_kp_s_surprise_prediction_algorithms_c_2, __pyx_k_surprise_prediction_algorithms_c_2, sizeof(__pyx_k_surprise_prediction_algorithms_c_2), 0, 0, 1, 0},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_trainset, __pyx_k_trainset, sizeof(__pyx_k_trainset), 0, 0, 1, 1},
   {&__pyx_n_s_u, __pyx_k_u, sizeof(__pyx_k_u), 0, 0, 1, 1},
@@ -8597,7 +8629,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
   __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 107, __pyx_L1_error)
-  __pyx_builtin_print = __Pyx_GetBuiltinName(__pyx_n_s_print); if (!__pyx_builtin_print) __PYX_ERR(0, 110, __pyx_L1_error)
   __pyx_builtin_ImportError = __Pyx_GetBuiltinName(__pyx_n_s_ImportError); if (!__pyx_builtin_ImportError) __PYX_ERR(1, 945, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
@@ -8615,7 +8646,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * cdef inline int import_umath() except -1:
  */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_u_numpy_core_multiarray_failed_to); if (unlikely(!__pyx_tuple_)) __PYX_ERR(1, 945, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_numpy_core_multiarray_failed_to); if (unlikely(!__pyx_tuple_)) __PYX_ERR(1, 945, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
@@ -8626,11 +8657,11 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  * cdef inline int import_ufunc() except -1:
  */
-  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_u_numpy_core_umath_failed_to_impor); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(1, 951, __pyx_L1_error)
+  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_s_numpy_core_umath_failed_to_impor); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(1, 951, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":57
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":57
  *     """
  * 
  *     def __init__(self, n_cltr_u=3, n_cltr_i=3, n_epochs=20, random_state=None,             # <<<<<<<<<<<<<<
@@ -8640,12 +8671,12 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__3 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_n_cltr_u, __pyx_n_s_n_cltr_i, __pyx_n_s_n_epochs, __pyx_n_s_random_state, __pyx_n_s_verbose); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
-  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(6, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_c_2, __pyx_n_s_init, 57, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(6, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_kabirrec_surprise_prediction_alg_2, __pyx_n_s_init, 57, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 57, __pyx_L1_error)
   __pyx_tuple__5 = PyTuple_Pack(5, ((PyObject *)__pyx_int_3), ((PyObject *)__pyx_int_3), ((PyObject *)__pyx_int_20), ((PyObject *)Py_None), ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__5)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":68
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":68
  *         self.random_state = random_state
  * 
  *     def fit(self, trainset):             # <<<<<<<<<<<<<<
@@ -8655,9 +8686,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__7 = PyTuple_Pack(19, __pyx_n_s_self, __pyx_n_s_trainset, __pyx_n_s_user_mean, __pyx_n_s_item_mean, __pyx_n_s_cltr_u, __pyx_n_s_cltr_i, __pyx_n_s_avg_cltr_u, __pyx_n_s_avg_cltr_i, __pyx_n_s_avg_cocltr, __pyx_n_s_errors, __pyx_n_s_u, __pyx_n_s_i, __pyx_n_s_r, __pyx_n_s_uc, __pyx_n_s_ic, __pyx_n_s_est, __pyx_n_s_rng, __pyx_n_s_epoch, __pyx_n_s__6); if (unlikely(!__pyx_tuple__7)) __PYX_ERR(0, 68, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__7);
   __Pyx_GIVEREF(__pyx_tuple__7);
-  __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(2, 0, 19, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_c_2, __pyx_n_s_fit, 68, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) __PYX_ERR(0, 68, __pyx_L1_error)
+  __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(2, 0, 19, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_kabirrec_surprise_prediction_alg_2, __pyx_n_s_fit, 68, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) __PYX_ERR(0, 68, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":157
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":157
  *         return self
  * 
  *     def compute_averages(self, np.ndarray[np.int_t] cltr_u,             # <<<<<<<<<<<<<<
@@ -8667,9 +8698,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__9 = PyTuple_Pack(18, __pyx_n_s_self, __pyx_n_s_cltr_u, __pyx_n_s_cltr_i, __pyx_n_s_count_cltr_u, __pyx_n_s_count_cltr_i, __pyx_n_s_count_cocltr, __pyx_n_s_sum_cltr_u, __pyx_n_s_sum_cltr_i, __pyx_n_s_sum_cocltr, __pyx_n_s_avg_cltr_u, __pyx_n_s_avg_cltr_i, __pyx_n_s_avg_cocltr, __pyx_n_s_u, __pyx_n_s_i, __pyx_n_s_r, __pyx_n_s_uc, __pyx_n_s_ic, __pyx_n_s_global_mean); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
-  __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(3, 0, 18, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__9, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_c_2, __pyx_n_s_compute_averages, 157, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(3, 0, 18, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__9, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_kabirrec_surprise_prediction_alg_2, __pyx_n_s_compute_averages, 157, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) __PYX_ERR(0, 157, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":239
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":239
  *         return avg_cltr_u, avg_cltr_i, avg_cocltr
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
@@ -8679,7 +8710,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__11 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_u, __pyx_n_s_i, __pyx_n_s_u_2, __pyx_n_s_i_2, __pyx_n_s_uc, __pyx_n_s_ic, __pyx_n_s_est); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 239, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__11);
   __Pyx_GIVEREF(__pyx_tuple__11);
-  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(3, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_c_2, __pyx_n_s_estimate, 239, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) __PYX_ERR(0, 239, __pyx_L1_error)
+  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(3, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_kabirrec_surprise_prediction_alg_2, __pyx_n_s_estimate, 239, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) __PYX_ERR(0, 239, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -8987,14 +9018,14 @@ if (!__Pyx_RefNanny) {
   #if PY_MAJOR_VERSION < 3 && (__PYX_DEFAULT_STRING_ENCODING_IS_ASCII || __PYX_DEFAULT_STRING_ENCODING_IS_DEFAULT)
   if (__Pyx_init_sys_getdefaultencoding_params() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
-  if (__pyx_module_is_main_surprise__prediction_algorithms__co_clustering) {
+  if (__pyx_module_is_main_kabirrec__surprise__prediction_algorithms__co_clustering) {
     if (PyObject_SetAttr(__pyx_m, __pyx_n_s_name, __pyx_n_s_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   #if PY_MAJOR_VERSION >= 3
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "surprise.prediction_algorithms.co_clustering")) {
-      if (unlikely(PyDict_SetItemString(modules, "surprise.prediction_algorithms.co_clustering", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "kabirrec.surprise.prediction_algorithms.co_clustering")) {
+      if (unlikely(PyDict_SetItemString(modules, "kabirrec.surprise.prediction_algorithms.co_clustering", __pyx_m) < 0)) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   #endif
@@ -9015,19 +9046,19 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_patch_abc() < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":9
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":9
  * 
  * cimport numpy as np  # noqa
  * import numpy as np             # <<<<<<<<<<<<<<
  * 
  * from .algo_base import AlgoBase
  */
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_numpy, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_numpy, 0, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_1) < 0) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":11
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":11
  * import numpy as np
  * 
  * from .algo_base import AlgoBase             # <<<<<<<<<<<<<<
@@ -9048,7 +9079,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":12
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":12
  * 
  * from .algo_base import AlgoBase
  * from ..utils import get_rng             # <<<<<<<<<<<<<<
@@ -9069,7 +9100,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":15
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":15
  * 
  * 
  * class CoClustering(AlgoBase):             # <<<<<<<<<<<<<<
@@ -9085,59 +9116,59 @@ if (!__Pyx_RefNanny) {
   __pyx_t_1 = 0;
   __pyx_t_1 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_t_2, __pyx_n_s_CoClustering, __pyx_n_s_CoClustering, (PyObject *) NULL, __pyx_n_s_surprise_prediction_algorithms_c, __pyx_kp_s_A_collaborative_filtering_algori); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 15, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_t_2, __pyx_n_s_CoClustering, __pyx_n_s_CoClustering, (PyObject *) NULL, __pyx_n_s_kabirrec_surprise_prediction_alg, __pyx_kp_s_A_collaborative_filtering_algori); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 15, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":57
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":57
  *     """
  * 
  *     def __init__(self, n_cltr_u=3, n_cltr_i=3, n_epochs=20, random_state=None,             # <<<<<<<<<<<<<<
  *                  verbose=False):
  * 
  */
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_1__init__, 0, __pyx_n_s_CoClustering___init, NULL, __pyx_n_s_surprise_prediction_algorithms_c, __pyx_d, ((PyObject *)__pyx_codeobj__4)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_1__init__, 0, __pyx_n_s_CoClustering___init, NULL, __pyx_n_s_kabirrec_surprise_prediction_alg, __pyx_d, ((PyObject *)__pyx_codeobj__4)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_4, __pyx_tuple__5);
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_init, __pyx_t_4) < 0) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":68
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":68
  *         self.random_state = random_state
  * 
  *     def fit(self, trainset):             # <<<<<<<<<<<<<<
  * 
  *         # All this implementation was hugely inspired from MyMediaLite:
  */
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_3fit, 0, __pyx_n_s_CoClustering_fit, NULL, __pyx_n_s_surprise_prediction_algorithms_c, __pyx_d, ((PyObject *)__pyx_codeobj__8)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 68, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_3fit, 0, __pyx_n_s_CoClustering_fit, NULL, __pyx_n_s_kabirrec_surprise_prediction_alg, __pyx_d, ((PyObject *)__pyx_codeobj__8)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 68, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_fit, __pyx_t_4) < 0) __PYX_ERR(0, 68, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":157
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":157
  *         return self
  * 
  *     def compute_averages(self, np.ndarray[np.int_t] cltr_u,             # <<<<<<<<<<<<<<
  *                          np.ndarray[np.int_t] cltr_i):
  *         """Compute cluster averages.
  */
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_5compute_averages, 0, __pyx_n_s_CoClustering_compute_averages, NULL, __pyx_n_s_surprise_prediction_algorithms_c, __pyx_d, ((PyObject *)__pyx_codeobj__10)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_5compute_averages, 0, __pyx_n_s_CoClustering_compute_averages, NULL, __pyx_n_s_kabirrec_surprise_prediction_alg, __pyx_d, ((PyObject *)__pyx_codeobj__10)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_compute_averages, __pyx_t_4) < 0) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":239
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":239
  *         return avg_cltr_u, avg_cltr_i, avg_cocltr
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
  * 
  *         if not (self.trainset.knows_user(u) and self.trainset.knows_item(i)):
  */
-  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_7estimate, 0, __pyx_n_s_CoClustering_estimate, NULL, __pyx_n_s_surprise_prediction_algorithms_c, __pyx_d, ((PyObject *)__pyx_codeobj__12)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 239, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_8kabirrec_8surprise_21prediction_algorithms_13co_clustering_12CoClustering_7estimate, 0, __pyx_n_s_CoClustering_estimate, NULL, __pyx_n_s_kabirrec_surprise_prediction_alg, __pyx_d, ((PyObject *)__pyx_codeobj__12)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 239, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_estimate, __pyx_t_4) < 0) __PYX_ERR(0, 239, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":15
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":15
  * 
  * 
  * class CoClustering(AlgoBase):             # <<<<<<<<<<<<<<
@@ -9152,7 +9183,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/co_clustering.pyx":1
+  /* "kabirrec/surprise/prediction_algorithms/co_clustering.pyx":1
  * """             # <<<<<<<<<<<<<<
  * the :mod:`co_clustering` module includes the :class:`CoClustering` algorithm.
  * """
@@ -9180,11 +9211,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_XDECREF(__pyx_t_4);
   if (__pyx_m) {
     if (__pyx_d) {
-      __Pyx_AddTraceback("init surprise.prediction_algorithms.co_clustering", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init kabirrec.surprise.prediction_algorithms.co_clustering", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     Py_CLEAR(__pyx_m);
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init surprise.prediction_algorithms.co_clustering");
+    PyErr_SetString(PyExc_ImportError, "init kabirrec.surprise.prediction_algorithms.co_clustering");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -10508,6 +10539,14 @@ static CYTHON_INLINE void __Pyx_ErrFetchInState(PyThreadState *tstate, PyObject 
         "Argument '%.200s' has incorrect type (expected %.200s, got %.200s)",
         name, type->tp_name, Py_TYPE(obj)->tp_name);
     return 0;
+}
+
+/* DivInt[__pyx_t_5numpy_int_t] */
+  static CYTHON_INLINE __pyx_t_5numpy_int_t __Pyx_div___pyx_t_5numpy_int_t(__pyx_t_5numpy_int_t a, __pyx_t_5numpy_int_t b) {
+    __pyx_t_5numpy_int_t q = a / b;
+    __pyx_t_5numpy_int_t r = a - q*b;
+    q -= ((r != 0) & ((r ^ b) < 0));
+    return q;
 }
 
 /* ObjectGetItem */
@@ -12033,6 +12072,112 @@ static void __Pyx_ReleaseBuffer(Py_buffer *view) {
         return (target_type) value;\
     }
 
+/* Print */
+  #if !CYTHON_COMPILING_IN_PYPY && PY_MAJOR_VERSION < 3
+static PyObject *__Pyx_GetStdout(void) {
+    PyObject *f = PySys_GetObject((char *)"stdout");
+    if (!f) {
+        PyErr_SetString(PyExc_RuntimeError, "lost sys.stdout");
+    }
+    return f;
+}
+static int __Pyx_Print(PyObject* f, PyObject *arg_tuple, int newline) {
+    int i;
+    if (!f) {
+        if (!(f = __Pyx_GetStdout()))
+            return -1;
+    }
+    Py_INCREF(f);
+    for (i=0; i < PyTuple_GET_SIZE(arg_tuple); i++) {
+        PyObject* v;
+        if (PyFile_SoftSpace(f, 1)) {
+            if (PyFile_WriteString(" ", f) < 0)
+                goto error;
+        }
+        v = PyTuple_GET_ITEM(arg_tuple, i);
+        if (PyFile_WriteObject(v, f, Py_PRINT_RAW) < 0)
+            goto error;
+        if (PyString_Check(v)) {
+            char *s = PyString_AsString(v);
+            Py_ssize_t len = PyString_Size(v);
+            if (len > 0) {
+                switch (s[len-1]) {
+                    case ' ': break;
+                    case '\f': case '\r': case '\n': case '\t': case '\v':
+                        PyFile_SoftSpace(f, 0);
+                        break;
+                    default:  break;
+                }
+            }
+        }
+    }
+    if (newline) {
+        if (PyFile_WriteString("\n", f) < 0)
+            goto error;
+        PyFile_SoftSpace(f, 0);
+    }
+    Py_DECREF(f);
+    return 0;
+error:
+    Py_DECREF(f);
+    return -1;
+}
+#else
+static int __Pyx_Print(PyObject* stream, PyObject *arg_tuple, int newline) {
+    PyObject* kwargs = 0;
+    PyObject* result = 0;
+    PyObject* end_string;
+    if (unlikely(!__pyx_print)) {
+        __pyx_print = PyObject_GetAttr(__pyx_b, __pyx_n_s_print);
+        if (!__pyx_print)
+            return -1;
+    }
+    if (stream) {
+        kwargs = PyDict_New();
+        if (unlikely(!kwargs))
+            return -1;
+        if (unlikely(PyDict_SetItem(kwargs, __pyx_n_s_file, stream) < 0))
+            goto bad;
+        if (!newline) {
+            end_string = PyUnicode_FromStringAndSize(" ", 1);
+            if (unlikely(!end_string))
+                goto bad;
+            if (PyDict_SetItem(kwargs, __pyx_n_s_end, end_string) < 0) {
+                Py_DECREF(end_string);
+                goto bad;
+            }
+            Py_DECREF(end_string);
+        }
+    } else if (!newline) {
+        if (unlikely(!__pyx_print_kwargs)) {
+            __pyx_print_kwargs = PyDict_New();
+            if (unlikely(!__pyx_print_kwargs))
+                return -1;
+            end_string = PyUnicode_FromStringAndSize(" ", 1);
+            if (unlikely(!end_string))
+                return -1;
+            if (PyDict_SetItem(__pyx_print_kwargs, __pyx_n_s_end, end_string) < 0) {
+                Py_DECREF(end_string);
+                return -1;
+            }
+            Py_DECREF(end_string);
+        }
+        kwargs = __pyx_print_kwargs;
+    }
+    result = PyObject_Call(__pyx_print, arg_tuple, kwargs);
+    if (unlikely(kwargs) && (kwargs != __pyx_print_kwargs))
+        Py_DECREF(kwargs);
+    if (!result)
+        return -1;
+    Py_DECREF(result);
+    return 0;
+bad:
+    if (kwargs != __pyx_print_kwargs)
+        Py_XDECREF(kwargs);
+    return -1;
+}
+#endif
+
 /* Declarations */
   #if CYTHON_CCOMPLEX
   #ifdef __cplusplus
@@ -12966,6 +13111,43 @@ raise_neg_overflow:
         "can't convert negative value to long");
     return (long) -1;
 }
+
+/* PrintOne */
+  #if !CYTHON_COMPILING_IN_PYPY && PY_MAJOR_VERSION < 3
+static int __Pyx_PrintOne(PyObject* f, PyObject *o) {
+    if (!f) {
+        if (!(f = __Pyx_GetStdout()))
+            return -1;
+    }
+    Py_INCREF(f);
+    if (PyFile_SoftSpace(f, 0)) {
+        if (PyFile_WriteString(" ", f) < 0)
+            goto error;
+    }
+    if (PyFile_WriteObject(o, f, Py_PRINT_RAW) < 0)
+        goto error;
+    if (PyFile_WriteString("\n", f) < 0)
+        goto error;
+    Py_DECREF(f);
+    return 0;
+error:
+    Py_DECREF(f);
+    return -1;
+    /* the line below is just to avoid C compiler
+     * warnings about unused functions */
+    return __Pyx_Print(f, NULL, 0);
+}
+#else
+static int __Pyx_PrintOne(PyObject* stream, PyObject *o) {
+    int res;
+    PyObject* arg_tuple = PyTuple_Pack(1, o);
+    if (unlikely(!arg_tuple))
+        return -1;
+    res = __Pyx_Print(stream, arg_tuple, 1);
+    Py_DECREF(arg_tuple);
+    return res;
+}
+#endif
 
 /* CIntToPy */
   static CYTHON_INLINE PyObject* __Pyx_PyInt_From_long(long value) {
