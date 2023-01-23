@@ -382,8 +382,9 @@ def start_user_specific():
             return json.dumps({"message": "k_start should be smaller than k_end"}), 400
 
     print_log(verbose, f"Log: Fitting UserSpecific | userid:{userid} - model_name:{model_name}")
-    recommendation_service.user_specific_module(options={"verbose": verbose, "k": k})
-    recommendation_service.user_specific.fit(k_start=k_start, k_end=k_end)
+    recommendation_service.user_specific_module(options=
+                                                {"verbose": verbose, "k": k, "k_start": k_start, "k_end": k_end})
+    recommendation_service.user_specific.fit()
     print_log(verbose, f"Log: UserSpecific is fit | userid:{userid} - model_name:{model_name}")
     save_model(userid, model_name, recommendation_service)
     return json.dumps({"message": f"UserSpecific module for model:({model_name}) is ready for use"}), 200
