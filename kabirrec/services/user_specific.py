@@ -38,11 +38,13 @@ class UserSpecific(ModuleBase):
         self.clusters_score = None
         self.clusters_cost = None
         self.clusters_fit_time = None
-        self.k_start = None
-        self.k_end = None
+        self.k_start = options.get("k_start", None)
+        self.k_end = options.get("k_end", None)
         self.sorted_predictions = None
         self.optimal_k = options.get("k", None)
+        self.build_tables = options.get("build_tables", True)
         self.manual_cluster = False if self.optimal_k is None else True
+
 
     def set_optimal_k_clusters(self, k_start, k_end):
         """
@@ -175,28 +177,25 @@ class UserSpecific(ModuleBase):
 
         self.sorted_predictions = sorted_predictions
 
-    def fit(self, k_start=None, k_end=None):
+    def fit(self, trainset=None):
         """
         Fits the class and prepares the required things for recommend function.
         First clusters users using KModes, then fits the weighted slope one algorithm for later use.
         """
 
-        if k_start is None:
-            k_start = 2
-        if k_end is None:
-            k_end = int(self.user_info.shape[0] / 2)
+        if self.k_start is None:
+            self.k_start = 2
+        if self.k_end is None:
+            self.k_end = int(self.user_info.shape[0] / 2)
 
-        if not self.manual_cluster and k_start >= k_end:
+        if not self.manual_cluster and self.k_start >= self.k_end:
             raise ValueError("Error: k_start should be smaller than k_end")
         if self.verbose:
             print("Fitting the algorithm...")
 
-        self.k_start = k_start
-        self.k_end = k_end
-
         # get optimal number of clusters
         if not self.manual_cluster:
-            self.optimal_k = self.set_optimal_k_clusters(k_start, k_end)
+            self.optimal_k = self.set_optimal_k_clusters(self.k_start, self.k_end)
 
         # cluster with optimal k
         if self.verbose:
@@ -204,10 +203,6 @@ class UserSpecific(ModuleBase):
 
         kmode = KModes(n_clusters=self.optimal_k, init="random", n_init=5, n_jobs=-1, verbose=0)
         cluster_labels = kmode.fit_predict(self.user_info)
-
-        if self.verbose:
-            print("Clustering done.".format(self.optimal_k))
-            print("Building tables...")
 
         self.user_info['cluster'] = cluster_labels.tolist()
         virtual_rating, virtual_count = self.generate_virtual_rating_count(self.optimal_k)
@@ -226,6 +221,13 @@ class UserSpecific(ModuleBase):
 
         self.algo = WeightedSlopeOne(count_train_set)
         self.algo.fit(mean_train_set)
+
+        if not self.build_tables:
+            return
+
+        if self.verbose:
+            print("Clustering done.".format(self.optimal_k))
+            print("Building tables...")
 
         data = Dataset.load_from_df(self.user_rating[["user_id", "item_id", "rating"]], mean_reader)
         train_set = data.build_full_trainset()
@@ -250,6 +252,22 @@ class UserSpecific(ModuleBase):
             raise ValueError("Algorithm is not fit.")
         prediction_rating_object = self.algo.predict(user_id, item_id)
         return prediction_rating_object
+
+    def test(self, testset, verbose=False):
+        """
+        Test the algorithm on given testset, i.e. estimate all the ratings
+        in the given testset.
+        :param testset: a test set, as returned by a cross-validation or by the build_testset() method
+        :param verbose: whether to print details for each predictions
+        :return: list of predictions.
+        """
+
+        # The ratings are translated back to their original scale.
+        predictions = [
+            self.algo.predict(uid, iid, r_ui_trans, verbose=verbose)
+            for (uid, iid, r_ui_trans) in testset
+        ]
+        return predictions
 
     def recommend(self, user_id, n):
         """
