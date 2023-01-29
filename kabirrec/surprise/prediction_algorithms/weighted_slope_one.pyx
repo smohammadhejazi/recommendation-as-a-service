@@ -23,7 +23,7 @@ class WeightedSlopeOne(AlgoBase):
     def __init__(self, virtual_count):
 
         AlgoBase.__init__(self)
-        self.counts = virtual_count.ur
+        self.count = virtual_count.ur
 
     def fit(self, trainset):
         n_items = trainset.n_items
@@ -41,8 +41,8 @@ class WeightedSlopeOne(AlgoBase):
         dev = np.zeros((trainset.n_items, trainset.n_items), np.double)
 
         # Computation of freq and dev arrays.
-        for u, u_ratings in iteritems(trainset.ur):
-            u_count = self.counts[u]
+        for u, u_ratings in trainset.ur.items():
+            u_count = self.count[u]
             for i_idx, ir1 in enumerate(u_ratings):
                 for j_idx, ir2 in enumerate(u_ratings):
                     i = ir1[0]
