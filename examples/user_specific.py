@@ -19,12 +19,13 @@ if __name__ == "__main__":
     )
 
     user_specific = recommendation_service.user_specific_module(options={"verbose": True,
-                                                                         "k": 26,
+                                                                         "k": 30,
                                                                          "k_start": 20,
-                                                                         "k_end": 30})
+                                                                         "k_end": 40})
+
     user_specific.fit()
     user_specific.draw_clusters_graph("../examples_output/user_specific_plot.png")
-    prediction_rating = user_specific.recommend(1, 4)
+    prediction_rating = user_specific.recommend(2, 4)
     print(prediction_rating)
     prediction_rating = user_specific.predict_rating(1, 1)
     print(prediction_rating.est)
