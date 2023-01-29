@@ -30,20 +30,23 @@ recommendation_service.read_csv_data(
 Then you can call on generators for services to get the service object. First call the fit function and then you can use their prediction services.
 ## User Specific Example
 ```
-user_specific = recommendation_service.user_specific_module(options={"verbose": True, "k": 26})
-user_specific.fit(20, 30)
-user_specific.draw_clusters_graph()
-prediction_rating = user_specific.recommend(1, 4)
-print(prediction_rating)
-prediction_rating = user_specific.predict_rating(1, 1)
-print(prediction_rating.est)
+    user_specific = recommendation_service.user_specific_module(options={"verbose": True,
+                                                                         "k": 30,
+                                                                         "k_start": 20,
+                                                                         "k_end": 40})
+    user_specific.fit()
+    user_specific.draw_clusters_graph("../examples_output/user_specific_plot.png")
+    prediction_rating = user_specific.recommend(2, 4)
+    print(prediction_rating)
+    prediction_rating = user_specific.predict_rating(1, 1)
+    print(prediction_rating.est)
 ```
 Output:
 ```
 Fitting the algorithm...
 Finding optimal cluster...
-Optimal cluster k=23 found.
-Clustering with k=23...
+Optimal cluster k=30 found.
+Clustering with k=30...
 Clustering done.
 Building tables...
 Tables are built.
@@ -54,11 +57,11 @@ Fitting is done.
 ![Clusters Info](https://github.com/smohammadhejazi/recommendation-as-a-service/raw/main/examples_output/user_specific_plot.png "Clusters Info")
 ## Similar Item Example
 ```
-similar_items = recommendation_service.similar_items_module(options={"verbose": True})
+similar_items = recommendation_service.similar_items_module(options={"algo": "KNNBasic", "verbose": True})
 similar_items.fit()
-items = similar_items.recommend("Toy Story (1995)", k=5)
+items = similar_items.recommend("Toy Story (1995)", n=5)
 for movie in items:
-    print(movie)
+	print(movie)
 ```
 Output:
 ```
@@ -77,11 +80,11 @@ Craft, The (1996)
 ```
 ## Cold Start Example
 ```
-cold_start = recommendation_service.cold_start_module(options {"verbose": True})
+cold_start = recommendation_service.cold_start_module(options={"verbose": True})
 cold_start.fit()
 items = cold_start.recommend(5)
 for movie in items:
-    print(movie)
+	print(movie)
 ```
 Output:
 ```
