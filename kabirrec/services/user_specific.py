@@ -7,6 +7,7 @@ import time
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
 from kmodes.kmodes import KModes
 from collections import defaultdict
 from .module_base import ModuleBase
@@ -15,6 +16,7 @@ from ..utils import matching_dissimilarity
 from ..surprise import WeightedSlopeOne
 from ..surprise import Dataset
 from ..surprise import Reader
+from ..surprise import Prediction
 
 
 class UserSpecific(ModuleBase):
@@ -35,6 +37,7 @@ class UserSpecific(ModuleBase):
             options = {}
         ModuleBase.__init__(self, user_rating=user_rating, user_info=user_info, item_info=item_info, options=options)
         self.algo = None
+        self.user_cluster = None
         self.clusters_score = None
         self.clusters_cost = None
         self.clusters_fit_time = None
@@ -89,8 +92,7 @@ class UserSpecific(ModuleBase):
             virtual_rating: mean of item ratings of all the users in the cluster
             virtual_count: number of ratings to items of all users in the cluster
         """
-        virtual_rating = pd.DataFrame(columns=["user_id", "item_id", "rating_mean"])
-        virtual_count = pd.DataFrame(columns=["user_id", "item_id", "rating_count"])
+        virtual_rating_count = pd.DataFrame(columns=["user_id", "item_id", "ratingmean", "ratingcount"])
 
         for i in range(k):
             # users in cluster i
@@ -98,25 +100,18 @@ class UserSpecific(ModuleBase):
 
             # ratings and counts of these users
             users_rating = self.user_rating[self.user_rating["user_id"].isin(users["user_id"])]
-            users_items = users_rating.groupby(["item_id"], as_index=False)
-            res = users_items.agg({"rating": ["mean", "count"]})
+            res = users_rating.groupby(["item_id"], as_index=False).agg({"rating": ["mean", "count"]})
             res.columns = list(map(''.join, res.columns.values))
-            res = res.rename({"ratingmean": "rating_mean", "ratingcount": "rating_count"}, axis=1)
-
-            # mean and count of item ratings in within this cluster
-            item_mean = res[["item_id", "rating_mean"]]
-            item_count = res[["item_id", "rating_count"]]
+            # res = res.rename({"ratingmean": "rating_mean", "ratingcount": "rating_count"}, axis=1)
 
             # add virtual user_id to dataframes
-            item_mean.insert(0, 'user_id', i)
-            item_count.insert(0, 'user_id', i)
+            res.insert(0, 'user_id', i)
 
             # TODO maybe we can optimise this part
-            # add them to virtual_rating and virtual count
-            virtual_rating = pd.concat([virtual_rating, item_mean])
-            virtual_count = pd.concat([virtual_count, item_count])
+            # add them to virtual_rating_count
+            virtual_rating_count = pd.concat([virtual_rating_count, res])
 
-        return virtual_rating, virtual_count
+        return virtual_rating_count
 
     def draw_clusters_graph(self, path=None):
         """
@@ -137,21 +132,19 @@ class UserSpecific(ModuleBase):
         fig, axes = plt.subplots(3, 1)
 
         ax1 = axes[0]
-        # ax1.set_xlabel("No. of clusters")
-        ax1.set_ylabel("distortion", color=color)
-        # ax1.set_xticks(k_clusters)
+        ax1.set_ylabel("Cost", color=color)
+        ax1.xaxis.set_major_locator(MaxNLocator(integer=True))
         ax1.plot(k_clusters, self.clusters_cost, color=color, marker=marker, linestyle=line)
 
         ax2 = axes[1]
-        # ax2.set_xlabel("No. of clusters")
-        ax2.set_ylabel("time (s)", color=color)
-        # ax2.set_xticks(k_clusters)
+        ax2.set_ylabel("Time (s)", color=color)
+        ax2.xaxis.set_major_locator(MaxNLocator(integer=True))
         ax2.plot(k_clusters, self.clusters_fit_time, color=color, marker=marker, linestyle=line)
 
         ax3 = axes[2]
+        ax3.set_ylabel("Silhouette Score")
         ax3.set_xlabel("No. of clusters")
-        ax3.set_ylabel("Silhouette score")
-        # ax3.set_xticks(k_clusters)
+        ax3.xaxis.set_major_locator(MaxNLocator(integer=True))
         ax3.plot(k_clusters, self.clusters_score, color=color, marker=marker, linestyle=line)
 
         fig.tight_layout()
@@ -202,25 +195,23 @@ class UserSpecific(ModuleBase):
             print("Clustering with k={}...".format(self.optimal_k))
 
         kmode = KModes(n_clusters=self.optimal_k, init="random", n_init=5, n_jobs=-1, verbose=0)
-        cluster_labels = kmode.fit_predict(self.user_info)
-
-        self.user_info['cluster'] = cluster_labels.tolist()
-        virtual_rating, virtual_count = self.generate_virtual_rating_count(self.optimal_k)
+        cluster_lables = kmode.fit_predict(self.user_info)
+        self.user_info["cluster"] = cluster_lables.tolist()
+        self.user_cluster = {}
+        for idx, i in np.ndenumerate(cluster_lables):
+            self.user_cluster[idx[0] + 1] = i
+        virtual_rating_count = self.generate_virtual_rating_count(self.optimal_k)
 
         # virtual ratings ready
+        rating_reader = Reader(rating_scale=(1, 5))
+        count_reader = Reader(rating_scale=(virtual_rating_count["ratingcount"].min(), virtual_rating_count["ratingcount"].max()))
+        rating_data = Dataset.load_from_df(virtual_rating_count[["user_id", "item_id", "ratingmean"]], rating_reader)
+        count_data = Dataset.load_from_df(virtual_rating_count[["user_id", "item_id", "ratingcount"]], count_reader)
+        rating_trainset = rating_data.build_full_trainset()
+        count_trainset = count_data.build_full_trainset()
 
-        mean_reader = Reader(rating_scale=(1, 5))
-        count_reader = Reader(rating_scale=(virtual_count["rating_count"].min(), virtual_count["rating_count"].max()))
-        mean_data = Dataset.load_from_df(virtual_rating, mean_reader)
-        count_data = Dataset.load_from_df(virtual_count, count_reader)
-
-        mean_train_set = mean_data.build_full_trainset()
-        count_train_set = count_data.build_full_trainset()
-
-        mean_train_set.build_anti_testset()
-
-        self.algo = WeightedSlopeOne(count_train_set)
-        self.algo.fit(mean_train_set)
+        self.algo = WeightedSlopeOne(count_trainset)
+        self.algo.fit(rating_trainset)
 
         if not self.build_tables:
             return
@@ -229,10 +220,10 @@ class UserSpecific(ModuleBase):
             print("Clustering done.".format(self.optimal_k))
             print("Building tables...")
 
-        data = Dataset.load_from_df(self.user_rating[["user_id", "item_id", "rating"]], mean_reader)
-        train_set = data.build_full_trainset()
-        test_set = train_set.build_anti_testset()
-        predictions = self.algo.test(test_set)
+        # data = Dataset.load_from_df(self.user_rating[["user_id", "item_id", "rating"]], rating_reader)
+        # train_set = data.build_full_trainset()
+        test_set = rating_trainset.build_anti_testset()
+        predictions = self.test(test_set)
 
         self.set_top_n(predictions)
         self.is_fit = True
@@ -240,18 +231,23 @@ class UserSpecific(ModuleBase):
             print("Tables are built.")
             print("Fitting is done.")
 
-    def predict_rating(self, user_id, item_id):
+    def predict_rating(self, user_id, item_id, r_ui=None, clip=True, verbose=False):
         """
         Predict the rating of an item
         :param user_id: specified user
         :param item_id: specified item
+        :param r_ui: the true rating
+        :param clip: whether to clip the estimation into the rating scale.
+        :param verbose: whether to print details of the prediction
         :return: prediction object
         """
 
         if self.is_fit is False:
             raise ValueError("Algorithm is not fit.")
-        prediction_rating_object = self.algo.predict(user_id, item_id)
-        return prediction_rating_object
+        virtual_user = self.user_cluster[user_id]
+        p_object = self.algo.predict(virtual_user, item_id, r_ui, clip, verbose)
+        p_object = Prediction(virtual_user, p_object.iid, p_object.r_ui, p_object.est, p_object.details)
+        return p_object
 
     def test(self, testset, verbose=False):
         """
@@ -267,6 +263,7 @@ class UserSpecific(ModuleBase):
             self.algo.predict(uid, iid, r_ui_trans, verbose=verbose)
             for (uid, iid, r_ui_trans) in testset
         ]
+
         return predictions
 
     def recommend(self, user_id, n):
@@ -279,7 +276,7 @@ class UserSpecific(ModuleBase):
 
         if self.is_fit is False:
             raise ValueError("Algorithm is not fit.")
-        items = self.sorted_predictions[user_id]
+        items = self.sorted_predictions[self.user_cluster[user_id]]
         recommendation_table = []
         for i in range(n):
             entry = (items[i][0], self.id_to_name(items[i][0]), items[i][1])
