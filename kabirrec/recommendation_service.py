@@ -129,7 +129,7 @@ if __name__ == "__main__":
         print(movie)
 
     user_specific = recommendation_service.user_specific_module(options={"verbose": True,
-                                                                         "k": 26,
+                                                                         "k": 30,
                                                                          "k_start": 20,
                                                                          "k_end": 30})
     user_specific.fit()
