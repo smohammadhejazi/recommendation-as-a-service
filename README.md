@@ -69,11 +69,11 @@ Done computing similarity matrix.
 Fitting is done.
 Finding 5 nearest items...
 5 nearest items found.
-Beauty and the Beast (1991)
-Raiders of the Lost Ark (1981)
-That Thing You Do! (1996)
-Lion King, The (1994)
-Craft, The (1996)
+(588, 'Beauty and the Beast (1991)')
+(174, 'Raiders of the Lost Ark (1981)')
+(845, 'That Thing You Do! (1996)')
+(71, 'Lion King, The (1994)')
+(928, 'Craft, The (1996)')
 ```
 ## Cold Start Example
 ```
@@ -87,12 +87,11 @@ Output:
 ```
 Ranking items...
 All items are ranked.
-     item_id  rating
-49        50    2541
-99       100    2111
-180      181    2032
-257      258    1936
-173      174    1786
+(50, 'Star Wars (1977)', 2541)
+(100, 'Fargo (1996)', 2111)
+(181, 'Return of the Jedi (1983)', 2032)
+(258, 'Contact (1997)', 1936)
+(174, 'Raiders of the Lost Ark (1981)', 1786)
 ```
 ## API Server
 **/api_server** folder contains an API server designed to use Kabirrec as a live service. It can load database, fit the algorithm and use them live by sending HTTP request to it's different routes.
