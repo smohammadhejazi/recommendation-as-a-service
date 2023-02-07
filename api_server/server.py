@@ -430,7 +430,7 @@ def user_specific():
         return json.dumps({"items_list": items})
     except Exception as e:
         print_log(verbose, f"Error: invalid dataset_userid/UserSpecific is not fit | userid:{userid} - model_name:{model_name}")
-        return json.dumps({"message": "dataset_userid is invalid/UserSpecific is not fit"}), 400
+        return json.dumps({"message": "dataset_userid is invalid/UserSpecific is not fit yet"}), 400
 
 
 if __name__ == "__main__":
