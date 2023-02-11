@@ -13,17 +13,18 @@ Its easy to use each service, first you need to create the RecommendationService
 ```
 recommendation_service = RecommendationService()
 
+data_set = "ml-100k"
 recommendation_service.read_csv_data(
-    user_info_path="../dataset/ml-100k/u.user",
-    user_ratings_path="../dataset/ml-100k/u.data",
-    item_info_path="../dataset/ml-100k/u.item",
-    info_columns=["user_id", "age", "gender", "occupation", "zip_code"],
-    ratings_columns=["user_id", "item_id", "rating", "timestamp"],
-    item_columns=["movie_id", "movie_title", "release_date", "video_release_date", "imdb_url", "unknown",
-    "action", "adventure", "animation", "children's", "comedy", "crime", "documentary",
-    "drama", "fantasy", "film_noir", "horror", "musical", "mystery", "romance", "sci-fi",
-    "thriller", "war", "western"],
-    info_sep="|", ratings_sep="\t", item_sep="|"
+	user_info_path="../dataset/{}/u.user".format(data_set),
+	user_ratings_path="../dataset/{}/u.data".format(data_set),
+	item_info_path="../dataset/{}/u.item".format(data_set),
+	user_info_columns=["user_id", "age", "gender", "occupation", "zip_code"],
+	user_ratings_columns=["user_id", "item_id", "rating", "timestamp"],
+	item_info_columns=["movie_id", "movie_title", "release_date", "video_release_date", "imdb_url", "unknown",
+				  "action", "adventure", "animation", "children's", "comedy", "crime", "documentary",
+				  "drama", "fantasy", "film_noir", "horror", "musical", "mystery", "romance", "sci-fi",
+				  "thriller", "war", "western"],
+	user_info_sep="|", user_ratings_sep="\t", item_sep="|"
 )
 ```
 
@@ -108,7 +109,6 @@ For configuring sim_options and bsl_options please check the following [link](ht
 
 Routes and options:
 - **/load-csv** : Load csv database (it should be in the format of MovieLens ml-100k)
-	- path: path of the database ("./dataset")
     - name: path of the database ("ml-100k")
 	- url: path of the database (None)
 	- extract: path of the database (false)
