@@ -6,7 +6,7 @@ metadata:
   labels:
     app: kabirrec-app
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: kabirrec-app
@@ -30,7 +30,7 @@ spec:
             readOnly: true
           - mountPath: /app/dataset
             name: dataset-storage
-          - mountPath: "/app/model"
+          - mountPath: /app/model
             name: model-storage
       volumes:
         - name: config-map
