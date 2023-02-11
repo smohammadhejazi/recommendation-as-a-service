@@ -49,4 +49,4 @@ __all__ = [
     "model_selection",
 ]
 
-__version__ = get_distribution("scikit-surprise").version
+__version__ = get_distribution("kabirrec").version
