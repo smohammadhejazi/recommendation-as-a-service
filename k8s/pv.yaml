@@ -1,4 +1,17 @@
 apiVersion: v1
+--
+kind: PersistentVolume
+metadata:
+  name: dataset-volume
+spec:
+  storageClassName: local-storage
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/dataset"
+--
 kind: PersistentVolume
 metadata:
   name: model-volume
@@ -9,4 +22,28 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: "/models"
+    path: "/model"
+--
+kind: PersistentVolumeClaim
+metadata:
+  name: dataset-volume-claim
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: local-storage
+  volumeName: dataset-volume
+--
+kind: PersistentVolumeClaim
+metadata:
+  name: model-volume-claim
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: local-storage
+  volumeName: model-volume
