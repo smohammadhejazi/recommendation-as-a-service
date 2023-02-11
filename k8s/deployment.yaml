@@ -30,7 +30,7 @@ spec:
             readOnly: true
           - mountPath: /app/dataset
             name: dataset-storage
-          - mountPath: "/app/models"
+          - mountPath: "/app/model"
             name: model-storage
       volumes:
         - name: config-map
