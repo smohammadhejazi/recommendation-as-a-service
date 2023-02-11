@@ -141,7 +141,7 @@ def load_csv():
                 print_log(verbose, f"Log: Extraction done | userid:{userid} - model_name:{model_name}")
 
         if name is None:
-            base = f"{CONFIG['datasets_path']}/default/{CONFIG['dataset_name']}/"
+            base = f"default_dataset/"
         else:
             base = f"{CONFIG['datasets_path']}/{userid}/{name}/"
         recommendation_service.read_csv_data(

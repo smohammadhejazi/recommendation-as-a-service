@@ -29,17 +29,16 @@ spec:
             name: config-map
             readOnly: true
           - mountPath: /app/dataset
-            name: dataset
+            name: dataset-storage
           - mountPath: "/app/models"
             name: model-storage
       volumes:
         - name: config-map
           configMap:
             name: app-config
-        - name: dataset
-          hostPath:
-            path: /dataset
-            type: Directory
+        - name: dataset-storage
+          persistentVolumeClaim:
+            claimName: dataset-volume-claim
         - name: model-storage
           persistentVolumeClaim:
             claimName: model-volume-claim
