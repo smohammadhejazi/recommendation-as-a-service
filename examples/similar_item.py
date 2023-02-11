@@ -11,7 +11,7 @@ if __name__ == "__main__":
         item_info_path="../dataset/{}/u.item".format(data_set),
         user_info_columns=["user_id", "age", "gender", "occupation", "zip_code"],
         user_ratings_columns=["user_id", "item_id", "rating", "timestamp"],
-        item_columns=["movie_id", "movie_title", "release_date", "video_release_date", "imdb_url", "unknown",
+        item_info_columns=["movie_id", "movie_title", "release_date", "video_release_date", "imdb_url", "unknown",
                       "action", "adventure", "animation", "children's", "comedy", "crime", "documentary",
                       "drama", "fantasy", "film_noir", "horror", "musical", "mystery", "romance", "sci-fi",
                       "thriller", "war", "western"],
