@@ -3,7 +3,7 @@ kind: PersistentVolume
 metadata:
   name: model-volume
 spec:
-  storageClassName: standard
+  storageClassName: local-storage
   capacity:
     storage: 1Gi
   accessModes:

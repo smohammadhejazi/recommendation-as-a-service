@@ -5,7 +5,22 @@ metadata:
 data:
   config.json: |-
     {
-        "host": "0.0.0.0",
-        "port": 8080,
-        "default_data_path" : "./dataset/ml-100k/"
+      "host": "0.0.0.0",
+      "port": 8080,
+      "datasets_path": "./dataset",
+      "dataset_name": "ml-100k",
+      "user_info_path": "u.user",
+      "user_ratings_path": "u.item",
+      "item_info_path": "u.user",
+      "user_info_columns": ["user_id", "age", "gender", "occupation", "zip_code"],
+      "user_ratings_columns": ["user_id", "item_id", "rating", "timestamp"],
+      "item_columns": ["movie_id", "movie_title", "release_date",
+                                                            "video_release_date", "imdb_url", "unknown",
+                                                            "action", "adventure", "animation", "children's",
+                                                            "comedy", "crime", "documentary", "drama", "fantasy",
+                                                            "film_noir", "horror", "musical", "mystery", "romance",
+                                                            "sci-fi", "thriller", "war", "western"],
+      "user_info_sep": "|",
+      "user_ratings_sep": "\t",
+      "item_sep": "|"
     }

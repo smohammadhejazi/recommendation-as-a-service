@@ -18,7 +18,7 @@ spec:
         app: kabirrec-app
     spec:
       containers:
-      - image: kabirrec:2.0
+      - image: kabirrec:1.0
         name: kabirrec-server
         resources: {}
         ports:
@@ -41,7 +41,7 @@ spec:
             path: /dataset
             type: Directory
         - name: model-storage
-            persistentVolumeClaim:
+          persistentVolumeClaim:
             claimName: model-volume-claim
 status: {}
 
