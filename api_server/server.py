@@ -3,6 +3,7 @@ import requests
 import zipfile
 import os
 import pickle
+from pathlib import Path
 from flask import Flask, request
 from kabirrec import RecommendationService
 
@@ -32,14 +33,14 @@ def is_token_valid(userid, token):
 
 def load_model(userid, model_name):
     try:
-        with open(f"./models/{userid}_{model_name}.obj", mode="rb") as model_file:
+        with open(f"./model/{userid}_{model_name}.obj", mode="rb") as model_file:
             return pickle.load(model_file)
     except FileNotFoundError:
         return None
 
 
 def save_model(userid, model_name, model_object):
-    with open(f"./models/{userid}_{model_name}.obj", mode="wb") as model_file:
+    with open(f"./model/{userid}_{model_name}.obj", mode="wb") as model_file:
         pickle.dump(model_object, model_file)
 
 
@@ -91,25 +92,19 @@ def load_csv():
     token = request.headers.get("Authorization", None)
     model_name = get_value(options, "model_name", str, None)
     verbose = get_value(options, "verbose", bool, False)
-    path = get_value(options, "path", str, CONFIG["datasets_path"]).strip("/")
-    name = get_value(options, "name", str, CONFIG["dataset_name"]).strip("/")
+    name = get_value(options, "name", str, None)
     url = get_value(options, "url", str, None)
     extract = get_value(options, "extract", bool, False)
     # CSV
-    user_info_path = get_value(options, "user_info_path", str, "u.user")
-    user_ratings_path = get_value(options, "user_ratings_path", str, "u.data")
-    item_info_path = get_value(options, "item_info_path", str, "u.item")
-    user_info_columns = get_value(options, "user_info_columns", str, ["user_id", "age", "gender", "occupation", "zip_code"])
-    user_ratings_columns = get_value(options, "ratings_columns", str, ["user_id", "item_id", "rating", "timestamp"])
-    item_columns = get_value(options, "item_columns", str, ["movie_id", "movie_title", "release_date",
-                                                            "video_release_date", "imdb_url", "unknown",
-                                                            "action", "adventure", "animation", "children's",
-                                                            "comedy", "crime", "documentary", "drama", "fantasy",
-                                                            "film_noir", "horror", "musical", "mystery", "romance",
-                                                            "sci-fi", "thriller", "war", "western"])
-    user_info_sep = get_value(options, "info_sep", str, "|")
-    user_ratings_sep = get_value(options, "ratings_sep", str, "\t")
-    item_sep = get_value(options, "item_sep", str, "|")
+    user_info_path = get_value(options, "user_info_path", str, CONFIG["user_info_path"])
+    user_ratings_path = get_value(options, "user_ratings_path", str, CONFIG["user_ratings_path"])
+    item_info_path = get_value(options, "item_info_path", str, CONFIG["item_info_path"])
+    user_info_columns = get_value(options, "user_info_columns", str, CONFIG["user_info_columns"])
+    user_ratings_columns = get_value(options, "ratings_columns", str, CONFIG["user_ratings_columns"])
+    item_info_columns = get_value(options, "item_info_columns", str, CONFIG["item_info_columns"])
+    user_info_sep = get_value(options, "info_sep", str, CONFIG["user_info_sep"])
+    user_ratings_sep = get_value(options, "ratings_sep", str, CONFIG["user_ratings_sep"])
+    item_sep = get_value(options, "item_sep", str, CONFIG["item_sep"])
 
     # parameters check
     if is_none([userid, token, model_name]):
@@ -126,30 +121,36 @@ def load_csv():
     if recommendation_service is None:
         print_log(verbose, f"Error: Invalid model_name | userid:{userid}")
         return json.dumps({"message": "model_name is invalid"}), 400
-
     # dataset loading
     print_log(verbose, f"Log: Loading database | userid:{userid} - model_name:{model_name}")
     try:
         if url is not None:
             print_log(verbose, f"Log: Downloading dataset | userid:{userid} - model_name:{model_name}")
+            Path(f"./dataset/{userid}").mkdir(parents=True, exist_ok=True)
             response = requests.get(url)
-            zip_path = path + "/" + os.path.basename(url)
-            extract_path = path + "/"
-            open(zip_path, "wb").write(response.content)
+            zip_path = f"{CONFIG['datasets_path']}/{userid}/{os.path.basename(url)}"
+            extract_path = f"{CONFIG['datasets_path']}/{userid}"
+            with open(zip_path, "wb") as zip_download:
+                zip_download.write(response.content)
             print_log(verbose, f"Log: Download done | userid:{userid} - model_name:{model_name}")
             if extract:
                 print_log(verbose, f"Log: Extracting | userid:{userid} - model_name:{model_name}")
                 with zipfile.ZipFile(zip_path, 'r') as zip_ref:
                     zip_ref.extractall(extract_path)
+                Path.unlink(Path(zip_path))
                 print_log(verbose, f"Log: Extraction done | userid:{userid} - model_name:{model_name}")
-        base = path + "/" + name + "/"
+
+        if name is None:
+            base = f"{CONFIG['datasets_path']}/default/{CONFIG['dataset_name']}/"
+        else:
+            base = f"{CONFIG['datasets_path']}/{userid}/{name}/"
         recommendation_service.read_csv_data(
             user_info_path=base + user_info_path,
             user_ratings_path=base + user_ratings_path,
             item_info_path=base + item_info_path,
             user_info_columns=user_info_columns,
             user_ratings_columns=user_ratings_columns,
-            item_columns=item_columns,
+            item_info_columns=item_info_columns,
             user_info_sep=user_info_sep, user_ratings_sep=user_ratings_sep, item_sep=item_sep
         )
         save_model(userid, model_name, recommendation_service)
