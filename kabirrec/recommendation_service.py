@@ -26,7 +26,7 @@ class RecommendationService:
         self.user_specific = None
 
     def read_csv_data(self, user_info_path, user_ratings_path, item_info_path,
-                      user_info_columns,  user_ratings_columns, item_columns,
+                      user_info_columns,  user_ratings_columns, item_info_columns,
                       user_info_sep, user_ratings_sep, item_sep):
         """
         Reads the csv files of dataset and saves it in the class
@@ -36,7 +36,7 @@ class RecommendationService:
         :param item_info_path: csv file path of items' info
         :param user_info_columns: columns of users' info csv
         :param user_ratings_columns: columns of users' ratings csv
-        :param item_columns: columns of items' info
+        :param item_info_columns: columns of items' info
         :param user_info_sep: csv separator of users' info csv
         :param user_ratings_sep: csv separator of users' ratings csv
         :param item_sep: csv separator of items' info
@@ -45,7 +45,7 @@ class RecommendationService:
         self.user_info = pd.read_csv(user_info_path, sep=user_info_sep, names=user_info_columns, engine='python')
         self.user_ratings = pd.read_csv(user_ratings_path, sep=user_ratings_sep, names=user_ratings_columns,
                                         engine='python')
-        self.item_info = pd.read_csv(item_info_path, sep=item_sep, names=item_columns, encoding="ISO-8859-1",
+        self.item_info = pd.read_csv(item_info_path, sep=item_sep, names=item_info_columns, encoding="ISO-8859-1",
                                      engine='python')
         self.data_loaded = True
 
@@ -109,7 +109,7 @@ if __name__ == "__main__":
         item_info_path="../dataset/{}/u.item".format(data_set),
         user_info_columns=["user_id", "age", "gender", "occupation", "zip_code"],
         user_ratings_columns=["user_id", "item_id", "rating", "timestamp"],
-        item_columns=["movie_id", "movie_title", "release_date", "video_release_date", "imdb_url", "unknown",
+        item_info_columns=["movie_id", "movie_title", "release_date", "video_release_date", "imdb_url", "unknown",
                       "action", "adventure", "animation", "children's", "comedy", "crime", "documentary",
                       "drama", "fantasy", "film_noir", "horror", "musical", "mystery", "romance", "sci-fi",
                       "thriller", "war", "western"],
