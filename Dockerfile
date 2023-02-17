@@ -6,7 +6,6 @@ WORKDIR /app
 FROM base AS dependencies  
 COPY ./requirements.txt ./
 RUN pip install -r requirements.txt
-RUN pip install --no-cache-dir flask
 
 # ---- Build ----
 FROM dependencies as build
