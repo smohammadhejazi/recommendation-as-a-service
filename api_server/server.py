@@ -159,6 +159,9 @@ def load_csv():
     except FileNotFoundError as e:
         print_log(verbose, f"Error: Invalid database path/parameters | userid:{userid} - model_name:{model_name}")
         return json.dumps({"message": "invalid path/parameters"}), 400
+    except Exception as e:
+        print_log(verbose, f"Error: Download/Extraction failed | userid:{userid} - model_name:{model_name}")
+        return json.dumps({"message": "download/extraction failed"}), 400
 
 
 @app.route('/start-coldstart', methods=["POST"])
