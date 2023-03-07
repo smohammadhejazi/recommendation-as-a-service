@@ -3,6 +3,7 @@ import requests
 import zipfile
 import os
 import pickle
+from urllib.request import urlopen
 from pathlib import Path
 from flask import Flask, request
 from kabirrec import RecommendationService
@@ -127,8 +128,10 @@ def load_csv():
         if url is not None:
             print_log(verbose, f"Log: Downloading dataset | userid:{userid} - model_name:{model_name}")
             Path(f"./dataset/{userid}").mkdir(parents=True, exist_ok=True)
+            response = urlopen(url)
+            filename = response.headers.get_filename()
             response = requests.get(url)
-            zip_path = f"{CONFIG['datasets_path']}/{userid}/{os.path.basename(url)}"
+            zip_path = f"{CONFIG['datasets_path']}/{userid}/{filename}"
             extract_path = f"{CONFIG['datasets_path']}/{userid}"
             with open(zip_path, "wb") as zip_download:
                 zip_download.write(response.content)
